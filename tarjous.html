@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nordic Modular Group Oy | Tarjouslomake</title>
+    <meta
+      name="description"
+      content="Täytä tarjouslomake ja rakenna suuntaa-antava tarjouspyyntö Nordic Modular Group Oy:lle."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="tarjous">
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html" aria-label="Nordic Modular Group Oy">
+          <img src="assets/logo.png" alt="Nordic Modular logo" />
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Valikko
+        </button>
+        <nav class="topnav" id="site-nav" aria-label="Päänavigaatio">
+          <a href="index.html" data-nav="home">Etusivu</a>
+          <a href="mallisto.html" data-nav="mallisto">Mallisto</a>
+          <a href="ratkaisut.html" data-nav="ratkaisut">Ratkaisut</a>
+          <a href="yritys.html" data-nav="yritys">Yritys</a>
+          <a href="tarjous.html" data-nav="tarjous">Tarjouslomake</a>
+          <a href="yhteystiedot.html" data-nav="yhteystiedot">Yhteystiedot</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="page-hero page-hero-tight">
+          <div class="page-hero-copy">
+            <p class="eyebrow">Tarjouslomake</p>
+            <h1>Rakenna tarjouspyyntö valmiiksi ennen yhteydenottoa.</h1>
+            <p class="lead">
+              Lomake kokoaa tuotteen, lisävarusteet, aikataulun ja kohteen tiedot yhteen. Lopussa avautuu
+              sähköpostiluonnos osoitteeseen <strong>info@nordicmodular.fi</strong>.
+            </p>
+          </div>
+        </section>
+
+        <section class="section form-layout">
+          <form class="quote-form" id="quote-form">
+            <div class="form-grid">
+              <label>
+                <span>Kiinnostava malli</span>
+                <select id="product" name="product">
+                  <option value="71000" data-label="Sauna-tupa Deluxe">Sauna-tupa Deluxe</option>
+                  <option value="44400" data-label="Aitta">Aitta</option>
+                  <option value="36700" data-label="Custom-moduuli">Custom-moduuli</option>
+                  <option value="46000" data-label="Mini sauna ja tupa">Mini sauna ja tupa</option>
+                  <option value="30000" data-label="Mini aitta">Mini aitta</option>
+                  <option value="22000" data-label="Mini custom">Mini custom</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Käyttökohde</span>
+                <select id="use-case" name="useCase">
+                  <option value="Vapaa-ajan käyttö">Vapaa-ajan käyttö</option>
+                  <option value="Vierasmajoitus">Vierasmajoitus</option>
+                  <option value="Matkailu- tai majoituskäyttö">Matkailu- tai majoituskäyttö</option>
+                  <option value="Työtila tai muu käyttö">Työtila tai muu käyttö</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Aikataulu</span>
+                <select id="timeline" name="timeline">
+                  <option value="Mahdollisimman pian">Mahdollisimman pian</option>
+                  <option value="3-6 kuukauden sisällä">3-6 kuukauden sisällä</option>
+                  <option value="6-12 kuukauden sisällä">6-12 kuukauden sisällä</option>
+                  <option value="Suunnittelu käynnissä">Suunnittelu käynnissä</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Kohdepaikkakunta</span>
+                <input id="location" name="location" type="text" placeholder="Esim. Lappeenranta" />
+              </label>
+
+              <label class="checkbox-row">
+                <input id="heatpump" name="heatpump" type="checkbox" value="2900" />
+                <span>Ilmalämpöpumppu (+ 2 900 €)</span>
+              </label>
+
+              <label class="checkbox-row">
+                <input id="solar" name="solar" type="checkbox" value="6400" />
+                <span>Aurinkopaneelijärjestelmä (+ 6 400 €)</span>
+              </label>
+
+              <label class="checkbox-row">
+                <input id="terrace" name="terrace" type="checkbox" value="8000" />
+                <span>Terassimoduuli (+ 8 000 €)</span>
+              </label>
+
+              <label class="checkbox-row">
+                <input id="premium" name="premium" type="checkbox" value="4500" />
+                <span>Premium-materiaalipaketti (+ 4 500 €)</span>
+              </label>
+
+              <label>
+                <span>Tontin valmius</span>
+                <select id="site-ready" name="siteReady">
+                  <option value="Perustiedot vasta selvityksessä">Perustiedot vasta selvityksessä</option>
+                  <option value="Tontti on, pohjatyöt kesken">Tontti on, pohjatyöt kesken</option>
+                  <option value="Tontti on valmis toimituksen suunnitteluun">Tontti on valmis toimituksen suunnitteluun</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Nimi</span>
+                <input id="name" name="name" type="text" placeholder="Oma nimi" />
+              </label>
+
+              <label>
+                <span>Sähköposti</span>
+                <input id="email" name="email" type="email" placeholder="nimi@esimerkki.fi" />
+              </label>
+
+              <label>
+                <span>Puhelin</span>
+                <input id="phone" name="phone" type="tel" placeholder="+358..." />
+              </label>
+
+              <label class="full-span">
+                <span>Lisätiedot</span>
+                <textarea
+                  id="details"
+                  name="details"
+                  rows="6"
+                  placeholder="Kerro kohteesta, toiveista, arvioidusta käyttötarkoituksesta tai erityisvaatimuksista."
+                ></textarea>
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button class="button button-primary" type="submit">Luo tarjouspyyntö sähköpostiin</button>
+              <button class="button button-secondary" type="reset">Tyhjennä</button>
+            </div>
+          </form>
+
+          <aside class="quote-summary">
+            <div class="summary-card">
+              <p class="eyebrow">Suuntaa-antava arvio</p>
+              <h2 id="estimate-total">71 000 €</h2>
+              <p id="estimate-label">Sauna-tupa Deluxe valituilla oletuksilla.</p>
+              <ul class="summary-list" id="estimate-items">
+                <li>Perusmalli: Sauna-tupa Deluxe</li>
+              </ul>
+              <p class="summary-note">
+                Arvio on suuntaa-antava. Lopullinen tarjous määräytyy toimituksen, kohteen ja valitun varustelun perusteella.
+              </p>
+            </div>
+
+            <div class="summary-card">
+              <p class="eyebrow">Yhteys</p>
+              <h3>info@nordicmodular.fi</h3>
+              <p>
+                Lomake ei tarvitse palvelinta toimiakseen: se muodostaa sähköpostiluonnoksen valmiilla tiedoilla.
+              </p>
+            </div>
+          </aside>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Nordic Modular Group Oy</p>
+        <p>Materiaalissa käytetty brändinimi: Nordic Modular Homes</p>
+        <p>&copy; <span id="year"></span> Rakennettu yritysmateriaalin pohjalta.</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
