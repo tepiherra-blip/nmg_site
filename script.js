@@ -5,6 +5,8 @@ const formatEuro = (value) =>
     maximumFractionDigits: 0,
   }).format(value);
 
+document.documentElement.classList.add("has-js");
+
 const setYear = () => {
   const yearElement = document.getElementById("year");
   if (yearElement) {
@@ -88,6 +90,8 @@ const initReveal = () => {
     items.forEach((item) => item.classList.add("is-visible"));
     return;
   }
+
+  document.documentElement.classList.add("reveal-enabled");
 
   const observer = new IntersectionObserver(
     (entries) => {
