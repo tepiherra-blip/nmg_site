@@ -701,6 +701,13 @@ p {
   color: var(--accent-strong);
 }
 
+.catalog-content {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+  min-width: 0;
+}
+
 .catalog-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1157,6 +1164,31 @@ html.reveal-enabled .reveal.is-visible {
   .spec-grid,
   .detail-gallery,
   .footer {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog-card,
+  .catalog-card-product {
+    display: block;
+  }
+
+  .catalog-visual {
+    min-height: 0;
+    margin-bottom: 18px;
+    padding: 14px;
+  }
+
+  .catalog-visual img {
+    display: block;
+    width: 100%;
+    max-height: none;
+    height: auto;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+
+  .catalog-actions {
+    display: grid;
     grid-template-columns: 1fr;
   }
 
