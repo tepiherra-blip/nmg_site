@@ -160,6 +160,9 @@ textarea {
   right: 18px;
   bottom: 18px;
   z-index: 140;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-height: 48px;
   padding: 0 18px;
   border: 1px solid var(--line-strong);
@@ -1113,8 +1116,12 @@ p {
   }
 
   .theme-toggle {
+    top: 14px;
     right: 12px;
-    bottom: 12px;
+    bottom: auto;
+    min-height: 44px;
+    padding: 0 14px;
+    font-size: 0.92rem;
   }
 
   .topnav {
