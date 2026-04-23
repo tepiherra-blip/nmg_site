@@ -79,6 +79,11 @@ const initReveal = () => {
   const items = document.querySelectorAll(".reveal");
   if (!items.length) return;
 
+  if (window.matchMedia("(max-width: 760px)").matches) {
+    items.forEach((item) => item.classList.add("is-visible"));
+    return;
+  }
+
   if (!("IntersectionObserver" in window)) {
     items.forEach((item) => item.classList.add("is-visible"));
     return;

@@ -1155,6 +1155,11 @@ p {
     grid-template-columns: 1fr;
   }
 
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
   .hero-banner,
   .hero-banner-image {
     min-height: 72vh;
