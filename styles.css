@@ -675,8 +675,8 @@ p {
   min-height: 280px;
   padding: 18px;
   border-radius: var(--radius-md);
-  background: linear-gradient(180deg, rgba(208, 232, 245, 0.08), rgba(190, 220, 236, 0.04));
-  border: 1px solid rgba(208, 232, 245, 0.12);
+  background: var(--surface-lifted);
+  border: 1px solid var(--line);
 }
 
 .catalog-visual img {
@@ -1211,6 +1211,8 @@ html.reveal-enabled .reveal.is-visible {
     min-height: 0;
     margin-bottom: 18px;
     padding: 14px;
+    background: var(--surface-lifted);
+    border-color: var(--line);
   }
 
   .catalog-visual img {
