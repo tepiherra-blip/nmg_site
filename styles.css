@@ -1204,7 +1204,7 @@ html.reveal-enabled .reveal.is-visible {
     max-width: 100%;
     padding: 20px;
     border-radius: 22px;
-    background: linear-gradient(180deg, rgba(15, 37, 52, 0.98), rgba(19, 52, 74, 0.98));
+    background: var(--card-gradient);
   }
 
   .catalog-visual {
