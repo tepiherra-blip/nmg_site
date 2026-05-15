@@ -1727,7 +1727,9 @@ html.reveal-enabled .reveal.is-visible {
   }
 
   .topbar {
-    position: static;
+    position: sticky;
+    top: 10px;
+    z-index: 120;
     flex-wrap: wrap;
     border-radius: 28px;
   }
