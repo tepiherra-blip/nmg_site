@@ -267,6 +267,16 @@ const setYear = () => {
   }
 };
 
+const syncTopbarOffset = () => {
+  const topbar = document.querySelector(".topbar");
+  if (!topbar) return;
+
+  const top = window.matchMedia("(max-width: 760px)").matches ? 10 : 12;
+  const extra = window.matchMedia("(max-width: 760px)").matches ? 22 : 28;
+  const offset = Math.ceil(topbar.getBoundingClientRect().height + top + extra);
+  document.documentElement.style.setProperty("--topbar-offset", `${offset}px`);
+};
+
 const THEME_KEY = "nmg-theme";
 
 const applyTheme = (theme) => {
@@ -327,6 +337,7 @@ const initMenu = () => {
   button.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("is-open");
     button.setAttribute("aria-expanded", String(isOpen));
+    window.requestAnimationFrame(syncTopbarOffset);
   });
 };
 
@@ -842,3 +853,5 @@ initQuoteForm();
 initShopButtons();
 initOrderForm();
 initProductDetail();
+syncTopbarOffset();
+window.addEventListener("resize", syncTopbarOffset);

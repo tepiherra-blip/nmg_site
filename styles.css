@@ -38,6 +38,7 @@
   --space-6: 3rem;
   --space-7: 4rem;
   --max: 1200px;
+  --topbar-offset: 132px;
 }
 
 :root[data-theme="light"] {
@@ -117,13 +118,17 @@ textarea {
 .site-shell {
   width: min(calc(100% - 32px), var(--max));
   margin: 0 auto;
+  padding-top: var(--topbar-offset);
   padding-bottom: 48px;
 }
 
 .topbar {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 12px;
+  left: 50%;
+  width: min(calc(100% - 32px), var(--max));
+  transform: translateX(-50%);
+  margin-top: 0;
   z-index: 100;
   display: flex;
   align-items: center;
@@ -1784,9 +1789,11 @@ html.reveal-enabled .reveal.is-visible {
   }
 
   .topbar {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 8px;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    width: min(calc(100% - 20px), var(--max));
+    transform: translateX(-50%);
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     column-gap: 12px;
