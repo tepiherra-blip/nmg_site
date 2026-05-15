@@ -1702,7 +1702,7 @@ html.reveal-enabled .reveal.is-visible {
 @media (max-width: 760px) {
   .site-shell {
     width: min(calc(100% - 20px), var(--max));
-    padding-top: 92px;
+    padding-top: 104px;
   }
 
   .page-hero,
@@ -1728,11 +1728,12 @@ html.reveal-enabled .reveal.is-visible {
   }
 
   .topbar {
-    position: fixed;
+    position: fixed !important;
     top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(calc(100% - 20px), var(--max));
+    left: 10px;
+    right: 10px;
+    width: auto;
+    transform: none;
     margin-top: 0;
     z-index: 160;
     flex-wrap: wrap;
