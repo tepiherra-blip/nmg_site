@@ -1702,7 +1702,7 @@ html.reveal-enabled .reveal.is-visible {
 @media (max-width: 760px) {
   .site-shell {
     width: min(calc(100% - 20px), var(--max));
-    padding-top: 156px;
+    padding-top: 96px;
   }
 
   .page-hero,
@@ -1736,12 +1736,12 @@ html.reveal-enabled .reveal.is-visible {
     transform: none;
     margin-top: 0;
     z-index: 160;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     border-radius: 28px;
   }
 
   .brand img {
-    width: min(100%, 280px);
+    width: min(190px, 56vw);
   }
 
   .menu-toggle {
@@ -1749,9 +1749,9 @@ html.reveal-enabled .reveal.is-visible {
   }
 
   .theme-toggle {
-    top: 86px;
+    top: auto;
     right: 12px;
-    bottom: auto;
+    bottom: 12px;
     min-height: 44px;
     padding: 0 14px;
     font-size: 0.92rem;
@@ -1760,6 +1760,7 @@ html.reveal-enabled .reveal.is-visible {
 
   .topnav {
     display: none;
+    order: 3;
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
