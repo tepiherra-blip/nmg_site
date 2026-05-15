@@ -536,7 +536,6 @@ p {
 }
 
 .story-grid,
-.process-grid,
 .product-grid,
 .benefit-grid,
 .benefit-list,
@@ -550,12 +549,6 @@ p {
 
 .story-grid {
   grid-template-columns: repeat(3, 1fr);
-}
-
-.process-grid {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(4, 1fr);
 }
 
 .product-grid {
@@ -1647,7 +1640,6 @@ html.reveal-enabled .reveal.is-visible {
   }
 
   .story-grid,
-  .process-grid,
   .product-grid,
   .benefit-grid,
   .benefit-list,
@@ -1687,7 +1679,6 @@ html.reveal-enabled .reveal.is-visible {
 
   .product-grid,
   .story-grid,
-  .process-grid,
   .benefit-grid,
   .benefit-list,
   .team-grid,
@@ -1718,7 +1709,6 @@ html.reveal-enabled .reveal.is-visible {
   .form-layout,
   .shop-hero,
   .story-grid,
-  .process-grid,
   .product-grid,
   .benefit-grid,
   .benefit-list,
@@ -1787,7 +1777,6 @@ html.reveal-enabled .reveal.is-visible {
   .category-card,
   .catalog-jump-card,
   .story-grid,
-  .process-grid,
   .product-grid,
   .benefit-grid,
   .benefit-list,
