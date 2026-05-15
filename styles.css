@@ -117,16 +117,13 @@ textarea {
 .site-shell {
   width: min(calc(100% - 32px), var(--max));
   margin: 0 auto;
-  padding-top: 108px;
   padding-bottom: 48px;
 }
 
 .topbar {
-  position: fixed !important;
+  position: sticky;
   top: 12px;
-  left: 50%;
-  width: min(calc(100% - 32px), var(--max));
-  transform: translateX(-50%);
+  margin-top: 16px;
   z-index: 100;
   display: flex;
   align-items: center;
@@ -141,16 +138,9 @@ textarea {
 }
 
 @media (min-width: 761px) {
-  .site-shell {
-    padding-top: 120px;
-  }
-
   .topbar {
-    position: fixed !important;
+    position: sticky;
     top: 12px;
-    left: 50%;
-    width: min(calc(100% - 32px), var(--max));
-    transform: translateX(-50%);
     z-index: 130;
   }
 }
