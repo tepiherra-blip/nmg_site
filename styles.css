@@ -1735,17 +1735,28 @@ html.reveal-enabled .reveal.is-visible {
     width: auto;
     transform: none;
     margin-top: 0;
+    padding: 12px 14px;
+    min-height: 68px;
     z-index: 160;
     flex-wrap: nowrap;
     border-radius: 28px;
   }
 
+  .brand {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
   .brand img {
-    width: min(190px, 56vw);
+    width: min(160px, 48vw);
   }
 
   .menu-toggle {
     display: inline-flex;
+    flex: 0 0 auto;
+    margin-left: auto;
+    min-height: 42px;
+    padding: 0 14px;
   }
 
   .theme-toggle {
@@ -1765,7 +1776,7 @@ html.reveal-enabled .reveal.is-visible {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-    padding-top: 8px;
+    padding-top: 12px;
   }
 
   .topnav.is-open {
