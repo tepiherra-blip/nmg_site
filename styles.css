@@ -1702,7 +1702,7 @@ html.reveal-enabled .reveal.is-visible {
 @media (max-width: 760px) {
   .site-shell {
     width: min(calc(100% - 20px), var(--max));
-    padding-top: 104px;
+    padding-top: 156px;
   }
 
   .page-hero,
@@ -1749,12 +1749,13 @@ html.reveal-enabled .reveal.is-visible {
   }
 
   .theme-toggle {
-    top: 14px;
+    top: 86px;
     right: 12px;
     bottom: auto;
     min-height: 44px;
     padding: 0 14px;
     font-size: 0.92rem;
+    z-index: 170;
   }
 
   .topnav {
