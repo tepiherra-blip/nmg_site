@@ -9,37 +9,6 @@ document.documentElement.classList.add("has-js");
 
 const SHOP_CART_KEY = "nmg-shop-cart";
 
-const normalizeOfferCopy = () => {
-  document.querySelectorAll('a[href^="tarjous.html"], button').forEach((element) => {
-    const text = element.textContent?.trim();
-    if (!text) return;
-
-    if (
-      text === "Pyydä tarjous" ||
-      text === "Pyydä tarjous tästä mallista" ||
-      text === "Kysy tästä" ||
-      text === "Avaa tarjouslomake" ||
-      text === "Täytä tarjouslomake"
-    ) {
-      element.textContent = "Pyydä alustava tarjous";
-    }
-  });
-
-  document.querySelectorAll(".price").forEach((element) => {
-    const text = element.textContent?.trim();
-    if (text === "Pyydä erillinen tarjous") {
-      element.textContent = "Alustava hinta määräytyy kohteen mukaan";
-    }
-  });
-
-  document.querySelectorAll("p").forEach((element) => {
-    const text = element.textContent?.trim();
-    if (text === "Pyydä erillinen tarjous. Toteutus ja hinta määräytyvät kohteen vaatimusten mukaan.") {
-      element.textContent = "Alustava hinta ja toimitussisältö tarkennetaan kohteen vaatimusten mukaan.";
-    }
-  });
-};
-
 const SHOP_PRODUCTS = {
   "premium-laudesetti": {
     id: "premium-laudesetti",
@@ -256,14 +225,7 @@ const addProductToCart = (productId) => {
 const setYear = () => {
   const yearElement = document.getElementById("year");
   if (yearElement) {
-    const year = new Date().getFullYear();
-    const footerParagraph = yearElement.parentElement;
-
-    if (footerParagraph) {
-      footerParagraph.textContent = `© ${year} Nordic Modular Finland Oy. Kaikki oikeudet pidätetään.`;
-    } else {
-      yearElement.textContent = year;
-    }
+    yearElement.textContent = new Date().getFullYear();
   }
 };
 
@@ -518,7 +480,7 @@ const initQuoteForm = () => {
 const initShopButtons = () => {
   document.querySelectorAll(".shop-card-media span").forEach((span) => {
     if (span.textContent?.trim() === "Kuvan paikka") {
-      span.textContent = "Nordic Modular Shop";
+      span.textContent = "Tuotekuva";
     }
   });
 
@@ -834,7 +796,6 @@ const initProductDetail = () => {
 
 initTheme();
 setYear();
-normalizeOfferCopy();
 setActiveNav();
 initMenu();
 initReveal();
