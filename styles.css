@@ -1767,6 +1767,13 @@ html.reveal-enabled .reveal.is-visible {
     padding: 20px;
     border-radius: 22px;
     background: var(--card-gradient);
+    margin-bottom: 18px;
+  }
+
+  .shop-card,
+  .shop-category-card,
+  .shop-trust-card {
+    margin-bottom: 18px;
   }
 
   .catalog-visual {
