@@ -1675,6 +1675,28 @@ html.reveal-enabled .reveal.is-visible {
     width: min(calc(100% - 20px), var(--max));
   }
 
+  .page-hero,
+  .split-section,
+  .form-layout,
+  .shop-hero,
+  .story-grid,
+  .product-grid,
+  .benefit-grid,
+  .benefit-list,
+  .category-grid,
+  .catalog-grid,
+  .shop-grid,
+  .shop-category-row,
+  .shop-trust-grid,
+  .timeline,
+  .team-grid,
+  .contact-details-grid,
+  .form-grid,
+  .spec-grid,
+  .detail-gallery {
+    gap: 24px;
+  }
+
   .topbar {
     position: static;
     flex-wrap: wrap;
@@ -1826,8 +1848,22 @@ html.reveal-enabled .reveal.is-visible {
     padding: 22px 18px;
   }
 
+  .page-hero {
+    padding-top: 36px;
+  }
+
+  .page-hero-copy {
+    gap: 14px;
+  }
+
+  .section-heading,
+  .form-section-heading {
+    margin-bottom: 24px;
+  }
+
   .section {
-    padding-top: 72px;
+    padding-top: 82px;
+    padding-bottom: 10px;
   }
 
   h1 {
