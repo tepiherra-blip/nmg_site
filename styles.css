@@ -76,12 +76,14 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   color: var(--text);
   font-family: Aptos, "Segoe UI", sans-serif;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at top left, rgba(105, 185, 236, 0.18), transparent 30%),
     radial-gradient(circle at top right, rgba(240, 178, 103, 0.1), transparent 20%),
@@ -536,6 +538,7 @@ p {
 }
 
 .story-grid,
+.process-grid,
 .product-grid,
 .benefit-grid,
 .benefit-list,
@@ -549,6 +552,12 @@ p {
 
 .story-grid {
   grid-template-columns: repeat(3, 1fr);
+}
+
+.process-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .product-grid {
@@ -1640,6 +1649,7 @@ html.reveal-enabled .reveal.is-visible {
   }
 
   .story-grid,
+  .process-grid,
   .product-grid,
   .benefit-grid,
   .benefit-list,
@@ -1679,6 +1689,7 @@ html.reveal-enabled .reveal.is-visible {
 
   .product-grid,
   .story-grid,
+  .process-grid,
   .benefit-grid,
   .benefit-list,
   .team-grid,
@@ -1694,6 +1705,50 @@ html.reveal-enabled .reveal.is-visible {
 }
 
 @media (max-width: 900px) {
+  .page-hero,
+  .split-section,
+  .form-layout,
+  .shop-hero,
+  .story-grid,
+  .process-grid,
+  .product-grid,
+  .benefit-grid,
+  .benefit-list,
+  .category-grid,
+  .catalog-grid,
+  .shop-grid,
+  .shop-category-row,
+  .shop-trust-grid,
+  .timeline,
+  .team-grid,
+  .contact-details-grid,
+  .form-grid,
+  .spec-grid,
+  .detail-gallery,
+  .footer {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-actions,
+  .catalog-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions .button,
+  .catalog-actions .button,
+  .product-card .button,
+  .cta-strip .button {
+    width: 100%;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .product-featured,
+  .full-span {
+    grid-column: auto;
+  }
+
   .footer {
     grid-template-columns: 1fr;
   }
@@ -1709,6 +1764,7 @@ html.reveal-enabled .reveal.is-visible {
   .form-layout,
   .shop-hero,
   .story-grid,
+  .process-grid,
   .product-grid,
   .benefit-grid,
   .benefit-list,
@@ -1777,6 +1833,7 @@ html.reveal-enabled .reveal.is-visible {
   .category-card,
   .catalog-jump-card,
   .story-grid,
+  .process-grid,
   .product-grid,
   .benefit-grid,
   .benefit-list,
