@@ -138,9 +138,17 @@ textarea {
 }
 
 @media (min-width: 761px) {
+  .site-shell {
+    padding-top: 112px;
+  }
+
   .topbar {
-    position: sticky;
+    position: fixed;
     top: 12px;
+    left: 50%;
+    width: min(calc(100% - 32px), var(--max));
+    transform: translateX(-50%);
+    margin-top: 0;
     z-index: 130;
   }
 }
