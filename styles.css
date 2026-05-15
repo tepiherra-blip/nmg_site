@@ -1668,14 +1668,15 @@ html.reveal-enabled .reveal.is-visible {
   .footer {
     align-items: start;
   }
-}
 
-@media (max-width: 900px) {
   .category-grid,
   .catalog-grid,
   .shop-grid,
   .shop-category-row,
-  .shop-trust-grid,
+  .shop-trust-grid {
+    grid-template-columns: 1fr;
+  }
+
   .product-grid,
   .story-grid,
   .benefit-grid,
@@ -1683,13 +1684,18 @@ html.reveal-enabled .reveal.is-visible {
   .team-grid,
   .contact-details-grid,
   .timeline,
-  .detail-gallery,
-  .footer {
+  .detail-gallery {
     grid-template-columns: 1fr;
   }
 
   .product-featured {
     grid-column: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .footer {
+    grid-template-columns: 1fr;
   }
 }
 
