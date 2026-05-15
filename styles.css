@@ -1670,6 +1670,29 @@ html.reveal-enabled .reveal.is-visible {
   }
 }
 
+@media (max-width: 900px) {
+  .category-grid,
+  .catalog-grid,
+  .shop-grid,
+  .shop-category-row,
+  .shop-trust-grid,
+  .product-grid,
+  .story-grid,
+  .benefit-grid,
+  .benefit-list,
+  .team-grid,
+  .contact-details-grid,
+  .timeline,
+  .detail-gallery,
+  .footer {
+    grid-template-columns: 1fr;
+  }
+
+  .product-featured {
+    grid-column: auto;
+  }
+}
+
 @media (max-width: 760px) {
   .site-shell {
     width: min(calc(100% - 20px), var(--max));
