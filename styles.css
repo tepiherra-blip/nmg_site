@@ -1785,43 +1785,49 @@ html.reveal-enabled .reveal.is-visible {
   .topbar {
     position: sticky;
     top: 10px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 12px;
+    row-gap: 10px;
     padding: 12px 14px;
-    min-height: 64px;
+    min-height: 0;
     z-index: 120;
-    flex-wrap: nowrap;
+    justify-content: stretch;
     align-items: center;
     border-radius: 28px;
   }
 
   .brand {
-    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
     min-width: 0;
   }
 
   .brand img {
-    width: min(172px, 48vw);
+    width: min(156px, 46vw);
   }
 
   .menu-toggle {
     display: inline-flex;
-    margin-left: auto;
+    align-self: center;
     min-height: 42px;
     padding: 0 14px;
   }
 
   .theme-toggle {
     top: auto;
-    right: 16px;
-    bottom: 16px;
+    right: 14px;
+    bottom: 14px;
     min-height: 44px;
     padding: 0 14px;
     font-size: 0.92rem;
-    max-width: calc(100vw - 32px);
+    max-width: calc(100vw - 28px);
     white-space: nowrap;
   }
 
   .topnav {
     display: none;
+    grid-column: 1 / -1;
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
