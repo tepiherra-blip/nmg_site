@@ -1916,3 +1916,42 @@ html.reveal-enabled .reveal.is-visible {
     align-items: flex-start;
   }
 }
+
+@media (max-width: 1120px) {
+  .category-grid,
+  .catalog-grid,
+  .shop-grid,
+  .shop-category-row,
+  .shop-trust-grid {
+    display: block !important;
+  }
+
+  .category-grid > *,
+  .catalog-grid > *,
+  .shop-grid > *,
+  .shop-category-row > *,
+  .shop-trust-grid > * {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 20px !important;
+  }
+
+  .category-grid > *:last-child,
+  .catalog-grid > *:last-child,
+  .shop-grid > *:last-child,
+  .shop-category-row > *:last-child,
+  .shop-trust-grid > *:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .category-card,
+  .catalog-card,
+  .catalog-card-product,
+  .shop-card,
+  .shop-category-card,
+  .shop-trust-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
