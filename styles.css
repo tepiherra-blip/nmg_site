@@ -38,7 +38,6 @@
   --space-6: 3rem;
   --space-7: 4rem;
   --max: 1200px;
-  --topbar-offset: 132px;
 }
 
 :root[data-theme="light"] {
@@ -118,7 +117,7 @@ textarea {
 .site-shell {
   width: min(calc(100% - 32px), var(--max));
   margin: 0 auto;
-  padding-top: var(--topbar-offset);
+  padding-top: 108px;
   padding-bottom: 48px;
 }
 
@@ -128,13 +127,11 @@ textarea {
   left: 50%;
   width: min(calc(100% - 32px), var(--max));
   transform: translateX(-50%);
-  margin-top: 0;
   z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
-  margin-top: 16px;
   padding: 16px 20px;
   border: 1px solid var(--line-strong);
   border-radius: 999px;
@@ -1763,6 +1760,7 @@ html.reveal-enabled .reveal.is-visible {
 @media (max-width: 760px) {
   .site-shell {
     width: min(calc(100% - 20px), var(--max));
+    padding-top: 88px;
   }
 
   .page-hero,
