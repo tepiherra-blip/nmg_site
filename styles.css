@@ -122,7 +122,7 @@ textarea {
 }
 
 .topbar {
-  position: fixed;
+  position: fixed !important;
   top: 12px;
   left: 50%;
   width: min(calc(100% - 32px), var(--max));
@@ -138,6 +138,21 @@ textarea {
   background: var(--header-gradient);
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow-md);
+}
+
+@media (min-width: 761px) {
+  .site-shell {
+    padding-top: 120px;
+  }
+
+  .topbar {
+    position: fixed !important;
+    top: 12px;
+    left: 50%;
+    width: min(calc(100% - 32px), var(--max));
+    transform: translateX(-50%);
+    z-index: 130;
+  }
 }
 
 .brand {
