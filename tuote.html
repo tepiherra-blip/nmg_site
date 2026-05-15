@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nordic Modular Finland Oy | Tuote</title>
+    <meta
+      name="description"
+      content="Nordic Modular Shopin tuotetiedot, lisätiedot ja suora tilauspainike."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="shop">
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html" aria-label="Nordic Modular Finland Oy">
+          <img src="assets/logo.png" alt="Nordic Modular Finland Oy logo" />
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Valikko
+        </button>
+        <nav class="topnav" id="site-nav" aria-label="Päänavigaatio">
+          <a href="index.html" data-nav="home">Etusivu</a>
+          <a href="mallisto.html" data-nav="mallisto">Mallisto</a>
+          <a href="ratkaisut.html" data-nav="ratkaisut">Ratkaisut</a>
+          <a href="yritys.html" data-nav="yritys">Yritys</a>
+          <a href="shop.html" data-nav="shop">Shop</a>
+          <a href="yhteystiedot.html" data-nav="yhteystiedot">Yhteystiedot</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="page-hero detail-hero reveal">
+          <div class="detail-intro">
+            <p class="eyebrow" id="product-category">Shop-tuote</p>
+            <h1 id="product-name">Tuote</h1>
+            <p class="lead" id="product-description">
+              Laadukas lisävaruste saunaan, pihaan tai mökille osaksi toimivaa kokonaisuutta.
+            </p>
+            <div class="hero-actions">
+              <button class="button button-primary product-order-button" type="button" id="product-order-button">
+                Tilaa tuote
+              </button>
+              <a class="button button-secondary" href="tilaus.html">Siirry tilaukseen</a>
+            </div>
+          </div>
+
+          <div class="shop-detail-visual">
+            <div class="shop-card-media shop-card-media-large">
+              <span id="product-image-placeholder">Nordic Modular Shop</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section detail-layout reveal">
+          <div class="detail-stack">
+            <article class="info-card">
+              <span class="card-label">Tuotekuvaus</span>
+              <h2>Mitä tuote sisältää</h2>
+              <p id="product-long-description">
+                Tuotteen tarkemmat ominaisuudet, käyttökohteet ja vaihtoehdot esitetään tällä sivulla selkeästi.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <span class="card-label">Keskeiset tiedot</span>
+              <ul class="feature-list" id="product-features">
+                <li>Tuotekohtaiset ominaisuudet</li>
+              </ul>
+            </article>
+          </div>
+
+          <aside class="quote-summary">
+            <div class="summary-card summary-card-highlight">
+              <p class="eyebrow">Hinta</p>
+              <h2 id="product-price">0 €</h2>
+              <p id="product-price-note">Hinta alkaen valitulla perusratkaisulla.</p>
+            </div>
+
+            <div class="summary-card">
+              <p class="eyebrow">Sopii myös osaksi toimitusta</p>
+              <h3>Nordic Modular -kokonaisuuksiin</h3>
+              <p id="product-fit">
+                Tuote voidaan toimittaa myös osana laajempaa sauna-, piha- tai mökkikokonaisuutta.
+              </p>
+            </div>
+
+            <div class="summary-card">
+              <p class="eyebrow">Tilaus</p>
+              <h3>Lisää tuote tilaukseen</h3>
+              <p>Tuote lisätään tilaukseen ja viimeistellään tilaussivulla yhdessä muiden valintojen kanssa.</p>
+            </div>
+          </aside>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div>
+          <p class="footer-title">Nordic Modular Finland Oy</p>
+          <p class="footer-copy">Valmiit tilaratkaisut pohjoisiin olosuhteisiin.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Alatunnisteen navigaatio">
+          <a href="index.html">Etusivu</a>
+          <a href="mallisto.html">Mallisto</a>
+          <a href="shop.html">Shop</a>
+          <a href="tilaus.html">Tilaus</a>
+          <a href="yhteystiedot.html">Yhteystiedot</a>
+        </nav>
+        <div class="footer-meta">
+          <a href="mailto:info@nordicmodular.fi">info@nordicmodular.fi</a>
+          <p>&copy; <span id="year"></span> Nordic Modular Finland Oy</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
