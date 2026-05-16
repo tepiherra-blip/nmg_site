@@ -6,7 +6,7 @@
     <title>Nordic Modular Finland Oy | Tilaus</title>
     <meta
       name="description"
-      content="Tee tilaus Nordic Modular Shopin tuotteista ja lähetä se suoraan Nordic Modular Finland Oy:lle."
+      content="Kokoa tuotevalinnat yhteen ja laheta tilauspyynto Nordic Modular Finland Oy:lle."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -19,7 +19,7 @@
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
           Valikko
         </button>
-        <nav class="topnav" id="site-nav" aria-label="Päänavigaatio">
+        <nav class="topnav" id="site-nav" aria-label="Paanavigaatio">
           <a href="index.html" data-nav="home">Etusivu</a>
           <a href="mallisto.html" data-nav="mallisto">Mallisto</a>
           <a href="ratkaisut.html" data-nav="ratkaisut">Ratkaisut</a>
@@ -33,9 +33,10 @@
         <section class="page-hero page-hero-tight reveal">
           <div class="page-hero-copy">
             <p class="eyebrow">Tilaus</p>
-            <h1>Viimeistele tilaus valituista tuotteista.</h1>
+            <h1>Viimeistele tilauspyyntö valituista tuotteista.</h1>
             <p class="lead">
-              Tilaussivu kokoaa valitut tuotteet yhteen, näyttää toimituksen ja viimeistelee tilauksen lähetyksen.
+              Tilaussivu kokoaa valitut tuotteet yhteen, näyttää toimituksen ja viimeistelee yhteydenoton
+              ennen vahvistusta.
             </p>
           </div>
         </section>
@@ -49,14 +50,14 @@
               </div>
               <div id="order-items" class="order-items"></div>
               <div class="order-empty-actions" id="order-empty" hidden>
-                <a class="button button-primary" href="shop.html">Jatka ostoksia</a>
+                <a class="button button-primary" href="shop.html">Jatka shopiin</a>
               </div>
             </div>
 
             <div class="form-section">
               <div class="form-section-heading">
                 <p class="eyebrow">2. Toimitus ja lisätiedot</p>
-                <h2>Toimitus, aikataulu ja lisätiedot.</h2>
+                <h2>Toimitus, aikataulu ja muut tarkennukset.</h2>
               </div>
               <div class="form-grid">
                 <label>
@@ -107,12 +108,12 @@
 
             <div class="form-section">
               <div class="form-section-heading">
-                <p class="eyebrow">3. Maksutapa</p>
-                <h2>Valitse sinulle sopiva maksutapa.</h2>
+                <p class="eyebrow">3. Maksutavan toive</p>
+                <h2>Valitse alustava maksutapa.</h2>
               </div>
               <div class="payment-demo-banner">
-                <strong>Maksuvaihe</strong>
-                <p>Maksutapa valitaan tilauksen yhteydessä. Lopullinen maksuvaihe vahvistetaan tilauskäsittelyn jälkeen.</p>
+                <strong>Maksutavan vahvistus</strong>
+                <p>Valittu maksutapa toimii tässä vaiheessa toiveena. Lopullinen maksuvaihe vahvistetaan tilauskäsittelyn yhteydessä.</p>
               </div>
               <div class="payment-method-grid">
                 <label class="payment-method-card">
@@ -124,7 +125,7 @@
                 <label class="payment-method-card">
                   <input type="radio" name="paymentMethod" value="Verkkopankki" />
                   <span class="payment-method-title">Verkkopankki</span>
-                  <span class="payment-method-copy">Suomalaiset pankkimaksut tilauksen yhteydessä.</span>
+                  <span class="payment-method-copy">Suomalaiset pankkimaksut tilauksen vahvistuksen yhteydessä.</span>
                 </label>
 
                 <label class="payment-method-card">
@@ -134,8 +135,8 @@
                 </label>
               </div>
               <div class="payment-demo-actions">
-                <button class="button button-secondary" type="button" id="demo-payment-button">Jatka maksuvaiheeseen</button>
-                <p class="field-hint">Maksuvaihe vahvistetaan tilauskäsittelyn yhteydessä.</p>
+                <button class="button button-secondary" type="button" id="demo-payment-button">Tarkista maksutavan toive</button>
+                <p class="field-hint">Varsinainen maksulinkki tai maksuvaihe toimitetaan vahvistuksen yhteydessä.</p>
               </div>
             </div>
 
@@ -177,14 +178,14 @@
                     id="order-details"
                     name="details"
                     rows="6"
-                    placeholder="Kerro mahdollisista väri-, materiaali-, toimitus- tai asennustoiveista."
+                    placeholder="Kerro mahdollisista väri-, materiaali-, toimitus- tai muista toiveista."
                   ></textarea>
                 </label>
               </div>
             </div>
 
             <div class="form-actions">
-              <button class="button button-primary" type="submit">Lähetä tilaus sähköpostiin</button>
+              <button class="button button-primary" type="submit">Lähetä tilauspyyntö sähköpostiin</button>
               <a class="button button-secondary" href="shop.html">Jatka ostoksia</a>
               <button class="button button-ghost" type="button" id="clear-order">Tyhjennä tilaus</button>
             </div>
@@ -199,27 +200,25 @@
                 <li>Tilaukseen ei ole lisätty tuotteita</li>
               </ul>
               <p class="summary-note" id="delivery-summary">Toimitus lisätään yhteenvetoon valitun toimitustavan mukaan.</p>
-              <p class="summary-note">
-                Lopullinen toimitusvahvistus lähetetään tilauskäsittelyn jälkeen.
-              </p>
+              <p class="summary-note">Lopullinen tilausvahvistus ja maksuvaihe vahvistetaan käsittelyn jälkeen.</p>
             </div>
 
             <div class="summary-card">
               <p class="eyebrow">Tilaustapa</p>
-              <h3>Suora tilaus shopista</h3>
-              <p>Shop-tuotteet tilataan tällä sivulla suoraan ilman erillistä tarjouslomaketta.</p>
+              <h3>Shop-tuotteet yhdellä yhteydenotolla</h3>
+              <p>Voit koota useita tuotteita samaan tilauspyyntöön ilman erillistä tarjouslomaketta.</p>
             </div>
 
             <div class="summary-card">
-              <p class="eyebrow">Verkkomaksu</p>
+              <p class="eyebrow">Maksutavan toive</p>
               <h3 id="payment-method-label">Korttimaksu</h3>
-              <p>Valittu maksutapa näkyy tässä tilauksen yhteenvetona.</p>
+              <p>Valittu maksutapa näkyy tässä yhteenvedossa ennen lopullista vahvistusta.</p>
             </div>
 
             <div class="summary-card">
               <p class="eyebrow">Yhteys</p>
               <h3><a href="mailto:info@nordicmodular.fi">info@nordicmodular.fi</a></h3>
-              <p>Jos haluat suuremman kokonaisuuden tai yhdistää tuotteita rakennustoimitukseen, se onnistuu samalla tilauksella.</p>
+              <p>Jos haluat liittää tuotteet suurempaan rakennus- tai pihatoimitukseen, se onnistuu samalla yhteydenotolla.</p>
             </div>
           </aside>
         </section>

@@ -6,7 +6,7 @@
     <title>Nordic Modular Finland Oy | Tarjous</title>
     <meta
       name="description"
-      content="Täytä tarjouslomake ja rakenna suuntaa-antava tarjouspyyntö Nordic Modular Finland Oy:lle."
+      content="Tayta alustava tarjouspyynto Nordic Modular Finland Oy:lle ja aloita keskustelu kohteestasi."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -19,7 +19,7 @@
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
           Valikko
         </button>
-        <nav class="topnav" id="site-nav" aria-label="Päänavigaatio">
+        <nav class="topnav" id="site-nav" aria-label="Paanavigaatio">
           <a href="index.html" data-nav="home">Etusivu</a>
           <a href="mallisto.html" data-nav="mallisto">Mallisto</a>
           <a href="ratkaisut.html" data-nav="ratkaisut">Ratkaisut</a>
@@ -36,7 +36,7 @@
             <p class="eyebrow">Tarjous</p>
             <h1>Pyydä alustava tarjous kohteeseesi.</h1>
             <p class="lead">
-              Lomake kokoaa yhteen mallin, käyttökohteen, lisävarusteet ja yhteystiedot. Lopuksi avautuu
+              Kerro meille kiinnostava malli, kohteen sijainti ja toivottu aikataulu. Lopuksi avautuu
               valmis sähköpostiluonnos osoitteeseen <strong>info@nordicmodular.fi</strong>.
             </p>
             <p>
@@ -63,7 +63,9 @@
                     <option value="46000" data-label="Mini sauna ja tupa">Mini sauna ja tupa</option>
                     <option value="30000" data-label="Mini aitta">Mini aitta</option>
                     <option value="22000" data-label="Mini custom">Mini custom</option>
-                    <option value="0" data-label="Muu työ tai malliston ulkopuolinen toteutus">Muu työ tai malliston ulkopuolinen toteutus</option>
+                    <option value="0" data-label="Muu työ tai malliston ulkopuolinen toteutus">
+                      Muu työ tai malliston ulkopuolinen toteutus
+                    </option>
                   </select>
                   <small id="product-hint" class="field-hint">Voit valita myös malliston ulkopuolisen työn.</small>
                 </label>
@@ -75,7 +77,7 @@
                     <option value="Vierasmajoitus">Vierasmajoitus</option>
                     <option value="Matkailu- tai majoituskäyttö">Matkailu- tai majoituskäyttö</option>
                     <option value="Työtila tai muu käyttö">Työtila tai muu käyttö</option>
-                    <option value="Muut työt tai malliston ulkopuolinen työ">Muut työt tai malliston ulkopuolinen työ</option>
+                    <option value="Muu työ tai malliston ulkopuolinen toteutus">Muu työ tai malliston ulkopuolinen toteutus</option>
                   </select>
                 </label>
 
@@ -98,64 +100,7 @@
 
             <div class="form-section">
               <div class="form-section-heading">
-                <p class="eyebrow">2. Lisävarusteet</p>
-                <h2>Valitse haluamasi lisät.</h2>
-              </div>
-              <div class="form-grid form-grid-compact">
-                <label class="checkbox-row">
-                  <input id="heatpump" name="heatpump" type="checkbox" value="2900" />
-                  <span>Ilmalämpöpumppu (+ 2 900 €)</span>
-                </label>
-
-                <label class="checkbox-row">
-                  <input id="solar" name="solar" type="checkbox" value="6400" />
-                  <span>Aurinkopaneelijärjestelmä (+ 6 400 €)</span>
-                </label>
-
-                <label class="checkbox-row">
-                  <input id="terrace" name="terrace" type="checkbox" value="8000" />
-                  <span>Terassimoduuli (+ 8 000 €)</span>
-                </label>
-
-                <label class="checkbox-row">
-                  <input id="premium" name="premium" type="checkbox" value="4500" />
-                  <span>Premium-materiaalipaketti (+ 4 500 €)</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-section">
-              <div class="form-section-heading">
-                <p class="eyebrow">3. Kohteen valmius</p>
-                <h2>Kerro hieman kohteesta.</h2>
-              </div>
-              <div class="form-grid">
-                <label>
-                  <span>Tontin valmius</span>
-                  <select id="site-ready" name="siteReady">
-                    <option value="Perustiedot vasta selvityksessä">Perustiedot vasta selvityksessä</option>
-                    <option value="Tontti on, pohjatyöt kesken">Tontti on, pohjatyöt kesken</option>
-                    <option value="Tontti on valmis toimituksen suunnitteluun">Tontti on valmis toimituksen suunnitteluun</option>
-                  </select>
-                </label>
-
-                <label>
-                  <span>Muut työt</span>
-                  <select id="other-work" name="otherWork">
-                    <option value="Ei valittu">Ei valittu</option>
-                    <option value="Haluan kysyä muista töistä, joita mallistossa ei ole">Haluan kysyä muista töistä, joita mallistossa ei ole</option>
-                    <option value="Terassi">Terassi</option>
-                    <option value="Saunaremontti">Saunaremontti</option>
-                    <option value="Valmislauteet">Valmislauteet</option>
-                    <option value="Muu rakennusalan työ">Muu rakennusalan työ</option>
-                  </select>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-section">
-              <div class="form-section-heading">
-                <p class="eyebrow">4. Yhteystiedot</p>
+                <p class="eyebrow">2. Yhteystiedot</p>
                 <h2>Jätä yhteystiedot vastausta varten.</h2>
               </div>
               <div class="form-grid">
@@ -181,7 +126,7 @@
 
             <div class="form-section">
               <div class="form-section-heading">
-                <p class="eyebrow">5. Lisätiedot</p>
+                <p class="eyebrow">3. Lisätiedot</p>
                 <h2>Kerro toiveet omin sanoin.</h2>
               </div>
               <div class="form-grid">
@@ -191,14 +136,14 @@
                     id="details"
                     name="details"
                     rows="6"
-                    placeholder="Kerro kohteesta, toiveista, arvioidusta käyttötarkoituksesta, erityisvaatimuksista tai muista töistä joita haluat kysyä."
+                    placeholder="Kerro kohteesta, toiveista, varustelutasosta, tontin tilanteesta tai mahdollisista muista töistä."
                   ></textarea>
                 </label>
               </div>
             </div>
 
             <div class="form-actions">
-              <button class="button button-primary" type="submit">Luo alustava tarjouspyyntö</button>
+              <button class="button button-primary" type="submit">Pyydä alustava tarjous</button>
               <button class="button button-secondary" type="reset">Tyhjennä</button>
             </div>
           </form>
@@ -207,25 +152,29 @@
             <div class="summary-card summary-card-highlight">
               <p class="eyebrow">Suuntaa-antava arvio</p>
               <h2 id="estimate-total">71 000 €</h2>
-              <p id="estimate-label">Sauna-tupa Deluxe valituilla lisävarusteilla.</p>
+              <p id="estimate-label">Sauna-tupa Deluxe alkaen.</p>
               <ul class="summary-list" id="estimate-items">
                 <li>Valinta: Sauna-tupa Deluxe</li>
               </ul>
               <p class="summary-note">
-                Arvio on suuntaa-antava. Lopullinen tarjous määräytyy toimituksen, kohteen ja valitun varustelun perusteella.
+                Hinta on alustava ennakkohinta. Lopullinen tarjous tarkentuu toimitussisällön, kohteen,
+                kuljetuksen, perustusten ja valitun varustelun mukaan.
               </p>
             </div>
 
             <div class="summary-card">
-              <p class="eyebrow">Näin etenet</p>
-              <h3>Yksi lomake riittää alkuun.</h3>
-              <p>Kun olet täyttänyt tiedot, sivu avaa sähköpostiluonnoksen valmiilla sisällöllä osoitteeseen info@nordicmodular.fi.</p>
+              <p class="eyebrow">Miten etenemme</p>
+              <h3>Kevyt ensikontakti riittää alkuun.</h3>
+              <p>
+                Kun olet täyttänyt tiedot, sivu avaa sähköpostiluonnoksen valmiilla sisällöllä osoitteeseen
+                info@nordicmodular.fi.
+              </p>
             </div>
 
             <div class="summary-card">
               <p class="eyebrow">Yhteys</p>
               <h3><a href="mailto:info@nordicmodular.fi">info@nordicmodular.fi</a></h3>
-              <p>Voit käyttää lomaketta myös silloin, kun haluat kysyä muista töistä, joita mallistossa ei ole.</p>
+              <p>Voit käyttää lomaketta myös silloin, kun haluat kysyä malliston ulkopuolisista toteutuksista.</p>
             </div>
           </aside>
         </section>

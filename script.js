@@ -409,17 +409,15 @@ const initQuoteForm = () => {
   const estimate = () => {
     const product = form.querySelector("#product");
     const selectedProduct = product.options[product.selectedIndex];
-    let total = Number(product.value);
+    const useCase = form.querySelector("#use-case")?.value;
+    const timeline = form.querySelector("#timeline")?.value;
+    const location = form.querySelector("#location")?.value.trim();
+    const total = Number(product.value);
 
     const items = [`Valinta: ${selectedProduct.dataset.label}`];
-
-    ["heatpump", "solar", "terrace", "premium"].forEach((id) => {
-      const input = form.querySelector(`#${id}`);
-      if (input.checked) {
-        total += Number(input.value);
-        items.push(input.parentElement.textContent.trim());
-      }
-    });
+    if (useCase) items.push(`Käyttö: ${useCase}`);
+    if (timeline) items.push(`Aikataulu: ${timeline}`);
+    if (location) items.push(`Sijainti: ${location}`);
 
     totalEl.textContent = formatEuro(total);
     labelEl.textContent =
@@ -507,6 +505,134 @@ const initQuoteForm = () => {
         "Yhteystiedot:",
         `Nimi: ${name}`,
         `Sähköposti: ${email}`,
+        `Puhelin: ${phone}`,
+      ].join("\n")
+    );
+
+    window.location.href = `mailto:info@nordicmodular.fi?subject=${subject}&body=${body}`;
+  });
+};
+
+const initSimpleQuoteForm = () => {
+  const form = document.getElementById("quote-form");
+  if (!form) return;
+
+  const totalEl = document.getElementById("estimate-total");
+  const labelEl = document.getElementById("estimate-label");
+  const itemsEl = document.getElementById("estimate-items");
+
+  const validators = {
+    name: (value) => (value.trim() ? "" : "Lisaa nimi."),
+    email: (value) => (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()) ? "" : "Lisaa toimiva sahkopostiosoite."),
+    phone: (value) => (value.trim().length >= 6 ? "" : "Lisaa puhelinnumero, josta sinut tavoittaa."),
+  };
+
+  const setFieldError = (input, message) => {
+    const field = input.closest("label");
+    const errorEl = field?.querySelector(".field-error");
+    if (!field || !errorEl) return;
+
+    field.classList.toggle("has-error", Boolean(message));
+    errorEl.textContent = message;
+  };
+
+  const validateField = (input) => {
+    const validator = validators[input.name];
+    if (!validator) return true;
+    const message = validator(input.value);
+    setFieldError(input, message);
+    return !message;
+  };
+
+  const estimate = () => {
+    const product = form.querySelector("#product");
+    const selectedProduct = product.options[product.selectedIndex];
+    const useCase = form.querySelector("#use-case")?.value;
+    const timeline = form.querySelector("#timeline")?.value;
+    const location = form.querySelector("#location")?.value.trim();
+    const total = Number(product.value);
+
+    const items = [`Valinta: ${selectedProduct.dataset.label}`];
+    if (useCase) items.push(`Kaytto: ${useCase}`);
+    if (timeline) items.push(`Aikataulu: ${timeline}`);
+    if (location) items.push(`Sijainti: ${location}`);
+
+    if (totalEl) totalEl.textContent = formatEuro(total);
+    if (labelEl) {
+      labelEl.textContent =
+        total > 0
+          ? `${selectedProduct.dataset.label} alkaen.`
+          : `${selectedProduct.dataset.label}. Lopullinen tarjous tarkentuu tyon sisallon mukaan.`;
+    }
+    if (itemsEl) {
+      itemsEl.innerHTML = items.map((item) => `<li>${item}</li>`).join("");
+    }
+  };
+
+  setModelFromQuery(form);
+  estimate();
+
+  form.addEventListener("input", (event) => {
+    estimate();
+    if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) {
+      validateField(event.target);
+    }
+  });
+
+  form.addEventListener("change", estimate);
+
+  form.addEventListener("reset", () => {
+    requestAnimationFrame(() => {
+      form.querySelectorAll(".has-error").forEach((field) => field.classList.remove("has-error"));
+      form.querySelectorAll(".field-error").forEach((item) => {
+        item.textContent = "";
+      });
+      estimate();
+    });
+  });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const requiredFields = ["name", "email", "phone"].map((name) => form.querySelector(`[name="${name}"]`));
+    const isValid = requiredFields.every((field) => validateField(field));
+
+    if (!isValid) {
+      const firstInvalid = requiredFields.find((field) => !validateField(field));
+      firstInvalid?.focus();
+      return;
+    }
+
+    const product = form.querySelector("#product");
+    const selectedProduct = product.options[product.selectedIndex];
+    const useCase = form.querySelector("#use-case").value;
+    const timeline = form.querySelector("#timeline").value;
+    const location = form.querySelector("#location").value.trim() || "Ei ilmoitettu";
+    const details = form.querySelector("#details").value.trim() || "Ei lisatietoja";
+    const name = form.querySelector("#name").value.trim();
+    const email = form.querySelector("#email").value.trim();
+    const phone = form.querySelector("#phone").value.trim();
+    const total = totalEl?.textContent || "";
+
+    const subject = encodeURIComponent(`Tarjouspyynto: ${selectedProduct.dataset.label}`);
+    const body = encodeURIComponent(
+      [
+        "Hei,",
+        "",
+        "haluan pyytää alustavan tarjouksen seuraavasta ratkaisusta:",
+        "",
+        `Malli: ${selectedProduct.dataset.label}`,
+        `Alustava hinta: ${total}`,
+        `Kayttokohde: ${useCase}`,
+        `Aikataulu: ${timeline}`,
+        `Paikkakunta: ${location}`,
+        "",
+        "Lisatiedot:",
+        details,
+        "",
+        "Yhteystiedot:",
+        `Nimi: ${name}`,
+        `Sahkoposti: ${email}`,
         `Puhelin: ${phone}`,
       ].join("\n")
     );
@@ -838,7 +964,7 @@ normalizeOfferCopy();
 setActiveNav();
 initMenu();
 initReveal();
-initQuoteForm();
+initSimpleQuoteForm();
 initShopButtons();
 initOrderForm();
 initProductDetail();

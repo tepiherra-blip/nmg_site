@@ -573,7 +573,7 @@ p {
 .process-grid {
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .product-grid {
@@ -644,6 +644,14 @@ p {
   height: 100%;
 }
 
+.story-card .feature-list,
+.product-card .feature-list,
+.catalog-card .feature-list,
+.info-card .feature-list,
+.summary-card .feature-list {
+  margin-top: 2px;
+}
+
 .story-card h2,
 .story-card h3,
 .product-card h2,
@@ -673,6 +681,13 @@ p {
 .shop-card p,
 .shop-trust-card p {
   max-width: 58ch;
+}
+
+.company-summary {
+  margin-top: 22px;
+  max-width: 88ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .product-card {
@@ -1129,14 +1144,19 @@ p {
   place-items: center;
   min-height: 210px;
   border-radius: var(--radius-md);
-  border: 1px dashed var(--line-strong);
+  border: 1px solid var(--line);
   background:
+    radial-gradient(circle at top right, rgba(157, 220, 255, 0.14), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(216, 163, 93, 0.12), transparent 24%),
     linear-gradient(180deg, rgba(208, 232, 245, 0.08), rgba(188, 217, 233, 0.03)),
-    linear-gradient(155deg, rgba(11, 30, 42, 0.42), rgba(17, 49, 69, 0.38));
+    linear-gradient(155deg, rgba(11, 30, 42, 0.5), rgba(17, 49, 69, 0.42));
   color: var(--muted-strong);
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-align: center;
+  padding: 20px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 :root[data-theme="light"] .shop-detail-visual .shop-card-media {
@@ -1161,6 +1181,14 @@ p {
   gap: 16px;
   align-content: start;
   height: 100%;
+}
+
+.shop-card-copy .catalog-meta {
+  margin-top: 2px;
+}
+
+.shop-card-copy .catalog-actions {
+  margin-top: auto;
 }
 
 .shop-card .button {
