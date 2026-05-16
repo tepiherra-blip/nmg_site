@@ -1878,8 +1878,12 @@ html.reveal-enabled .reveal.is-visible {
   .menu-toggle {
     display: inline-flex;
     align-self: center;
+    width: 42px;
+    min-width: 42px;
     min-height: 42px;
-    padding: 0 14px;
+    padding: 0;
+    font-size: 0;
+    color: transparent;
   }
 
   .theme-toggle {
