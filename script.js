@@ -8,6 +8,69 @@ const formatEuro = (value) =>
 document.documentElement.classList.add("has-js");
 
 const SHOP_CART_KEY = "nmg-shop-cart";
+const QUOTE_EMAIL_CONFIG = {
+  to: "info@nordicmodular.fi",
+  cc: "teppo.herranen@nordicmodular.fi",
+  subject: "Uusi tarjouspyyntö verkkosivuilta",
+  senderName: "Nordic Modular -verkkosivut",
+  // TODO: Korvaa nämä placeholder-arvot lopullisella Polar55 SMTP -kytkennällä
+  // silloin kun lomake lähetetään oikeasti palvelimen kautta eikä mailto-varalogiikalla.
+  smtp: {
+    provider: "Polar55",
+    host: "TODO_POLAR55_SMTP_HOST",
+    port: "TODO_POLAR55_SMTP_PORT",
+    secure: "TODO_POLAR55_SMTP_SECURE",
+    username: "TODO_POLAR55_SMTP_USERNAME",
+    password: "TODO_POLAR55_SMTP_PASSWORD",
+  },
+};
+
+const buildQuoteEmailPayload = ({
+  productLabel,
+  total,
+  useCase,
+  timeline,
+  location,
+  details,
+  name,
+  email,
+  phone,
+}) => ({
+  to: QUOTE_EMAIL_CONFIG.to,
+  cc: QUOTE_EMAIL_CONFIG.cc,
+  subject: QUOTE_EMAIL_CONFIG.subject,
+  replyTo: email,
+  senderName: QUOTE_EMAIL_CONFIG.senderName,
+  bodyLines: [
+    "Hei,",
+    "",
+    "uusi tarjouspyynto verkkosivuilta:",
+    "",
+    `Malli: ${productLabel}`,
+    `Alustava hinta: ${total}`,
+    `Kayttokohde: ${useCase}`,
+    `Aikataulu: ${timeline}`,
+    `Paikkakunta: ${location}`,
+    "",
+    "Lisatiedot:",
+    details,
+    "",
+    "Yhteystiedot:",
+    `Nimi: ${name}`,
+    `Sahkoposti: ${email}`,
+    `Puhelin: ${phone}`,
+    "",
+    `Reply-To: ${email}`,
+    `Lahettajan nimi: ${QUOTE_EMAIL_CONFIG.senderName}`,
+  ],
+});
+
+const openQuoteMailDraft = (payload) => {
+  const subject = encodeURIComponent(payload.subject);
+  const body = encodeURIComponent(payload.bodyLines.join("\n"));
+  const cc = encodeURIComponent(payload.cc);
+  window.location.href = `mailto:${payload.to}?cc=${cc}&subject=${subject}&body=${body}`;
+};
 
 const normalizeOfferCopy = () => {
   document.querySelectorAll('a[href^="tarjous.html"], button').forEach((element) => {
@@ -41,15 +104,15 @@ const normalizeOfferCopy = () => {
 };
 
 const SHOP_PRODUCTS = {
-  "premium-laudesetti": {
-    id: "premium-laudesetti",
-    name: "Premium laudesetti",
+  "nordic-laudesetti": {
+    id: "nordic-laudesetti",
+    name: "Nordic laudesetti",
     category: "Sauna",
     description: "Valmis lauderatkaisu laadukkaaseen saunaan kotona tai mökillä.",
     price: 1490,
     priceLabel: "Alkaen 1 490 €",
     longDescription:
-      "Premium laudesetti tuo saunaan valmiin ja viimeistellyn lauderatkaisun, jossa yhdistyvät käytännöllisyys, selkeä ilme ja miellyttävä käyttötuntuma.",
+      "Nordic laudesetti tuo saunaan valmiin ja viimeistellyn lauderatkaisun, jossa yhdistyvät käytännöllisyys, selkeä ilme ja miellyttävä käyttötuntuma.",
     features: ["Valmis kokonaisuus lauteisiin", "Sopii mökille tai kotisaunaan", "Selkeä ja laadukas viimeistely"],
     fit: "Voidaan yhdistää myös osaksi Nordic Modular -saunatoimitusta.",
   },
@@ -64,18 +127,6 @@ const SHOP_PRODUCTS = {
       "LED-valaistuspaketti tuo saunaan pehmeän tunnelman ja toimivan käyttövalon. Ratkaisu sopii sekä uuden saunan viimeistelyyn että olemassa olevan tilan päivitykseen.",
     features: ["Tunnelmavaloon ja käyttövaloon", "Sopii lauteisiin tai seinäpintoihin", "Voidaan tarjota osana saunapakettia"],
     fit: "Toimii hyvin lisämyyntituotteena saunan tai muun toimituksen yhteydessä.",
-  },
-  "kuituvalosetti-saunaan": {
-    id: "kuituvalosetti-saunaan",
-    name: "Kuituvalosetti saunaan",
-    category: "Sauna",
-    description: "Hillitty ja näyttävä kuituvaloratkaisu moderniin saunasisustukseen.",
-    price: 620,
-    priceLabel: "Alkaen 620 €",
-    longDescription:
-      "Kuituvalosetti luo saunaan hillityn ja näyttävän valaistuksen, joka korostaa tilan tunnelmaa sekä viimeisteltyä ilmettä.",
-    features: ["Hillitty premium-ilme", "Sopii moderniin saunaan", "Voidaan yhdistää valaistus- tai lauderatkaisuun"],
-    fit: "Sopii myös osaksi Nordic Modular -saunaratkaisun viimeistelyä.",
   },
   "terassivalaistuspaketti": {
     id: "terassivalaistuspaketti",
@@ -149,17 +200,17 @@ const SHOP_PRODUCTS = {
     features: ["Moderni premium-ratkaisu", "Pihaan tai mökille", "Voidaan kytkeä osaksi rentoutumiskokonaisuutta"],
     fit: "Erinomainen lisä sauna- ja terassitoimituksen rinnalle.",
   },
-  terassipaketti: {
-    id: "terassipaketti",
-    name: "Terassipaketti",
-    category: "Piha & terassi",
-    description: "Valmis paketti selkeään terassitoteutukseen mökille tai kotiin.",
-    price: 1980,
-    priceLabel: "Alkaen 1 980 €",
+  "nordic-sahkokiuka": {
+    id: "nordic-sahkokiuka",
+    name: "Nordic sähkökiuas",
+    category: "Sauna",
+    description: "Selkeä kiuasvaihtoehto uuteen saunaan tai saunaratkaisun täydentämiseen.",
+    price: 890,
+    priceLabel: "Alkaen 890 €",
     longDescription:
-      "Terassipaketti tarjoaa selkeän lähtökohdan toimivalle ja viimeistellylle ulkotilalle mökille, kotiin tai vapaa-ajan kohteeseen.",
-    features: ["Valmis lähtökohta terassille", "Mökille tai kotiin", "Voidaan täydentää valaistuksella tai kaiteilla"],
-    fit: "Sopii osaksi Nordic Modular -kokonaisuuksia tai erillistoimituksena.",
+      "Nordic sähkökiuas on käytännöllinen ja selkeä vaihtoehto, kun saunaan halutaan toimiva perusratkaisu ilman turhaa monimutkaisuutta.",
+    features: ["Selkeä sähkökiuasratkaisu", "Sopii uuteen tai päivitettävään saunaan", "Voidaan yhdistää osaksi saunatoimitusta"],
+    fit: "Sopii hyvin laudesetin, valaistuksen ja saunamallien rinnalle.",
   },
   ulkovalopaketti: {
     id: "ulkovalopaketti",
@@ -171,19 +222,19 @@ const SHOP_PRODUCTS = {
     longDescription:
       "Ulkovalopaketti kokoaa yhteen pihan ja terassin valaistuksen, joka tukee turvallisuutta, tunnelmaa ja käyttömukavuutta.",
     features: ["Pihaan ja terassille", "Kulkureittien valaistus", "Laajennettavissa eri kohteisiin"],
-    fit: "Voidaan toimittaa osana piha- tai terassipakettia.",
+    fit: "Voidaan toimittaa osana piha- tai terassikokonaisuutta.",
   },
-  "saunan-tunnelmavalo": {
-    id: "saunan-tunnelmavalo",
-    name: "Saunan tunnelmavalo",
+  "nordic-puukiuas": {
+    id: "nordic-puukiuas",
+    name: "Nordic puukiuas",
     category: "Sauna",
-    description: "Pehmeä ja lämmin valo tunnelmalliseen saunakokemukseen.",
-    price: 240,
-    priceLabel: "Alkaen 240 €",
+    description: "Perinteinen puukiuasratkaisu mökille, pihasaunaan ja vapaa-ajan käyttöön.",
+    price: 1290,
+    priceLabel: "Alkaen 1 290 €",
     longDescription:
-      "Saunan tunnelmavalo viimeistelee saunatilan pehmeällä valolla, joka tekee käytöstä miellyttävän ja rauhallisen.",
-    features: ["Lämmin tunnelmavalo", "Saunasisustuksen viimeistelyyn", "Yhdistettävissä muihin valaistustuotteisiin"],
-    fit: "Sopii hyvin osaksi saunan materiaalien ja lauteiden kokonaisuutta.",
+      "Nordic puukiuas tuo saunaan perinteisen lämmitystavan ja vahvan saunatunnelman, joka sopii erityisesti mökille ja pihasaunaan.",
+    features: ["Perinteinen puukiuas", "Sopii mökille ja pihasaunaan", "Toimii osana saunakokonaisuutta"],
+    fit: "Sopii erityisesti Nordic Pihasauna- ja saunatupamallien rinnalle.",
   },
   "laudesuoja-viimeistelypaketti": {
     id: "laudesuoja-viimeistelypaketti",
@@ -209,17 +260,137 @@ const SHOP_PRODUCTS = {
     features: ["Pihalle, mökille tai terassille", "Valmis lähtöpaketti", "Täydennettävissä lisävarusteilla"],
     fit: "Voidaan yhdistää pihan, terassin tai saunarakennuksen kokonaisuuteen.",
   },
-  "mokkeilyn-varustepaketti": {
-    id: "mokkeilyn-varustepaketti",
-    name: "Mökkeilyn varustepaketti",
+  "nordic-ilmalampopumppu": {
+    id: "nordic-ilmalampopumppu",
+    name: "Nordic ilmalämpöpumppu",
     category: "Piha & mökki",
-    description: "Helppo lähtöpaketti toimivaan vapaa-ajan käyttöön ja pihapiirin viimeistelyyn.",
-    price: 890,
-    priceLabel: "Alkaen 890 €",
+    description: "Tehokas lisä mukavuuteen, ylläpitolämpöön ja vapaa-ajan kohteen käyttöön ympäri vuoden.",
+    price: 1590,
+    priceLabel: "Alkaen 1 590 €",
     longDescription:
-      "Mökkeilyn varustepaketti kokoaa yhteen tuotteita, joilla vapaa-ajan kohteen käyttö, viihtyisyys ja viimeistely paranevat helposti.",
-    features: ["Helppo lähtöpaketti mökille", "Pihan ja vapaa-ajan käyttöön", "Sopii osaksi laajempaa kokonaisuutta"],
-    fit: "Sopii osaksi laajempaa mökkikokonaisuutta tai erillistuotteena.",
+      "Nordic ilmalämpöpumppu tuo vapaa-ajan kohteeseen tasaisempaa lämpöä, ylläpitolämpöä ja käyttömukavuutta ympäri vuoden.",
+    features: ["Ylläpitolämpö ja käyttömukavuus", "Sopii mökille ja vapaa-ajan kohteisiin", "Voidaan yhdistää osaksi laajempaa toimitusta"],
+    fit: "Sopii hyvin lisävarusteeksi aitta-, saunatupa- ja mökkikäyttöön suunniteltuihin kokonaisuuksiin.",
+  },
+};
+
+const MODEL_LIBRARY = {
+  "compact-aitta-14": {
+    series: "Nordic Compact 14",
+    name: "Nordic Compact Aitta 14",
+    description: "Kompakti aittaratkaisu lisämajoitukseen, vieraskäyttöön tai pihapiirin lisätilaksi.",
+    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
+    features: ["Kompakti pohjamalli", "Sopii lisämajoitukseen", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
+    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    backLink: "mallisto-compact-14.html",
+  },
+  "compact-saunatupa-14": {
+    series: "Nordic Compact 14",
+    name: "Nordic Compact Saunatupa 14",
+    description: "Selkeä 14 m² saunatuparatkaisu vapaa-aikaan, pihaan tai mökkikäyttöön.",
+    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
+    features: ["Sauna ja tupa kompaktissa koossa", "Sopii vapaa-aikaan", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
+    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    backLink: "mallisto-compact-14.html",
+  },
+  "compact-terassi": {
+    series: "Nordic Compact 14",
+    name: "Nordic Compact Terassi",
+    description: "Compact-sarjaa täydentävä terassiratkaisu, joka viimeistelee kokonaisuuden.",
+    overview: "Tälle mallille lisätään myöhemmin kuvat, vaihtoehdot, mitat ja toteutustiedot.",
+    features: ["Täydentävä terassimalli", "Sopii Compact-sarjan yhteyteen", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
+    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    backLink: "mallisto-compact-14.html",
+  },
+  "classic-aitta-18": {
+    series: "Nordic Classic 18",
+    name: "Nordic Classic Aitta 18",
+    description: "Monikäyttöinen aittamalli vieraskäyttöön, lisämajoitukseen ja vapaa-aikaan.",
+    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
+    features: ["18 m² perusmalli", "Sopii majoitukseen", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
+    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    backLink: "mallisto-classic-18.html",
+  },
+  "classic-saunatupa-18": {
+    series: "Nordic Classic 18",
+    name: "Nordic Classic Saunatupa 18",
+    description: "Classic-sarjan saunatuparatkaisu vapaa-aikaan, pihaan tai mökkikäyttöön.",
+    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
+    features: ["Saunatupa 18 m² kokoluokassa", "Sopii vapaa-aikaan ja pihoille", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
+    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    backLink: "mallisto-classic-18.html",
+  },
+  "classic-terassi": {
+    series: "Nordic Classic 18",
+    name: "Nordic Classic Terassi",
+    description: "Terassiratkaisu, joka täydentää Classic-sarjan mallien käyttöä ja viimeistelyä.",
+    overview: "Tälle mallille lisätään myöhemmin kuvat, vaihtoehdot, mitat ja toteutustiedot.",
+    features: ["Täydentävä terassimalli", "Classic-sarjan rinnalle", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
+    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    backLink: "mallisto-classic-18.html",
+  },
+  "grand-aitta-30": {
+    series: "Nordic Grand 30",
+    name: "Nordic Grand Aitta 30",
+    description: "Tilavampi aittaratkaisu majoitukseen, vieraskäyttöön tai vapaa-ajan kokonaisuuteen.",
+    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
+    features: ["Suurempi 30 m² kokoluokka", "Sopii majoituskäyttöön", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
+    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    backLink: "mallisto-grand-30.html",
+  },
+  "grand-saunatupa-30": {
+    series: "Nordic Grand 30",
+    name: "Nordic Grand Saunatupa 30",
+    description: "Suurempi saunatuparatkaisu silloin, kun käyttöön tarvitaan enemmän tilaa ja mukavuutta.",
+    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
+    features: ["Saunatupa suuremmassa kokoluokassa", "Sopii mökki- ja majoituskäyttöön", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
+    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    backLink: "mallisto-grand-30.html",
+  },
+  "grand-terassi": {
+    series: "Nordic Grand 30",
+    name: "Nordic Grand Terassi",
+    description: "Laajempaa Grand-kokonaisuutta täydentävä terassiratkaisu oleskeluun ja käyttöön.",
+    overview: "Tälle mallille lisätään myöhemmin kuvat, vaihtoehdot, mitat ja toteutustiedot.",
+    features: ["Terassiratkaisu Grand-sarjaan", "Sopii suurempiin kokonaisuuksiin", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
+    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    backLink: "mallisto-grand-30.html",
+  },
+  "nordic-pihasauna": {
+    series: "Nordic Pihasauna",
+    name: "Nordic Pihasauna",
+    description: "Selkeä pihasaunamalli mökille, omakotitalon pihaan tai vapaa-ajan käyttöön.",
+    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
+    features: ["Selkeä pihasaunaratkaisu", "Sopii vapaa-aikaan ja pihoille", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
+    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    backLink: "mallisto-pihasauna.html",
+  },
+  "custom-aitta": {
+    series: "Nordic Custom",
+    name: "Räätälöity aitta",
+    description: "Muokattava aittaratkaisu majoitukseen, vierastilaksi tai muuhun lisäkäyttöön.",
+    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset vaihtoehdot, kuvat, pohjakuva ja tarkemmat tuotetiedot.",
+    features: ["Muokattava aittaratkaisu", "Sopii eri käyttötarkoituksiin", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
+    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    backLink: "mallisto-custom.html",
+  },
+  "custom-saunatupa": {
+    series: "Nordic Custom",
+    name: "Räätälöity saunatupa",
+    description: "Saunatuparatkaisu, jonka tilajako ja varustelu voidaan suunnitella kohteen mukaan.",
+    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset vaihtoehdot, kuvat, pohjakuva ja tarkemmat tuotetiedot.",
+    features: ["Muokattava saunatupa", "Tilajako ja varustelu kohteen mukaan", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
+    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    backLink: "mallisto-custom.html",
+  },
+  "custom-kokonaisuus": {
+    series: "Nordic Custom",
+    name: "Räätälöity kokonaisuus majoitus- tai mökkikäyttöön",
+    description: "Laajempi kokonaisuus, jossa voidaan yhdistää eri tiloja ja käyttötarpeita samaan toimitukseen.",
+    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset vaihtoehdot, kuvat, pohjakuva ja tarkemmat tuotetiedot.",
+    features: ["Laajempi räätälöitävä kokonaisuus", "Sopii majoitus- ja mökkikäyttöön", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
+    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    backLink: "mallisto-custom.html",
   },
 };
 
@@ -618,6 +789,25 @@ const initSimpleQuoteForm = () => {
     const phone = form.querySelector("#phone").value.trim();
     const total = totalEl?.textContent || "";
 
+    const payload = buildQuoteEmailPayload({
+      productLabel: selectedProduct.dataset.label,
+      total,
+      useCase,
+      timeline,
+      location,
+      details,
+      name,
+      email,
+      phone,
+    });
+
+    // TODO: Korvaa tämä mailto-varalogiikka julkaisuversiossa palvelinlahetyksella.
+    // Polar55 SMTP -kytkennassa tarjouspyynto lahetetaan osoitteeseen info@nordicmodular.fi,
+    // kopio teppo.herranen@nordicmodular.fi, Reply-To asiakkaan sahkopostiin
+    // ja lahettajan nimena Nordic Modular -verkkosivut.
+    openQuoteMailDraft(payload);
+    return;
+
     const subject = encodeURIComponent(`Tarjouspyynto: ${selectedProduct.dataset.label}`);
     const body = encodeURIComponent(
       [
@@ -962,6 +1152,44 @@ const initProductDetail = () => {
   });
 };
 
+const initModelDetail = () => {
+  const nameEl = document.getElementById("model-name");
+  if (!nameEl) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const modelId = params.get("model");
+  const model = modelId ? MODEL_LIBRARY[modelId] : null;
+
+  if (!model) {
+    window.location.href = "mallisto.html";
+    return;
+  }
+
+  const seriesEl = document.getElementById("model-series");
+  const descriptionEl = document.getElementById("model-description");
+  const overviewEl = document.getElementById("model-overview");
+  const featuresEl = document.getElementById("model-features");
+  const noteEl = document.getElementById("model-note");
+  const placeholderEl = document.getElementById("model-placeholder");
+  const backLinkEl = document.getElementById("model-back-link");
+  const offerLinkEl = document.getElementById("model-offer-link");
+
+  if (seriesEl) seriesEl.textContent = `Mallisto / ${model.series}`;
+  nameEl.textContent = model.name;
+  if (descriptionEl) descriptionEl.textContent = model.description;
+  if (overviewEl) overviewEl.textContent = model.overview;
+  if (noteEl) noteEl.textContent = model.note;
+  if (placeholderEl) placeholderEl.textContent = model.name;
+  if (backLinkEl) backLinkEl.href = model.backLink;
+  if (offerLinkEl) offerLinkEl.href = `tarjous.html?model=${encodeURIComponent(model.name)}`;
+
+  if (featuresEl) {
+    featuresEl.innerHTML = model.features.map((feature) => `<li>${feature}</li>`).join("");
+  }
+
+  document.title = `Nordic Modular Finland Oy | ${model.name}`;
+};
+
 initTheme();
 setYear();
 normalizeOfferCopy();
@@ -972,3 +1200,4 @@ initSimpleQuoteForm();
 initShopButtons();
 initOrderForm();
 initProductDetail();
+initModelDetail();
