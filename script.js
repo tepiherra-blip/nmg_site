@@ -324,9 +324,13 @@ const initMenu = () => {
   const nav = document.querySelector(".topnav");
   if (!button || !nav) return;
 
+  button.textContent = "";
+  button.setAttribute("aria-label", "Avaa valikko");
+
   button.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("is-open");
     button.setAttribute("aria-expanded", String(isOpen));
+    button.setAttribute("aria-label", isOpen ? "Sulje valikko" : "Avaa valikko");
   });
 };
 
