@@ -2245,6 +2245,18 @@ html.reveal-enabled .reveal.is-visible {
     max-width: none;
   }
 
+  .category-card-media {
+    min-height: 0;
+  }
+
+  .category-card-placeholder {
+    min-height: 180px;
+    padding: 34px 22px;
+    place-items: center;
+    align-content: center;
+    text-align: center;
+  }
+
   .page-hero-image.is-plan,
   .catalog-card--plan .catalog-visual,
   .category-card--plan .category-card-media {
@@ -2297,6 +2309,25 @@ html.reveal-enabled .reveal.is-visible {
   .hero-banner-copy {
     justify-content: flex-start;
     padding: 22px 18px;
+  }
+
+  .hero-banner-details {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    padding: 8px 0 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .hero-banner-copy .hero-actions,
+  .hero-banner-copy .hero-points,
+  .hero-banner-copy .hero-lead {
+    max-width: 100%;
   }
 
   .page-hero {
