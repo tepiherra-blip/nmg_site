@@ -2312,10 +2312,11 @@ html.reveal-enabled .reveal.is-visible {
   }
 
   .hero-banner-image {
-    min-height: 260px;
-    height: 260px;
+    min-height: 320px;
+    height: 320px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    object-position: center 38%;
   }
 
   .hero-banner-copy {
@@ -2323,8 +2324,8 @@ html.reveal-enabled .reveal.is-visible {
     inset: auto;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 16px;
-    padding: 22px 18px 20px;
+    gap: 14px;
+    padding: 18px 18px 18px;
     background: var(--card-gradient);
   }
 
@@ -2352,6 +2353,39 @@ html.reveal-enabled .reveal.is-visible {
   .hero-banner-copy h1 {
     width: 100%;
     max-width: none;
+    font-size: clamp(1.95rem, 8.3vw, 2.7rem);
+    line-height: 1;
+  }
+
+  .hero-banner-copy .eyebrow {
+    font-size: 0.74rem;
+    letter-spacing: 0.16em;
+  }
+
+  .hero-banner-copy .hero-lead {
+    font-size: 0.96rem;
+    line-height: 1.52;
+    max-width: 30ch;
+  }
+
+  .hero-banner-copy .hero-actions {
+    gap: 10px;
+  }
+
+  .hero-banner-copy .button {
+    min-height: 50px;
+  }
+
+  .hero-banner-copy .hero-points {
+    gap: 10px;
+  }
+
+  .hero-banner-copy .hero-points li {
+    line-height: 1.45;
+  }
+
+  .hero-banner-copy .hero-points li:last-child {
+    display: none;
   }
 
   .page-hero {
