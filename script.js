@@ -283,6 +283,10 @@ const MODEL_LIBRARY = {
     features: ["Kompakti pohjamalli", "Sopii lisämajoitukseen", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
     note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
     backLink: "mallisto-compact-14.html",
+    image: {
+      src: "assets/hero-sunset.png",
+      alt: "Nordic Compact Aitta 14 julkisivu jarven rannalla",
+    },
   },
   "compact-saunatupa-14": {
     series: "Nordic Compact 14",
@@ -292,6 +296,10 @@ const MODEL_LIBRARY = {
     features: ["Sauna ja tupa kompaktissa koossa", "Sopii vapaa-aikaan", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
     note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
     backLink: "mallisto-compact-14.html",
+    image: {
+      src: "assets/hyva-112.png",
+      alt: "Nordic Compact Saunatupa 14 julkisivu kesamaisemassa",
+    },
   },
   "compact-terassi": {
     series: "Nordic Compact 14",
@@ -301,6 +309,10 @@ const MODEL_LIBRARY = {
     features: ["Täydentävä terassimalli", "Sopii Compact-sarjan yhteyteen", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
     note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
     backLink: "mallisto-compact-14.html",
+    image: {
+      src: "assets/lakeside-day.png",
+      alt: "Nordic Compact Terassi julkisivu ja terassi jarven rannalla",
+    },
   },
   "classic-aitta-18": {
     series: "Nordic Classic 18",
@@ -310,6 +322,10 @@ const MODEL_LIBRARY = {
     features: ["18 m² perusmalli", "Sopii majoitukseen", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
     note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
     backLink: "mallisto-classic-18.html",
+    image: {
+      src: "assets/kesa-112.png",
+      alt: "Nordic Classic Aitta 18 julkisivu kesamaisemassa",
+    },
   },
   "classic-saunatupa-18": {
     series: "Nordic Classic 18",
@@ -319,6 +335,10 @@ const MODEL_LIBRARY = {
     features: ["Saunatupa 18 m² kokoluokassa", "Sopii vapaa-aikaan ja pihoille", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
     note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
     backLink: "mallisto-classic-18.html",
+    image: {
+      src: "assets/hero-lappi.png",
+      alt: "Nordic Classic Saunatupa 18 julkisivu revontulien alla",
+    },
   },
   "classic-terassi": {
     series: "Nordic Classic 18",
@@ -328,24 +348,72 @@ const MODEL_LIBRARY = {
     features: ["Täydentävä terassimalli", "Classic-sarjan rinnalle", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
     note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
     backLink: "mallisto-classic-18.html",
+    image: {
+      src: "assets/kaksi-rakennusta.png",
+      alt: "Nordic Classic Terassi kahden rakennuksen valissa",
+    },
   },
   "grand-aitta-30": {
     series: "Nordic Grand 30",
     name: "Nordic Grand Aitta 30",
     description: "Tilavampi aittaratkaisu majoitukseen, vieraskäyttöön tai vapaa-ajan kokonaisuuteen.",
-    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
-    features: ["Suurempi 30 m² kokoluokka", "Sopii majoituskäyttöön", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
-    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    overview: "Nordic Grand Aitta 30 on tilavampi aittaratkaisu, joka sopii lisämajoitukseen, vieraskäyttöön ja vapaa-ajan kokonaisuuksiin. Selkeä pohjaratkaisu tekee mallista hyvän lähtökohdan myöhemmälle tarkentamiselle.",
+    features: ["30 m² aittaratkaisu", "Sopii majoitus- ja vieraskäyttöön", "Selkeä kaksiosainen pohjaratkaisu", "Muokattavissa myöhemmin kohteen tarpeiden mukaan"],
+    note: "Tähän malliin on lisätty ensimmäinen pohjakuva. Tarkemmat kuvat, hinnat ja toimitussisältö täydentyvät myöhemmin.",
     backLink: "mallisto-grand-30.html",
+    image: {
+      src: "assets/lakeside-day.png",
+      alt: "Nordic Grand Aitta 30 julkisivu jarven rannalla",
+    },
+    gallery: [
+      {
+        src: "assets/plan-aitta.png",
+        alt: "Nordic Grand Aitta 30 pohjakuva",
+        caption: "Pohjakuva",
+        className: "plan-card-wide",
+      },
+    ],
   },
   "grand-saunatupa-30": {
     series: "Nordic Grand 30",
     name: "Nordic Grand Saunatupa 30",
     description: "Suurempi saunatuparatkaisu silloin, kun käyttöön tarvitaan enemmän tilaa ja mukavuutta.",
-    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
-    features: ["Saunatupa suuremmassa kokoluokassa", "Sopii mökki- ja majoituskäyttöön", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
-    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    overview: "Nordic Grand Saunatupa 30 yhdistää oleskelutilan, saunan ja tukitilat selkeäksi kokonaisuudeksi. Malli sopii vapaa-aikaan, mökkikäyttöön ja majoituskäyttöön silloin, kun halutaan enemmän tilaa ja valmista perusrunkoa jatkokehitykselle.",
+    features: ["30 m² saunatupakokonaisuus", "Oleskelutila, sauna ja wc samaan ratkaisuun", "Sopii vapaa-aikaan, mökille ja majoituskäyttöön", "Muokattavissa varustelun ja viimeistelyn osalta"],
+    note: "Tähän malliin on lisätty ensimmäiset kuvat ja pohjakuva. Tarkemmat hinnat, tekniset tiedot ja toimitussisältö täydentyvät myöhemmin.",
     backLink: "mallisto-grand-30.html",
+    image: {
+      src: "assets/grand-saunatupa-30-hero.png",
+      alt: "Nordic Grand Saunatupa 30 revontulitaivaan alla",
+    },
+    gallery: [
+      {
+        src: "assets/grand-saunatupa-30-plan.png",
+        alt: "Nordic Grand Saunatupa 30 pohjakuva",
+        caption: "Pohjakuva",
+        className: "plan-card-wide",
+      },
+      {
+        src: "assets/grand-saunatupa-30-2.png",
+        alt: "Nordic Grand Saunatupa 30 keittiö ja oleskelutila",
+        caption: "Keittiö ja oleskelutila",
+      },
+      {
+        src: "assets/grand-saunatupa-30-4.png",
+        alt: "Nordic Grand Saunatupa 30 ruokailutila ja järvinäkymä",
+        caption: "Ruokailutila ja järvinäkymä",
+      },
+      {
+        src: "assets/grand-saunatupa-30-5.png",
+        alt: "Nordic Grand Saunatupa 30 oleskelutila suurilla ikkunoilla",
+        caption: "Oleskelutila suurilla ikkunoilla",
+      },
+      {
+        src: "assets/grand-saunatupa-30-6.png",
+        alt: "Nordic Grand Saunatupa 30 saunan sisätila",
+        caption: "Saunan sisätila",
+      },
+    ],
   },
   "grand-terassi": {
     series: "Nordic Grand 30",
@@ -355,15 +423,70 @@ const MODEL_LIBRARY = {
     features: ["Terassiratkaisu Grand-sarjaan", "Sopii suurempiin kokonaisuuksiin", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
     note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
     backLink: "mallisto-grand-30.html",
+    image: {
+      src: "assets/grand-saunatupa-30-hero.png",
+      alt: "Nordic Grand Terassi julkisivu ja terassi talvimaisemassa",
+    },
   },
   "nordic-pihasauna": {
     series: "Nordic Pihasauna",
     name: "Nordic Pihasauna",
     description: "Selkeä pihasaunamalli mökille, omakotitalon pihaan tai vapaa-ajan käyttöön.",
-    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
-    features: ["Selkeä pihasaunaratkaisu", "Sopii vapaa-aikaan ja pihoille", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
-    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    overview: "Nordic Pihasauna on selkeä ja kompakti saunaratkaisu vapaa-aikaan, mökille tai omakotitalon pihaan. Malli toimii hyvänä lähtökohtana silloin, kun halutaan oma saunarakennus ilman turhaa monimutkaisuutta.",
+    features: ["Kompakti pihasaunamalli", "Sopii mökille ja pihapiiriin", "Selkeä saunaratkaisu omaan käyttöön", "Muokattavissa myöhemmin tarkempien toteutustietojen mukaan"],
+    note: "Tähän malliin on lisätty ensimmäinen ulkokuva ja pohjakuva. Tarkemmat hinnat, varustelutiedot ja toimitussisältö täydentyvät myöhemmin.",
     backLink: "mallisto-pihasauna.html",
+    image: {
+      src: "assets/nordic-pihasauna-hero.png",
+      alt: "Nordic Pihasauna 3D ulkonäkymä",
+    },
+    gallery: [
+      {
+        src: "assets/nordic-pihasauna-plan.png",
+        alt: "Nordic Pihasauna pohjakuva",
+        caption: "Pohjakuva",
+        className: "plan-card-wide",
+      },
+    ],
+  },
+  "compact-varasto-14": {
+    series: "Nordic Varastot",
+    name: "Nordic Compact Varasto 14",
+    description: "Kompakti varastomalli pihan, mökin tai vapaa-ajan kohteen säilytystarpeisiin.",
+    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
+    features: ["Kompakti varastoratkaisu", "Sopii pihalle ja mökille", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
+    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    backLink: "mallisto-varastot.html",
+    image: {
+      src: "assets/kesa-112.png",
+      alt: "Nordic Compact Varasto 14 julkisivu kesamaisemassa",
+    },
+  },
+  "classic-varasto-18": {
+    series: "Nordic Varastot",
+    name: "Nordic Classic Varasto 18",
+    description: "Monikäyttöinen varastomalli silloin, kun säilytystilaa tarvitaan hieman enemmän.",
+    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
+    features: ["18 m² varastomalli", "Sopii piha- ja mökkikäyttöön", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
+    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    backLink: "mallisto-varastot.html",
+    image: {
+      src: "assets/hero-sunset.png",
+      alt: "Nordic Classic Varasto 18 julkisivu ilta-auringossa",
+    },
+  },
+  "grand-varasto-30": {
+    series: "Nordic Varastot",
+    name: "Nordic Grand Varasto 30",
+    description: "Tilavampi varastoratkaisu suurempaan säilytystarpeeseen ja monipuolisempaan käyttöön.",
+    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
+    features: ["Suurempi varastokokonaisuus", "Sopii laajempiin säilytystarpeisiin", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
+    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    backLink: "mallisto-varastot.html",
+    image: {
+      src: "assets/lakeside-day.png",
+      alt: "Nordic Grand Varasto 30 julkisivu jarven rannalla",
+    },
   },
   "custom-aitta": {
     series: "Nordic Custom",
@@ -373,6 +496,10 @@ const MODEL_LIBRARY = {
     features: ["Muokattava aittaratkaisu", "Sopii eri käyttötarkoituksiin", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
     note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
     backLink: "mallisto-custom.html",
+    image: {
+      src: "assets/kesa-112.png",
+      alt: "Raataloity aitta julkisivu kesamaisemassa",
+    },
   },
   "custom-saunatupa": {
     series: "Nordic Custom",
@@ -382,6 +509,10 @@ const MODEL_LIBRARY = {
     features: ["Muokattava saunatupa", "Tilajako ja varustelu kohteen mukaan", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
     note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
     backLink: "mallisto-custom.html",
+    image: {
+      src: "assets/hero-lappi.png",
+      alt: "Raataloity saunatupa julkisivu revontulien alla",
+    },
   },
   "custom-kokonaisuus": {
     series: "Nordic Custom",
@@ -391,6 +522,10 @@ const MODEL_LIBRARY = {
     features: ["Laajempi räätälöitävä kokonaisuus", "Sopii majoitus- ja mökkikäyttöön", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
     note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
     backLink: "mallisto-custom.html",
+    image: {
+      src: "assets/kaksi-rakennusta.png",
+      alt: "Raataloity kokonaisuus kahden rakennuksen julkisivuna",
+    },
   },
 };
 
@@ -1171,6 +1306,10 @@ const initModelDetail = () => {
   const featuresEl = document.getElementById("model-features");
   const noteEl = document.getElementById("model-note");
   const placeholderEl = document.getElementById("model-placeholder");
+  const placeholderCardEl = document.getElementById("model-placeholder-card");
+  const mainImageEl = document.getElementById("model-main-image");
+  const gallerySectionEl = document.getElementById("model-gallery-section");
+  const galleryEl = document.getElementById("model-gallery");
   const backLinkEl = document.getElementById("model-back-link");
   const offerLinkEl = document.getElementById("model-offer-link");
 
@@ -1183,8 +1322,35 @@ const initModelDetail = () => {
   if (backLinkEl) backLinkEl.href = model.backLink;
   if (offerLinkEl) offerLinkEl.href = `tarjous.html?model=${encodeURIComponent(model.name)}`;
 
+  if (mainImageEl && model.image?.src) {
+    mainImageEl.src = model.image.src;
+    mainImageEl.alt = model.image.alt || model.name;
+    mainImageEl.hidden = false;
+    placeholderCardEl?.setAttribute("hidden", "");
+  } else {
+    mainImageEl?.setAttribute("hidden", "");
+    placeholderCardEl?.removeAttribute("hidden");
+  }
+
   if (featuresEl) {
     featuresEl.innerHTML = model.features.map((feature) => `<li>${feature}</li>`).join("");
+  }
+
+  if (gallerySectionEl && galleryEl && Array.isArray(model.gallery) && model.gallery.length) {
+    galleryEl.innerHTML = model.gallery
+      .map(
+        (item) => `
+          <figure class="media-card ${item.className || ""}">
+            <img src="${item.src}" alt="${item.alt || model.name}" />
+            ${item.caption ? `<figcaption class="media-caption">${item.caption}</figcaption>` : ""}
+          </figure>
+        `
+      )
+      .join("");
+    gallerySectionEl.hidden = false;
+  } else if (gallerySectionEl && galleryEl) {
+    galleryEl.innerHTML = "";
+    gallerySectionEl.hidden = true;
   }
 
   document.title = `Nordic Modular Finland Oy | ${model.name}`;
