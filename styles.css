@@ -2101,6 +2101,17 @@ html.reveal-enabled .reveal.is-visible {
     grid-template-columns: 1fr;
   }
 
+  .cta-strip {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    align-items: start;
+  }
+
+  .cta-strip .hero-actions {
+    width: 100%;
+  }
+
   .hero-actions .button,
   .catalog-actions .button,
   .product-card .button,
@@ -2281,6 +2292,33 @@ html.reveal-enabled .reveal.is-visible {
   .category-card-copy h2,
   .catalog-jump-copy h2 {
     max-width: none;
+  }
+
+  .cta-strip {
+    padding: 24px 20px;
+    border-radius: 26px;
+  }
+
+  .cta-strip h2 {
+    max-width: 16ch;
+    font-size: clamp(1.65rem, 8vw, 2.2rem);
+    line-height: 1.05;
+  }
+
+  .cta-strip p {
+    max-width: 26ch;
+  }
+
+  .cta-strip .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .cta-strip .button {
+    min-height: 52px;
+    padding-inline: 18px;
+    white-space: normal;
   }
 
   .category-card-media {
