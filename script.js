@@ -8,6 +8,7 @@ const formatEuro = (value) =>
 document.documentElement.classList.add("has-js");
 
 const SHOP_CART_KEY = "nmg-shop-cart";
+const FORM_ENDPOINT = "https://formsubmit.co/ajax/info@nordicmodular.fi";
 const QUOTE_EMAIL_CONFIG = {
   to: "info@nordicmodular.fi",
   cc: "teppo.herranen@nordicmodular.fi",
@@ -27,7 +28,6 @@ const QUOTE_EMAIL_CONFIG = {
 
 const buildQuoteEmailPayload = ({
   productLabel,
-  total,
   useCase,
   timeline,
   location,
@@ -36,40 +36,72 @@ const buildQuoteEmailPayload = ({
   email,
   phone,
 }) => ({
-  to: QUOTE_EMAIL_CONFIG.to,
-  cc: QUOTE_EMAIL_CONFIG.cc,
-  subject: QUOTE_EMAIL_CONFIG.subject,
-  replyTo: email,
-  senderName: QUOTE_EMAIL_CONFIG.senderName,
-  bodyLines: [
-    "Hei,",
-    "",
-    "uusi tarjouspyynto verkkosivuilta:",
-    "",
-    `Malli: ${productLabel}`,
-    `Alustava hinta: ${total}`,
-    `Kayttokohde: ${useCase}`,
-    `Aikataulu: ${timeline}`,
-    `Paikkakunta: ${location}`,
-    "",
-    "Lisatiedot:",
-    details,
-    "",
-    "Yhteystiedot:",
-    `Nimi: ${name}`,
-    `Sahkoposti: ${email}`,
-    `Puhelin: ${phone}`,
-    "",
-    `Reply-To: ${email}`,
-    `Lahettajan nimi: ${QUOTE_EMAIL_CONFIG.senderName}`,
-  ],
+  name,
+  email,
+  phone,
+  _subject: QUOTE_EMAIL_CONFIG.subject,
+  _cc: QUOTE_EMAIL_CONFIG.cc,
+  _replyto: email,
+  _template: "table",
+  _captcha: "false",
+  _honey: "",
+  _url: "https://www.nordicmodular.fi/tarjous.html",
+  lomake: "Tarjouspyynto",
+  malli: productLabel,
+  kayttokohde: useCase,
+  aikataulu: timeline,
+  paikkakunta: location,
+  lisatiedot: details,
+  lahettajan_nimi: QUOTE_EMAIL_CONFIG.senderName,
 });
 
-const openQuoteMailDraft = (payload) => {
-  const subject = encodeURIComponent(payload.subject);
-  const body = encodeURIComponent(payload.bodyLines.join("\n"));
-  const cc = encodeURIComponent(payload.cc);
-  window.location.href = `mailto:${payload.to}?cc=${cc}&subject=${subject}&body=${body}`;
+const buildContactEmailPayload = ({ name, email, phone, subject, message }) => ({
+  name,
+  email,
+  phone,
+  _subject: "Uusi yhteydenottopyynto verkkosivuilta",
+  _cc: QUOTE_EMAIL_CONFIG.cc,
+  _replyto: email,
+  _template: "table",
+  _captcha: "false",
+  _honey: "",
+  _url: "https://www.nordicmodular.fi/yhteystiedot.html",
+  lomake: "Yhteydenottopyynto",
+  aihe: subject,
+  viesti: message,
+  lahettajan_nimi: QUOTE_EMAIL_CONFIG.senderName,
+});
+
+const submitFormToEndpoint = async (payload) => {
+  const response = await fetch(FORM_ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw new Error(data?.message || "Lomakkeen lahetys ei onnistunut.");
+  }
+
+  return data;
+};
+
+const setFormStatus = (statusEl, type, message) => {
+  if (!statusEl) return;
+  statusEl.hidden = false;
+  statusEl.className = `form-status is-${type}`;
+  statusEl.textContent = message;
+};
+
+const resetFormStatus = (statusEl) => {
+  if (!statusEl) return;
+  statusEl.hidden = true;
+  statusEl.className = "form-status";
+  statusEl.textContent = "";
 };
 
 const normalizeOfferCopy = () => {
@@ -100,6 +132,12 @@ const normalizeOfferCopy = () => {
     if (text === "Pyydä erillinen tarjous. Toteutus ja hinta määräytyvät kohteen vaatimusten mukaan.") {
       element.textContent = "Alustava hinta ja toimitussisältö tarkennetaan kohteen vaatimusten mukaan.";
     }
+  });
+};
+
+const initPrelaunchVisibility = () => {
+  document.querySelectorAll('[data-nav="shop"], .footer-nav a[href="shop.html"]').forEach((element) => {
+    element.remove();
   });
 };
 
@@ -405,10 +443,14 @@ const MODEL_LIBRARY = {
     series: "Nordic Custom",
     name: "Räätälöity saunatupa",
     description: "Saunatuparatkaisu, jonka tilajako ja varustelu voidaan suunnitella kohteen mukaan.",
-    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset vaihtoehdot, kuvat, pohjakuva ja tarkemmat tuotetiedot.",
-    features: ["Muokattava saunatupa", "Tilajako ja varustelu kohteen mukaan", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
-    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    overview: "Räätälöity saunatupa on lähtömalli kohteisiin, joissa saunan, oleskelun ja käytännöllisen tilajaon halutaan mukautuvan asiakkaan käyttötarkoitukseen.",
+    features: ["Muokattava saunatupa", "Tilajako ja varustelu kohteen mukaan", "Sopii vapaa-aikaan ja mökkikäyttöön", "Tarkentuu myöhemmin kuvien ja pohjakuvien täydentyessä"],
+    note: "Tähän malliin on lisätty ensimmäinen ulkokuva. Pohjakuva ja tarkemmat toteutustiedot voidaan täydentää myöhemmin.",
     backLink: "mallisto-custom.html",
+    image: {
+      src: "assets/custom-saunatupa-main.png",
+      alt: "Räätälöity saunatupa ulkonäkymä",
+    },
   },
   "custom-kokonaisuus": {
     series: "Nordic Custom",
@@ -466,29 +508,741 @@ const setYear = () => {
 };
 
 const THEME_KEY = "nmg-theme";
+const LANG_KEY = "nmg-language";
+
+const UI_COPY = {
+  fi: {
+    menuOpen: "Avaa valikko",
+    menuClose: "Sulje valikko",
+    themeNextLight: "Vaalea",
+    themeNextDark: "Tumma",
+    themeAria: "Vaihda teemaan: ",
+    navAria: "Päänavigaatio",
+    footerNavAria: "Alatunnisteen navigaatio",
+    quoteSending: "Lähetetään...",
+    quoteSent: "Tarjouspyyntö lähetettiin onnistuneesti. Palaamme sinulle mahdollisimman pian.",
+    contactSent: "Yhteydenotto lähetettiin onnistuneesti. Palaamme sinulle mahdollisimman pian.",
+    sendError:
+      "Lähetys ei onnistunut juuri nyt. Voit yrittää uudelleen tai lähettää viestin osoitteeseen info@nordicmodular.fi.",
+    quoteFallback: "Pyydä alustava tarjous",
+    contactFallback: "Lähetä yhteydenotto",
+    validationName: "Lisää nimi.",
+    validationEmail: "Lisää toimiva sähköpostiosoite.",
+    validationPhone: "Lisää puhelinnumero, josta sinut tavoittaa.",
+    validationMessage: "Kerro viestissäsi hieman tarkemmin, miten voimme auttaa.",
+  },
+  en: {
+    menuOpen: "Open menu",
+    menuClose: "Close menu",
+    themeNextLight: "Light",
+    themeNextDark: "Dark",
+    themeAria: "Switch theme to ",
+    navAria: "Main navigation",
+    footerNavAria: "Footer navigation",
+    quoteSending: "Sending...",
+    quoteSent: "Your quote request was sent successfully. We will get back to you as soon as possible.",
+    contactSent: "Your message was sent successfully. We will get back to you as soon as possible.",
+    sendError:
+      "Sending did not succeed right now. Please try again or send your message to info@nordicmodular.fi.",
+    quoteFallback: "Request a preliminary quote",
+    contactFallback: "Send enquiry",
+    validationName: "Please add your name.",
+    validationEmail: "Please add a valid email address.",
+    validationPhone: "Please add a phone number where we can reach you.",
+    validationMessage: "Please tell us a little more about how we can help.",
+  },
+};
+
+const normalizeCopy = (value) => value.replace(/\s+/g, " ").trim();
+
+const getCurrentLanguage = () => (document.documentElement.lang === "en" ? "en" : "fi");
+
+const getLanguageFromUrl = () => {
+  const params = new URLSearchParams(window.location.search);
+  const value = params.get("lang");
+  return value === "en" || value === "fi" ? value : "";
+};
+
+const buildLanguageHref = (language) => {
+  const url = new URL(window.location.href);
+  url.searchParams.set("lang", language === "en" ? "en" : "fi");
+  return `${url.pathname}${url.search}${url.hash}`;
+};
+
+const getPreferredLanguage = () => {
+  const languages = Array.isArray(navigator.languages) && navigator.languages.length ? navigator.languages : [navigator.language];
+  return languages.some((value) => String(value).toLowerCase().startsWith("fi")) ? "fi" : "en";
+};
+
+const getUiCopy = () => UI_COPY[getCurrentLanguage()] || UI_COPY.fi;
+
+const setStoredText = (element, text) => {
+  if (!element) return;
+  if (element.dataset.i18nFiText === undefined) {
+    element.dataset.i18nFiText = element.textContent;
+  }
+  element.textContent = text;
+};
+
+const setStoredHtml = (element, html) => {
+  if (!element) return;
+  if (element.dataset.i18nFiHtml === undefined) {
+    element.dataset.i18nFiHtml = element.innerHTML;
+  }
+  element.innerHTML = html;
+};
+
+const setStoredAttribute = (element, attribute, value) => {
+  if (!element) return;
+  const datasetKey = `i18nFi${attribute.charAt(0).toUpperCase()}${attribute.slice(1)}`;
+  if (element.dataset[datasetKey] === undefined) {
+    element.dataset[datasetKey] = element.getAttribute(attribute) || "";
+  }
+  element.setAttribute(attribute, value);
+};
+
+const setStoredTitle = (value) => {
+  if (!document.documentElement.dataset.i18nFiTitle) {
+    document.documentElement.dataset.i18nFiTitle = document.title;
+  }
+  document.title = value;
+};
+
+const setStoredMetaDescription = (value) => {
+  const meta = document.querySelector('meta[name="description"]');
+  if (!meta) return;
+  if (meta.dataset.i18nFiContent === undefined) {
+    meta.dataset.i18nFiContent = meta.getAttribute("content") || "";
+  }
+  meta.setAttribute("content", value);
+};
+
+const restoreOriginalLanguageContent = () => {
+  document.querySelectorAll("[data-i18n-fi-text]").forEach((element) => {
+    element.textContent = element.dataset.i18nFiText;
+  });
+
+  document.querySelectorAll("[data-i18n-fi-html]").forEach((element) => {
+    element.innerHTML = element.dataset.i18nFiHtml;
+  });
+
+  document.querySelectorAll("[data-i18n-fi-placeholder]").forEach((element) => {
+    element.setAttribute("placeholder", element.dataset.i18nFiPlaceholder);
+  });
+
+  document.querySelectorAll("[data-i18n-fi-content]").forEach((element) => {
+    element.setAttribute("content", element.dataset.i18nFiContent);
+  });
+
+  if (document.documentElement.dataset.i18nFiTitle) {
+    document.title = document.documentElement.dataset.i18nFiTitle;
+  }
+};
+
+const setTextList = (selector, values) => {
+  const elements = document.querySelectorAll(selector);
+  elements.forEach((element, index) => {
+    if (values[index] !== undefined) {
+      setStoredText(element, values[index]);
+    }
+  });
+};
+
+const ensureContactLanguageNote = () => {
+  if (document.body.dataset.page !== "yhteystiedot") return;
+  const list = document.querySelector(".contact-details-grid .info-card .feature-list");
+  if (!list) return;
+
+  const noteText = "Palvelemme puhelimitse suomeksi ja sähköpostitse suomeksi sekä englanniksi.";
+  const existing = Array.from(list.querySelectorAll("li")).find((item) => normalizeCopy(item.textContent) === noteText);
+  if (existing) return;
+
+  const languageNote = document.createElement("li");
+  languageNote.textContent = noteText;
+  const websiteItem = list.querySelector('a[href="https://www.nordicmodular.fi"]')?.closest("li");
+  if (websiteItem?.nextSibling) {
+    list.insertBefore(languageNote, websiteItem.nextSibling);
+  } else {
+    list.appendChild(languageNote);
+  }
+};
+
+const applyEnglishTranslations = () => {
+  const page = document.body.dataset.page;
+
+  setStoredAttribute(document.querySelector(".brand"), "aria-label", "Nordic Modular Finland Oy");
+  setStoredAttribute(document.querySelector(".brand img"), "alt", "Nordic Modular Finland Oy logo");
+  setStoredAttribute(document.querySelector(".topnav"), "aria-label", UI_COPY.en.navAria);
+  setStoredAttribute(document.querySelector(".footer-nav"), "aria-label", UI_COPY.en.footerNavAria);
+
+  document.querySelectorAll(".topnav a").forEach((link) => {
+    const key = link.getAttribute("data-nav");
+    const labels = {
+      home: "Home",
+      mallisto: "Collection",
+      ratkaisut: "Solutions",
+      yritys: "Company",
+      shop: "Shop",
+      tarjous: "Quote",
+      yhteystiedot: "Contact",
+    };
+    if (labels[key]) {
+      setStoredText(link, labels[key]);
+    }
+  });
+
+  document.querySelectorAll(".footer-nav a").forEach((link) => {
+    const href = link.getAttribute("href") || "";
+    const labels = {
+      "index.html": "Home",
+      "mallisto.html": "Collection",
+      "ratkaisut.html": "Solutions",
+      "yritys.html": "Company",
+      "shop.html": "Shop",
+      "tarjous.html": "Quote",
+      "yhteystiedot.html": "Contact",
+    };
+    if (labels[href]) {
+      setStoredText(link, labels[href]);
+    }
+  });
+  setTextList(".footer-copy", ["Ready-made space solutions for northern conditions."]);
+
+  if (page === "home") {
+    setStoredTitle("Nordic Modular Finland Oy | Home");
+    setStoredMetaDescription(
+      "Ready-made space solutions for northern conditions. Factory-built saunas, cabins and modular buildings for leisure use, accommodation and yard environments."
+    );
+    setTextList(".hero-banner-copy .eyebrow", ["Nordic Modular Finland Oy"]);
+    setTextList(".hero-banner-copy h1", ["Space solutions for northern conditions."]);
+    setTextList(".hero-banner .hero-lead", [
+      "Factory-built saunas, cabins and modular solutions for projects that value clear procurement, high-quality execution and a functional end result.",
+    ]);
+    setTextList(".hero-banner .hero-actions a", ["Request a preliminary quote", "Explore the collection"]);
+    setTextList(".hero-banner .hero-points li", [
+      "Standardised structures",
+      "Factory quality and controlled finishing",
+      "A faster and clearer procurement process",
+    ]);
+    setTextList(".section-heading .eyebrow", ["Concept", "Procurement path", "Most popular models", "Why this works", "Next step"]);
+    setTextList(".section-heading h2", [
+      "High-quality building without a heavy project.",
+      "How does the procurement process work?",
+      "Solutions for leisure use, accommodation and yard environments.",
+    ]);
+    setTextList(".section-heading p", [
+      "The starting point is to make procurement smoother. When the model, equipment level and delivery structure are clear from the beginning, decision-making also becomes easier.",
+      "At the first stage, it is enough to know the model or the need. After that, the whole solution is refined step by step according to the project.",
+      "The collection includes ready-made alternatives that make it easy to get started.",
+    ]);
+    setTextList(".process-grid .card-label", ["Clear start", "Controlled quality", "Practical flexibility"]);
+    setTextList(".process-grid h3", [
+      "Ready-made models and price level",
+      "Standardised structures",
+      "Options without confusion",
+    ]);
+    setTextList(".process-grid .story-card p:not(.card-label)", [
+      "Solutions are easy to understand even before the quotation stage.",
+      "Repeatable solutions support quality, dimensional accuracy and more consistent execution.",
+      "Materials, equipment and finishing are selected according to the intended use of the project.",
+    ]);
+    setTextList(".story-grid .card-label", ["01", "02", "03", "04"]);
+    setTextList(".story-grid h3", [
+      "Choose a model or tell us your needs",
+      "We create a preliminary solution",
+      "We define the delivery scope",
+      "Manufacturing and delivery",
+    ]);
+    setTextList(".story-grid .story-card p:not(.card-label)", [
+      "Explore the collection or tell us what kind of space solution you are looking for.",
+      "We review the intended use, location, equipment level and preliminary budget.",
+      "We define materials, equipment, transport, foundations and possible additional work.",
+      "The building is manufactured in controlled conditions and delivered according to the agreed plan.",
+    ]);
+    setTextList(".product-kicker", ["30 m² Grand series", "Grand series cabin", "Customisable solution", "Yard sauna model"]);
+    setTextList(".product-grid h3", ["Nordic Grand Saunatupa 30", "Nordic Grand Aitta 30", "Nordic Custom", "Nordic Pihasauna"]);
+    setTextList(".product-grid > article > p", [
+      "A larger sauna-lounge solution for projects where more comfort, equipment and living space are needed.",
+      "A more spacious cabin solution for accommodation, guest use and completing a leisure property.",
+      "A customisable solution when a standard floor plan needs more freedom.",
+      "A clear and high-quality yard sauna solution for a cottage, detached house yard or leisure use.",
+    ]);
+    setTextList(".product-grid .feature-list li", [
+      "A striking model from the Grand series",
+      "Sauna, living space and leisure use in one package",
+      "Can be adapted to the project needs",
+      "Grand series accommodation solution",
+      "Suitable as additional space for a yard or cottage",
+      "Can be adapted to the intended use",
+      "Cabin, sauna-lounge and complete solution options",
+      "Adaptable in layout and equipment level",
+      "Suitable for single or broader implementations",
+      "A dedicated series for yard sauna use",
+      "Suitable for leisure use and yard environments",
+      "Adaptable according to the project",
+    ]);
+    setTextList(".product-grid .price", [
+      "Detailed prices will be added later",
+      "Detailed prices will be added later",
+      "Detailed prices will be added later",
+      "Detailed prices will be added later",
+    ]);
+    setTextList(".product-grid .product-card-footer a", [
+      "Request a preliminary quote",
+      "Request a preliminary quote",
+      "Request a preliminary quote",
+      "Request a preliminary quote",
+    ]);
+    setTextList(".split-copy .eyebrow", ["Why this works"]);
+    setTextList(".split-copy h2", ["A clear procurement model that still preserves quality and flexibility."]);
+    setTextList(".split-copy > p", [
+      "When the collection, structures and options are organised in advance, it is easier for the customer to compare alternatives and request a preliminary quote without a heavy starting phase.",
+    ]);
+    setTextList(".benefit-list h3", ["Standardised structures", "Built for northern conditions", "Clear quotation path", "Additional work available"]);
+    setTextList(".benefit-list p", [
+      "Repeatable structural solutions bring confidence to quality and delivery.",
+      "Durability, energy efficiency and year-round usability are considered from the start.",
+      "The product, intended use and wishes can be discussed through one form.",
+      "Terraces, sauna renovations and ready-made benches can be included as part of the whole.",
+    ]);
+    setTextList(".cta-strip .eyebrow", ["Next step"]);
+    setTextList(".cta-strip h2", ["Choose a model and request a preliminary quote for your project."]);
+    setTextList(".cta-strip > div > p:last-of-type", [
+      "Tell us the location of the project, intended use, the model you are interested in and your preferred schedule. We will come back with a preliminary solution and follow-up questions.",
+    ]);
+    setTextList(".cta-strip .hero-actions a", ["Request a preliminary quote", "Contact us"]);
+  }
+
+  if (page === "mallisto") {
+    setStoredTitle("Nordic Modular Finland Oy | Collection");
+    setStoredMetaDescription(
+      "The Nordic Modular Finland Oy collection is based on clear base models that can be adapted to customer needs."
+    );
+    setTextList(".page-hero-copy .eyebrow", ["Collection"]);
+    setTextList(".page-hero-copy h1", ["A ready-made collection and adaptable solutions for customer needs."]);
+    setTextList(".page-hero-copy .lead", [
+      "The Nordic Modular Finland Oy collection includes ready-made base models as well as adaptable solutions for different uses. The models suit yard buildings, sauna lounges, guest accommodation, cottage use and broader accommodation, storage and leisure-time projects.",
+    ]);
+    setTextList(".catalog-note .eyebrow", ["Note"]);
+    setTextList(".catalog-note h2", ["The collection will be completed gradually."]);
+    setTextList(".catalog-note p", ["Images, prices and detailed product information will be added as the collection develops."]);
+    setTextList(".section-heading.narrow .eyebrow", ["Main collections"]);
+    setTextList(".section-heading.narrow h2", ["A clear model series structure for different uses."]);
+    setTextList(".section-heading.narrow p", ["Each main collection brings together solutions of the same size range or intended use."]);
+    setTextList(".catalog-actions a", Array.from(document.querySelectorAll(".catalog-actions a")).map((_, index) => (index % 2 === 0 ? "Explore the collection" : "Request a quote")));
+    const customEmphasis = document.querySelector(".model-emphasis");
+    setStoredText(customEmphasis, "All our models can be adapted to customer needs.");
+  }
+
+  if (page === "ratkaisut") {
+    setStoredTitle("Nordic Modular Finland Oy | Solutions");
+    setStoredMetaDescription("A clear delivery model and modular solutions for leisure use, accommodation and yard environments.");
+    setTextList(".page-hero-copy .eyebrow", ["Solutions"]);
+    setTextList(".page-hero-copy h1", ["A clearer way to acquire a ready-made space solution."]);
+    setTextList(".page-hero-copy .lead", [
+      "The core of the solution is controlled execution: a ready-made starting model, clear freedom of choice and delivery that is easier to plan according to the project.",
+    ]);
+    setTextList(".benefit-grid h2", ["Ready-made starting models", "Controlled manufacturing", "Built for northern conditions", "Clear decision-making"]);
+    setTextList(".benefit-grid p", [
+      "Procurement starts from a clear model that can be refined according to the project needs.",
+      "Pre-manufacturing supports quality, scheduling and control of the overall delivery.",
+      "The solutions emphasise practicality, durability and year-round comfort.",
+      "Materials, equipment and delivery scope are reviewed step by step without unnecessary uncertainty.",
+    ]);
+    setTextList(".split-copy .eyebrow", ["Use cases"]);
+    setTextList(".split-copy h2", ["Solutions for leisure use, accommodation and yard environments."]);
+    setTextList(".split-copy > p", [
+      "The collection suits projects where a ready-made, easy-to-understand and high-quality building is wanted without a heavy design process right from the start.",
+    ]);
+    setTextList(".split-copy .feature-list li", [
+      "Saunas and leisure use",
+      "Cabins and additional accommodation",
+      "Tourism and accommodation projects",
+      "Adaptable solutions according to the project",
+    ]);
+    setTextList(".info-stack .card-label", ["For the customer", "For delivery", "For the site"]);
+    setTextList(".info-stack h3", ["Easier to get started", "A more predictable whole", "Expandable according to need"]);
+    setTextList(".info-stack p", [
+      "When the starting point is clear, the quotation request and follow-up planning progress more calmly.",
+      "Standardised solutions make it easier to agree on scope, equipment and work allocation.",
+      "Terraces and other complementary work can be planned alongside the buildings separately.",
+    ]);
+    setTextList(".cta-strip .eyebrow", ["Next step"]);
+    setTextList(".cta-strip h2", ["Tell us the site, your wishes and the schedule."]);
+    setTextList(".cta-strip > div > p:last-of-type", [
+      "Send us the model you are interested in, the intended use and the location of the project. We will come back with a preliminary solution and the needed clarifications.",
+    ]);
+    setTextList(".cta-strip .button-primary", ["Request a preliminary quote"]);
+  }
+
+  if (page === "yritys") {
+    setStoredTitle("Nordic Modular Finland Oy | Company");
+    setStoredMetaDescription(
+      "Nordic Modular Finland Oy develops ready-made space solutions for northern conditions for leisure use, accommodation and yard environments."
+    );
+    setTextList(".page-hero-copy .eyebrow", ["Company"]);
+    setTextList(".page-hero-copy h1", ["Nordic Modular Finland Oy develops clear space solutions for northern conditions."]);
+    setTextList(".page-hero-copy .lead", [
+      "The goal is to combine practical construction experience, controlled manufacturing and solutions that suit leisure use, accommodation and additional space in yard environments.",
+    ]);
+    setTextList(".story-grid .eyebrow", ["Concept", "How we work", "Complementary work"]);
+    setTextList(".story-grid h2", ["A more ready-made starting point for the customer.", "Controlled progress.", "The same whole taken further."]);
+    setTextList(".story-grid .story-card p:not(.eyebrow)", [
+      "A clear collection makes it easier to start procurement and understand the options.",
+      "Solutions are refined step by step according to the project, intended use and delivery scope.",
+      "Alongside the buildings, terraces and other complementary construction work can also be planned.",
+    ]);
+    setStoredText(document.querySelector(".company-summary p"), "Nordic Modular Finland Oy develops standardised modular buildings for leisure use, yard environments, accommodation use and tailored space needs. The aim is to combine practical construction experience, the controllability of factory manufacturing and solutions suited to northern conditions.");
+    setTextList(".split-copy .eyebrow", ["What we trust"]);
+    setTextList(".split-copy h2", ["A clear collection, controlled delivery and practical service."]);
+    setTextList(".split-copy > p", [
+      "The role of the company site is above all to build trust: what we develop, what our solutions suit and how the customer can move the discussion forward.",
+    ]);
+    setTextList(".split-copy .feature-list li", [
+      "Ready-made saunas, cabins and space solutions",
+      "Possibility for adaptable solutions",
+      "A starting point suited to northern conditions",
+      "Practical construction understanding supporting decisions",
+    ]);
+    setTextList(".info-stack .card-label", ["Trust", "Suitability", "Further development"]);
+    setTextList(".info-stack h3", ["No unnecessary complexity", "A solution according to the project", "From collection to larger wholes"]);
+    setTextList(".info-stack p", [
+      "The customer quickly understands what is available and how the discussion should begin.",
+      "The models suit both private leisure use and accommodation or tourism use.",
+      "Clear starting models provide a strong base also for broader deliveries and future development.",
+    ]);
+  }
+
+  if (page === "tarjous") {
+    setStoredTitle("Nordic Modular Finland Oy | Quote");
+    setStoredMetaDescription("Fill in a preliminary quote request for Nordic Modular Finland Oy and start the discussion about your project.");
+    setTextList(".page-hero-copy .eyebrow", ["Quote"]);
+    setTextList(".page-hero-copy h1", ["Request a preliminary quote for your project."]);
+    setTextList(".page-hero-copy .lead", [
+      "Tell us which model interests you, where the project is located and your preferred schedule. We will review the request and continue from there.",
+    ]);
+    setTextList(".page-hero-copy > p:last-of-type", [
+      "Send us the location of the project, intended use, the model you are interested in and your preferred schedule. We will come back with a preliminary solution and follow-up questions.",
+    ]);
+    setTextList(".form-section-heading .eyebrow", ["1. Preferred solution", "2. Contact details", "3. Additional information"]);
+    setTextList(".form-section-heading h2", [
+      "Choose the starting point for your quote request.",
+      "Leave your contact details for our reply.",
+      "Tell us your wishes in your own words.",
+    ]);
+    setTextList('label span', Array.from(document.querySelectorAll('form#quote-form label span')).map((_, index) => [
+      "Model of interest",
+      "Intended use",
+      "Schedule",
+      "Project location",
+      "Name",
+      "Email",
+      "Phone",
+      "Additional details",
+    ][index]));
+    setTextList("#product option", [
+      "Nordic Compact Aitta 14",
+      "Nordic Compact Saunatupa 14",
+      "Nordic Compact Terassi",
+      "Nordic Classic Aitta 18",
+      "Nordic Classic Saunatupa 18",
+      "Nordic Classic Terassi",
+      "Nordic Grand Aitta 30",
+      "Nordic Grand Saunatupa 30",
+      "Nordic Grand Terassi",
+      "Nordic Pihasauna",
+      "Nordic Varasto 1",
+      "Nordic Varasto 2",
+      "Nordic Varasto 3",
+      "Custom cabin",
+      "Custom sauna lounge",
+      "Custom accommodation or cottage project",
+      "Other work or a project outside the collection",
+    ]);
+    setTextList("#use-case option", [
+      "Leisure use",
+      "Guest accommodation",
+      "Tourism or accommodation use",
+      "Workspace or other use",
+      "Other work or a project outside the collection",
+    ]);
+    setTextList("#timeline option", ["As soon as possible", "Within 3–6 months", "Within 6–12 months", "Planning in progress"]);
+    setStoredText(document.getElementById("product-hint"), "You can also choose work outside the current collection.");
+    setStoredAttribute(document.getElementById("location"), "placeholder", "For example Lappeenranta");
+    setStoredAttribute(document.getElementById("name"), "placeholder", "Your name");
+    setStoredAttribute(document.getElementById("email"), "placeholder", "name@example.com");
+    setStoredAttribute(document.getElementById("phone"), "placeholder", "+358...");
+    setStoredAttribute(document.getElementById("details"), "placeholder", "Tell us about the site, your wishes, the equipment level, the site situation or possible additional work.");
+    setTextList(".form-actions button", ["Request a preliminary quote", "Clear"]);
+    setTextList(".quote-summary .eyebrow", ["Indicative estimate", "How we proceed", "Contact"]);
+    setTextList(".quote-summary h3", ["A light first contact is enough to get started.", "info@nordicmodular.fi"]);
+    setTextList(".quote-summary .summary-note", [
+      "The price is an initial estimate. The final quote will be refined based on the delivery scope, project, transport, foundations and selected equipment.",
+    ]);
+    setStoredText(document.querySelector("#estimate-label"), "Nordic Compact Aitta 14. The final quote will be refined according to the project scope.");
+    setTextList(".quote-summary .summary-card:nth-of-type(2) p:last-of-type", [
+      "When you submit the form, the request is sent directly to info@nordicmodular.fi.",
+    ]);
+    setTextList(".quote-summary .summary-card:nth-of-type(3) p:last-of-type", [
+      "You can also use the form to ask about projects outside the collection.",
+    ]);
+  }
+
+  if (page === "yhteystiedot") {
+    ensureContactLanguageNote();
+    setStoredTitle("Nordic Modular Finland Oy | Contact");
+    setStoredMetaDescription(
+      "Contact Nordic Modular Finland Oy. Early-stage contact details, company information and contact channels on one page."
+    );
+    setTextList(".page-hero-copy .eyebrow", ["Contact"]);
+    setTextList(".page-hero-copy h1", ["Get in touch"]);
+    setTextList(".page-hero-copy .lead", [
+      "We design and develop modular buildings, yard buildings and sauna solutions suited to northern conditions. Contact us if you want to discuss an upcoming project, collaboration or the development of the collection.",
+      "We serve customers across Finland. You can contact the right person directly or send your quote request to the general email address. We will direct the enquiry to the right person according to the customer's needs, project location and the nature of the project.",
+    ]);
+    setTextList(".team-card h2", ["Teppo Herranen", "Aleksi Herranen", "Toni Herranen"]);
+    setTextList(".contact-role", [
+      "Administration, projects and business sales",
+      "Sales, marketing and customer relations",
+      "Production, technical sales and private customers",
+    ]);
+    setTextList(".contact-focus li", [
+      "Business customers and project sites",
+      "South-Eastern Finland and nationwide projects",
+      "Business and private customers",
+      "Uusimaa and Southern Finland",
+      "Private customers and tailored projects",
+      "Saunas, woodworking and technical solutions",
+    ]);
+    setTextList(".form-section-heading .eyebrow", ["Contact"]);
+    setTextList(".form-section-heading h2", ["Send us a message directly."]);
+    setTextList('form#contact-form label span', ["Name", "Email", "Phone", "Subject", "Message"]);
+    setStoredAttribute(document.getElementById("contact-name"), "placeholder", "Your name");
+    setStoredAttribute(document.getElementById("contact-email"), "placeholder", "name@example.com");
+    setStoredAttribute(document.getElementById("contact-phone"), "placeholder", "+358...");
+    setTextList("#contact-subject option", ["Quote request", "General enquiry", "Collaboration", "Collection development"]);
+    setStoredAttribute(document.getElementById("contact-message"), "placeholder", "Briefly tell us about the project, your request or the reason for contacting us.");
+    setTextList(".form-actions button", ["Send enquiry", "Clear"]);
+    setTextList(".quote-summary .eyebrow", ["Contact", "What to tell us"]);
+    setTextList(".quote-summary h2", ["info@nordicmodular.fi"]);
+    setTextList(".quote-summary h3", ["A short description is enough to get started."]);
+    setTextList(".quote-summary .summary-card p:last-of-type", [
+      "General quote requests and enquiries are directed to the right person according to the topic, location and project type.",
+      "Tell us the project location, intended use, model of interest or other request. We will come back with follow-up questions.",
+    ]);
+    setTextList(".contact-details-grid .info-card .eyebrow", ["Contact", "Company information"]);
+    setTextList(".contact-details-grid .info-card h2", ["Getting in touch is easy", "Nordic Modular Finland Oy"]);
+    setTextList(".contact-details-grid .info-card:first-of-type p", ["General quote requests and enquiries"]);
+    setTextList(".contact-details-grid .info-card .feature-list li", [
+      "Email: info@nordicmodular.fi",
+      "Website: www.nordicmodular.fi",
+      "We serve by phone in Finnish, and by email in both Finnish and English.",
+      "Enquiries sent to the general email address are directed to the right person according to the customer's needs and the project location.",
+      "Business ID: in establishment phase",
+      "Registered office: Lappeenranta",
+      "Official delivery and invoicing details will be confirmed before commercial operations begin",
+    ]);
+    setTextList(".info-card-emphasis .eyebrow", ["Note", "Additional services"]);
+    setTextList(".info-card-emphasis h2", [
+      "Pre-marketing and concept presentation use",
+      "We also provide other construction-related services.",
+    ]);
+    setTextList(".info-card-emphasis p", [
+      "The site is used for pre-marketing and concept presentation. Final delivery contents, prices and company details will be confirmed before commercial operations begin.",
+      "We also carry out terraces, sauna renovations and ready-made benches. Feel free to ask and we will look at the right solution for your project at the same time.",
+    ]);
+  }
+
+  if (page === "shop") {
+    setStoredTitle("Nordic Modular Finland Oy | Shop");
+    setStoredMetaDescription("The Nordic Modular Shop brings together quality products for sauna, yard and cottage use in one premium view.");
+    setTextList(".shop-hero-copy .eyebrow", ["Nordic Modular Shop"]);
+    setTextList(".shop-hero-copy h1", ["Quality products for sauna, yard and cottage life."]);
+    setTextList(".shop-hero-copy .lead", [
+      "A carefully selected range of benches, lighting, hot tubs and terrace products suitable both for separate purchases and as part of a broader delivery.",
+    ]);
+    setTextList(".shop-hero-note", ["Designed for northern conditions."]);
+    setTextList(".shop-hero-copy .hero-actions a", ["Explore products", "Open order summary"]);
+    setTextList(".shop-hero-panel .card-label", ["Carefully selected range"]);
+    setTextList(".shop-hero-panel h2", ["Quality for sauna, yard and leisure use."]);
+    setTextList(".shop-hero-panel .feature-list li", [
+      "Selected products for sauna, yard and terrace",
+      "A clear and high-quality range without unnecessary clutter",
+      "Also suitable as part of a broader Nordic Modular delivery",
+    ]);
+    setTextList(".section-heading.narrow .eyebrow", ["Categories", "Featured products", "Additional selection"]);
+    setTextList(".section-heading.narrow h2", [
+      "Three clear product categories.",
+      "Start with these popular options.",
+      "Complementary products for the same whole.",
+    ]);
+    setTextList(".section-heading.narrow p", [
+      "The range is divided so that you can quickly find suitable options for sauna, hot tubs and yard or terrace projects.",
+      "The first products have been highlighted for those who want a clear starting point quickly.",
+      "The rest of the range complements sauna, hot tub and yard purchases when you want to finish the whole at once.",
+    ]);
+    setTextList(".shop-category-card .card-label", ["Sauna", "Hot tubs & spas", "Yard & terrace"]);
+    setTextList(".shop-category-card h3", ["Benches, lighting and finishing", "For outdoor relaxation", "Finished outdoor spaces"]);
+    setTextList(".shop-category-card p", [
+      "Solutions for atmosphere, usability and high-quality finishing.",
+      "A selection of hot tubs and spas as part of a yard or cottage whole.",
+      "Terraces, lighting and equipment packages for practical finishing of the yard.",
+    ]);
+    setTextList(".shop-card .product-kicker", Array.from(document.querySelectorAll(".shop-card .product-kicker")).map((element) => {
+      const value = normalizeCopy(element.textContent);
+      if (value === "Sauna") return "Sauna";
+      if (value === "Paljut & porealtaat") return "Hot tubs & spas";
+      if (value === "Piha & terassi") return "Yard & terrace";
+      if (value === "Piha & mökki" || value === "Piha & mÃ¶kki") return "Yard & cottage";
+      return value;
+    }));
+    setTextList(".shop-card p:not(.product-kicker):not(.price)", Array.from(document.querySelectorAll(".shop-card p:not(.product-kicker):not(.price)")).map((element) => {
+      const value = normalizeCopy(element.textContent);
+      const map = {
+        "Valmis lauderatkaisu laadukkaaseen saunaan kotona tai mökillä.": "A ready-made bench solution for a high-quality sauna at home or at the cottage.",
+        "Tyylikäs valaistuspaketti pehmeään tunnelmaan ja käytännölliseen valoon.": "A stylish lighting package for soft ambience and practical light.",
+        "Viimeistelty premium-ratkaisu rentoutumiseen ympäri vuoden.": "A finished premium solution for relaxation all year round.",
+        "Moderni poreallas laadukkaaseen pihaan tai mökin yhteyteen.": "A modern spa for a high-quality yard or cottage setting.",
+        "Selkeä kiuasvaihtoehto uuteen saunaan tai saunaratkaisun täydentämiseen.": "A clear heater option for a new sauna or to complete a sauna solution.",
+        "Kokonaisuus pihan, terassin ja kulkureittien valaistukseen.": "A complete solution for lighting the yard, terrace and walkways.",
+        "Perinteinen puukiuasratkaisu mökille, pihasaunaan ja vapaa-ajan käyttöön.": "A traditional wood-burning heater for a cottage, yard sauna or leisure use.",
+        "Selkeä valaistus terassin reunoihin, kulkureiteille ja oleskelutilaan.": "A clear lighting solution for terrace edges, walkways and the lounge area.",
+        "Ajattoman tumma valaisin viimeistelemään kulkuväylät ja sisäänkäynnit.": "A timeless dark luminaire to finish walkways and entrances.",
+        "Matala ja huomaamaton valaisin pihan reiteille ja mökin kulkuihin.": "A low and discreet luminaire for yard paths and cottage walkways.",
+        "Selkeä lähtötason palju pihapiiriin ja mökkikäyttöön.": "A clear entry-level hot tub for the yard or cottage use.",
+        "Tehokas lisä mukavuuteen, ylläpitolämpöön ja vapaa-ajan kohteen käyttöön ympäri vuoden.": "An efficient addition for comfort, maintenance heating and year-round use of a leisure property.",
+        "Viimeistelyyn ja huollettavuuteen suunniteltu paketti lauteille ja pinnoille.": "A package designed for finishing and maintainability of benches and surfaces.",
+        "Valmis kokonaisuus mökin, pihan tai terassin tulipaikkaratkaisuun.": "A ready-made whole for a fire feature at a cottage, yard or terrace.",
+      };
+      return map[value] || value;
+    }));
+    setTextList(".shop-card .catalog-actions a", Array.from(document.querySelectorAll(".shop-card .catalog-actions a")).map(() => "View product"));
+    setTextList(".shop-card .shop-order-button", Array.from(document.querySelectorAll(".shop-card .shop-order-button")).map(() => "Order"));
+  }
+};
+
+const applyLanguage = (language) => {
+  const nextLanguage = language === "en" ? "en" : "fi";
+  document.documentElement.lang = nextLanguage;
+  restoreOriginalLanguageContent();
+
+  const brandLink = document.querySelector(".brand");
+  const brandImage = document.querySelector(".brand img");
+  const topNav = document.querySelector(".topnav");
+  const footerNav = document.querySelector(".footer-nav");
+  const toggle = document.querySelector(".lang-toggle");
+
+  if (brandLink) brandLink.setAttribute("aria-label", "Nordic Modular Finland Oy");
+  if (brandImage) brandImage.setAttribute("alt", "Nordic Modular Finland Oy logo");
+  if (topNav) topNav.setAttribute("aria-label", nextLanguage === "en" ? UI_COPY.en.navAria : UI_COPY.fi.navAria);
+  if (footerNav) footerNav.setAttribute("aria-label", nextLanguage === "en" ? UI_COPY.en.footerNavAria : UI_COPY.fi.footerNavAria);
+  if (toggle) toggle.setAttribute("aria-label", nextLanguage === "en" ? "Language selector" : "Kielivalinta");
+
+  if (nextLanguage === "en") {
+    applyEnglishTranslations();
+  }
+
+  const themeButton = document.querySelector(".theme-toggle");
+  if (themeButton) {
+    updateThemeButton(themeButton);
+  }
+
+  const menuButton = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".topnav");
+  if (menuButton) {
+    setMenuButtonLabel(menuButton, Boolean(nav?.classList.contains("is-open")));
+  }
+
+  document.querySelectorAll(".lang-toggle [data-lang]").forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.lang === nextLanguage);
+    button.setAttribute("aria-pressed", String(button.dataset.lang === nextLanguage));
+  });
+
+  if (document.body.dataset.page === "tarjous") {
+    document.getElementById("product")?.dispatchEvent(new Event("change", { bubbles: true }));
+  }
+};
+
+const initLanguage = () => {
+  const topbar = document.querySelector(".topbar");
+  if (!topbar) return;
+
+  ensureContactLanguageNote();
+
+  const urlLanguage = getLanguageFromUrl();
+  const savedLanguage = window.localStorage.getItem(LANG_KEY);
+  const initialLanguage =
+    urlLanguage || (savedLanguage === "fi" || savedLanguage === "en" ? savedLanguage : getPreferredLanguage());
+
+  let actions = topbar.querySelector(".topbar-actions");
+  if (!actions) {
+    actions = document.createElement("div");
+    actions.className = "topbar-actions";
+    topbar.appendChild(actions);
+  }
+
+  const menuButton = topbar.querySelector(".menu-toggle");
+  if (menuButton && menuButton.parentElement !== actions) {
+    actions.appendChild(menuButton);
+  }
+
+  let toggle = actions.querySelector(".lang-toggle");
+  if (!toggle) {
+    toggle = document.createElement("div");
+    toggle.className = "lang-toggle";
+    toggle.setAttribute("aria-label", "Language selector");
+    toggle.innerHTML = `
+      <a href="${buildLanguageHref("fi")}" data-lang="fi">FI</a>
+      <a href="${buildLanguageHref("en")}" data-lang="en">EN</a>
+    `;
+    actions.prepend(toggle);
+  }
+
+  toggle.querySelectorAll("[data-lang]").forEach((button) => {
+    button.setAttribute("href", buildLanguageHref(button.dataset.lang));
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      const nextLanguage = button.dataset.lang === "en" ? "en" : "fi";
+      if (nextLanguage === getCurrentLanguage()) return;
+      window.localStorage.setItem(LANG_KEY, nextLanguage);
+      applyLanguage(nextLanguage);
+
+      const url = new URL(window.location.href);
+      url.searchParams.set("lang", nextLanguage);
+      window.history.replaceState({}, "", url);
+    });
+  });
+
+  applyLanguage(initialLanguage);
+};
 
 const applyTheme = (theme) => {
-  if (theme === "light") {
-    document.documentElement.setAttribute("data-theme", "light");
-  } else {
-    document.documentElement.removeAttribute("data-theme");
-  }
+  document.documentElement.setAttribute("data-theme", theme === "light" ? "light" : "dark");
 };
 
 const getCurrentTheme = () =>
   document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
 
+const getPreferredTheme = () => {
+  if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
+    return "light";
+  }
+  return "dark";
+};
+
 const updateThemeButton = (button) => {
+  const ui = getUiCopy();
   const currentTheme = getCurrentTheme();
-  const nextThemeLabel = currentTheme === "light" ? "Tumma teema" : "Vaalea teema";
+  const nextThemeLabel = currentTheme === "light" ? ui.themeNextDark : ui.themeNextLight;
   button.textContent = nextThemeLabel;
-  button.setAttribute("aria-label", `Vaihda teemaan: ${nextThemeLabel.toLowerCase()}`);
+  button.setAttribute("aria-label", `${ui.themeAria}${nextThemeLabel.toLowerCase()}`);
   button.setAttribute("aria-pressed", String(currentTheme === "light"));
 };
 
 const initTheme = () => {
   const savedTheme = window.localStorage.getItem(THEME_KEY);
-  applyTheme(savedTheme === "light" ? "light" : "dark");
+  const initialTheme = savedTheme === "light" || savedTheme === "dark" ? savedTheme : getPreferredTheme();
+  applyTheme(initialTheme);
 
   if (document.querySelector(".theme-toggle")) return;
 
@@ -504,6 +1258,16 @@ const initTheme = () => {
     updateThemeButton(themeButton);
   });
 
+  if (window.matchMedia) {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: light)");
+    mediaQuery.addEventListener("change", () => {
+      const currentSavedTheme = window.localStorage.getItem(THEME_KEY);
+      if (currentSavedTheme === "light" || currentSavedTheme === "dark") return;
+      applyTheme(mediaQuery.matches ? "light" : "dark");
+      updateThemeButton(themeButton);
+    });
+  }
+
   document.body.appendChild(themeButton);
 };
 
@@ -517,18 +1281,24 @@ const setActiveNav = () => {
   });
 };
 
+const setMenuButtonLabel = (button, isOpen) => {
+  if (!button) return;
+  const ui = getUiCopy();
+  button.textContent = "";
+  button.setAttribute("aria-label", isOpen ? ui.menuClose : ui.menuOpen);
+};
+
 const initMenu = () => {
   const button = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".topnav");
   if (!button || !nav) return;
 
-  button.textContent = "";
-  button.setAttribute("aria-label", "Avaa valikko");
+  setMenuButtonLabel(button, false);
 
   button.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("is-open");
     button.setAttribute("aria-expanded", String(isOpen));
-    button.setAttribute("aria-label", isOpen ? "Sulje valikko" : "Avaa valikko");
+    setMenuButtonLabel(button, isOpen);
   });
 };
 
@@ -579,9 +1349,7 @@ const initQuoteForm = () => {
   const form = document.getElementById("quote-form");
   if (!form) return;
 
-  const totalEl = document.getElementById("estimate-total");
-  const labelEl = document.getElementById("estimate-label");
-  const itemsEl = document.getElementById("estimate-items");
+  const statusEl = document.getElementById("quote-form-status");
 
   const validators = {
     name: (value) => (value.trim() ? "" : "Lisää nimi."),
@@ -634,12 +1402,16 @@ const initQuoteForm = () => {
 
   form.addEventListener("input", (event) => {
     estimate();
+    resetFormStatus(statusEl);
     if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) {
       validateField(event.target);
     }
   });
 
-  form.addEventListener("change", estimate);
+  form.addEventListener("change", () => {
+    estimate();
+    resetFormStatus(statusEl);
+  });
 
   form.addEventListener("reset", () => {
     requestAnimationFrame(() => {
@@ -647,6 +1419,7 @@ const initQuoteForm = () => {
       form.querySelectorAll(".field-error").forEach((item) => {
         item.textContent = "";
       });
+      resetFormStatus(statusEl);
       estimate();
     });
   });
@@ -722,11 +1495,12 @@ const initSimpleQuoteForm = () => {
   const totalEl = document.getElementById("estimate-total");
   const labelEl = document.getElementById("estimate-label");
   const itemsEl = document.getElementById("estimate-items");
+  const statusEl = document.getElementById("quote-form-status");
 
   const validators = {
-    name: (value) => (value.trim() ? "" : "Lisaa nimi."),
-    email: (value) => (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()) ? "" : "Lisaa toimiva sahkopostiosoite."),
-    phone: (value) => (value.trim().length >= 6 ? "" : "Lisaa puhelinnumero, josta sinut tavoittaa."),
+    name: (value) => (value.trim() ? "" : getUiCopy().validationName),
+    email: (value) => (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()) ? "" : getUiCopy().validationEmail),
+    phone: (value) => (value.trim().length >= 6 ? "" : getUiCopy().validationPhone),
   };
 
   const setFieldError = (input, message) => {
@@ -746,42 +1520,18 @@ const initSimpleQuoteForm = () => {
     return !message;
   };
 
-  const estimate = () => {
-    const product = form.querySelector("#product");
-    const selectedProduct = product.options[product.selectedIndex];
-    const useCase = form.querySelector("#use-case")?.value;
-    const timeline = form.querySelector("#timeline")?.value;
-    const location = form.querySelector("#location")?.value.trim();
-    const total = Number(product.value);
-
-    const items = [`Valinta: ${selectedProduct.dataset.label}`];
-    if (useCase) items.push(`Kaytto: ${useCase}`);
-    if (timeline) items.push(`Aikataulu: ${timeline}`);
-    if (location) items.push(`Sijainti: ${location}`);
-
-    if (totalEl) totalEl.textContent = formatEuro(total);
-    if (labelEl) {
-      labelEl.textContent =
-        total > 0
-          ? `${selectedProduct.dataset.label} alkaen.`
-          : `${selectedProduct.dataset.label}. Lopullinen tarjous tarkentuu tyon sisallon mukaan.`;
-    }
-    if (itemsEl) {
-      itemsEl.innerHTML = items.map((item) => `<li>${item}</li>`).join("");
-    }
-  };
-
   setModelFromQuery(form);
-  estimate();
 
   form.addEventListener("input", (event) => {
-    estimate();
+    resetFormStatus(statusEl);
     if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) {
       validateField(event.target);
     }
   });
 
-  form.addEventListener("change", estimate);
+  form.addEventListener("change", () => {
+    resetFormStatus(statusEl);
+  });
 
   form.addEventListener("reset", () => {
     requestAnimationFrame(() => {
@@ -789,11 +1539,11 @@ const initSimpleQuoteForm = () => {
       form.querySelectorAll(".field-error").forEach((item) => {
         item.textContent = "";
       });
-      estimate();
+      resetFormStatus(statusEl);
     });
   });
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const requiredFields = ["name", "email", "phone"].map((name) => form.querySelector(`[name="${name}"]`));
@@ -807,18 +1557,19 @@ const initSimpleQuoteForm = () => {
 
     const product = form.querySelector("#product");
     const selectedProduct = product.options[product.selectedIndex];
-    const useCase = form.querySelector("#use-case").value;
-    const timeline = form.querySelector("#timeline").value;
-    const location = form.querySelector("#location").value.trim() || "Ei ilmoitettu";
-    const details = form.querySelector("#details").value.trim() || "Ei lisatietoja";
+    const productLabel = selectedProduct.textContent.trim() || selectedProduct.dataset.label;
+    const useCase = form.querySelector("#use-case").selectedOptions?.[0]?.textContent || form.querySelector("#use-case").value;
+    const timeline = form.querySelector("#timeline").selectedOptions?.[0]?.textContent || form.querySelector("#timeline").value;
+    const location = form.querySelector("#location").value.trim() || (getCurrentLanguage() === "en" ? "Not provided" : "Ei ilmoitettu");
+    const details = form.querySelector("#details").value.trim() || (getCurrentLanguage() === "en" ? "No additional information" : "Ei lisatietoja");
     const name = form.querySelector("#name").value.trim();
     const email = form.querySelector("#email").value.trim();
     const phone = form.querySelector("#phone").value.trim();
-    const total = totalEl?.textContent || "";
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalButtonLabel = submitButton?.textContent || getUiCopy().quoteFallback;
 
     const payload = buildQuoteEmailPayload({
-      productLabel: selectedProduct.dataset.label,
-      total,
+      productLabel,
       useCase,
       timeline,
       location,
@@ -832,8 +1583,26 @@ const initSimpleQuoteForm = () => {
     // Polar55 SMTP -kytkennassa tarjouspyynto lahetetaan osoitteeseen info@nordicmodular.fi,
     // kopio teppo.herranen@nordicmodular.fi, Reply-To asiakkaan sahkopostiin
     // ja lahettajan nimena Nordic Modular -verkkosivut.
-    openQuoteMailDraft(payload);
-    return;
+    try {
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = getUiCopy().quoteSending;
+      }
+
+      await submitFormToEndpoint(payload);
+      setFormStatus(statusEl, "success", getUiCopy().quoteSent);
+      form.reset();
+      return;
+    } catch (error) {
+      console.error("Tarjouslomakkeen lahetys epaonnistui", error);
+      setFormStatus(statusEl, "error", getUiCopy().sendError);
+      return;
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonLabel;
+      }
+    }
 
     const subject = encodeURIComponent(`Tarjouspyynto: ${selectedProduct.dataset.label}`);
     const body = encodeURIComponent(
@@ -859,6 +1628,105 @@ const initSimpleQuoteForm = () => {
     );
 
     window.location.href = `mailto:info@nordicmodular.fi?subject=${subject}&body=${body}`;
+  });
+};
+
+const initContactForm = () => {
+  const form = document.getElementById("contact-form");
+  if (!form) return;
+
+  const statusEl = document.getElementById("contact-form-status");
+
+  const validators = {
+    name: (value) => (value.trim() ? "" : getUiCopy().validationName),
+    email: (value) => (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()) ? "" : getUiCopy().validationEmail),
+    message: (value) => (value.trim().length >= 10 ? "" : getUiCopy().validationMessage),
+  };
+
+  const setFieldError = (input, message) => {
+    const field = input.closest("label");
+    const errorEl = field?.querySelector(".field-error");
+    if (!field || !errorEl) return;
+
+    field.classList.toggle("has-error", Boolean(message));
+    errorEl.textContent = message;
+  };
+
+  const validateField = (input) => {
+    const validator = validators[input.name];
+    if (!validator) return true;
+    const message = validator(input.value);
+    setFieldError(input, message);
+    return !message;
+  };
+
+  form.addEventListener("input", (event) => {
+    resetFormStatus(statusEl);
+    if (
+      event.target instanceof HTMLInputElement ||
+      event.target instanceof HTMLTextAreaElement ||
+      event.target instanceof HTMLSelectElement
+    ) {
+      validateField(event.target);
+    }
+  });
+
+  form.addEventListener("reset", () => {
+    requestAnimationFrame(() => {
+      form.querySelectorAll(".has-error").forEach((field) => field.classList.remove("has-error"));
+      form.querySelectorAll(".field-error").forEach((item) => {
+        item.textContent = "";
+      });
+      resetFormStatus(statusEl);
+    });
+  });
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const requiredFields = ["name", "email", "message"].map((name) => form.querySelector(`[name="${name}"]`));
+    const isValid = requiredFields.every((field) => validateField(field));
+
+    if (!isValid) {
+      const firstInvalid = requiredFields.find((field) => !validateField(field));
+      firstInvalid?.focus();
+      return;
+    }
+
+    const name = form.querySelector("#contact-name").value.trim();
+    const email = form.querySelector("#contact-email").value.trim();
+    const phone = form.querySelector("#contact-phone").value.trim() || (getCurrentLanguage() === "en" ? "Not provided" : "Ei ilmoitettu");
+    const subject = form.querySelector("#contact-subject").selectedOptions?.[0]?.textContent || form.querySelector("#contact-subject").value;
+    const message = form.querySelector("#contact-message").value.trim();
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalButtonLabel = submitButton?.textContent || getUiCopy().contactFallback;
+
+    const payload = buildContactEmailPayload({
+      name,
+      email,
+      phone,
+      subject,
+      message,
+    });
+
+    try {
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = getUiCopy().quoteSending;
+      }
+
+      await submitFormToEndpoint(payload);
+      setFormStatus(statusEl, "success", getUiCopy().contactSent);
+      form.reset();
+    } catch (error) {
+      console.error("Yhteydenottolomakkeen lahetys epaonnistui", error);
+      setFormStatus(statusEl, "error", getUiCopy().sendError);
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonLabel;
+      }
+    }
   });
 };
 
@@ -1250,11 +2118,14 @@ const initModelDetail = () => {
 
 initTheme();
 setYear();
+initLanguage();
 normalizeOfferCopy();
+initPrelaunchVisibility();
 setActiveNav();
 initMenu();
 initReveal();
 initSimpleQuoteForm();
+initContactForm();
 initShopButtons();
 initOrderForm();
 initProductDetail();

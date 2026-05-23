@@ -60,7 +60,6 @@
               </ul>
               <ul class="feature-list">
                 <li><a href="mailto:teppo.herranen@nordicmodular.fi">Sähköposti: teppo.herranen@nordicmodular.fi</a></li>
-                <li><a href="tel:+358401234567">Puhelin: 040 123 4567</a></li>
               </ul>
             </article>
 
@@ -74,7 +73,6 @@
               </ul>
               <ul class="feature-list">
                 <li><a href="mailto:aleksi.herranen@nordicmodular.fi">Sähköposti: aleksi.herranen@nordicmodular.fi</a></li>
-                <li><a href="tel:+358451234567">Puhelin: 045 123 4567</a></li>
               </ul>
             </article>
 
@@ -88,10 +86,80 @@
               </ul>
               <ul class="feature-list">
                 <li><a href="mailto:toni.herranen@nordicmodular.fi">Sähköposti: toni.herranen@nordicmodular.fi</a></li>
-                <li><a href="tel:+358501234567">Puhelin: 050 123 4567</a></li>
               </ul>
             </article>
           </div>
+        </section>
+
+        <section class="section form-layout reveal">
+          <form class="quote-form" id="contact-form" novalidate>
+            <div class="form-section">
+              <div class="form-section-heading">
+                <p class="eyebrow">Yhteydenotto</p>
+                <h2>Laheta viesti suoraan meille.</h2>
+              </div>
+              <div class="form-grid">
+                <label>
+                  <span>Nimi</span>
+                  <input id="contact-name" name="name" type="text" placeholder="Oma nimi" required />
+                  <small class="field-error" aria-live="polite"></small>
+                </label>
+
+                <label>
+                  <span>Sahkoposti</span>
+                  <input id="contact-email" name="email" type="email" placeholder="nimi@esimerkki.fi" required />
+                  <small class="field-error" aria-live="polite"></small>
+                </label>
+
+                <label>
+                  <span>Puhelin</span>
+                  <input id="contact-phone" name="phone" type="tel" placeholder="+358..." />
+                </label>
+
+                <label>
+                  <span>Aihe</span>
+                  <select id="contact-subject" name="subject">
+                    <option value="Tarjouspyynto">Tarjouspyynto</option>
+                    <option value="Yleinen yhteydenotto">Yleinen yhteydenotto</option>
+                    <option value="Yhteistyo">Yhteistyo</option>
+                    <option value="Malliston kehitys">Malliston kehitys</option>
+                  </select>
+                </label>
+
+                <label class="full-span">
+                  <span>Viesti</span>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    rows="6"
+                    placeholder="Kerro lyhyesti hankkeesta, toiveesta tai yhteydenoton aiheesta."
+                    required
+                  ></textarea>
+                  <small class="field-error" aria-live="polite"></small>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="button button-primary" type="submit">Laheta yhteydenotto</button>
+              <button class="button button-secondary" type="reset">Tyhjenna</button>
+            </div>
+            <div id="contact-form-status" class="form-status" hidden aria-live="polite"></div>
+          </form>
+
+          <aside class="quote-summary">
+            <div class="summary-card summary-card-highlight">
+              <p class="eyebrow">Yhteys</p>
+              <h2><a href="mailto:info@nordicmodular.fi">info@nordicmodular.fi</a></h2>
+              <p>Yleiset tarjouspyynnot ja yhteydenotot ohjataan oikealle henkilolle aiheen, sijainnin ja projektin mukaan.</p>
+            </div>
+
+            <div class="summary-card">
+              <p class="eyebrow">Mita kannattaa kertoa</p>
+              <h3>Alkuun riittaa kevyt kuvaus.</h3>
+              <p>Kerro kohteen sijainti, kayttotarkoitus, kiinnostava malli tai muu toive. Palaamme asiaan jatkokysymyksilla.</p>
+            </div>
+          </aside>
         </section>
 
         <section class="section contact-details-grid reveal">

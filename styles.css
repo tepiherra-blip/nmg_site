@@ -1,4 +1,5 @@
 :root {
+  color-scheme: dark;
   --bg: #07131b;
   --bg-soft: #0c1e2a;
   --surface: rgba(11, 24, 35, 0.92);
@@ -40,7 +41,12 @@
   --max: 1200px;
 }
 
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
 :root[data-theme="light"] {
+  color-scheme: light;
   --bg: #eef5f8;
   --bg-soft: #e5eef3;
   --surface: rgba(255, 255, 255, 0.92);
@@ -190,6 +196,58 @@ textarea {
   box-shadow:
     0 -6px 0 var(--text),
     0 6px 0 var(--text);
+}
+
+.topbar-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--menu-button-bg);
+}
+
+.lang-toggle button,
+.lang-toggle a {
+  min-width: 40px;
+  min-height: 36px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.lang-toggle button.is-active,
+.lang-toggle a.is-active {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text);
+}
+
+.lang-toggle button:hover,
+.lang-toggle button:focus-visible,
+.lang-toggle a:hover,
+.lang-toggle a:focus-visible {
+  color: var(--text);
+  transform: translateY(-1px);
 }
 
 .theme-toggle {
@@ -1747,6 +1805,26 @@ body[data-page="yritys"] .split-copy {
   display: none;
 }
 
+.form-status {
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.form-status.is-success {
+  color: var(--text);
+  border-color: rgba(139, 216, 175, 0.28);
+  background: linear-gradient(180deg, rgba(139, 216, 175, 0.14), rgba(139, 216, 175, 0.06));
+}
+
+.form-status.is-error {
+  color: var(--text);
+  border-color: rgba(255, 141, 141, 0.28);
+  background: linear-gradient(180deg, rgba(255, 141, 141, 0.14), rgba(255, 141, 141, 0.06));
+}
+
 .has-error input,
 .has-error select,
 .has-error textarea {
@@ -2198,6 +2276,24 @@ html.reveal-enabled .reveal.is-visible {
     padding: 0;
     font-size: 0;
     color: transparent;
+  }
+
+  .topbar-actions {
+    grid-column: 2;
+    justify-self: end;
+    gap: 8px;
+  }
+
+  .lang-toggle {
+    padding: 3px;
+  }
+
+  .lang-toggle button,
+  .lang-toggle a {
+    min-width: 34px;
+    min-height: 34px;
+    padding: 0 8px;
+    font-size: 0.78rem;
   }
 
   .theme-toggle {
