@@ -1,4 +1,4 @@
-const formatEuro = (value) =>
+﻿const formatEuro = (value) =>
   new Intl.NumberFormat("fi-FI", {
     style: "currency",
     currency: "EUR",
@@ -14,8 +14,8 @@ const QUOTE_EMAIL_CONFIG = {
   cc: "teppo.herranen@nordicmodular.fi",
   subject: "Uusi tarjouspyyntö verkkosivuilta",
   senderName: "Nordic Modular -verkkosivut",
-  // TODO: Korvaa nämä placeholder-arvot lopullisella Polar55 SMTP -kytkennällä
-  // silloin kun lomake lähetetään oikeasti palvelimen kautta eikä mailto-varalogiikalla.
+  // TODO: Korvaa nämä placeholder-arvot lopullisella Polar55 SMTP -kytkennällä.
+  // TODO: Lähetä lomakkeet myöhemmin palvelimen kautta, ei pelkällä varalogiikalla.
   smtp: {
     provider: "Polar55",
     host: "TODO_POLAR55_SMTP_HOST",
@@ -110,27 +110,27 @@ const normalizeOfferCopy = () => {
     if (!text) return;
 
     if (
-      text === "Pyydä tarjous" ||
-      text === "Pyydä tarjous tästä mallista" ||
-      text === "Kysy tästä" ||
+      text === "Pyydï¿½ tarjous" ||
+      text === "Pyydï¿½ tarjous tï¿½stï¿½ mallista" ||
+      text === "Kysy tï¿½stï¿½" ||
       text === "Avaa tarjouslomake" ||
-      text === "Täytä tarjouslomake"
+      text === "Tï¿½ytï¿½ tarjouslomake"
     ) {
-      element.textContent = "Pyydä alustava tarjous";
+      element.textContent = "Pyydï¿½ alustava tarjous";
     }
   });
 
   document.querySelectorAll(".price").forEach((element) => {
     const text = element.textContent?.trim();
-    if (text === "Pyydä erillinen tarjous") {
-      element.textContent = "Alustava hinta määräytyy kohteen mukaan";
+    if (text === "Pyydï¿½ erillinen tarjous") {
+      element.textContent = "Alustava hinta mï¿½ï¿½rï¿½ytyy kohteen mukaan";
     }
   });
 
   document.querySelectorAll("p").forEach((element) => {
     const text = element.textContent?.trim();
-    if (text === "Pyydä erillinen tarjous. Toteutus ja hinta määräytyvät kohteen vaatimusten mukaan.") {
-      element.textContent = "Alustava hinta ja toimitussisältö tarkennetaan kohteen vaatimusten mukaan.";
+    if (text === "Pyydï¿½ erillinen tarjous. Toteutus ja hinta mï¿½ï¿½rï¿½ytyvï¿½t kohteen vaatimusten mukaan.") {
+      element.textContent = "Alustava hinta ja toimitussisï¿½ltï¿½ tarkennetaan kohteen vaatimusten mukaan.";
     }
   });
 };
@@ -146,35 +146,35 @@ const SHOP_PRODUCTS = {
     id: "nordic-laudesetti",
     name: "Nordic laudesetti",
     category: "Sauna",
-    description: "Valmis lauderatkaisu laadukkaaseen saunaan kotona tai mökillä.",
+    description: "Valmis lauderatkaisu laadukkaaseen saunaan kotona tai mï¿½killï¿½.",
     price: 1490,
-    priceLabel: "Alkaen 1 490 €",
+    priceLabel: "Alkaen 1 490 ï¿½",
     longDescription:
-      "Nordic laudesetti tuo saunaan valmiin ja viimeistellyn lauderatkaisun, jossa yhdistyvät käytännöllisyys, selkeä ilme ja miellyttävä käyttötuntuma.",
-    features: ["Valmis kokonaisuus lauteisiin", "Sopii mökille tai kotisaunaan", "Selkeä ja laadukas viimeistely"],
-    fit: "Voidaan yhdistää myös osaksi Nordic Modular -saunatoimitusta.",
+      "Nordic laudesetti tuo saunaan valmiin ja viimeistellyn lauderatkaisun, jossa yhdistyvï¿½t kï¿½ytï¿½nnï¿½llisyys, selkeï¿½ ilme ja miellyttï¿½vï¿½ kï¿½yttï¿½tuntuma.",
+    features: ["Valmis kokonaisuus lauteisiin", "Sopii mï¿½kille tai kotisaunaan", "Selkeï¿½ ja laadukas viimeistely"],
+    fit: "Voidaan yhdistï¿½ï¿½ myï¿½s osaksi Nordic Modular -saunatoimitusta.",
   },
   "saunan-led-valaistuspaketti": {
     id: "saunan-led-valaistuspaketti",
     name: "Saunan LED-valaistuspaketti",
     category: "Sauna",
-    description: "Tyylikäs valaistuspaketti pehmeään tunnelmaan ja käytännölliseen valoon.",
+    description: "Tyylikï¿½s valaistuspaketti pehmeï¿½ï¿½n tunnelmaan ja kï¿½ytï¿½nnï¿½lliseen valoon.",
     price: 390,
-    priceLabel: "Alkaen 390 €",
+    priceLabel: "Alkaen 390 ï¿½",
     longDescription:
-      "LED-valaistuspaketti tuo saunaan pehmeän tunnelman ja toimivan käyttövalon. Ratkaisu sopii sekä uuden saunan viimeistelyyn että olemassa olevan tilan päivitykseen.",
-    features: ["Tunnelmavaloon ja käyttövaloon", "Sopii lauteisiin tai seinäpintoihin", "Voidaan tarjota osana saunapakettia"],
-    fit: "Toimii hyvin lisämyyntituotteena saunan tai muun toimituksen yhteydessä.",
+      "LED-valaistuspaketti tuo saunaan pehmeï¿½n tunnelman ja toimivan kï¿½yttï¿½valon. Ratkaisu sopii sekï¿½ uuden saunan viimeistelyyn ettï¿½ olemassa olevan tilan pï¿½ivitykseen.",
+    features: ["Tunnelmavaloon ja kï¿½yttï¿½valoon", "Sopii lauteisiin tai seinï¿½pintoihin", "Voidaan tarjota osana saunapakettia"],
+    fit: "Toimii hyvin lisï¿½myyntituotteena saunan tai muun toimituksen yhteydessï¿½.",
   },
   "terassivalaistuspaketti": {
     id: "terassivalaistuspaketti",
     name: "Terassivalaistuspaketti",
     category: "Piha & terassi",
-    description: "Selkeä valaistus terassin reunoihin, kulkureiteille ja oleskelutilaan.",
+    description: "Selkeï¿½ valaistus terassin reunoihin, kulkureiteille ja oleskelutilaan.",
     price: 540,
-    priceLabel: "Alkaen 540 €",
+    priceLabel: "Alkaen 540 ï¿½",
     longDescription:
-      "Terassivalaistuspaketti kokoaa yhteen toimivan ulkovalaistuksen, joka tukee kulkua, oleskelua ja terassin käytettävyyttä ilta-aikaan.",
+      "Terassivalaistuspaketti kokoaa yhteen toimivan ulkovalaistuksen, joka tukee kulkua, oleskelua ja terassin kï¿½ytettï¿½vyyttï¿½ ilta-aikaan.",
     features: ["Terassin valaistus yhteen pakettiin", "Sopii kulkureiteille ja oleskeluun", "Laajennettavissa osaksi terassitoimitusta"],
     fit: "Voidaan toimittaa osana terassi- tai pihaprojektia.",
   },
@@ -182,72 +182,72 @@ const SHOP_PRODUCTS = {
     id: "pihavalaisin-musta",
     name: "Pihavalaisin musta",
     category: "Piha & terassi",
-    description: "Ajattoman tumma valaisin viimeistelemään kulkuväylät ja sisäänkäynnit.",
+    description: "Ajattoman tumma valaisin viimeistelemï¿½ï¿½n kulkuvï¿½ylï¿½t ja sisï¿½ï¿½nkï¿½ynnit.",
     price: 129,
-    priceLabel: "Alkaen 129 €",
+    priceLabel: "Alkaen 129 ï¿½",
     longDescription:
-      "Pihavalaisin musta viimeistelee sisäänkäynnit, pihan kulkureitit ja rakennuksen lähiympäristön ajattomalla ilmeellä.",
-    features: ["Ajaton tumma ilme", "Sopii sisäänkäynteihin", "Helppo liittää laajempaan pihavalaistukseen"],
-    fit: "Sopii lisätuotteeksi piha- ja terassikokonaisuuksiin.",
+      "Pihavalaisin musta viimeistelee sisï¿½ï¿½nkï¿½ynnit, pihan kulkureitit ja rakennuksen lï¿½hiympï¿½ristï¿½n ajattomalla ilmeellï¿½.",
+    features: ["Ajaton tumma ilme", "Sopii sisï¿½ï¿½nkï¿½ynteihin", "Helppo liittï¿½ï¿½ laajempaan pihavalaistukseen"],
+    fit: "Sopii lisï¿½tuotteeksi piha- ja terassikokonaisuuksiin.",
   },
   polkuvalaisin: {
     id: "polkuvalaisin",
     name: "Polkuvalaisin",
     category: "Piha & terassi",
-    description: "Matala ja huomaamaton valaisin pihan reiteille ja mökin kulkuihin.",
+    description: "Matala ja huomaamaton valaisin pihan reiteille ja mï¿½kin kulkuihin.",
     price: 98,
-    priceLabel: "Alkaen 98 €",
+    priceLabel: "Alkaen 98 ï¿½",
     longDescription:
-      "Polkuvalaisin tuo kulkureiteille turvallisuutta ja selkeyttä ilman raskasta ilmettä. Se sopii pihan reiteille, terassille ja mökin ympäristöön.",
-    features: ["Pihan reiteille ja kulkuihin", "Huomaamaton ja käytännöllinen", "Sopii osaksi ulkovalopakettia"],
-    fit: "Voidaan myydä yksittäin tai osana pihavalaistuksen kokonaisuutta.",
+      "Polkuvalaisin tuo kulkureiteille turvallisuutta ja selkeyttï¿½ ilman raskasta ilmettï¿½. Se sopii pihan reiteille, terassille ja mï¿½kin ympï¿½ristï¿½ï¿½n.",
+    features: ["Pihan reiteille ja kulkuihin", "Huomaamaton ja kï¿½ytï¿½nnï¿½llinen", "Sopii osaksi ulkovalopakettia"],
+    fit: "Voidaan myydï¿½ yksittï¿½in tai osana pihavalaistuksen kokonaisuutta.",
   },
   "palju-basic": {
     id: "palju-basic",
     name: "Palju Basic",
     category: "Paljut & porealtaat",
-    description: "Selkeä lähtötason palju pihapiiriin ja mökkikäyttöön.",
+    description: "Selkeï¿½ lï¿½htï¿½tason palju pihapiiriin ja mï¿½kkikï¿½yttï¿½ï¿½n.",
     price: 2490,
-    priceLabel: "Alkaen 2 490 €",
+    priceLabel: "Alkaen 2 490 ï¿½",
     longDescription:
-      "Palju Basic tarjoaa selkeän ja toimivan tavan tuoda rentoutuminen pihapiiriin tai mökille ilman turhaa monimutkaisuutta.",
-    features: ["Selkeä perusmalli", "Sopii mökille ja pihaan", "Laajennettavissa lisävarusteilla"],
-    fit: "Toimii myös osana suurempaa pihapiirin rentoutumiskokonaisuutta.",
+      "Palju Basic tarjoaa selkeï¿½n ja toimivan tavan tuoda rentoutuminen pihapiiriin tai mï¿½kille ilman turhaa monimutkaisuutta.",
+    features: ["Selkeï¿½ perusmalli", "Sopii mï¿½kille ja pihaan", "Laajennettavissa lisï¿½varusteilla"],
+    fit: "Toimii myï¿½s osana suurempaa pihapiirin rentoutumiskokonaisuutta.",
   },
   "palju-premium": {
     id: "palju-premium",
     name: "Palju Premium",
     category: "Paljut & porealtaat",
-    description: "Viimeistelty premium-ratkaisu rentoutumiseen ympäri vuoden.",
+    description: "Viimeistelty premium-ratkaisu rentoutumiseen ympï¿½ri vuoden.",
     price: 4290,
-    priceLabel: "Alkaen 4 290 €",
+    priceLabel: "Alkaen 4 290 ï¿½",
     longDescription:
-      "Palju Premium on laadukas vaihtoehto ympärivuotiseen käyttöön, kun ulkotilan viimeistelyltä halutaan sekä mukavuutta että näyttävyyttä.",
-    features: ["Premium-ilme ja viimeistely", "Ympärivuotiseen käyttöön", "Täydennettävissä lisäominaisuuksilla"],
-    fit: "Sopii hyvin osaksi laadukasta piha- tai mökkikokonaisuutta.",
+      "Palju Premium on laadukas vaihtoehto ympï¿½rivuotiseen kï¿½yttï¿½ï¿½n, kun ulkotilan viimeistelyltï¿½ halutaan sekï¿½ mukavuutta ettï¿½ nï¿½yttï¿½vyyttï¿½.",
+    features: ["Premium-ilme ja viimeistely", "Ympï¿½rivuotiseen kï¿½yttï¿½ï¿½n", "Tï¿½ydennettï¿½vissï¿½ lisï¿½ominaisuuksilla"],
+    fit: "Sopii hyvin osaksi laadukasta piha- tai mï¿½kkikokonaisuutta.",
   },
   "poreallas-nordic": {
     id: "poreallas-nordic",
     name: "Poreallas Nordic",
     category: "Paljut & porealtaat",
-    description: "Moderni poreallas laadukkaaseen pihaan tai mökin yhteyteen.",
+    description: "Moderni poreallas laadukkaaseen pihaan tai mï¿½kin yhteyteen.",
     price: 6900,
-    priceLabel: "Alkaen 6 900 €",
+    priceLabel: "Alkaen 6 900 ï¿½",
     longDescription:
-      "Poreallas Nordic täydentää pihaa tai vapaa-ajan kohdetta modernilla rentoutumisratkaisulla, joka sopii laadukkaaseen kokonaisuuteen.",
-    features: ["Moderni premium-ratkaisu", "Pihaan tai mökille", "Voidaan kytkeä osaksi rentoutumiskokonaisuutta"],
-    fit: "Erinomainen lisä sauna- ja terassitoimituksen rinnalle.",
+      "Poreallas Nordic tï¿½ydentï¿½ï¿½ pihaa tai vapaa-ajan kohdetta modernilla rentoutumisratkaisulla, joka sopii laadukkaaseen kokonaisuuteen.",
+    features: ["Moderni premium-ratkaisu", "Pihaan tai mï¿½kille", "Voidaan kytkeï¿½ osaksi rentoutumiskokonaisuutta"],
+    fit: "Erinomainen lisï¿½ sauna- ja terassitoimituksen rinnalle.",
   },
   "nordic-sahkokiuka": {
     id: "nordic-sahkokiuka",
-    name: "Nordic sähkökiuas",
+    name: "Nordic sï¿½hkï¿½kiuas",
     category: "Sauna",
-    description: "Selkeä kiuasvaihtoehto uuteen saunaan tai saunaratkaisun täydentämiseen.",
+    description: "Selkeï¿½ kiuasvaihtoehto uuteen saunaan tai saunaratkaisun tï¿½ydentï¿½miseen.",
     price: 890,
-    priceLabel: "Alkaen 890 €",
+    priceLabel: "Alkaen 890 ï¿½",
     longDescription:
-      "Nordic sähkökiuas on käytännöllinen ja selkeä vaihtoehto, kun saunaan halutaan toimiva perusratkaisu ilman turhaa monimutkaisuutta.",
-    features: ["Selkeä sähkökiuasratkaisu", "Sopii uuteen tai päivitettävään saunaan", "Voidaan yhdistää osaksi saunatoimitusta"],
+      "Nordic sï¿½hkï¿½kiuas on kï¿½ytï¿½nnï¿½llinen ja selkeï¿½ vaihtoehto, kun saunaan halutaan toimiva perusratkaisu ilman turhaa monimutkaisuutta.",
+    features: ["Selkeï¿½ sï¿½hkï¿½kiuasratkaisu", "Sopii uuteen tai pï¿½ivitettï¿½vï¿½ï¿½n saunaan", "Voidaan yhdistï¿½ï¿½ osaksi saunatoimitusta"],
     fit: "Sopii hyvin laudesetin, valaistuksen ja saunamallien rinnalle.",
   },
   ulkovalopaketti: {
@@ -256,9 +256,9 @@ const SHOP_PRODUCTS = {
     category: "Piha & terassi",
     description: "Kokonaisuus pihan, terassin ja kulkureittien valaistukseen.",
     price: 690,
-    priceLabel: "Alkaen 690 €",
+    priceLabel: "Alkaen 690 ï¿½",
     longDescription:
-      "Ulkovalopaketti kokoaa yhteen pihan ja terassin valaistuksen, joka tukee turvallisuutta, tunnelmaa ja käyttömukavuutta.",
+      "Ulkovalopaketti kokoaa yhteen pihan ja terassin valaistuksen, joka tukee turvallisuutta, tunnelmaa ja kï¿½yttï¿½mukavuutta.",
     features: ["Pihaan ja terassille", "Kulkureittien valaistus", "Laajennettavissa eri kohteisiin"],
     fit: "Voidaan toimittaa osana piha- tai terassikokonaisuutta.",
   },
@@ -266,12 +266,12 @@ const SHOP_PRODUCTS = {
     id: "nordic-puukiuas",
     name: "Nordic puukiuas",
     category: "Sauna",
-    description: "Perinteinen puukiuasratkaisu mökille, pihasaunaan ja vapaa-ajan käyttöön.",
+    description: "Perinteinen puukiuasratkaisu mï¿½kille, pihasaunaan ja vapaa-ajan kï¿½yttï¿½ï¿½n.",
     price: 1290,
-    priceLabel: "Alkaen 1 290 €",
+    priceLabel: "Alkaen 1 290 ï¿½",
     longDescription:
-      "Nordic puukiuas tuo saunaan perinteisen lämmitystavan ja vahvan saunatunnelman, joka sopii erityisesti mökille ja pihasaunaan.",
-    features: ["Perinteinen puukiuas", "Sopii mökille ja pihasaunaan", "Toimii osana saunakokonaisuutta"],
+      "Nordic puukiuas tuo saunaan perinteisen lï¿½mmitystavan ja vahvan saunatunnelman, joka sopii erityisesti mï¿½kille ja pihasaunaan.",
+    features: ["Perinteinen puukiuas", "Sopii mï¿½kille ja pihasaunaan", "Toimii osana saunakokonaisuutta"],
     fit: "Sopii erityisesti Nordic Pihasauna- ja saunatupamallien rinnalle.",
   },
   "laudesuoja-viimeistelypaketti": {
@@ -280,35 +280,35 @@ const SHOP_PRODUCTS = {
     category: "Sauna",
     description: "Viimeistelyyn ja huollettavuuteen suunniteltu paketti lauteille ja pinnoille.",
     price: 175,
-    priceLabel: "Alkaen 175 €",
+    priceLabel: "Alkaen 175 ï¿½",
     longDescription:
-      "Laudesuoja ja viimeistelypaketti auttaa pitämään saunan pinnat siisteinä, huollettuina ja käyttöä kestävinä.",
-    features: ["Lauteille ja puupinnoille", "Viimeistelyyn ja huoltoon", "Helppo lisätä osaksi saunatoimitusta"],
-    fit: "Toimii lisämyyntinä saunatuotteiden ja lauderatkaisujen yhteydessä.",
+      "Laudesuoja ja viimeistelypaketti auttaa pitï¿½mï¿½ï¿½n saunan pinnat siisteinï¿½, huollettuina ja kï¿½yttï¿½ï¿½ kestï¿½vinï¿½.",
+    features: ["Lauteille ja puupinnoille", "Viimeistelyyn ja huoltoon", "Helppo lisï¿½tï¿½ osaksi saunatoimitusta"],
+    fit: "Toimii lisï¿½myyntinï¿½ saunatuotteiden ja lauderatkaisujen yhteydessï¿½.",
   },
   takkapaketti: {
     id: "takkapaketti",
     name: "Takkapaketti",
-    category: "Piha & mökki",
-    description: "Valmis kokonaisuus mökin, pihan tai terassin tulipaikkaratkaisuun.",
+    category: "Piha & mï¿½kki",
+    description: "Valmis kokonaisuus mï¿½kin, pihan tai terassin tulipaikkaratkaisuun.",
     price: 1250,
-    priceLabel: "Alkaen 1 250 €",
+    priceLabel: "Alkaen 1 250 ï¿½",
     longDescription:
-      "Takkapaketti tuo pihalle, terassille tai mökille valmiin tulipaikkaratkaisun, joka täydentää oleskelua ja tunnelmaa.",
-    features: ["Pihalle, mökille tai terassille", "Valmis lähtöpaketti", "Täydennettävissä lisävarusteilla"],
-    fit: "Voidaan yhdistää pihan, terassin tai saunarakennuksen kokonaisuuteen.",
+      "Takkapaketti tuo pihalle, terassille tai mï¿½kille valmiin tulipaikkaratkaisun, joka tï¿½ydentï¿½ï¿½ oleskelua ja tunnelmaa.",
+    features: ["Pihalle, mï¿½kille tai terassille", "Valmis lï¿½htï¿½paketti", "Tï¿½ydennettï¿½vissï¿½ lisï¿½varusteilla"],
+    fit: "Voidaan yhdistï¿½ï¿½ pihan, terassin tai saunarakennuksen kokonaisuuteen.",
   },
   "nordic-ilmalampopumppu": {
     id: "nordic-ilmalampopumppu",
-    name: "Nordic ilmalämpöpumppu",
-    category: "Piha & mökki",
-    description: "Tehokas lisä mukavuuteen, ylläpitolämpöön ja vapaa-ajan kohteen käyttöön ympäri vuoden.",
+    name: "Nordic ilmalï¿½mpï¿½pumppu",
+    category: "Piha & mï¿½kki",
+    description: "Tehokas lisï¿½ mukavuuteen, yllï¿½pitolï¿½mpï¿½ï¿½n ja vapaa-ajan kohteen kï¿½yttï¿½ï¿½n ympï¿½ri vuoden.",
     price: 1590,
-    priceLabel: "Alkaen 1 590 €",
+    priceLabel: "Alkaen 1 590 ï¿½",
     longDescription:
-      "Nordic ilmalämpöpumppu tuo vapaa-ajan kohteeseen tasaisempaa lämpöä, ylläpitolämpöä ja käyttömukavuutta ympäri vuoden.",
-    features: ["Ylläpitolämpö ja käyttömukavuus", "Sopii mökille ja vapaa-ajan kohteisiin", "Voidaan yhdistää osaksi laajempaa toimitusta"],
-    fit: "Sopii hyvin lisävarusteeksi aitta-, saunatupa- ja mökkikäyttöön suunniteltuihin kokonaisuuksiin.",
+      "Nordic ilmalï¿½mpï¿½pumppu tuo vapaa-ajan kohteeseen tasaisempaa lï¿½mpï¿½ï¿½, yllï¿½pitolï¿½mpï¿½ï¿½ ja kï¿½yttï¿½mukavuutta ympï¿½ri vuoden.",
+    features: ["Yllï¿½pitolï¿½mpï¿½ ja kï¿½yttï¿½mukavuus", "Sopii mï¿½kille ja vapaa-ajan kohteisiin", "Voidaan yhdistï¿½ï¿½ osaksi laajempaa toimitusta"],
+    fit: "Sopii hyvin lisï¿½varusteeksi aitta-, saunatupa- ja mï¿½kkikï¿½yttï¿½ï¿½n suunniteltuihin kokonaisuuksiin.",
   },
 };
 
@@ -406,28 +406,28 @@ const MODEL_LIBRARY = {
   "nordic-varasto-1": {
     series: "Nordic Varastot",
     name: "Nordic Varasto 1",
-    description: "Kompakti varastomalli pihan, mökin tai vapaa-ajan kohteen säilytystarpeisiin.",
-    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
-    features: ["Kompakti varastoratkaisu", "Sopii pihalle ja mökille", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
-    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    description: "Kompakti varastomalli pihan, mï¿½kin tai vapaa-ajan kohteen sï¿½ilytystarpeisiin.",
+    overview: "Tï¿½lle mallille lisï¿½tï¿½ï¿½n myï¿½hemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
+    features: ["Kompakti varastoratkaisu", "Sopii pihalle ja mï¿½kille", "Tï¿½ydennettï¿½vissï¿½ myï¿½hemmin tarkemmilla tiedoilla"],
+    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisï¿½tï¿½ï¿½n tï¿½hï¿½n mallikohtaisesti myï¿½hemmin.",
     backLink: "mallisto-varastot.html",
   },
   "nordic-varasto-2": {
     series: "Nordic Varastot",
     name: "Nordic Varasto 2",
-    description: "Monikäyttöinen varastomalli silloin, kun säilytystilaa tarvitaan hieman enemmän.",
-    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
-    features: ["Monikäyttöinen varastoratkaisu", "Sopii piha- ja mökkikäyttöön", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
-    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    description: "Monikï¿½yttï¿½inen varastomalli silloin, kun sï¿½ilytystilaa tarvitaan hieman enemmï¿½n.",
+    overview: "Tï¿½lle mallille lisï¿½tï¿½ï¿½n myï¿½hemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
+    features: ["Monikï¿½yttï¿½inen varastoratkaisu", "Sopii piha- ja mï¿½kkikï¿½yttï¿½ï¿½n", "Tï¿½ydennettï¿½vissï¿½ myï¿½hemmin tarkemmilla tiedoilla"],
+    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisï¿½tï¿½ï¿½n tï¿½hï¿½n mallikohtaisesti myï¿½hemmin.",
     backLink: "mallisto-varastot.html",
   },
   "nordic-varasto-3": {
     series: "Nordic Varastot",
     name: "Nordic Varasto 3",
-    description: "Tilavampi varastoratkaisu suurempaan säilytystarpeeseen ja monipuolisempaan käyttöön.",
-    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
-    features: ["Tilavampi varastokokonaisuus", "Sopii laajempiin säilytystarpeisiin ja teknisiin tiloihin", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
-    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    description: "Tilavampi varastoratkaisu suurempaan sï¿½ilytystarpeeseen ja monipuolisempaan kï¿½yttï¿½ï¿½n.",
+    overview: "Tï¿½lle mallille lisï¿½tï¿½ï¿½n myï¿½hemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
+    features: ["Tilavampi varastokokonaisuus", "Sopii laajempiin sï¿½ilytystarpeisiin ja teknisiin tiloihin", "Tï¿½ydennettï¿½vissï¿½ myï¿½hemmin tarkemmilla tiedoilla"],
+    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisï¿½tï¿½ï¿½n tï¿½hï¿½n mallikohtaisesti myï¿½hemmin.",
     backLink: "mallisto-varastot.html",
   },
   "custom-aitta": {
@@ -566,7 +566,7 @@ const getLanguageFromUrl = () => {
 const buildLanguageHref = (language) => {
   const url = new URL(window.location.href);
   url.searchParams.set("lang", language === "en" ? "en" : "fi");
-  return `${url.pathname}${url.search}${url.hash}`;
+  return url.href;
 };
 
 const getPreferredLanguage = () => {
@@ -951,9 +951,9 @@ const applyEnglishTranslations = () => {
       "Nordic Grand Saunatupa 30",
       "Nordic Grand Terassi",
       "Nordic Pihasauna",
-      "Nordic Varasto 1",
-      "Nordic Varasto 2",
-      "Nordic Varasto 3",
+      "Nordic Compact Storage 14",
+      "Nordic Classic Storage 18",
+      "Nordic Grand Storage 30",
       "Custom cabin",
       "Custom sauna lounge",
       "Custom accommodation or cottage project",
@@ -1093,26 +1093,26 @@ const applyEnglishTranslations = () => {
       if (value === "Sauna") return "Sauna";
       if (value === "Paljut & porealtaat") return "Hot tubs & spas";
       if (value === "Piha & terassi") return "Yard & terrace";
-      if (value === "Piha & mökki" || value === "Piha & mÃ¶kki") return "Yard & cottage";
+      if (value === "Piha & mï¿½kki" || value === "Piha & mökki") return "Yard & cottage";
       return value;
     }));
     setTextList(".shop-card p:not(.product-kicker):not(.price)", Array.from(document.querySelectorAll(".shop-card p:not(.product-kicker):not(.price)")).map((element) => {
       const value = normalizeCopy(element.textContent);
       const map = {
-        "Valmis lauderatkaisu laadukkaaseen saunaan kotona tai mökillä.": "A ready-made bench solution for a high-quality sauna at home or at the cottage.",
-        "Tyylikäs valaistuspaketti pehmeään tunnelmaan ja käytännölliseen valoon.": "A stylish lighting package for soft ambience and practical light.",
-        "Viimeistelty premium-ratkaisu rentoutumiseen ympäri vuoden.": "A finished premium solution for relaxation all year round.",
-        "Moderni poreallas laadukkaaseen pihaan tai mökin yhteyteen.": "A modern spa for a high-quality yard or cottage setting.",
-        "Selkeä kiuasvaihtoehto uuteen saunaan tai saunaratkaisun täydentämiseen.": "A clear heater option for a new sauna or to complete a sauna solution.",
+        "Valmis lauderatkaisu laadukkaaseen saunaan kotona tai mï¿½killï¿½.": "A ready-made bench solution for a high-quality sauna at home or at the cottage.",
+        "Tyylikï¿½s valaistuspaketti pehmeï¿½ï¿½n tunnelmaan ja kï¿½ytï¿½nnï¿½lliseen valoon.": "A stylish lighting package for soft ambience and practical light.",
+        "Viimeistelty premium-ratkaisu rentoutumiseen ympï¿½ri vuoden.": "A finished premium solution for relaxation all year round.",
+        "Moderni poreallas laadukkaaseen pihaan tai mï¿½kin yhteyteen.": "A modern spa for a high-quality yard or cottage setting.",
+        "Selkeï¿½ kiuasvaihtoehto uuteen saunaan tai saunaratkaisun tï¿½ydentï¿½miseen.": "A clear heater option for a new sauna or to complete a sauna solution.",
         "Kokonaisuus pihan, terassin ja kulkureittien valaistukseen.": "A complete solution for lighting the yard, terrace and walkways.",
-        "Perinteinen puukiuasratkaisu mökille, pihasaunaan ja vapaa-ajan käyttöön.": "A traditional wood-burning heater for a cottage, yard sauna or leisure use.",
-        "Selkeä valaistus terassin reunoihin, kulkureiteille ja oleskelutilaan.": "A clear lighting solution for terrace edges, walkways and the lounge area.",
-        "Ajattoman tumma valaisin viimeistelemään kulkuväylät ja sisäänkäynnit.": "A timeless dark luminaire to finish walkways and entrances.",
-        "Matala ja huomaamaton valaisin pihan reiteille ja mökin kulkuihin.": "A low and discreet luminaire for yard paths and cottage walkways.",
-        "Selkeä lähtötason palju pihapiiriin ja mökkikäyttöön.": "A clear entry-level hot tub for the yard or cottage use.",
-        "Tehokas lisä mukavuuteen, ylläpitolämpöön ja vapaa-ajan kohteen käyttöön ympäri vuoden.": "An efficient addition for comfort, maintenance heating and year-round use of a leisure property.",
+        "Perinteinen puukiuasratkaisu mï¿½kille, pihasaunaan ja vapaa-ajan kï¿½yttï¿½ï¿½n.": "A traditional wood-burning heater for a cottage, yard sauna or leisure use.",
+        "Selkeï¿½ valaistus terassin reunoihin, kulkureiteille ja oleskelutilaan.": "A clear lighting solution for terrace edges, walkways and the lounge area.",
+        "Ajattoman tumma valaisin viimeistelemï¿½ï¿½n kulkuvï¿½ylï¿½t ja sisï¿½ï¿½nkï¿½ynnit.": "A timeless dark luminaire to finish walkways and entrances.",
+        "Matala ja huomaamaton valaisin pihan reiteille ja mï¿½kin kulkuihin.": "A low and discreet luminaire for yard paths and cottage walkways.",
+        "Selkeï¿½ lï¿½htï¿½tason palju pihapiiriin ja mï¿½kkikï¿½yttï¿½ï¿½n.": "A clear entry-level hot tub for the yard or cottage use.",
+        "Tehokas lisï¿½ mukavuuteen, yllï¿½pitolï¿½mpï¿½ï¿½n ja vapaa-ajan kohteen kï¿½yttï¿½ï¿½n ympï¿½ri vuoden.": "An efficient addition for comfort, maintenance heating and year-round use of a leisure property.",
         "Viimeistelyyn ja huollettavuuteen suunniteltu paketti lauteille ja pinnoille.": "A package designed for finishing and maintainability of benches and surfaces.",
-        "Valmis kokonaisuus mökin, pihan tai terassin tulipaikkaratkaisuun.": "A ready-made whole for a fire feature at a cottage, yard or terrace.",
+        "Valmis kokonaisuus mï¿½kin, pihan tai terassin tulipaikkaratkaisuun.": "A ready-made whole for a fire feature at a cottage, yard or terrace.",
       };
       return map[value] || value;
     }));
@@ -1181,11 +1181,6 @@ const initLanguage = () => {
     topbar.appendChild(actions);
   }
 
-  const menuButton = topbar.querySelector(".menu-toggle");
-  if (menuButton && menuButton.parentElement !== actions) {
-    actions.appendChild(menuButton);
-  }
-
   let toggle = actions.querySelector(".lang-toggle");
   if (!toggle) {
     toggle = document.createElement("div");
@@ -1203,13 +1198,13 @@ const initLanguage = () => {
     button.addEventListener("click", (event) => {
       event.preventDefault();
       const nextLanguage = button.dataset.lang === "en" ? "en" : "fi";
-      if (nextLanguage === getCurrentLanguage()) return;
       window.localStorage.setItem(LANG_KEY, nextLanguage);
+      const nextHref = buildLanguageHref(nextLanguage);
       applyLanguage(nextLanguage);
-
-      const url = new URL(window.location.href);
-      url.searchParams.set("lang", nextLanguage);
-      window.history.replaceState({}, "", url);
+      window.history.replaceState({}, "", nextHref);
+      toggle.querySelectorAll("[data-lang]").forEach((link) => {
+        link.setAttribute("href", buildLanguageHref(link.dataset.lang));
+      });
     });
   });
 
@@ -1352,11 +1347,11 @@ const initQuoteForm = () => {
   const statusEl = document.getElementById("quote-form-status");
 
   const validators = {
-    name: (value) => (value.trim() ? "" : "Lisää nimi."),
+    name: (value) => (value.trim() ? "" : "Lisï¿½ï¿½ nimi."),
     email: (value) =>
-      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()) ? "" : "Lisää toimiva sähköpostiosoite.",
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()) ? "" : "Lisï¿½ï¿½ toimiva sï¿½hkï¿½postiosoite.",
     phone: (value) =>
-      value.trim().length >= 6 ? "" : "Lisää puhelinnumero, josta sinut tavoittaa.",
+      value.trim().length >= 6 ? "" : "Lisï¿½ï¿½ puhelinnumero, josta sinut tavoittaa.",
   };
 
   const setFieldError = (input, message) => {
@@ -1385,15 +1380,15 @@ const initQuoteForm = () => {
     const total = Number(product.value);
 
     const items = [`Valinta: ${selectedProduct.dataset.label}`];
-    if (useCase) items.push(`Käyttö: ${useCase}`);
+    if (useCase) items.push(`Kï¿½yttï¿½: ${useCase}`);
     if (timeline) items.push(`Aikataulu: ${timeline}`);
     if (location) items.push(`Sijainti: ${location}`);
 
     totalEl.textContent = formatEuro(total);
     labelEl.textContent =
       total > 0
-        ? `${selectedProduct.dataset.label} valituilla lisävarusteilla.`
-        : `${selectedProduct.dataset.label}. Lopullinen tarjous tarkentuu työn sisällön mukaan.`;
+        ? `${selectedProduct.dataset.label} valituilla lisï¿½varusteilla.`
+        : `${selectedProduct.dataset.label}. Lopullinen tarjous tarkentuu tyï¿½n sisï¿½llï¿½n mukaan.`;
     itemsEl.innerHTML = items.map((item) => `<li>${item}</li>`).join("");
   };
 
@@ -1443,7 +1438,7 @@ const initQuoteForm = () => {
     const location = form.querySelector("#location").value.trim() || "Ei ilmoitettu";
     const siteReady = form.querySelector("#site-ready").value;
     const otherWork = form.querySelector("#other-work").value;
-    const details = form.querySelector("#details").value.trim() || "Ei lisätietoja";
+    const details = form.querySelector("#details").value.trim() || "Ei lisï¿½tietoja";
     const name = form.querySelector("#name").value.trim();
     const email = form.querySelector("#email").value.trim();
     const phone = form.querySelector("#phone").value.trim();
@@ -1454,32 +1449,32 @@ const initQuoteForm = () => {
         .map((id) => form.querySelector(`#${id}`))
         .filter((input) => input.checked)
         .map((input) => `- ${input.parentElement.textContent.trim()}`)
-        .join("\n") || "- Ei valittuja lisävarusteita";
+        .join("\n") || "- Ei valittuja lisï¿½varusteita";
 
-    const subject = encodeURIComponent(`Tarjouspyyntö: ${selectedProduct.dataset.label}`);
+    const subject = encodeURIComponent(`Tarjouspyyntï¿½: ${selectedProduct.dataset.label}`);
     const body = encodeURIComponent(
       [
         "Hei,",
         "",
-        "haluan pyytää tarjouksen seuraavasta ratkaisusta:",
+        "haluan pyytï¿½ï¿½ tarjouksen seuraavasta ratkaisusta:",
         "",
         `Malli: ${selectedProduct.dataset.label}`,
         `Suuntaa-antava arvio: ${total}`,
-        `Käyttökohde: ${useCase}`,
+        `Kï¿½yttï¿½kohde: ${useCase}`,
         `Aikataulu: ${timeline}`,
         `Paikkakunta: ${location}`,
         `Tontin valmius: ${siteReady}`,
-        `Muut työt: ${otherWork}`,
+        `Muut tyï¿½t: ${otherWork}`,
         "",
-        "Lisävarusteet:",
+        "Lisï¿½varusteet:",
         selectedExtras,
         "",
-        "Lisätiedot:",
+        "Lisï¿½tiedot:",
         details,
         "",
         "Yhteystiedot:",
         `Nimi: ${name}`,
-        `Sähköposti: ${email}`,
+        `Sï¿½hkï¿½posti: ${email}`,
         `Puhelin: ${phone}`,
       ].join("\n")
     );
@@ -1579,7 +1574,7 @@ const initSimpleQuoteForm = () => {
       phone,
     });
 
-    // TODO: Korvaa tämä mailto-varalogiikka julkaisuversiossa palvelinlahetyksella.
+    // TODO: Korvaa tï¿½mï¿½ mailto-varalogiikka julkaisuversiossa palvelinlahetyksella.
     // Polar55 SMTP -kytkennassa tarjouspyynto lahetetaan osoitteeseen info@nordicmodular.fi,
     // kopio teppo.herranen@nordicmodular.fi, Reply-To asiakkaan sahkopostiin
     // ja lahettajan nimena Nordic Modular -verkkosivut.
@@ -1609,7 +1604,7 @@ const initSimpleQuoteForm = () => {
       [
         "Hei,",
         "",
-        "haluan pyytää alustavan tarjouksen seuraavasta ratkaisusta:",
+        "haluan pyytï¿½ï¿½ alustavan tarjouksen seuraavasta ratkaisusta:",
         "",
         `Malli: ${selectedProduct.dataset.label}`,
         `Alustava hinta: ${total}`,
@@ -1768,11 +1763,11 @@ const initOrderForm = () => {
   const deliverySummaryEl = document.getElementById("delivery-summary");
 
   const validators = {
-    name: (value) => (value.trim() ? "" : "Lisää nimi."),
+    name: (value) => (value.trim() ? "" : "Lisï¿½ï¿½ nimi."),
     email: (value) =>
-      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()) ? "" : "Lisää toimiva sähköpostiosoite.",
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()) ? "" : "Lisï¿½ï¿½ toimiva sï¿½hkï¿½postiosoite.",
     phone: (value) =>
-      value.trim().length >= 6 ? "" : "Lisää puhelinnumero, josta sinut tavoittaa.",
+      value.trim().length >= 6 ? "" : "Lisï¿½ï¿½ puhelinnumero, josta sinut tavoittaa.",
   };
 
   const setFieldError = (input, message) => {
@@ -1830,8 +1825,8 @@ const initOrderForm = () => {
     if (!items.length) {
       emptyEl.hidden = false;
       totalEl.textContent = formatEuro(0);
-      labelEl.textContent = "Valitse tuotteita shopista, niin yhteenveto päivittyy tähän.";
-      summaryItemsEl.innerHTML = "<li>Tilaukseen ei ole lisätty tuotteita</li>";
+      labelEl.textContent = "Valitse tuotteita shopista, niin yhteenveto pï¿½ivittyy tï¿½hï¿½n.";
+      summaryItemsEl.innerHTML = "<li>Tilaukseen ei ole lisï¿½tty tuotteita</li>";
       if (deliverySummaryEl) {
         deliverySummaryEl.textContent = `Toimitustapa: ${deliveryMethod} (${formatEuro(deliveryPrice)}).`;
       }
@@ -1854,7 +1849,7 @@ const initOrderForm = () => {
           <p>${item.description}</p>
         </div>
         <label class="order-item-qty">
-          <span>Määrä</span>
+          <span>Mï¿½ï¿½rï¿½</span>
           <input type="number" min="1" step="1" value="${item.quantity}" data-order-qty="${item.id}" />
         </label>
         <div class="order-item-price">${formatEuro(item.price * item.quantity)}</div>
@@ -1866,11 +1861,11 @@ const initOrderForm = () => {
     totalEl.textContent = formatEuro(total);
     labelEl.textContent = `${totalCount} tuotetta tilauksessa.`;
     summaryItemsEl.innerHTML = items
-      .map((item) => `<li>${item.name} x ${item.quantity} — ${formatEuro(item.price * item.quantity)}</li>`)
-      .concat(`<li>Toimitus — ${deliveryMethod} — ${formatEuro(deliveryPrice)}</li>`)
+      .map((item) => `<li>${item.name} x ${item.quantity} ï¿½ ${formatEuro(item.price * item.quantity)}</li>`)
+      .concat(`<li>Toimitus ï¿½ ${deliveryMethod} ï¿½ ${formatEuro(deliveryPrice)}</li>`)
       .join("");
     if (deliverySummaryEl) {
-      deliverySummaryEl.textContent = `Välisumma ${formatEuro(subtotal)} + toimitus ${formatEuro(deliveryPrice)}.`;
+      deliverySummaryEl.textContent = `Vï¿½lisumma ${formatEuro(subtotal)} + toimitus ${formatEuro(deliveryPrice)}.`;
     }
   };
 
@@ -1916,7 +1911,7 @@ const initOrderForm = () => {
   demoPaymentButton?.addEventListener("click", () => {
     const selectedPaymentMethod =
       form.querySelector('input[name="paymentMethod"]:checked')?.value || "Korttimaksu";
-    window.alert(`Valittu maksutapa: ${selectedPaymentMethod}. Maksuvaihe vahvistetaan tilauskäsittelyn yhteydessä.`);
+    window.alert(`Valittu maksutapa: ${selectedPaymentMethod}. Maksuvaihe vahvistetaan tilauskï¿½sittelyn yhteydessï¿½.`);
   });
 
   form.addEventListener("input", (event) => {
@@ -1952,11 +1947,11 @@ const initOrderForm = () => {
     const orderService = form.querySelector("#order-service").value;
     const paymentMethod =
       form.querySelector('input[name="paymentMethod"]:checked')?.value || "Korttimaksu";
-    const details = form.querySelector("#order-details").value.trim() || "Ei lisätietoja";
+    const details = form.querySelector("#order-details").value.trim() || "Ei lisï¿½tietoja";
 
     const orderLines = cartItems.map(
       (item) =>
-        `- ${item.name} | määrä ${item.quantity} | á ${formatEuro(item.price)} | yhteensä ${formatEuro(
+        `- ${item.name} | mï¿½ï¿½rï¿½ ${item.quantity} | ï¿½ ${formatEuro(item.price)} | yhteensï¿½ ${formatEuro(
           item.price * item.quantity
         )}`
     );
@@ -1968,30 +1963,30 @@ const initOrderForm = () => {
       [
         "Hei,",
         "",
-        "haluan tehdä tilauksen Nordic Modular Shopista.",
+        "haluan tehdï¿½ tilauksen Nordic Modular Shopista.",
         "",
         "Valitut tuotteet:",
         ...orderLines,
         "",
-        `Välisumma: ${formatEuro(subtotal)}`,
+        `Vï¿½lisumma: ${formatEuro(subtotal)}`,
         `Toimitus: ${deliveryMethod} / ${formatEuro(deliveryPrice)}`,
-        `Yhteensä: ${formatEuro(total)}`,
+        `Yhteensï¿½: ${formatEuro(total)}`,
         "",
         `Maksutapa: ${paymentMethod}`,
-        "Maksutapa vahvistetaan tilauskäsittelyn yhteydessä.",
+        "Maksutapa vahvistetaan tilauskï¿½sittelyn yhteydessï¿½.",
         "",
-        "Toimitus ja lisätiedot:",
+        "Toimitus ja lisï¿½tiedot:",
         `Toimitustapa: ${deliveryMethod}`,
         `Paikkakunta: ${deliveryCity}`,
         `Aikataulu: ${deliveryTimeline}`,
-        `Lisäpalvelut: ${orderService}`,
+        `Lisï¿½palvelut: ${orderService}`,
         "",
-        "Lisätiedot:",
+        "Lisï¿½tiedot:",
         details,
         "",
         "Yhteystiedot:",
         `Nimi: ${name}`,
-        `Sähköposti: ${email}`,
+        `Sï¿½hkï¿½posti: ${email}`,
         `Puhelin: ${phone}`,
       ].join("\n")
     );
@@ -2031,11 +2026,11 @@ const initProductDetail = () => {
   if (longDescriptionEl) longDescriptionEl.textContent = product.longDescription || product.description;
   if (priceEl) priceEl.textContent = product.priceLabel || formatEuro(product.price);
   if (priceNoteEl) priceNoteEl.textContent = "Hinta alkaen valitulla perusratkaisulla.";
-  if (fitEl) fitEl.textContent = product.fit || "Tuote voidaan toimittaa myös osana laajempaa kokonaisuutta.";
+  if (fitEl) fitEl.textContent = product.fit || "Tuote voidaan toimittaa myï¿½s osana laajempaa kokonaisuutta.";
   if (placeholderEl) placeholderEl.textContent = `${product.category} / Nordic Modular Shop`;
 
   if (featuresEl) {
-    const features = Array.isArray(product.features) && product.features.length ? product.features : ["Lisää tähän tuotteen tärkeimmät ominaisuudet."];
+    const features = Array.isArray(product.features) && product.features.length ? product.features : ["Lisï¿½ï¿½ tï¿½hï¿½n tuotteen tï¿½rkeimmï¿½t ominaisuudet."];
     featuresEl.innerHTML = features.map((feature) => `<li>${feature}</li>`).join("");
   }
 
@@ -2130,3 +2125,5 @@ initShopButtons();
 initOrderForm();
 initProductDetail();
 initModelDetail();
+
+

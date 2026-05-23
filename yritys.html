@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fi">
   <head>
     <meta charset="UTF-8" />
@@ -16,15 +16,21 @@
         <a class="brand" href="index.html" aria-label="Nordic Modular Finland Oy">
           <img src="assets/logo.png" alt="Nordic Modular Finland Oy logo" />
         </a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          Valikko
-        </button>
-        <nav class="topnav" id="site-nav" aria-label="Paanavigaatio">
+        <div class="topbar-actions">
+          <div class="lang-toggle" aria-label="Kielivalinta">
+            <a href="?lang=fi" data-lang="fi" aria-pressed="true">FI</a>
+            <a href="?lang=en" data-lang="en" aria-pressed="false">EN</a>
+          </div>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+            Valikko
+          </button>
+        </div>
+        <nav class="topnav" id="site-nav" aria-label="Päänavigaatio">
           <a href="index.html" data-nav="home">Etusivu</a>
           <a href="mallisto.html" data-nav="mallisto">Mallisto</a>
           <a href="ratkaisut.html" data-nav="ratkaisut">Ratkaisut</a>
           <a href="yritys.html" data-nav="yritys">Yritys</a>
-          <a href="shop.html" data-nav="shop">Shop</a>
+          
           <a href="tarjous.html" data-nav="tarjous">Tarjous</a>
           <a href="yhteystiedot.html" data-nav="yhteystiedot">Yhteystiedot</a>
         </nav>
@@ -35,10 +41,7 @@
           <div class="page-hero-copy">
             <p class="eyebrow">Yritys</p>
             <h1>Nordic Modular Finland Oy kehittää selkeitä tilaratkaisuja pohjoisiin olosuhteisiin.</h1>
-            <p class="lead">
-              Tavoitteena on yhdistää rakennusalan käytännön kokemus, hallittu valmistus ja ratkaisut,
-              jotka sopivat vapaa-aikaan, majoitukseen ja pihapiirin lisätiloihin.
-            </p>
+            <p class="lead">Tavoitteena on yhdistää rakennusalan käytännön kokemus, hallittu valmistus ja ratkaisut, jotka sopivat vapaa-aikaan, majoitukseen ja pihapiirin lisätiloihin.</p>
           </div>
           <img class="page-hero-image" src="assets/hyva-112.png" alt="Nordic Modular rakennus kesäisessä ympäristössä" />
         </section>
@@ -48,7 +51,7 @@
             <article class="story-card">
               <p class="eyebrow">Ajatus</p>
               <h2>Valmiimpi lähtökohta asiakkaalle.</h2>
-              <p>Selkeä mallisto helpottaa hankinnan aloittamista ja tekee vaihtoehdoista helpommin hahmotettavia.</p>
+              <p>Selkeä mallisto tekee kokonaisuuksista helpommin hahmotettavia jo ennen tarjousvaihetta.</p>
             </article>
             <article class="story-card">
               <p class="eyebrow">Toimintatapa</p>
@@ -56,17 +59,20 @@
               <p>Ratkaisuja tarkennetaan vaiheittain kohteen, käyttötarkoituksen ja toimitussisällön mukaan.</p>
             </article>
             <article class="story-card">
-              <p class="eyebrow">Täydentävät työt</p>
-              <h2>Sama kokonaisuus pidemmälle.</h2>
-              <p>Rakennusten rinnalla voidaan suunnitella myös terassit ja muut täydentävät rakennusalan työt.</p>
+              <p class="eyebrow">Kokonaisuus</p>
+              <h2>Sama perusajatus myös laajempiin toteutuksiin.</h2>
+              <p>Rakennusten rinnalla voidaan suunnitella myös terassit, pihatyöt ja muut täydentävät ratkaisut.</p>
             </article>
           </div>
+        </section>
+
+        <section class="section reveal">
           <div class="summary-card company-summary">
+            <p class="eyebrow">Yhteenveto</p>
             <p>
-              Nordic Modular Finland Oy kehittää vakioituja moduulirakennuksia vapaa-ajan käyttöön,
-              pihoille, majoituskäyttöön ja räätälöityihin tilatarpeisiin. Tavoitteena on yhdistää
-              rakennusalan käytännön kokemus, tehdasvalmistuksen hallittavuus ja pohjoisiin olosuhteisiin
-              sopivat ratkaisut.
+              Nordic Modular Finland Oy kehittää vakioituja moduulirakennuksia vapaa-ajan käyttöön, pihoille,
+              majoituskäyttöön ja räätälöityihin tilatarpeisiin. Tavoitteena on yhdistää rakennusalan käytännön
+              kokemus, tehdasvalmistuksen hallittavuus ja pohjoisiin olosuhteisiin sopivat ratkaisut.
             </p>
           </div>
         </section>
@@ -76,13 +82,13 @@
             <p class="eyebrow">Mihin luotamme</p>
             <h2>Selkeä mallisto, hallittu toimitus ja käytännönläheinen palvelu.</h2>
             <p>
-              Yrityksen rooli sivustolla on ennen kaikkea rakentaa luottamusta: mitä kehitämme, mihin
-              ratkaisumme sopivat ja miten asiakas pääsee keskustelussa eteenpäin.
+              Yrityksen rooli sivustolla on ennen kaikkea rakentaa luottamusta: mitä kehitämme, mihin ratkaisumme
+              sopivat ja miten asiakas pääsee keskustelussa eteenpäin.
             </p>
             <ul class="feature-list">
               <li>Valmiit saunat, aitat ja tilaratkaisut</li>
-              <li>Mahdollisuus muokattaviin kokonaisuuksiin</li>
-              <li>Pohjoisiin olosuhteisiin sopiva lähtöajattelu</li>
+              <li>Mahdollisuus muokattaviin toteutuksiin</li>
+              <li>Lähtökohdat pohjoisiin olosuhteisiin</li>
               <li>Rakennusalan käytännön ymmärrys päätöksenteon tukena</li>
             </ul>
           </div>
@@ -99,9 +105,35 @@
             </article>
             <article class="info-card">
               <span class="card-label">Jatkokehitys</span>
-              <h3>Mallistosta kohti kokonaisuuksia</h3>
+              <h3>Mallistosta suurempiin kokonaisuuksiin</h3>
               <p>Selkeät lähtömallit antavat hyvän pohjan myös laajemmille toimituksille ja jatkokehitykselle.</p>
             </article>
+          </div>
+        </section>
+
+        <section class="section reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Ratkaisuja kuvina</p>
+            <h2>Referenssigalleria</h2>
+            <p>
+              Kuvia mallistosta, saunaratkaisuista ja vapaa-ajan käyttöön soveltuvista tiloista. Galleria auttaa
+              hahmottamaan, millaiseen ilmeeseen ratkaisuilla voidaan päästä eri käyttökohteissa.
+            </p>
+          </div>
+
+          <div class="reference-grid">
+            <figure class="media-card">
+              <img src="assets/grand-saunatupa-30-hero.png" alt="Nordic Grand Saunatupa 30 talvisessa ympäristössä" />
+              <figcaption class="media-caption">Valmiit pohjamallit sopivat vapaa-aikaan, majoitukseen ja pihapiirin lisätiloiksi.</figcaption>
+            </figure>
+            <figure class="media-card">
+              <img src="assets/lakeside-day.png" alt="Moduulirakennus järven rannalla kesämaisemassa" />
+              <figcaption class="media-caption">Ratkaisuja voidaan sovittaa mökille, pihapiiriin ja erilaisiin vapaa-ajan ympäristöihin.</figcaption>
+            </figure>
+            <figure class="media-card">
+              <img src="assets/sauna-interior.png" alt="Saunan sisätila järvinäkymällä" />
+              <figcaption class="media-caption">Laadukas viimeistely ja toimiva tilasuunnittelu näkyvät myös sisätiloissa.</figcaption>
+            </figure>
           </div>
         </section>
       </main>
@@ -114,7 +146,7 @@
         <nav class="footer-nav" aria-label="Alatunnisteen navigaatio">
           <a href="index.html">Etusivu</a>
           <a href="mallisto.html">Mallisto</a>
-          <a href="shop.html">Shop</a>
+          
           <a href="tarjous.html">Tarjous</a>
           <a href="yhteystiedot.html">Yhteystiedot</a>
         </nav>
@@ -128,3 +160,21 @@
     <script src="script.js"></script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

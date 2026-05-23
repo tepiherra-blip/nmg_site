@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fi">
   <head>
     <meta charset="UTF-8" />
@@ -16,15 +16,21 @@
         <a class="brand" href="index.html" aria-label="Nordic Modular Finland Oy">
           <img src="assets/logo.png" alt="Nordic Modular Finland Oy logo" />
         </a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          Valikko
-        </button>
-        <nav class="topnav" id="site-nav" aria-label="Paanavigaatio">
+        <div class="topbar-actions">
+          <div class="lang-toggle" aria-label="Kielivalinta">
+            <a href="?lang=fi" data-lang="fi" aria-pressed="true">FI</a>
+            <a href="?lang=en" data-lang="en" aria-pressed="false">EN</a>
+          </div>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+            Valikko
+          </button>
+        </div>
+        <nav class="topnav" id="site-nav" aria-label="Päänavigaatio">
           <a href="index.html" data-nav="home">Etusivu</a>
           <a href="mallisto.html" data-nav="mallisto">Mallisto</a>
           <a href="ratkaisut.html" data-nav="ratkaisut">Ratkaisut</a>
           <a href="yritys.html" data-nav="yritys">Yritys</a>
-          <a href="shop.html" data-nav="shop">Shop</a>
+          
           <a href="tarjous.html" data-nav="tarjous">Tarjous</a>
           <a href="yhteystiedot.html" data-nav="yhteystiedot">Yhteystiedot</a>
         </nav>
@@ -70,9 +76,7 @@
 
           <div class="process-grid">
             <article class="story-card">
-              <p class="card-label">Selkeä lähtö</p>
-              <h3>Valmiit mallit ja hintataso</h3>
-              <p>Ratkaisut ovat helposti hahmotettavia jo ennen tarjousvaihetta.</p>
+              <p class="card-label">Selkeä lähtö</p><h3>Valmiit mallit ja hintataso</h3><p>Ratkaisut ovat helposti hahmotettavia jo ennen tarjousvaihetta.</p>
             </article>
             <article class="story-card">
               <p class="card-label">Hallittu laatu</p>
@@ -142,7 +146,6 @@
                 <li>Muokattavissa kohteen tarpeiden mukaan</li>
               </ul>
               <div class="product-card-footer">
-                <p class="price">Tarkemmat hinnat täydentyvät myöhemmin</p>
                 <a class="button button-secondary" href="tarjous.html?model=Nordic%20Grand%20Saunatupa%2030">Pyydä alustava tarjous</a>
               </div>
             </article>
@@ -159,7 +162,6 @@
                 <li>Muokattavissa käyttötarkoituksen mukaan</li>
               </ul>
               <div class="product-card-footer">
-                <p class="price">Tarkemmat hinnat täydentyvät myöhemmin</p>
                 <a class="button button-ghost" href="tarjous.html?model=Nordic%20Grand%20Aitta%2030">Pyydä alustava tarjous</a>
               </div>
             </article>
@@ -176,7 +178,6 @@
                 <li>Sopii yksittäiseen tai laajempaan toteutukseen</li>
               </ul>
               <div class="product-card-footer">
-                <p class="price">Tarkemmat hinnat täydentyvät myöhemmin</p>
                 <a class="button button-ghost" href="tarjous.html?model=R%C3%A4%C3%A4t%C3%A4l%C3%B6ity%20kokonaisuus%20majoitus-%20tai%20m%C3%B6kkik%C3%A4ytt%C3%B6%C3%B6n">Pyydä alustava tarjous</a>
               </div>
             </article>
@@ -193,7 +194,6 @@
                 <li>Muokattavissa kohteen mukaan</li>
               </ul>
               <div class="product-card-footer">
-                <p class="price">Tarkemmat hinnat täydentyvät myöhemmin</p>
                 <a class="button button-ghost" href="tarjous.html?model=Nordic%20Pihasauna">Pyydä alustava tarjous</a>
               </div>
             </article>
@@ -267,7 +267,7 @@
         <nav class="footer-nav" aria-label="Alatunnisteen navigaatio">
           <a href="index.html">Etusivu</a>
           <a href="mallisto.html">Mallisto</a>
-          <a href="shop.html">Shop</a>
+          
           <a href="tarjous.html">Tarjous</a>
           <a href="yhteystiedot.html">Yhteystiedot</a>
         </nav>
@@ -281,3 +281,15 @@
     <script src="script.js"></script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

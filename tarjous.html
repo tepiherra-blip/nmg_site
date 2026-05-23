@@ -1,13 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nordic Modular Finland Oy | Tarjous</title>
-    <meta
-      name="description"
-      content="Täytä alustava tarjouspyyntö Nordic Modular Finland Oy:lle ja aloita keskustelu kohteestasi."
-    />
+    <meta name="description" content="Täytä alustava tarjouspyyntö Nordic Modular Finland Oy:lle ja aloita keskustelu kohteestasi." />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="tarjous">
@@ -16,15 +13,21 @@
         <a class="brand" href="index.html" aria-label="Nordic Modular Finland Oy">
           <img src="assets/logo.png" alt="Nordic Modular Finland Oy logo" />
         </a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          Valikko
-        </button>
+        <div class="topbar-actions">
+          <div class="lang-toggle" aria-label="Kielivalinta">
+            <a href="?lang=fi" data-lang="fi" aria-pressed="true">FI</a>
+            <a href="?lang=en" data-lang="en" aria-pressed="false">EN</a>
+          </div>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+            Valikko
+          </button>
+        </div>
         <nav class="topnav" id="site-nav" aria-label="Päänavigaatio">
           <a href="index.html" data-nav="home">Etusivu</a>
           <a href="mallisto.html" data-nav="mallisto">Mallisto</a>
           <a href="ratkaisut.html" data-nav="ratkaisut">Ratkaisut</a>
           <a href="yritys.html" data-nav="yritys">Yritys</a>
-          <a href="shop.html" data-nav="shop">Shop</a>
+          
           <a href="tarjous.html" data-nav="tarjous">Tarjous</a>
           <a href="yhteystiedot.html" data-nav="yhteystiedot">Yhteystiedot</a>
         </nav>
@@ -35,14 +38,8 @@
           <div class="page-hero-copy">
             <p class="eyebrow">Tarjous</p>
             <h1>Pyydä alustava tarjous kohteeseesi.</h1>
-            <p class="lead">
-              Kerro meille kiinnostava malli, kohteen sijainti ja toivottu aikataulu. Lähetämme
-              vastaukseksi alustavan ratkaisun ja jatkokysymykset kohteesi mukaan.
-            </p>
-            <p>
-              Lähetä meille tieto kohteen sijainnista, käyttötarkoituksesta, kiinnostavasta mallista ja
-              toivotusta aikataulusta. Palaamme alustavalla ratkaisulla ja jatkokysymyksillä.
-            </p>
+            <p class="lead">Kerro meille kiinnostava malli, kohteen sijainti ja toivottu aikataulu. Lähetämme vastaukseksi alustavan ratkaisun ja jatkokysymykset kohteesi mukaan.</p>
+            <p>Lähetä meille tieto kohteen sijainnista, käyttötarkoituksesta, kiinnostavasta mallista ja toivotusta aikataulusta. Palaamme alustavalla ratkaisulla ja jatkokysymyksillä.</p>
           </div>
         </section>
 
@@ -188,7 +185,7 @@
         <nav class="footer-nav" aria-label="Alatunnisteen navigaatio">
           <a href="index.html">Etusivu</a>
           <a href="mallisto.html">Mallisto</a>
-          <a href="shop.html">Shop</a>
+          
           <a href="yritys.html">Yritys</a>
           <a href="yhteystiedot.html">Yhteystiedot</a>
         </nav>
@@ -202,3 +199,11 @@
     <script src="script.js"></script>
   </body>
 </html>
+
+
+
+
+
+
+
+

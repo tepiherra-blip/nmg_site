@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fi">
   <head>
     <meta charset="UTF-8" />
@@ -16,15 +16,21 @@
         <a class="brand" href="index.html" aria-label="Nordic Modular Finland Oy">
           <img src="assets/logo.png" alt="Nordic Modular Finland Oy logo" />
         </a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          Valikko
-        </button>
-        <nav class="topnav" id="site-nav" aria-label="Paanavigaatio">
+        <div class="topbar-actions">
+          <div class="lang-toggle" aria-label="Kielivalinta">
+            <a href="?lang=fi" data-lang="fi" aria-pressed="true">FI</a>
+            <a href="?lang=en" data-lang="en" aria-pressed="false">EN</a>
+          </div>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+            Valikko
+          </button>
+        </div>
+        <nav class="topnav" id="site-nav" aria-label="Päänavigaatio">
           <a href="index.html" data-nav="home">Etusivu</a>
           <a href="mallisto.html" data-nav="mallisto">Mallisto</a>
           <a href="ratkaisut.html" data-nav="ratkaisut">Ratkaisut</a>
           <a href="yritys.html" data-nav="yritys">Yritys</a>
-          <a href="shop.html" data-nav="shop">Shop</a>
+          
           <a href="tarjous.html" data-nav="tarjous">Tarjous</a>
           <a href="yhteystiedot.html" data-nav="yhteystiedot">Yhteystiedot</a>
         </nav>
@@ -35,11 +41,7 @@
           <div class="page-hero-copy">
             <p class="eyebrow">Mallisto</p>
             <h1>Valmis mallisto ja räätälöitävät ratkaisut asiakkaan tarpeisiin.</h1>
-            <p class="lead">
-              Nordic Modular Finland Oy:n mallistosta löytyy valmiita pohjamalleja sekä räätälöitäviä ratkaisuja eri
-              käyttötarkoituksiin. Mallit soveltuvat piharakennuksiksi, saunatuviksi, vierasmajoiksi, mökkikäyttöön
-              sekä laajempiin majoitus-, varasto- ja vapaa-ajan kokonaisuuksiin.
-            </p>
+            <p class="lead">Nordic Modular Finland Oy:n mallistosta löytyy valmiita pohjamalleja sekä räätälöitäviä ratkaisuja eri käyttötarkoituksiin. Mallit soveltuvat piharakennuksiksi, saunatuviksi, vierasmajoiksi, mökkikäyttöön sekä laajempiin majoitus-, varasto- ja vapaa-ajan kokonaisuuksiin.</p>
           </div>
         </section>
 
@@ -192,7 +194,7 @@
         <nav class="footer-nav" aria-label="Alatunnisteen navigaatio">
           <a href="index.html">Etusivu</a>
           <a href="ratkaisut.html">Ratkaisut</a>
-          <a href="shop.html">Shop</a>
+          
           <a href="tarjous.html">Tarjous</a>
           <a href="yhteystiedot.html">Yhteystiedot</a>
         </nav>
@@ -206,3 +208,16 @@
     <script src="script.js"></script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fi">
   <head>
     <meta charset="UTF-8" />
@@ -6,7 +6,7 @@
     <title>Nordic Modular Finland Oy | Yhteystiedot</title>
     <meta
       name="description"
-      content="Ota yhteyttä Nordic Modular Finland Oy:hyn. Ennakkovaiheen yhteystiedot, yritystiedot ja yhteydenottokanavat yhdellä sivulla."
+      content="Ota yhteyttä Nordic Modular Finland Oy:hyn. Yritystiedot, yhteyshenkilöt ja yhteydenottokanavat yhdellä sivulla."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -16,15 +16,21 @@
         <a class="brand" href="index.html" aria-label="Nordic Modular Finland Oy">
           <img src="assets/logo.png" alt="Nordic Modular Finland Oy logo" />
         </a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          Valikko
-        </button>
+        <div class="topbar-actions">
+          <div class="lang-toggle" aria-label="Kielivalinta">
+            <a href="?lang=fi" data-lang="fi" aria-pressed="true">FI</a>
+            <a href="?lang=en" data-lang="en" aria-pressed="false">EN</a>
+          </div>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+            Valikko
+          </button>
+        </div>
         <nav class="topnav" id="site-nav" aria-label="Päänavigaatio">
           <a href="index.html" data-nav="home">Etusivu</a>
           <a href="mallisto.html" data-nav="mallisto">Mallisto</a>
           <a href="ratkaisut.html" data-nav="ratkaisut">Ratkaisut</a>
           <a href="yritys.html" data-nav="yritys">Yritys</a>
-          <a href="shop.html" data-nav="shop">Shop</a>
+          
           <a href="tarjous.html" data-nav="tarjous">Tarjous</a>
           <a href="yhteystiedot.html" data-nav="yhteystiedot">Yhteystiedot</a>
         </nav>
@@ -35,16 +41,8 @@
           <div class="page-hero-copy">
             <p class="eyebrow">Yhteystiedot</p>
             <h1>Ota yhteyttä</h1>
-            <p class="lead">
-              Suunnittelemme ja kehitämme pohjoisiin olosuhteisiin sopivia moduulirakennuksia, piharakennuksia ja
-              saunaratkaisuja. Voit ottaa yhteyttä, jos haluat keskustella tulevasta hankkeesta, yhteistyöstä tai
-              malliston kehityksestä.
-            </p>
-            <p class="lead">
-              Palvelemme asiakkaita koko Suomen alueella. Voit olla yhteydessä suoraan sopivaan yhteyshenkilöön tai
-              lähettää tarjouspyynnön yleiseen sähköpostiin. Ohjaamme yhteydenoton oikealle henkilölle asiakkaan
-              tarpeen, kohteen sijainnin ja projektin luonteen mukaan.
-            </p>
+            <p class="lead">Suunnittelemme ja kehitämme pohjoisiin olosuhteisiin sopivia moduulirakennuksia, piharakennuksia ja saunaratkaisuja. Voit ottaa yhteyttä, jos haluat keskustella tulevasta hankkeesta, yhteistyöstä tai malliston kehityksestä.</p>
+            <p class="lead">Palvelemme asiakkaita koko Suomen alueella. Voit olla yhteydessä suoraan sopivaan yhteyshenkilöön tai lähettää tarjouspyynnön yleiseen sähköpostiin. Ohjaamme yhteydenoton oikealle henkilölle asiakkaan tarpeen, kohteen sijainnin ja projektin luonteen mukaan.</p>
           </div>
         </section>
 
@@ -64,7 +62,7 @@
             </article>
 
             <article class="team-card">
-              <img class="contact-portrait" src="assets/contact-projects.png" alt="Projektit ja toimitukset" />
+              <img class="contact-portrait" src="assets/contact-projects.png" alt="Aleksi Herranen" />
               <h2>Aleksi Herranen</h2>
               <p class="contact-role">Myynti, markkinointi ja asiakkuudet</p>
               <ul class="contact-focus">
@@ -77,7 +75,7 @@
             </article>
 
             <article class="team-card">
-              <img class="contact-portrait" src="assets/contact-design.png" alt="Suunnittelu ja lisäpalvelut" />
+              <img class="contact-portrait" src="assets/contact-design.png" alt="Toni Herranen" />
               <h2>Toni Herranen</h2>
               <p class="contact-role">Tuotanto, tekninen myynti ja yksityisasiakkaat</p>
               <ul class="contact-focus">
@@ -96,7 +94,7 @@
             <div class="form-section">
               <div class="form-section-heading">
                 <p class="eyebrow">Yhteydenotto</p>
-                <h2>Laheta viesti suoraan meille.</h2>
+                <h2>Lähetä viesti suoraan meille.</h2>
               </div>
               <div class="form-grid">
                 <label>
@@ -106,7 +104,7 @@
                 </label>
 
                 <label>
-                  <span>Sahkoposti</span>
+                  <span>Sähköposti</span>
                   <input id="contact-email" name="email" type="email" placeholder="nimi@esimerkki.fi" required />
                   <small class="field-error" aria-live="polite"></small>
                 </label>
@@ -119,9 +117,9 @@
                 <label>
                   <span>Aihe</span>
                   <select id="contact-subject" name="subject">
-                    <option value="Tarjouspyynto">Tarjouspyynto</option>
+                    <option value="Tarjouspyyntö">Tarjouspyyntö</option>
                     <option value="Yleinen yhteydenotto">Yleinen yhteydenotto</option>
-                    <option value="Yhteistyo">Yhteistyo</option>
+                    <option value="Yhteistyö">Yhteistyö</option>
                     <option value="Malliston kehitys">Malliston kehitys</option>
                   </select>
                 </label>
@@ -141,8 +139,8 @@
             </div>
 
             <div class="form-actions">
-              <button class="button button-primary" type="submit">Laheta yhteydenotto</button>
-              <button class="button button-secondary" type="reset">Tyhjenna</button>
+              <button class="button button-primary" type="submit">Lähetä yhteydenotto</button>
+              <button class="button button-secondary" type="reset">Tyhjennä</button>
             </div>
             <div id="contact-form-status" class="form-status" hidden aria-live="polite"></div>
           </form>
@@ -151,13 +149,13 @@
             <div class="summary-card summary-card-highlight">
               <p class="eyebrow">Yhteys</p>
               <h2><a href="mailto:info@nordicmodular.fi">info@nordicmodular.fi</a></h2>
-              <p>Yleiset tarjouspyynnot ja yhteydenotot ohjataan oikealle henkilolle aiheen, sijainnin ja projektin mukaan.</p>
+              <p>Yleiset tarjouspyynnöt ja yhteydenotot ohjataan oikealle henkilölle aiheen, sijainnin ja projektin mukaan.</p>
             </div>
 
             <div class="summary-card">
-              <p class="eyebrow">Mita kannattaa kertoa</p>
-              <h3>Alkuun riittaa kevyt kuvaus.</h3>
-              <p>Kerro kohteen sijainti, kayttotarkoitus, kiinnostava malli tai muu toive. Palaamme asiaan jatkokysymyksilla.</p>
+              <p class="eyebrow">Mitä kannattaa kertoa</p>
+              <h3>Alkuun riittää kevyt kuvaus.</h3>
+              <p>Kerro kohteen sijainti, käyttötarkoitus, kiinnostava malli tai muu toive. Palaamme asiaan jatkokysymyksillä.</p>
             </div>
           </aside>
         </section>
@@ -178,22 +176,11 @@
             <p class="eyebrow">Yrityksen tiedot</p>
             <h2>Nordic Modular Finland Oy</h2>
             <ul class="feature-list">
-              <li>Y-tunnus: perustamisvaiheessa</li>
+              <li>Y-tunnus toimitetaan tarjous- ja sopimusvaiheessa</li>
               <li>Kotipaikka: Lappeenranta</li>
-              <li>Viralliset toimitus- ja laskutustiedot täsmentyvät ennen kaupallisen toiminnan käynnistymistä</li>
+              <li>Toimitus- ja laskutusohjeet annetaan tarjous- ja sopimusvaiheessa.</li>
             </ul>
           </article>
-        </section>
-
-        <section class="section reveal">
-          <div class="info-card info-card-emphasis">
-            <p class="eyebrow">Huomautus</p>
-            <h2>Ennakkomarkkinointi- ja konseptiesittelykäyttö</h2>
-            <p>
-              Sivusto on ennakkomarkkinointi- ja konseptiesittelykäytössä. Lopulliset toimitussisällöt, hinnat ja
-              yritystiedot täsmentyvät ennen varsinaista kaupallista toimintaa.
-            </p>
-          </div>
         </section>
 
         <section class="section reveal">
@@ -216,7 +203,7 @@
         <nav class="footer-nav" aria-label="Alatunnisteen navigaatio">
           <a href="index.html">Etusivu</a>
           <a href="mallisto.html">Mallisto</a>
-          <a href="shop.html">Shop</a>
+          
           <a href="tarjous.html">Tarjous</a>
           <a href="yritys.html">Yritys</a>
         </nav>
@@ -230,3 +217,19 @@
     <script src="script.js"></script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

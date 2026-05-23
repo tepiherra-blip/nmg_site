@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fi">
   <head>
     <meta charset="UTF-8" />
@@ -16,15 +16,21 @@
         <a class="brand" href="index.html" aria-label="Nordic Modular Finland Oy">
           <img src="assets/logo.png" alt="Nordic Modular Finland Oy logo" />
         </a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          Valikko
-        </button>
-        <nav class="topnav" id="site-nav" aria-label="Paanavigaatio">
+        <div class="topbar-actions">
+          <div class="lang-toggle" aria-label="Kielivalinta">
+            <a href="?lang=fi" data-lang="fi" aria-pressed="true">FI</a>
+            <a href="?lang=en" data-lang="en" aria-pressed="false">EN</a>
+          </div>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+            Valikko
+          </button>
+        </div>
+        <nav class="topnav" id="site-nav" aria-label="Päänavigaatio">
           <a href="index.html" data-nav="home">Etusivu</a>
           <a href="mallisto.html" data-nav="mallisto">Mallisto</a>
           <a href="ratkaisut.html" data-nav="ratkaisut">Ratkaisut</a>
           <a href="yritys.html" data-nav="yritys">Yritys</a>
-          <a href="shop.html" data-nav="shop">Shop</a>
+          
           <a href="tarjous.html" data-nav="tarjous">Tarjous</a>
           <a href="yhteystiedot.html" data-nav="yhteystiedot">Yhteystiedot</a>
         </nav>
@@ -35,32 +41,20 @@
           <div class="page-hero-copy">
             <p class="eyebrow">Ratkaisut</p>
             <h1>Selkeämpi tapa hankkia valmis tilaratkaisu.</h1>
-            <p class="lead">
-              Ratkaisujen ydin on hallittu toteutus: valmis lähtömalli, selkeä valinnanvapaus ja toimitus,
-              joka on helpompi suunnitella kohteen mukaan.
-            </p>
+            <p class="lead">Ratkaisujen ydin on hallittu toteutus: valmis lähtömalli, selkeä valinnanvapaus ja toimitus, joka on helpompi suunnitella kohteen mukaan.</p>
           </div>
           <img class="page-hero-image" src="assets/sauna-interior.png" alt="Saunan sisätila järvinäkymällä" />
         </section>
 
         <section class="section reveal">
           <div class="benefit-grid">
-            <article class="info-card">
-              <h2>Valmiit lähtömallit</h2>
-              <p>Hankinta lähtee liikkeelle selkeästä mallista, jota voidaan tarkentaa kohteen tarpeen mukaan.</p>
-            </article>
+            <article class="info-card"><h2>Valmiit lähtömallit</h2><p>Hankinta lähtee liikkeelle selkeästä mallista, jota voidaan tarkentaa kohteen tarpeen mukaan.</p></article>
             <article class="info-card">
               <h2>Hallittu valmistus</h2>
               <p>Esivalmistus helpottaa laatua, aikataulua ja toimituksen kokonaisuuden hallintaa.</p>
             </article>
-            <article class="info-card">
-              <h2>Pohjoisiin olosuhteisiin</h2>
-              <p>Ratkaisuissa painottuvat käytännöllisyys, kestävyys ja ympärivuotinen käyttömukavuus.</p>
-            </article>
-            <article class="info-card">
-              <h2>Selkeä päätöksenteko</h2>
-              <p>Materiaalit, varusteet ja toimitussisältö käydään läpi vaiheittain ilman turhaa epäselvyyttä.</p>
-            </article>
+            <article class="info-card"><h2>Pohjoisiin olosuhteisiin</h2><p>Ratkaisuissa painottuvat käytännöllisyys, kestävyys ja ympärivuotinen käyttömukavuus.</p></article>
+            <article class="info-card"><h2>Selkeä päätöksenteko</h2><p>Materiaalit, varusteet ja toimitussisältö käydään läpi vaiheittain ilman turhaa epäselvyyttä.</p></article>
           </div>
         </section>
 
@@ -72,12 +66,7 @@
               Mallisto sopii kohteisiin, joissa halutaan valmis, helposti hahmotettava ja laadukas rakennus ilman
               raskasta suunnitteluprosessia heti alkuun.
             </p>
-            <ul class="feature-list">
-              <li>Saunat ja vapaa-ajan käyttö</li>
-              <li>Aitat ja lisämajoitus</li>
-              <li>Matkailu- ja majoituskohteet</li>
-              <li>Muokattavat kokonaisuudet kohteen mukaan</li>
-            </ul>
+            <ul class="feature-list"><li>Saunat ja vapaa-ajan käyttö</li><li>Aitat ja lisämajoitus</li><li>Matkailu- ja majoituskohteet</li><li>Muokattavat kokonaisuudet kohteen mukaan</li></ul>
           </div>
           <div class="info-stack">
             <article class="info-card">
@@ -103,10 +92,7 @@
             <div>
               <p class="eyebrow">Seuraava askel</p>
               <h2>Kerro kohde, toiveet ja aikataulu.</h2>
-              <p>
-                Lähetä meille tieto kiinnostavasta mallista, käyttötarkoituksesta ja kohteen sijainnista.
-                Palaamme alustavalla ratkaisulla ja tarvittavilla tarkennuksilla.
-              </p>
+              <p>Lähetä meille tieto kiinnostavasta mallista, käyttötarkoituksesta ja kohteen sijainnista. Palaamme alustavalla ratkaisulla ja tarvittavilla tarkennuksilla.</p>
             </div>
             <a class="button button-primary" href="tarjous.html">Pyydä alustava tarjous</a>
           </div>
@@ -121,7 +107,7 @@
         <nav class="footer-nav" aria-label="Alatunnisteen navigaatio">
           <a href="index.html">Etusivu</a>
           <a href="mallisto.html">Mallisto</a>
-          <a href="shop.html">Shop</a>
+          
           <a href="tarjous.html">Tarjous</a>
           <a href="yhteystiedot.html">Yhteystiedot</a>
         </nav>
@@ -135,3 +121,30 @@
     <script src="script.js"></script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

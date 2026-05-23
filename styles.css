@@ -1017,6 +1017,12 @@ body[data-page="yritys"] .split-copy {
   object-fit: cover;
 }
 
+.reference-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .media-caption {
   padding: 16px 18px;
 }
@@ -2107,6 +2113,7 @@ html.reveal-enabled .reveal.is-visible {
   .order-item,
   .timeline,
   .team-grid,
+  .reference-grid,
   .contact-details-grid,
   .form-grid,
   .spec-grid,
@@ -2165,6 +2172,7 @@ html.reveal-enabled .reveal.is-visible {
   .shop-trust-grid,
   .timeline,
   .team-grid,
+  .reference-grid,
   .contact-details-grid,
   .form-grid,
   .spec-grid,
@@ -2340,6 +2348,7 @@ html.reveal-enabled .reveal.is-visible {
   .order-item,
   .timeline,
   .team-grid,
+  .reference-grid,
   .contact-details-grid,
   .form-grid,
   .spec-grid,

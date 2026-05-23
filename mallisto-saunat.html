@@ -16,15 +16,21 @@
         <a class="brand" href="index.html" aria-label="Nordic Modular Finland Oy">
           <img src="assets/logo.png" alt="Nordic Modular Finland Oy logo" />
         </a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          Valikko
-        </button>
-        <nav class="topnav" id="site-nav" aria-label="Päänavigaatio">
+        <div class="topbar-actions">
+          <div class="lang-toggle" aria-label="Kielivalinta">
+            <a href="?lang=fi" data-lang="fi" aria-pressed="true">FI</a>
+            <a href="?lang=en" data-lang="en" aria-pressed="false">EN</a>
+          </div>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+            Valikko
+          </button>
+        </div>
+        <nav class="topnav" id="site-nav" aria-label="P�?�?navigaatio">
           <a href="index.html" data-nav="home">Etusivu</a>
           <a href="mallisto.html" data-nav="mallisto">Mallisto</a>
           <a href="ratkaisut.html" data-nav="ratkaisut">Ratkaisut</a>
           <a href="yritys.html" data-nav="yritys">Yritys</a>
-          <a href="shop.html" data-nav="shop">Shop</a>
+          
           <a href="tarjous.html" data-nav="tarjous">Tarjous</a>
           <a href="yhteystiedot.html" data-nav="yhteystiedot">Yhteystiedot</a>
         </nav>
@@ -36,7 +42,7 @@
             <p class="eyebrow">Mallisto / Saunat</p>
             <h1>Saunamallit pohjoisiin olosuhteisiin.</h1>
             <p class="lead">
-              Saunamallit kohteisiin, joissa arvostetaan toimivaa tilaratkaisua, selkeää ilmettä ja hallittua toteutusta.
+              Saunamallit kohteisiin, joissa arvostetaan toimivaa tilaratkaisua, selke�?�? ilmett�? ja hallittua toteutusta.
             </p>
           </div>
           <img class="page-hero-image" src="assets/rantasauna-3d.png" alt="Saunamalli" />
@@ -46,10 +52,10 @@
           <div class="catalog-jump-card">
             <div class="catalog-jump-copy">
               <p class="eyebrow">Siirtyminen mallistossa</p>
-              <h2>Mallistoryhmät</h2>
+              <h2>Mallistoryhm�?t</h2>
               <p>Saunat, aitat, sauna-tuparatkaisut ja kokonaisuudet samassa mallistossa.</p>
             </div>
-            <div class="catalog-jump-actions" aria-label="Mallistoryhmät">
+            <div class="catalog-jump-actions" aria-label="Mallistoryhm�?t">
               <a class="button button-secondary" href="mallisto.html">Takaisin mallistoon</a>
               <a class="button button-ghost is-current" href="mallisto-saunat.html" aria-current="page">Saunat</a>
               <a class="button button-ghost" href="mallisto-aitat.html">Aitat</a>
@@ -63,7 +69,7 @@
           <div class="section-heading narrow">
             <p class="eyebrow">Saunat</p>
             <h2>Valitse sopiva saunamalli.</h2>
-            <p>Yksittäiset saunat sopivat rantaan, pihapiiriin tai lisäsaunaksi osaksi laajempaa kokonaisuutta.</p>
+            <p>Yksitt�?iset saunat sopivat rantaan, pihapiiriin tai lis�?saunaksi osaksi laajempaa kokonaisuutta.</p>
           </div>
 
           <div class="catalog-grid">
@@ -78,19 +84,19 @@
                   <p class="product-kicker">Saunamalli</p>
                   <h2><a href="rantasauna.html">Rantasauna</a></h2>
                 </div>
-                <p>Pieni rantaan sopiva saunamoduuli, jonka selkeä pohja tekee siitä helposti hahmotettavan ja sijoitettavan.</p>
+                <p>Pieni rantaan sopiva saunamoduuli, jonka selke�? pohja tekee siit�? helposti hahmotettavan ja sijoitettavan.</p>
                 <ul class="feature-list">
                   <li>Kompakti saunaratkaisu</li>
-                  <li>Sopii rantaan tai lisäsaunaksi</li>
+                  <li>Sopii rantaan tai lis�?saunaksi</li>
                   <li>Toteutus kohteen mukaan</li>
                 </ul>
                 <div class="catalog-meta">
-                  <p class="price">Pyydä erillinen tarjous</p>
+                  <p class="price">Pyyd�? erillinen tarjous</p>
                   <p class="price-note">suunnitellaan kohteesi mukaan</p>
                 </div>
                 <div class="catalog-actions">
-                  <a class="button button-secondary" href="rantasauna.html">Lue lisää mallista</a>
-                  <a class="button button-ghost" href="tarjous.html?model=Muu%20ty%C3%B6%20tai%20malliston%20ulkopuolinen%20toteutus">Pyydä tarjous tästä mallista</a>
+                  <a class="button button-secondary" href="rantasauna.html">Lue lis�?�? mallista</a>
+                  <a class="button button-ghost" href="tarjous.html?model=Muu%20ty%C3%B6%20tai%20malliston%20ulkopuolinen%20toteutus">Pyyd�? tarjous t�?st�? mallista</a>
                 </div>
               </div>
             </article>
@@ -106,7 +112,7 @@
         <nav class="footer-nav" aria-label="Alatunnisteen navigaatio">
           <a href="index.html">Etusivu</a>
           <a href="mallisto.html">Mallisto</a>
-          <a href="shop.html">Shop</a>
+          
           <a href="tarjous.html">Tarjous</a>
           <a href="yhteystiedot.html">Yhteystiedot</a>
         </nav>
@@ -120,3 +126,4 @@
     <script src="script.js"></script>
   </body>
 </html>
+

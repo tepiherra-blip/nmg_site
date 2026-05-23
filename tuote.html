@@ -16,15 +16,21 @@
         <a class="brand" href="index.html" aria-label="Nordic Modular Finland Oy">
           <img src="assets/logo.png" alt="Nordic Modular Finland Oy logo" />
         </a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          Valikko
-        </button>
-        <nav class="topnav" id="site-nav" aria-label="Paanavigaatio">
+        <div class="topbar-actions">
+          <div class="lang-toggle" aria-label="Kielivalinta">
+            <a href="?lang=fi" data-lang="fi" aria-pressed="true">FI</a>
+            <a href="?lang=en" data-lang="en" aria-pressed="false">EN</a>
+          </div>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+            Valikko
+          </button>
+        </div>
+        <nav class="topnav" id="site-nav" aria-label="Päänavigaatio">
           <a href="index.html" data-nav="home">Etusivu</a>
           <a href="mallisto.html" data-nav="mallisto">Mallisto</a>
           <a href="ratkaisut.html" data-nav="ratkaisut">Ratkaisut</a>
           <a href="yritys.html" data-nav="yritys">Yritys</a>
-          <a href="shop.html" data-nav="shop">Shop</a>
+          
           <a href="yhteystiedot.html" data-nav="yhteystiedot">Yhteystiedot</a>
         </nav>
       </header>
@@ -35,11 +41,11 @@
             <p class="eyebrow" id="product-category">Shop-tuote</p>
             <h1 id="product-name">Tuote</h1>
             <p class="lead" id="product-description">
-              Laadukas lisävaruste saunaan, pihaan tai mökille osaksi toimivaa kokonaisuutta.
+              Laadukas lis�?varuste saunaan, pihaan tai m�?kille osaksi toimivaa kokonaisuutta.
             </p>
             <div class="hero-actions">
               <button class="button button-primary product-order-button" type="button" id="product-order-button">
-                Lisää tilaukseen
+                Lis�?�? tilaukseen
               </button>
               <a class="button button-secondary" href="tilaus.html">Avaa tilausyhteenveto</a>
             </div>
@@ -56,9 +62,9 @@
           <div class="detail-stack">
             <article class="info-card">
               <span class="card-label">Tuotekuvaus</span>
-              <h2>Mitä tuote tuo kokonaisuuteen</h2>
+              <h2>Mit�? tuote tuo kokonaisuuteen</h2>
               <p id="product-long-description">
-                Tällä sivulla esitetään tuotteen keskeinen käyttötarkoitus, tärkeimmät ominaisuudet ja sopivuus osaksi suurempaa kokonaisuutta.
+                T�?ll�? sivulla esitet�?�?n tuotteen keskeinen k�?ytt�?tarkoitus, t�?rkeimm�?t ominaisuudet ja sopivuus osaksi suurempaa kokonaisuutta.
               </p>
             </article>
 
@@ -73,7 +79,7 @@
           <aside class="quote-summary">
             <div class="summary-card summary-card-highlight">
               <p class="eyebrow">Hinta</p>
-              <h2 id="product-price">0 €</h2>
+              <h2 id="product-price">0 �?</h2>
               <p id="product-price-note">Hinta alkaen valitulla perusratkaisulla.</p>
             </div>
 
@@ -81,14 +87,14 @@
               <p class="eyebrow">Sopivuus</p>
               <h3>Erilliseen hankintaan tai osaksi toimitusta</h3>
               <p id="product-fit">
-                Tuote voidaan toimittaa myös osana laajempaa sauna-, piha- tai mökkikokonaisuutta.
+                Tuote voidaan toimittaa my�?s osana laajempaa sauna-, piha- tai m�?kkikokonaisuutta.
               </p>
             </div>
 
             <div class="summary-card">
               <p class="eyebrow">Tilaus</p>
-              <h3>Lisää tuote tilausyhteenvetoon</h3>
-              <p>Voit lisätä tuotteen tilaukseen nyt ja täydentää toimitus- ja yhteystiedot tilaussivulla.</p>
+              <h3>Lis�?�? tuote tilausyhteenvetoon</h3>
+              <p>Voit lis�?t�? tuotteen tilaukseen nyt ja t�?ydent�?�? toimitus- ja yhteystiedot tilaussivulla.</p>
             </div>
           </aside>
         </section>
@@ -102,7 +108,7 @@
         <nav class="footer-nav" aria-label="Alatunnisteen navigaatio">
           <a href="index.html">Etusivu</a>
           <a href="mallisto.html">Mallisto</a>
-          <a href="shop.html">Shop</a>
+          
           <a href="tilaus.html">Tilaus</a>
           <a href="yhteystiedot.html">Yhteystiedot</a>
         </nav>
@@ -116,3 +122,4 @@
     <script src="script.js"></script>
   </body>
 </html>
+

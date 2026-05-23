@@ -4,39 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nordic Modular Finland Oy | Malli</title>
-    <meta name="description" content="Nordic Modular -mallin esittelysivu. Mallikohtaiset kuvat, hinnat ja tekniset tiedot lisätään myöhemmin." />
+    <meta
+      name="description"
+      content="Nordic Modular -mallin esittelysivu. Mallikohtainen kuvaus, tilaratkaisu ja tarjouspolku yhdellä sivulla."
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="mallisto">
     <div class="site-shell">
       <header class="topbar">
-        <a class="brand" href="index.html" aria-label="Nordic Modular Finland Oy"><img src="assets/logo.png" alt="Nordic Modular Finland Oy logo" /></a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Valikko</button>
-        <nav class="topnav" id="site-nav" aria-label="Paanavigaatio">
-          <a href="index.html" data-nav="home">Etusivu</a><a href="mallisto.html" data-nav="mallisto">Mallisto</a><a href="ratkaisut.html" data-nav="ratkaisut">Ratkaisut</a><a href="yritys.html" data-nav="yritys">Yritys</a><a href="shop.html" data-nav="shop">Shop</a><a href="tarjous.html" data-nav="tarjous">Tarjous</a><a href="yhteystiedot.html" data-nav="yhteystiedot">Yhteystiedot</a>
+        <a class="brand" href="index.html" aria-label="Nordic Modular Finland Oy">
+          <img src="assets/logo.png" alt="Nordic Modular Finland Oy logo" />
+        </a>
+        <div class="topbar-actions">
+          <div class="lang-toggle" aria-label="Kielivalinta">
+            <a href="?lang=fi" data-lang="fi" aria-pressed="true">FI</a>
+            <a href="?lang=en" data-lang="en" aria-pressed="false">EN</a>
+          </div>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Valikko</button>
+        </div>
+        <nav class="topnav" id="site-nav" aria-label="Päänavigaatio">
+          <a href="index.html" data-nav="home">Etusivu</a>
+          <a href="mallisto.html" data-nav="mallisto">Mallisto</a>
+          <a href="ratkaisut.html" data-nav="ratkaisut">Ratkaisut</a>
+          <a href="yritys.html" data-nav="yritys">Yritys</a>
+          <a href="tarjous.html" data-nav="tarjous">Tarjous</a>
+          <a href="yhteystiedot.html" data-nav="yhteystiedot">Yhteystiedot</a>
         </nav>
       </header>
+
       <main>
         <section class="page-hero detail-hero reveal">
           <div class="detail-intro">
             <p class="eyebrow" id="model-series">Mallisto</p>
             <h1 id="model-name">Nordic malli</h1>
-            <p class="lead" id="model-description">Tälle sivulle lisätään mallikohtainen esittely, kuvat, pohjakuvat ja tarkemmat tiedot myöhemmässä vaiheessa.</p>
+            <p class="lead" id="model-description">Mallikohtainen esittely, kuvat ja tarjouspolku yhdessä näkymässä.</p>
             <div class="hero-actions">
-              <a class="button button-primary" id="model-offer-link" href="tarjous.html">Pyydä tarjous</a>
+              <a class="button button-primary" id="model-offer-link" href="tarjous.html">Pyydä alustava tarjous</a>
               <a class="button button-secondary" id="model-back-link" href="mallisto.html">Takaisin mallistoon</a>
             </div>
           </div>
           <div class="shop-detail-visual">
-            <img
-              id="model-main-image"
-              class="page-hero-image"
-              src=""
-              alt=""
-              hidden
-            />
+            <img id="model-main-image" class="page-hero-image" src="" alt="" hidden />
             <div id="model-placeholder-card" class="shop-card-media shop-card-media-large">
-              <span id="model-placeholder">Nordic Modular Malli</span>
+              <span id="model-placeholder">Nordic Modular malli</span>
             </div>
           </div>
         </section>
@@ -45,16 +56,19 @@
           <div class="detail-stack">
             <article class="info-card">
               <span class="card-label">Mallin kuvaus</span>
-              <h2>Mallikohtaiset tiedot täydentyvät myöhemmin.</h2>
-              <p id="model-overview">Tämä sivu toimii valmiina mallipohjana myöhempää täydentämistä varten. Tänne voidaan lisätä kuvat, pohjakuvat, varustelu, tekniset tiedot ja muut tarkemmat sisällöt.</p>
+              <h2>Selkeä lähtökohta mallin esittelyyn.</h2>
+              <p id="model-overview">
+                Mallikohtainen kuvaus, tilaratkaisu ja toimituksen perusajatus esitetään tällä sivulla tiiviisti.
+                Tarkempi kokonaisuus käydään läpi tarjousvaiheessa kohteen tarpeen mukaan.
+              </p>
             </article>
             <article class="info-card">
-              <span class="card-label">Täydennettävät tiedot</span>
+              <span class="card-label">Mitä mallista voidaan käydä läpi</span>
               <ul class="feature-list" id="model-features">
                 <li>Kuvat mallista</li>
                 <li>Pohjakuvat ja tilajako</li>
-                <li>Tekniset tiedot ja varustelu</li>
-                <li>Mahdolliset hinnat ja toimitussisältö</li>
+                <li>Varustelu ja toimitussisältö</li>
+                <li>Kohdekohtaiset vaihtoehdot</li>
               </ul>
             </article>
             <section id="model-gallery-section" class="info-card" hidden>
@@ -66,18 +80,37 @@
           <aside class="quote-summary">
             <div class="summary-card summary-card-highlight">
               <p class="eyebrow">Huomautus</p>
-              <h2>Työn alla</h2>
-              <p id="model-note">Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.</p>
+              <h2>Toimitus tarkennetaan kohteen mukaan</h2>
+              <p id="model-note">
+                Mallikohtainen toimitussisältö, varustelu ja mahdolliset vaihtoehdot käydään läpi tarjousvaiheessa
+                asiakkaan tarpeen mukaan.
+              </p>
             </div>
             <div class="summary-card">
               <p class="eyebrow">Seuraava askel</p>
               <h3>Pyydä alustava tarjous</h3>
-              <p>Voit lähettää jo tässä vaiheessa yhteydenoton, vaikka mallikohtaiset yksityiskohdat täydentyvät vielä.</p>
+              <p>Voit lähettää yhteydenoton heti, jos haluat keskustella mallista, varustelusta ja kohteeseesi sopivasta toimituksesta.</p>
             </div>
           </aside>
         </section>
       </main>
-      <footer class="footer"><div><p class="footer-title">Nordic Modular Finland Oy</p><p class="footer-copy">Valmiit tilaratkaisut pohjoisiin olosuhteisiin.</p></div><nav class="footer-nav" aria-label="Alatunnisteen navigaatio"><a href="index.html">Etusivu</a><a href="mallisto.html">Mallisto</a><a href="shop.html">Shop</a><a href="tarjous.html">Tarjous</a><a href="yhteystiedot.html">Yhteystiedot</a></nav><div class="footer-meta"><a href="mailto:info@nordicmodular.fi">info@nordicmodular.fi</a><p>&copy; <span id="year"></span> Nordic Modular Finland Oy</p></div></footer>
+
+      <footer class="footer">
+        <div>
+          <p class="footer-title">Nordic Modular Finland Oy</p>
+          <p class="footer-copy">Valmiit tilaratkaisut pohjoisiin olosuhteisiin.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Alatunnisteen navigaatio">
+          <a href="index.html">Etusivu</a>
+          <a href="mallisto.html">Mallisto</a>
+          <a href="tarjous.html">Tarjous</a>
+          <a href="yhteystiedot.html">Yhteystiedot</a>
+        </nav>
+        <div class="footer-meta">
+          <a href="mailto:info@nordicmodular.fi">info@nordicmodular.fi</a>
+          <p>&copy; <span id="year"></span> Nordic Modular Finland Oy</p>
+        </div>
+      </footer>
     </div>
     <script src="script.js"></script>
   </body>
