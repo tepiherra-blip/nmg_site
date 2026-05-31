@@ -297,6 +297,26 @@ const MODEL_LIBRARY = {
       { src: "assets/mallisto/nordmod-grand/grand saunatupa/iso terassi ok2.png", alt: "NordMod Grand Terassi saunatuvan yhteydessä" },
     ],
   },
+  "nordmod-terassi": {
+    series: "NordMod Terassi",
+    name: "NordMod Terassi",
+    description: "Moduuliterassi mökkimallin yhteyteen tai erikseen ostettavaksi ratkaisuksi.",
+    overview:
+      "NordMod Terassi on sama perustuote kaikkiin mallisarjoihin. Se sovitetaan Compact-, Classic- tai Grand-kokoon kohteen ja mökkimallin mukaan, ja sitä voidaan käyttää myös erillisenä terassiratkaisuna saunan, aitan, piharakennuksen tai muun vapaa-ajan kokonaisuuden rinnalla.",
+    features: [
+      "Sama tuote eri kokovaihtoehtoina",
+      "Sopii Compact-, Classic- ja Grand-mallien yhteyteen",
+      "Voidaan ostaa myös erillisenä moduuliterassina",
+      "Mitat ja viimeistely tarkennetaan kohteen mukaan",
+    ],
+    note: "Tarkat mitat, hinnat ja tuotetiedot lisätään myöhemmin. Tarjousvaiheessa terassi sovitetaan valittuun malliin tai erilliseen käyttökohteeseen.",
+    backLink: "mallisto.html",
+    image: {
+      src: "assets/mallisto/Terassi/Terassi.png",
+      alt: "NordMod Terassi järvimaisemassa",
+    },
+    gallery: [{ src: "assets/mallisto/Terassi/Terassi.png", alt: "NordMod Terassi ulkokuva" }],
+  },
   "nordic-pihasauna": {
     series: "NordMod Pihasauna",
     name: "NordMod Pihasauna",
@@ -355,6 +375,21 @@ const UI_COPY = {
 
 const getCurrentLanguage = () => "fi";
 const getUiCopy = () => UI_COPY;
+
+const MODEL_ALIASES = {
+  "compact-terassi": "nordmod-terassi",
+  "classic-terassi": "nordmod-terassi",
+  "grand-terassi": "nordmod-terassi",
+};
+
+const TERRACE_SIZE_LABELS = {
+  compact: "NordMod Terassi Compact-koko",
+  classic: "NordMod Terassi Classic-koko",
+  grand: "NordMod Terassi Grand-koko",
+  "compact-terassi": "NordMod Terassi Compact-koko",
+  "classic-terassi": "NordMod Terassi Classic-koko",
+  "grand-terassi": "NordMod Terassi Grand-koko",
+};
 
 const applyTheme = (theme) => {
   document.documentElement.setAttribute("data-theme", theme === "light" ? "light" : "dark");
@@ -707,7 +742,9 @@ const initModelDetail = () => {
   if (!nameEl) return;
 
   const params = new URLSearchParams(window.location.search);
-  const modelId = params.get("model");
+  const requestedModelId = params.get("model");
+  const modelId = MODEL_ALIASES[requestedModelId] || requestedModelId;
+  const sizeLabel = TERRACE_SIZE_LABELS[params.get("size")] || TERRACE_SIZE_LABELS[requestedModelId];
   const model = modelId ? MODEL_LIBRARY[modelId] : null;
 
   if (!model) {
@@ -737,7 +774,10 @@ const initModelDetail = () => {
   if (noteEl) noteEl.textContent = model.note;
   if (placeholderEl) placeholderEl.textContent = model.name;
   if (backLinkEl) backLinkEl.href = model.backLink;
-  if (offerLinkEl) offerLinkEl.href = `tarjous.html?model=${encodeURIComponent(model.name)}`;
+  if (offerLinkEl) {
+    const offerProductName = modelId === "nordmod-terassi" && sizeLabel ? sizeLabel : model.name;
+    offerLinkEl.href = `tarjous.html?model=${encodeURIComponent(offerProductName)}`;
+  }
 
   if (mainImageEl && model.image?.src) {
     mainImageEl.src = model.image.src;

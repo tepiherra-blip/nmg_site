@@ -966,6 +966,23 @@ body[data-page="yritys"] .split-copy {
   object-fit: cover;
 }
 
+.mobile-feature-image {
+  display: none;
+  margin: 8px 0 4px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: var(--surface-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.mobile-feature-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
 .reference-grid {
   display: grid;
   gap: 20px;
@@ -2279,6 +2296,18 @@ html.reveal-enabled .reveal.is-visible {
     display: none;
   }
 
+  .mobile-hidden {
+    display: none !important;
+  }
+
+  .mobile-feature-image {
+    display: block;
+  }
+
+  .split-section .media-stack {
+    display: none;
+  }
+
   .page-hero {
     padding-top: 36px;
   }
@@ -2333,5 +2362,58 @@ html.reveal-enabled .reveal.is-visible {
 
   .category-card,
   .catalog-card,
-  .catalog-card-product,
+  .catalog-card-product {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .detail-hero {
+    display: grid;
+    gap: 22px;
+  }
+
+  .model-detail-visual {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .detail-hero .page-hero-image,
+  .floor-plan-card,
+  .floor-plan-image,
+  .detail-gallery,
+  .detail-gallery .media-card,
+  .detail-gallery .media-card img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .detail-hero .page-hero-image {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+  }
+
+  .floor-plan-card {
+    padding: 12px;
+  }
+
+  .floor-plan-image {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+  }
+
+  .detail-gallery .media-card img {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+  }
 }
