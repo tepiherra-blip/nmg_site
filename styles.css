@@ -1672,15 +1672,17 @@ body[data-page="yritys"] .split-copy {
 }
 
 .detail-hero {
-  grid-template-columns: 1fr 0.95fr;
+  grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
   align-items: stretch;
+  gap: 28px;
 }
 
 .detail-hero .page-hero-image {
-  min-height: 420px;
+  height: 100%;
+  min-height: 330px;
   object-fit: contain;
   background: rgba(255, 255, 255, 0.03);
-  padding: 20px;
+  padding: 0;
 }
 
 .detail-hero .page-hero-image:not([hidden]) {
@@ -1693,7 +1695,43 @@ body[data-page="yritys"] .split-copy {
 
 .detail-intro {
   display: grid;
-  gap: 18px;
+  align-content: start;
+  gap: 16px;
+}
+
+.model-detail-visual {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.85fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.model-detail-visual .model-placeholder-media {
+  grid-column: 1 / -1;
+}
+
+.floor-plan-card {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface-lifted);
+  box-shadow: var(--shadow-md);
+}
+
+.floor-plan-card[hidden] {
+  display: none;
+}
+
+.floor-plan-image {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .spec-grid {
@@ -1726,6 +1764,14 @@ body[data-page="yritys"] .split-copy {
   gap: 18px;
 }
 
+.product-info-card {
+  min-height: 260px;
+}
+
+.product-info-card .feature-list {
+  margin-top: 18px;
+}
+
 .detail-price {
   font-size: clamp(2rem, 3vw, 3rem);
 }
@@ -1737,8 +1783,10 @@ body[data-page="yritys"] .split-copy {
 }
 
 .detail-gallery .media-card img {
+  height: 320px;
   min-height: 260px;
-  object-fit: cover;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .detail-gallery .media-card.plan-card img,
@@ -1851,6 +1899,7 @@ html.reveal-enabled .reveal.is-visible {
   .page-hero,
   .split-section,
   .form-layout,
+  .model-detail-visual,
   .story-grid,
   .process-grid,
   .product-grid,

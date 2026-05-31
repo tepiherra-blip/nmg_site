@@ -137,152 +137,183 @@ const normalizeOfferCopy = () => {
 
 const MODEL_LIBRARY = {
   "compact-aitta-14": {
-    series: "Nordic Compact 14",
-    name: "Nordic Compact Aitta 14",
+    series: "NordMod Compact",
+    name: "NordMod Compact Aitta 14",
     description: "Kompakti aittaratkaisu lisämajoitukseen, vieraskäyttöön tai pihapiirin lisätilaksi.",
     overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
     features: ["Kompakti pohjamalli", "Sopii lisämajoitukseen", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
     note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
     backLink: "mallisto-compact-14.html",
+    image: {
+      src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/musta1.png",
+      alt: "NordMod Compact Aitta ulkokuva metsämaisemassa",
+    },
+    gallery: [
+      { src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/compact pohja.png", alt: "NordMod Compact Aitta pohjakuva", caption: "Pohjakuva", className: "plan-card-wide" },
+      { src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/musta5.png", alt: "NordMod Compact Aitta etunäkymä terassilla" },
+      { src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/musta2.png", alt: "NordMod Compact Aitta ulkonäkymä" },
+      { src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/musta3.png", alt: "NordMod Compact Aitta vaihtoehtoinen ulkokuva" },
+    ],
   },
   "compact-saunatupa-14": {
-    series: "Nordic Compact 14",
-    name: "Nordic Compact Saunatupa 14",
+    series: "NordMod Compact",
+    name: "NordMod Compact Saunatupa 14",
     description: "Selkeä 14 m² saunatuparatkaisu vapaa-aikaan, pihaan tai mökkikäyttöön.",
     overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
     features: ["Sauna ja tupa kompaktissa koossa", "Sopii vapaa-aikaan", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
     note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
     backLink: "mallisto-compact-14.html",
+    image: {
+      src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/sauna musta 1.png",
+      alt: "NordMod Compact Saunatupa ulkokuva",
+    },
+    gallery: [
+      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/Comapct pohja.png", alt: "NordMod Compact Saunatupa pohjakuva", caption: "Pohjakuva", className: "plan-card-wide" },
+      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/sauna musta 2.png", alt: "NordMod Compact Saunatupa sivunäkymä" },
+      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/sauna musta 3.png", alt: "NordMod Compact Saunatupa terassilla" },
+      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/sauna musta 4.png", alt: "NordMod Compact Saunatupa vaihtoehtoinen ulkokuva" },
+    ],
   },
   "compact-terassi": {
-    series: "Nordic Compact 14",
-    name: "Nordic Compact Terassi",
+    series: "NordMod Compact",
+    name: "NordMod Compact Terassi",
     description: "Compact-sarjaa täydentävä terassiratkaisu, joka viimeistelee kokonaisuuden.",
     overview: "Tälle mallille lisätään myöhemmin kuvat, vaihtoehdot, mitat ja toteutustiedot.",
     features: ["Täydentävä terassimalli", "Sopii Compact-sarjan yhteyteen", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
     note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
     backLink: "mallisto-compact-14.html",
+    image: {
+      src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/musta5.png",
+      alt: "NordMod Compact Terassi etunäkymä",
+    },
+    gallery: [
+      { src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/musta5.png", alt: "NordMod Compact Terassi etunäkymä" },
+      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/sauna musta 1.png", alt: "NordMod Compact Terassi saunamallin yhteydessä" },
+    ],
   },
   "classic-aitta-18": {
-    series: "Nordic Classic 18",
-    name: "Nordic Classic Aitta 18",
+    series: "NordMod Classic",
+    name: "NordMod Classic Aitta 18",
     description: "Monikäyttöinen aittamalli vieraskäyttöön, lisämajoitukseen ja vapaa-aikaan.",
     overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
     features: ["18 m² perusmalli", "Sopii majoitukseen", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
     note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
     backLink: "mallisto-classic-18.html",
+    image: {
+      src: "assets/mallisto/nordmod-classic/Classic aitta/kuva1.png",
+      alt: "NordMod Classic Aitta ulkokuva ilta-auringossa",
+    },
+    gallery: [
+      { src: "assets/mallisto/nordmod-classic/Classic aitta/classic pohja.png", alt: "NordMod Classic Aitta pohjakuva", caption: "Pohjakuva", className: "plan-card-wide" },
+      { src: "assets/mallisto/nordmod-classic/Classic aitta/kuva 3.png", alt: "NordMod Classic Aitta ulkokuva" },
+      { src: "assets/mallisto/nordmod-classic/Classic aitta/kuva3.png", alt: "NordMod Classic Aitta vaihtoehtoinen ulkokuva" },
+    ],
   },
   "classic-saunatupa-18": {
-    series: "Nordic Classic 18",
-    name: "Nordic Classic Saunatupa 18",
+    series: "NordMod Classic",
+    name: "NordMod Classic Saunatupa 18",
     description: "Classic-sarjan saunatuparatkaisu vapaa-aikaan, pihaan tai mökkikäyttöön.",
     overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
     features: ["Saunatupa 18 m² kokoluokassa", "Sopii vapaa-aikaan ja pihoille", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
     note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
     backLink: "mallisto-classic-18.html",
+    image: {
+      src: "assets/mallisto/nordmod-classic/Classic sauna/Classic sauna 1.png",
+      alt: "NordMod Classic Saunatupa ulkokuva terassilla",
+    },
+    gallery: [
+      { src: "assets/mallisto/nordmod-classic/Classic sauna/classic pohja.png", alt: "NordMod Classic Saunatupa pohjakuva", caption: "Pohjakuva", className: "plan-card-wide" },
+      { src: "assets/mallisto/nordmod-classic/Classic sauna/Classic sauna 2.png", alt: "NordMod Classic Saunatupa ulkokuva" },
+      { src: "assets/mallisto/nordmod-classic/Classic sauna/classic sauna3.png", alt: "NordMod Classic Saunatupa sivunäkymä" },
+      { src: "assets/mallisto/nordmod-classic/Classic sauna/classic sauna 4.png", alt: "NordMod Classic Saunatupa vaihtoehtoinen ulkokuva" },
+    ],
   },
   "classic-terassi": {
-    series: "Nordic Classic 18",
-    name: "Nordic Classic Terassi",
+    series: "NordMod Classic",
+    name: "NordMod Classic Terassi",
     description: "Terassiratkaisu, joka täydentää Classic-sarjan mallien käyttöä ja viimeistelyä.",
     overview: "Tälle mallille lisätään myöhemmin kuvat, vaihtoehdot, mitat ja toteutustiedot.",
     features: ["Täydentävä terassimalli", "Classic-sarjan rinnalle", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
     note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
     backLink: "mallisto-classic-18.html",
+    image: {
+      src: "assets/mallisto/nordmod-classic/Classic aitta/kuva1.png",
+      alt: "NordMod Classic Terassi mallin yhteydessä",
+    },
+    gallery: [
+      { src: "assets/mallisto/nordmod-classic/Classic aitta/kuva1.png", alt: "NordMod Classic Terassi aittamallin yhteydessä" },
+      { src: "assets/mallisto/nordmod-classic/Classic sauna/Classic sauna 1.png", alt: "NordMod Classic Terassi saunamallin yhteydessä" },
+    ],
   },
   "grand-aitta-30": {
-    series: "Nordic Grand 30",
-    name: "Nordic Grand Aitta 30",
+    series: "NordMod Grand",
+    name: "NordMod Grand Aitta 30",
     description: "Tilavampi aittaratkaisu majoitukseen, vieraskäyttöön tai vapaa-ajan kokonaisuuteen.",
-    overview: "Nordic Grand Aitta 30 on tilavampi aittaratkaisu, joka sopii lisämajoitukseen, vieraskäyttöön ja vapaa-ajan kokonaisuuksiin. Selkeä pohjaratkaisu tekee mallista hyvän lähtökohdan myöhemmälle tarkentamiselle.",
+    overview: "NordMod Grand Aitta 30 on tilavampi aittaratkaisu, joka sopii lisämajoitukseen, vieraskäyttöön ja vapaa-ajan kokonaisuuksiin. Selkeä pohjaratkaisu tekee mallista hyvän lähtökohdan myöhemmälle tarkentamiselle.",
     features: ["30 m² aittaratkaisu", "Sopii majoitus- ja vieraskäyttöön", "Selkeä kaksiosainen pohjaratkaisu", "Muokattavissa myöhemmin kohteen tarpeiden mukaan"],
     note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
     backLink: "mallisto-grand-30.html",
+    image: {
+      src: "assets/mallisto/nordmod-grand/grand aitta/grand aitta1.png",
+      alt: "NordMod Grand Aitta ulkokuva",
+    },
+    gallery: [
+      { src: "assets/mallisto/nordmod-grand/grand aitta/Grand pohja.png", alt: "NordMod Grand Aitta pohjakuva", caption: "Pohjakuva", className: "plan-card-wide" },
+    ],
   },
   "grand-saunatupa-30": {
-    series: "Nordic Grand 30",
-    name: "Nordic Grand Saunatupa 30",
+    series: "NordMod Grand",
+    name: "NordMod Grand Saunatupa 30",
     description: "Suurempi saunatuparatkaisu silloin, kun käyttöön tarvitaan enemmän tilaa ja mukavuutta.",
-    overview: "Nordic Grand Saunatupa 30 yhdistää oleskelutilan, saunan ja tukitilat selkeäksi kokonaisuudeksi. Malli sopii vapaa-aikaan, mökkikäyttöön ja majoituskäyttöön silloin, kun halutaan enemmän tilaa ja valmista perusrunkoa jatkokehitykselle.",
+    overview: "NordMod Grand Saunatupa 30 yhdistää oleskelutilan, saunan ja tukitilat selkeäksi kokonaisuudeksi. Malli sopii vapaa-aikaan, mökkikäyttöön ja majoituskäyttöön silloin, kun halutaan enemmän tilaa ja valmista perusrunkoa jatkokehitykselle.",
     features: ["30 m² saunatupakokonaisuus", "Oleskelutila, sauna ja wc samaan ratkaisuun", "Sopii vapaa-aikaan, mökille ja majoituskäyttöön", "Muokattavissa varustelun ja viimeistelyn osalta"],
     note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
     backLink: "mallisto-grand-30.html",
+    image: {
+      src: "assets/mallisto/nordmod-grand/grand saunatupa/iso terassi ok2.png",
+      alt: "NordMod Grand Saunatupa ulkokuva terassilla",
+    },
+    gallery: [
+      { src: "assets/mallisto/nordmod-grand/grand saunatupa/Grand s pohja.png", alt: "NordMod Grand Saunatupa pohjakuva", caption: "Pohjakuva", className: "plan-card-wide" },
+      { src: "assets/mallisto/nordmod-grand/grand saunatupa/iso terassi ok 4.png", alt: "NordMod Grand Saunatupa sivunäkymä" },
+      { src: "assets/mallisto/nordmod-grand/grand saunatupa/iso terassi ok 5.png", alt: "NordMod Grand Saunatupa vaihtoehtoinen ulkokuva" },
+      { src: "assets/mallisto/nordmod-grand/grand saunatupa/iso terassi ok3.png", alt: "NordMod Grand Saunatupa terassinäkymä" },
+    ],
   },
   "grand-terassi": {
-    series: "Nordic Grand 30",
-    name: "Nordic Grand Terassi",
+    series: "NordMod Grand",
+    name: "NordMod Grand Terassi",
     description: "Laajempaa Grand-kokonaisuutta täydentävä terassiratkaisu oleskeluun ja käyttöön.",
     overview: "Tälle mallille lisätään myöhemmin kuvat, vaihtoehdot, mitat ja toteutustiedot.",
     features: ["Terassiratkaisu Grand-sarjaan", "Sopii suurempiin kokonaisuuksiin", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
     note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
     backLink: "mallisto-grand-30.html",
+    image: {
+      src: "assets/mallisto/nordmod-grand/grand aitta/grand aitta1.png",
+      alt: "NordMod Grand Terassi aittamallin yhteydessä",
+    },
+    gallery: [
+      { src: "assets/mallisto/nordmod-grand/grand aitta/grand aitta1.png", alt: "NordMod Grand Terassi aittamallin yhteydessä" },
+      { src: "assets/mallisto/nordmod-grand/grand saunatupa/iso terassi ok2.png", alt: "NordMod Grand Terassi saunatuvan yhteydessä" },
+    ],
   },
   "nordic-pihasauna": {
-    series: "Nordic Pihasauna",
-    name: "Nordic Pihasauna",
+    series: "NordMod Pihasauna",
+    name: "NordMod Pihasauna",
     description: "Selkeä pihasaunamalli mökille, omakotitalon pihaan tai vapaa-ajan käyttöön.",
-    overview: "Nordic Pihasauna on selkeä ja kompakti saunaratkaisu vapaa-aikaan, mökille tai omakotitalon pihaan. Malli toimii hyvänä lähtökohtana silloin, kun halutaan oma saunarakennus ilman turhaa monimutkaisuutta.",
+    overview: "NordMod Pihasauna on selkeä ja kompakti saunaratkaisu vapaa-aikaan, mökille tai omakotitalon pihaan. Malli toimii hyvänä lähtökohtana silloin, kun halutaan oma saunarakennus ilman turhaa monimutkaisuutta.",
     features: ["Kompakti pihasaunamalli", "Sopii mökille ja pihapiiriin", "Selkeä saunaratkaisu omaan käyttöön", "Muokattavissa myöhemmin tarkempien toteutustietojen mukaan"],
     note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
     backLink: "mallisto-pihasauna.html",
-  },
-  "nordic-varasto-1": {
-    series: "Nordic Varastot",
-    name: "Nordic Varasto 1",
-    description: "Kompakti varastomalli pihan, mökin tai vapaa-ajan kohteen säilytystarpeisiin.",
-    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
-    features: ["Kompakti varastoratkaisu", "Sopii pihalle ja mökille", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
-    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
-    backLink: "mallisto-varastot.html",
-  },
-  "nordic-varasto-2": {
-    series: "Nordic Varastot",
-    name: "Nordic Varasto 2",
-    description: "Monikäyttöinen varastomalli silloin, kun säilytystilaa tarvitaan hieman enemmän.",
-    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
-    features: ["Monikäyttöinen varastoratkaisu", "Sopii piha- ja mökkikäyttöön", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
-    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
-    backLink: "mallisto-varastot.html",
-  },
-  "nordic-varasto-3": {
-    series: "Nordic Varastot",
-    name: "Nordic Varasto 3",
-    description: "Tilavampi varastoratkaisu suurempaan säilytystarpeeseen ja monipuolisempaan käyttöön.",
-    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
-    features: ["Tilavampi varastokokonaisuus", "Sopii laajempiin säilytystarpeisiin ja teknisiin tiloihin", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
-    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
-    backLink: "mallisto-varastot.html",
-  },
-  "custom-aitta": {
-    series: "Nordic Custom",
-    name: "Räätälöity aitta",
-    description: "Muokattava aittaratkaisu majoitukseen, vierastilaksi tai muuhun lisäkäyttöön.",
-    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset vaihtoehdot, kuvat, pohjakuva ja tarkemmat tuotetiedot.",
-    features: ["Muokattava aittaratkaisu", "Sopii eri käyttötarkoituksiin", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
-    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
-    backLink: "mallisto-custom.html",
-  },
-  "custom-saunatupa": {
-    series: "Nordic Custom",
-    name: "Räätälöity saunatupa",
-    description: "Saunatuparatkaisu, jonka tilajako ja varustelu voidaan suunnitella kohteen mukaan.",
-    overview: "Räätälöity saunatupa on lähtömalli kohteisiin, joissa saunan, oleskelun ja käytännöllisen tilajaon halutaan mukautuvan asiakkaan käyttötarkoitukseen.",
-    features: ["Muokattava saunatupa", "Tilajako ja varustelu kohteen mukaan", "Sopii vapaa-aikaan ja mökkikäyttöön", "Tarkentuu myöhemmin kuvien ja pohjakuvien täydentyessä"],
-    note: "Tähän malliin on lisätty ensimmäinen ulkokuva. Pohjakuva ja tarkemmat toteutustiedot voidaan täydentää myöhemmin.",
-    backLink: "mallisto-custom.html",
     image: {
-      src: "assets/custom-saunatupa-main.png",
-      alt: "Räätälöity saunatupa ulkonäkymä",
+      src: "assets/mallisto/nordmod-pihasauna/NordMod Pihasauna/pihasauna plan73.png",
+      alt: "NordMod Pihasauna ulkokuva järvimaisemassa",
     },
-  },
-  "custom-kokonaisuus": {
-    series: "Nordic Custom",
-    name: "Räätälöity kokonaisuus majoitus- tai mökkikäyttöön",
-    description: "Laajempi kokonaisuus, jossa voidaan yhdistää eri tiloja ja käyttötarpeita samaan toimitukseen.",
-    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset vaihtoehdot, kuvat, pohjakuva ja tarkemmat tuotetiedot.",
-    features: ["Laajempi räätälöitävä kokonaisuus", "Sopii majoitus- ja mökkikäyttöön", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
-    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
-    backLink: "mallisto-custom.html",
+    gallery: [
+      { src: "assets/mallisto/nordmod-pihasauna/NordMod Pihasauna/sauna pohja.png", alt: "NordMod Pihasauna pohjakuva", caption: "Pohjakuva", className: "plan-card-wide" },
+      { src: "assets/mallisto/nordmod-pihasauna/NordMod Pihasauna/pihasauna.png", alt: "NordMod Pihasauna etunäkymä" },
+      { src: "assets/mallisto/nordmod-pihasauna/NordMod Pihasauna/pihasauna1.png", alt: "NordMod Pihasauna vaihtoehtoinen ulkokuva" },
+    ],
   },
 };
 
@@ -692,6 +723,8 @@ const initModelDetail = () => {
   const placeholderEl = document.getElementById("model-placeholder");
   const placeholderCardEl = document.getElementById("model-placeholder-card");
   const mainImageEl = document.getElementById("model-main-image");
+  const floorPlanCardEl = document.getElementById("model-floor-plan-card");
+  const floorPlanImageEl = document.getElementById("model-floor-plan-image");
   const gallerySectionEl = document.getElementById("model-gallery-section");
   const galleryEl = document.getElementById("model-gallery");
   const backLinkEl = document.getElementById("model-back-link");
@@ -720,8 +753,22 @@ const initModelDetail = () => {
     featuresEl.innerHTML = model.features.map((feature) => `<li>${feature}</li>`).join("");
   }
 
-  if (gallerySectionEl && galleryEl && Array.isArray(model.gallery) && model.gallery.length) {
-    galleryEl.innerHTML = model.gallery
+  const galleryItems = Array.isArray(model.gallery) ? model.gallery : [];
+  const floorPlan = galleryItems.find((item) => item.className?.includes("plan-card") || item.caption === "Pohjakuva");
+  const visibleGalleryItems = galleryItems.filter((item) => item !== floorPlan);
+
+  if (floorPlanCardEl && floorPlanImageEl && floorPlan?.src) {
+    floorPlanImageEl.src = floorPlan.src;
+    floorPlanImageEl.alt = floorPlan.alt || `${model.name} pohjakuva`;
+    floorPlanCardEl.hidden = false;
+  } else if (floorPlanCardEl && floorPlanImageEl) {
+    floorPlanImageEl.removeAttribute("src");
+    floorPlanImageEl.alt = "";
+    floorPlanCardEl.hidden = true;
+  }
+
+  if (gallerySectionEl && galleryEl && visibleGalleryItems.length) {
+    galleryEl.innerHTML = visibleGalleryItems
       .map(
         (item) => `
           <figure class="media-card ${item.className || ""}">
