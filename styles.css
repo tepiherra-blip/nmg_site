@@ -24,11 +24,11 @@
   --header-gradient:
     linear-gradient(
       100deg,
-      rgba(2, 6, 8, 0.98) 0%,
-      rgba(6, 18, 27, 0.96) 18%,
-      rgba(20, 70, 104, 0.9) 43%,
-      rgba(236, 246, 251, 0.96) 72%,
-      rgba(248, 252, 255, 0.96) 100%
+      #020608 0%,
+      #020608 16%,
+      #0b2334 42%,
+      #eaf4f9 74%,
+      #f8fcff 100%
     );
   --menu-button-bg: rgba(18, 59, 87, 0.04);
   --button-secondary-bg: linear-gradient(135deg, rgba(223, 238, 247, 0.88), rgba(208, 228, 240, 0.92));
@@ -75,10 +75,11 @@
   --header-gradient:
     linear-gradient(
       100deg,
-      rgba(1, 5, 8, 0.98) 0%,
-      rgba(7, 19, 27, 0.96) 22%,
-      rgba(17, 61, 91, 0.92) 56%,
-      rgba(31, 88, 124, 0.9) 100%
+      #010508 0%,
+      #010508 18%,
+      #07131b 42%,
+      #113d5b 72%,
+      #1f587c 100%
     );
   --menu-button-bg: rgba(216, 234, 244, 0.07);
   --button-secondary-bg: linear-gradient(135deg, rgba(233, 245, 252, 0.18), rgba(186, 220, 238, 0.1));
@@ -149,9 +150,15 @@ textarea {
   padding: 16px 20px;
   border: 1px solid var(--line-strong);
   border-radius: 999px;
+  background-color: #f8fcff;
   background: var(--header-gradient);
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow-md);
+  background-clip: padding-box;
+}
+
+:root[data-theme="dark"] .topbar {
+  background-color: #010508;
 }
 
 @media (min-width: 761px) {
