@@ -1042,6 +1042,10 @@ p {
   object-fit: cover;
 }
 
+.mobile-catalog-cta {
+  display: none;
+}
+
 .split-section {
   grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
 }
@@ -2577,6 +2581,21 @@ html.reveal-enabled .reveal.is-visible {
     grid-template-columns: 1fr;
     gap: 14px;
     margin-top: 18px;
+  }
+
+  body[data-page="home"] .product-grid .product-card:nth-child(n + 3) {
+    display: none;
+  }
+
+  .mobile-catalog-cta {
+    display: grid;
+    margin-top: 18px;
+  }
+
+  .mobile-catalog-cta .button {
+    width: 100%;
+    min-height: 52px;
+    text-align: center;
   }
 
   .home-visual-strip img {
