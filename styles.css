@@ -250,31 +250,6 @@ textarea {
   margin-left: auto;
 }
 
-.header-cta {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  min-height: 42px;
-  padding: 0 18px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-  color: #062132;
-  font-size: 0.92rem;
-  font-weight: 800;
-  box-shadow: 0 12px 28px rgba(79, 168, 216, 0.22);
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease,
-    filter 180ms ease;
-}
-
-.header-cta:hover,
-.header-cta:focus-visible {
-  transform: translateY(-1px);
-  filter: brightness(1.04);
-  box-shadow: 0 16px 32px rgba(79, 168, 216, 0.28);
-}
-
 .theme-toggle {
   position: fixed;
   right: 18px;
@@ -2123,6 +2098,7 @@ html.reveal-enabled .reveal.is-visible {
   .product-grid,
   .benefit-grid,
   .benefit-list,
+  .category-grid,
   .catalog-grid,
   .timeline,
   .team-grid,
@@ -2274,13 +2250,6 @@ html.reveal-enabled .reveal.is-visible {
     padding: 0;
     font-size: 0;
     color: transparent;
-  }
-
-  .header-cta {
-    display: inline-flex;
-    min-height: 40px;
-    padding: 0 14px;
-    font-size: 0.88rem;
   }
 
   .topbar-actions {

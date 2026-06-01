@@ -447,17 +447,6 @@ const initMenu = () => {
   });
 };
 
-const initHeaderCta = () => {
-  const actions = document.querySelector(".topbar-actions");
-  if (!actions || actions.querySelector(".header-cta")) return;
-
-  const link = document.createElement("a");
-  link.className = "header-cta";
-  link.href = "tarjous.html";
-  link.textContent = "Tarjous";
-  actions.prepend(link);
-};
-
 const initStickyHeader = () => {
   const header = document.querySelector(".topbar");
   if (!header) return;
@@ -824,7 +813,6 @@ initTheme();
 setYear();
 normalizeOfferCopy();
 setActiveNav();
-initHeaderCta();
 initStickyHeader();
 initMenu();
 initReveal();
