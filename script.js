@@ -140,9 +140,9 @@ const MODEL_LIBRARY = {
     series: "NordMod Compact",
     name: "NordMod Compact Aitta 14",
     description: "Kompakti aittaratkaisu lisämajoitukseen, vieraskäyttöön tai pihapiirin lisätilaksi.",
-    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
-    features: ["Kompakti pohjamalli", "Sopii lisämajoitukseen", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
-    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    overview: "NordMod Compact on kompakti ja tehokas piharakennusmalli, joka sopii pienemmille tonteille, mökille tai kodin lisätilaksi. Aittaversio toimii vieras-, harraste- tai lisätilakäytössä silloin, kun halutaan laadukas ja selkeä tilaratkaisu rajalliseen tilaan.",
+    features: ["Aittaversio Compact-kokoluokassa", "Sopii vieras-, harraste- ja lisätilaksi", "Selkeä ratkaisu pienemmille tonteille"],
+    note: "Tarkemmat mitat, kuvat, hinnat ja toimitussisällöt täydentyvät malliston kehittyessä.",
     backLink: "mallisto-compact-14.html",
     image: {
       src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/musta1.png",
@@ -159,9 +159,9 @@ const MODEL_LIBRARY = {
     series: "NordMod Compact",
     name: "NordMod Compact Saunatupa 14",
     description: "Selkeä 14 m² saunatuparatkaisu vapaa-aikaan, pihaan tai mökkikäyttöön.",
-    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
-    features: ["Sauna ja tupa kompaktissa koossa", "Sopii vapaa-aikaan", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
-    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    overview: "NordMod Compact Saunatupa yhdistää saunan ja oleskelutilan tiiviissä kokonaisuudessa. Malli sopii mökille, pihapiiriin tai vapaa-ajan käyttöön, kun halutaan selkeä saunatupatoteutus kompaktissa koossa.",
+    features: ["Sauna ja tupa kompaktissa koossa", "Sopii mökille ja pihapiiriin", "Hyvä valinta rajalliseen tilaan"],
+    note: "Tarkemmat mitat, kuvat, hinnat ja toimitussisällöt täydentyvät malliston kehittyessä.",
     backLink: "mallisto-compact-14.html",
     image: {
       src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/sauna musta 1.png",
@@ -195,9 +195,9 @@ const MODEL_LIBRARY = {
     series: "NordMod Classic",
     name: "NordMod Classic Aitta 18",
     description: "Monikäyttöinen aittamalli vieraskäyttöön, lisämajoitukseen ja vapaa-aikaan.",
-    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
-    features: ["18 m² perusmalli", "Sopii majoitukseen", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
-    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    overview: "NordMod Classic on malliston monikäyttöinen perusmalli, jossa yhdistyvät käytännöllinen pohjaratkaisu, viimeistelty ulkoasu ja pohjoisiin olosuhteisiin suunniteltu rakenne. Aittaversio sopii hyvin vierasmajaksi, lisämajoitukseen tai piharakennukseksi.",
+    features: ["Aittaversio Classic-kokoluokassa", "Sopii majoitukseen ja lisätilaksi", "Viimeistelty perusmalli pohjoisiin oloihin"],
+    note: "Tarkemmat mitat, kuvat, hinnat ja toimitussisällöt täydentyvät malliston kehittyessä.",
     backLink: "mallisto-classic-18.html",
     image: {
       src: "assets/mallisto/nordmod-classic/Classic aitta/kuva1.png",
@@ -213,9 +213,9 @@ const MODEL_LIBRARY = {
     series: "NordMod Classic",
     name: "NordMod Classic Saunatupa 18",
     description: "Classic-sarjan saunatuparatkaisu vapaa-aikaan, pihaan tai mökkikäyttöön.",
-    overview: "Tälle mallille lisätään myöhemmin mallikohtaiset kuvat, pohjakuva, varustelutiedot ja tarkempi tekninen kuvaus.",
-    features: ["Saunatupa 18 m² kokoluokassa", "Sopii vapaa-aikaan ja pihoille", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
-    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    overview: "NordMod Classic Saunatupa on monikäyttöinen perusmalli vapaa-aikaan, mökille ja pihapiiriin. Mallissa yhdistyvät sauna, oleskelu ja käytännöllinen pohjaratkaisu viimeisteltyyn Nordic Modular -ulkoasuun.",
+    features: ["Saunatupa 18 m² kokoluokassa", "Sopii vapaa-aikaan ja pihoille", "Käytännöllinen sauna- ja oleskeluratkaisu"],
+    note: "Tarkemmat mitat, kuvat, hinnat ja toimitussisällöt täydentyvät malliston kehittyessä.",
     backLink: "mallisto-classic-18.html",
     image: {
       src: "assets/mallisto/nordmod-classic/Classic sauna/Classic sauna 1.png",
@@ -249,9 +249,9 @@ const MODEL_LIBRARY = {
     series: "NordMod Grand",
     name: "NordMod Grand Aitta 30",
     description: "Tilavampi aittaratkaisu majoitukseen, vieraskäyttöön tai vapaa-ajan kokonaisuuteen.",
-    overview: "NordMod Grand Aitta 30 on tilavampi aittaratkaisu, joka sopii lisämajoitukseen, vieraskäyttöön ja vapaa-ajan kokonaisuuksiin. Selkeä pohjaratkaisu tekee mallista hyvän lähtökohdan myöhemmälle tarkentamiselle.",
-    features: ["30 m² aittaratkaisu", "Sopii majoitus- ja vieraskäyttöön", "Selkeä kaksiosainen pohjaratkaisu", "Muokattavissa myöhemmin kohteen tarpeiden mukaan"],
-    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    overview: "NordMod Grand on tilavampi ja näyttävämpi moduuliratkaisu vapaa-ajan käyttöön, majoitukseen tai premium-tason piharakennukseksi. Grand Aitta tarjoaa enemmän oleskelutilaa, muunneltavuutta ja mahdollisuuksia varusteluun.",
+    features: ["30 m² aittaratkaisu", "Sopii majoitus- ja vieraskäyttöön", "Tilavampi lähtökohta vapaa-ajan kokonaisuuksiin"],
+    note: "Tarkemmat mitat, kuvat, hinnat ja toimitussisällöt täydentyvät malliston kehittyessä.",
     backLink: "mallisto-grand-30.html",
     image: {
       src: "assets/mallisto/nordmod-grand/grand aitta/grand aitta1.png",
@@ -265,9 +265,9 @@ const MODEL_LIBRARY = {
     series: "NordMod Grand",
     name: "NordMod Grand Saunatupa 30",
     description: "Suurempi saunatuparatkaisu silloin, kun käyttöön tarvitaan enemmän tilaa ja mukavuutta.",
-    overview: "NordMod Grand Saunatupa 30 yhdistää oleskelutilan, saunan ja tukitilat selkeäksi kokonaisuudeksi. Malli sopii vapaa-aikaan, mökkikäyttöön ja majoituskäyttöön silloin, kun halutaan enemmän tilaa ja valmista perusrunkoa jatkokehitykselle.",
-    features: ["30 m² saunatupakokonaisuus", "Oleskelutila, sauna ja wc samaan ratkaisuun", "Sopii vapaa-aikaan, mökille ja majoituskäyttöön", "Muokattavissa varustelun ja viimeistelyn osalta"],
-    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    overview: "NordMod Grand Saunatupa 30 yhdistää oleskelutilan, saunan ja tukitilat selkeäksi kokonaisuudeksi. Malli sopii vapaa-aikaan, mökkikäyttöön ja majoituskäyttöön silloin, kun halutaan enemmän tilaa, käyttömukavuutta ja näyttävämpi kokonaisuus.",
+    features: ["30 m² saunatupakokonaisuus", "Oleskelutila, sauna ja tukitilat", "Sopii vapaa-aikaan, mökille ja majoituskäyttöön"],
+    note: "Tarkemmat mitat, kuvat, hinnat ja toimitussisällöt täydentyvät malliston kehittyessä.",
     backLink: "mallisto-grand-30.html",
     image: {
       src: "assets/mallisto/nordmod-grand/grand saunatupa/iso terassi ok2.png",
@@ -300,16 +300,16 @@ const MODEL_LIBRARY = {
   "nordmod-terassi": {
     series: "NordMod Terassi",
     name: "NordMod Terassi",
-    description: "Moduuliterassi mökkimallin yhteyteen tai erikseen ostettavaksi ratkaisuksi.",
+    description: "Elementtirakenteinen terassiratkaisu mökkimallin yhteyteen tai erikseen ostettavaksi ratkaisuksi.",
     overview:
-      "NordMod Terassi on sama perustuote kaikkiin mallisarjoihin. Se sovitetaan Compact-, Classic- tai Grand-kokoon kohteen ja mökkimallin mukaan, ja sitä voidaan käyttää myös erillisenä terassiratkaisuna saunan, aitan, piharakennuksen tai muun vapaa-ajan kokonaisuuden rinnalla.",
+      "NordMod Terassi on elementtirakenteinen terassiratkaisu saunan, aitan, saunatuvan tai muun piharakennuksen yhteyteen. Terassi voidaan suunnitella osaksi Nordic Modular -mallistoa tai toteuttaa erillisenä ratkaisuna asiakkaan kohteeseen. Selkeä rakenne ja viimeistelty ulkonäkö tekevät siitä käytännöllisen lisän vapaa-ajan rakennuksiin ja pihapiireihin.",
     features: [
       "Sama tuote eri kokovaihtoehtoina",
       "Sopii Compact-, Classic- ja Grand-mallien yhteyteen",
       "Voidaan ostaa myös erillisenä moduuliterassina",
-      "Mitat ja viimeistely tarkennetaan kohteen mukaan",
+      "Mitat ja viimeistely tarkennetaan tarjousvaiheessa",
     ],
-    note: "Tarkat mitat, hinnat ja tuotetiedot lisätään myöhemmin. Tarjousvaiheessa terassi sovitetaan valittuun malliin tai erilliseen käyttökohteeseen.",
+    note: "Tarkemmat mitat, kuvat, hinnat ja toimitussisällöt täydentyvät malliston kehittyessä.",
     backLink: "mallisto.html",
     image: {
       src: "assets/mallisto/Terassi/Terassi.png",
@@ -320,10 +320,10 @@ const MODEL_LIBRARY = {
   "nordic-pihasauna": {
     series: "NordMod Pihasauna",
     name: "NordMod Pihasauna",
-    description: "Selkeä pihasaunamalli mökille, omakotitalon pihaan tai vapaa-ajan käyttöön.",
-    overview: "NordMod Pihasauna on selkeä ja kompakti saunaratkaisu vapaa-aikaan, mökille tai omakotitalon pihaan. Malli toimii hyvänä lähtökohtana silloin, kun halutaan oma saunarakennus ilman turhaa monimutkaisuutta.",
-    features: ["Kompakti pihasaunamalli", "Sopii mökille ja pihapiiriin", "Selkeä saunaratkaisu omaan käyttöön", "Muokattavissa myöhemmin tarkempien toteutustietojen mukaan"],
-    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    description: "Yhden vakiokoon pihasaunamalli mökille, omakotitalon pihapiiriin tai vapaa-ajan käyttöön.",
+    overview: "NordMod Pihasauna on yhden vakiokoon pihasaunamalli, jossa yhdistyvät selkeä pohjaratkaisu, viihtyisä saunatila ja huoliteltu Nordic Modular -tyylinen ulkoasu. Vakiokokoinen ratkaisu tekee suunnittelusta, hinnoittelusta ja toimituksesta selkeämpää.",
+    features: ["Yhden vakiokoon pihasaunamalli", "Selkeä ja helposti hahmotettava pihasaunaratkaisu", "Varustelu ja toimitussisältö tarkentuvat kohteen mukaan"],
+    note: "Tarkemmat mitat, kuvat, hinnat ja toimitussisällöt täydentyvät malliston kehittyessä.",
     backLink: "mallisto-pihasauna.html",
     image: {
       src: "assets/mallisto/nordmod-pihasauna/NordMod Pihasauna/pihasauna plan73.png",
@@ -351,7 +351,7 @@ const setYear = () => {
   }
 };
 
-const THEME_KEY = "nmg-theme";
+const THEME_KEY = "nmg-theme-manual";
 const UI_COPY = {
   menuOpen: "Avaa valikko",
   menuClose: "Sulje valikko",
@@ -399,10 +399,7 @@ const getCurrentTheme = () =>
   document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
 
 const getPreferredTheme = () => {
-  if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
-    return "light";
-  }
-  return "dark";
+  return "light";
 };
 
 const updateThemeButton = (button) => {
@@ -415,6 +412,7 @@ const updateThemeButton = (button) => {
 };
 
 const initTheme = () => {
+  window.localStorage.removeItem("nmg-theme");
   const savedTheme = window.localStorage.getItem(THEME_KEY);
   const initialTheme = savedTheme === "light" || savedTheme === "dark" ? savedTheme : getPreferredTheme();
   applyTheme(initialTheme);
@@ -432,16 +430,6 @@ const initTheme = () => {
     window.localStorage.setItem(THEME_KEY, nextTheme);
     updateThemeButton(themeButton);
   });
-
-  if (window.matchMedia) {
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: light)");
-    mediaQuery.addEventListener("change", () => {
-      const currentSavedTheme = window.localStorage.getItem(THEME_KEY);
-      if (currentSavedTheme === "light" || currentSavedTheme === "dark") return;
-      applyTheme(mediaQuery.matches ? "light" : "dark");
-      updateThemeButton(themeButton);
-    });
-  }
 
   document.body.appendChild(themeButton);
 };
