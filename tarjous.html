@@ -34,7 +34,7 @@
           <div class="page-hero-copy">
             <p class="eyebrow">Tarjous</p>
             <h1>Pyydä alustava tarjous kohteeseesi.</h1>
-            <p class="lead">Kerro meille kiinnostava malli, kohteen sijainti ja toivottu aikataulu. Lähetämme vastaukseksi alustavan ratkaisun ja jatkokysymykset kohteesi mukaan.</p>
+            <p class="lead">Kerro kiinnostava malli, kohteen sijainti ja yhteystietosi. Palaamme asiaan ja tarkennamme kokonaisuuden kanssasi.</p>
           </div>
         </section>
 
@@ -42,8 +42,8 @@
           <form class="quote-form" id="quote-form" novalidate>
             <div class="form-section">
               <div class="form-section-heading">
-                <p class="eyebrow">1. Kiinnostava ratkaisu</p>
-                <h2>Valitse lähtökohta tarjouspyynnölle.</h2>
+                <p class="eyebrow">1. Ratkaisu</p>
+                <h2>Valitse kiinnostava malli.</h2>
               </div>
               <div class="form-grid">
                 <label>
@@ -65,28 +65,7 @@
                       Muu työ tai malliston ulkopuolinen toteutus
                     </option>
                   </select>
-                  <small id="product-hint" class="field-hint">Voit valita myös malliston ulkopuolisen työn.</small>
-                </label>
-
-                <label>
-                  <span>Käyttökohde</span>
-                  <select id="use-case" name="useCase">
-                    <option value="Vapaa-ajan käyttö">Vapaa-ajan käyttö</option>
-                    <option value="Vierasmajoitus">Vierasmajoitus</option>
-                    <option value="Matkailu- tai majoituskäyttö">Matkailu- tai majoituskäyttö</option>
-                    <option value="Työtila tai muu käyttö">Työtila tai muu käyttö</option>
-                    <option value="Muu työ tai malliston ulkopuolinen toteutus">Muu työ tai malliston ulkopuolinen toteutus</option>
-                  </select>
-                </label>
-
-                <label>
-                  <span>Aikataulu</span>
-                  <select id="timeline" name="timeline">
-                    <option value="Mahdollisimman pian">Mahdollisimman pian</option>
-                    <option value="3-6 kuukauden sisällä">3-6 kuukauden sisällä</option>
-                    <option value="6-12 kuukauden sisällä">6-12 kuukauden sisällä</option>
-                    <option value="Suunnittelu käynnissä">Suunnittelu käynnissä</option>
-                  </select>
+                  <small id="product-hint" class="field-hint">Voit valita myös malliston ulkopuolisen toteutuksen.</small>
                 </label>
 
                 <label>
@@ -99,7 +78,7 @@
             <div class="form-section">
               <div class="form-section-heading">
                 <p class="eyebrow">2. Yhteystiedot</p>
-                <h2>Jätä yhteystiedot vastausta varten.</h2>
+                <h2>Jätä nimi ja vähintään yksi yhteystieto.</h2>
               </div>
               <div class="form-grid">
                 <label>
@@ -110,13 +89,13 @@
 
                 <label>
                   <span>Sähköposti</span>
-                  <input id="email" name="email" type="email" placeholder="nimi@esimerkki.fi" required />
+                  <input id="email" name="email" type="email" placeholder="nimi@esimerkki.fi" />
                   <small class="field-error" aria-live="polite"></small>
                 </label>
 
-                <label class="full-span">
+                <label>
                   <span>Puhelin</span>
-                  <input id="phone" name="phone" type="tel" placeholder="+358..." required />
+                  <input id="phone" name="phone" type="tel" placeholder="+358..." />
                   <small class="field-error" aria-live="polite"></small>
                 </label>
               </div>
@@ -129,12 +108,12 @@
               </div>
               <div class="form-grid">
                 <label class="full-span">
-                  <span>Lisätiedot</span>
+                  <span>Vapaa viesti</span>
                   <textarea
                     id="details"
                     name="details"
-                    rows="6"
-                    placeholder="Kerro kohteesta, toiveista, varustelutasosta, tontin tilanteesta tai mahdollisista muista töistä."
+                    rows="5"
+                    placeholder="Kerro lyhyesti kohteesta, toiveista tai kysymyksestä."
                   ></textarea>
                 </label>
               </div>
@@ -142,7 +121,6 @@
 
             <div class="form-actions">
               <button class="button button-primary" type="submit">Pyydä alustava tarjous</button>
-              <button class="button button-secondary" type="reset">Tyhjennä</button>
             </div>
             <div id="quote-form-status" class="form-status" hidden aria-live="polite"></div>
           </form>

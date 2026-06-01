@@ -13,22 +13,18 @@ const QUOTE_EMAIL_CONFIG = {
   cc: "teppo.herranen@nordicmodular.fi",
   subject: "Uusi tarjouspyyntö verkkosivuilta",
   senderName: "Nordic Modular -verkkosivut",
-  // TODO: Korvaa nämä placeholder-arvot lopullisella Polar55 SMTP -kytkennällä.
-  // TODO: Lähetä lomakkeet myöhemmin palvelimen kautta, ei pelkällä varalogiikalla.
   smtp: {
     provider: "Polar55",
-    host: "TODO_POLAR55_SMTP_HOST",
-    port: "TODO_POLAR55_SMTP_PORT",
-    secure: "TODO_POLAR55_SMTP_SECURE",
-    username: "TODO_POLAR55_SMTP_USERNAME",
-    password: "TODO_POLAR55_SMTP_PASSWORD",
+    host: "",
+    port: "",
+    secure: "",
+    username: "",
+    password: "",
   },
 };
 
 const buildQuoteEmailPayload = ({
   productLabel,
-  useCase,
-  timeline,
   location,
   details,
   name,
@@ -47,8 +43,6 @@ const buildQuoteEmailPayload = ({
   _url: "https://www.nordicmodular.fi/tarjous.html",
   lomake: "Tarjouspyynto",
   malli: productLabel,
-  kayttokohde: useCase,
-  aikataulu: timeline,
   paikkakunta: location,
   lisatiedot: details,
   lahettajan_nimi: QUOTE_EMAIL_CONFIG.senderName,
@@ -119,19 +113,6 @@ const normalizeOfferCopy = () => {
     }
   });
 
-  document.querySelectorAll(".price").forEach((element) => {
-    const text = element.textContent?.trim();
-    if (text === "Pyydä erillinen tarjous") {
-      element.textContent = "Alustava hinta määräytyy kohteen mukaan";
-    }
-  });
-
-  document.querySelectorAll("p").forEach((element) => {
-    const text = element.textContent?.trim();
-    if (text === "Pyydä erillinen tarjous. Toteutus ja hinta määräytyvät kohteen vaatimusten mukaan.") {
-      element.textContent = "Alustava hinta ja toimitussisältö tarkennetaan kohteen vaatimusten mukaan.";
-    }
-  });
 };
 
 
@@ -142,7 +123,7 @@ const MODEL_LIBRARY = {
     description: "Kompakti aittaratkaisu lisämajoitukseen, vieraskäyttöön tai pihapiirin lisätilaksi.",
     overview: "NordMod Compact on kompakti ja tehokas piharakennusmalli, joka sopii pienemmille tonteille, mökille tai kodin lisätilaksi. Aittaversio toimii vieras-, harraste- tai lisätilakäytössä silloin, kun halutaan laadukas ja selkeä tilaratkaisu rajalliseen tilaan.",
     features: ["Aittaversio Compact-kokoluokassa", "Sopii vieras-, harraste- ja lisätilaksi", "Selkeä ratkaisu pienemmille tonteille"],
-    note: "Tarkemmat mitat, kuvat, hinnat ja toimitussisällöt täydentyvät malliston kehittyessä.",
+    note: "Mitat, kuvat ja toimitussisältö tarkennetaan kohteen mukaan.",
     backLink: "mallisto-compact-14.html",
     image: {
       src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/musta1.png",
@@ -161,7 +142,7 @@ const MODEL_LIBRARY = {
     description: "Selkeä 14 m² saunatuparatkaisu vapaa-aikaan, pihaan tai mökkikäyttöön.",
     overview: "NordMod Compact Saunatupa yhdistää saunan ja oleskelutilan tiiviissä kokonaisuudessa. Malli sopii mökille, pihapiiriin tai vapaa-ajan käyttöön, kun halutaan selkeä saunatupatoteutus kompaktissa koossa.",
     features: ["Sauna ja tupa kompaktissa koossa", "Sopii mökille ja pihapiiriin", "Hyvä valinta rajalliseen tilaan"],
-    note: "Tarkemmat mitat, kuvat, hinnat ja toimitussisällöt täydentyvät malliston kehittyessä.",
+    note: "Mitat, kuvat ja toimitussisältö tarkennetaan kohteen mukaan.",
     backLink: "mallisto-compact-14.html",
     image: {
       src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/sauna musta 1.png",
@@ -178,9 +159,9 @@ const MODEL_LIBRARY = {
     series: "NordMod Compact",
     name: "NordMod Compact Terassi",
     description: "Compact-sarjaa täydentävä terassiratkaisu, joka viimeistelee kokonaisuuden.",
-    overview: "Tälle mallille lisätään myöhemmin kuvat, vaihtoehdot, mitat ja toteutustiedot.",
-    features: ["Täydentävä terassimalli", "Sopii Compact-sarjan yhteyteen", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
-    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    overview: "NordMod Terassi täydentää Compact-sarjan kokonaisuutta ja tuo rakennuksen eteen selkeän oleskelu- ja kulkutilan.",
+    features: ["Täydentävä terassimalli", "Sopii Compact-sarjan yhteyteen", "Sama tuote kuin NordMod Terassi, koko valitaan mallin mukaan"],
+    note: "Terassi avautuu NordMod Terassi -tuotteena ja koko valitaan mallin mukaan.",
     backLink: "mallisto-compact-14.html",
     image: {
       src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/musta5.png",
@@ -197,7 +178,7 @@ const MODEL_LIBRARY = {
     description: "Monikäyttöinen aittamalli vieraskäyttöön, lisämajoitukseen ja vapaa-aikaan.",
     overview: "NordMod Classic on malliston monikäyttöinen perusmalli, jossa yhdistyvät käytännöllinen pohjaratkaisu, viimeistelty ulkoasu ja pohjoisiin olosuhteisiin suunniteltu rakenne. Aittaversio sopii hyvin vierasmajaksi, lisämajoitukseen tai piharakennukseksi.",
     features: ["Aittaversio Classic-kokoluokassa", "Sopii majoitukseen ja lisätilaksi", "Viimeistelty perusmalli pohjoisiin oloihin"],
-    note: "Tarkemmat mitat, kuvat, hinnat ja toimitussisällöt täydentyvät malliston kehittyessä.",
+    note: "Mitat, kuvat ja toimitussisältö tarkennetaan kohteen mukaan.",
     backLink: "mallisto-classic-18.html",
     image: {
       src: "assets/mallisto/nordmod-classic/Classic aitta/kuva1.png",
@@ -215,7 +196,7 @@ const MODEL_LIBRARY = {
     description: "Classic-sarjan saunatuparatkaisu vapaa-aikaan, pihaan tai mökkikäyttöön.",
     overview: "NordMod Classic Saunatupa on monikäyttöinen perusmalli vapaa-aikaan, mökille ja pihapiiriin. Mallissa yhdistyvät sauna, oleskelu ja käytännöllinen pohjaratkaisu viimeisteltyyn Nordic Modular -ulkoasuun.",
     features: ["Saunatupa 18 m² kokoluokassa", "Sopii vapaa-aikaan ja pihoille", "Käytännöllinen sauna- ja oleskeluratkaisu"],
-    note: "Tarkemmat mitat, kuvat, hinnat ja toimitussisällöt täydentyvät malliston kehittyessä.",
+    note: "Mitat, kuvat ja toimitussisältö tarkennetaan kohteen mukaan.",
     backLink: "mallisto-classic-18.html",
     image: {
       src: "assets/mallisto/nordmod-classic/Classic sauna/Classic sauna 1.png",
@@ -232,9 +213,9 @@ const MODEL_LIBRARY = {
     series: "NordMod Classic",
     name: "NordMod Classic Terassi",
     description: "Terassiratkaisu, joka täydentää Classic-sarjan mallien käyttöä ja viimeistelyä.",
-    overview: "Tälle mallille lisätään myöhemmin kuvat, vaihtoehdot, mitat ja toteutustiedot.",
-    features: ["Täydentävä terassimalli", "Classic-sarjan rinnalle", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
-    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    overview: "NordMod Terassi täydentää Classic-sarjan käyttöä ja viimeistelee rakennuksen edustan selkeäksi oleskelualueeksi.",
+    features: ["Täydentävä terassimalli", "Classic-sarjan rinnalle", "Sama tuote kuin NordMod Terassi, koko valitaan mallin mukaan"],
+    note: "Terassi avautuu NordMod Terassi -tuotteena ja koko valitaan mallin mukaan.",
     backLink: "mallisto-classic-18.html",
     image: {
       src: "assets/mallisto/nordmod-classic/Classic aitta/kuva1.png",
@@ -251,7 +232,7 @@ const MODEL_LIBRARY = {
     description: "Tilavampi aittaratkaisu majoitukseen, vieraskäyttöön tai vapaa-ajan kokonaisuuteen.",
     overview: "NordMod Grand on tilavampi ja näyttävämpi moduuliratkaisu vapaa-ajan käyttöön, majoitukseen tai premium-tason piharakennukseksi. Grand Aitta tarjoaa enemmän oleskelutilaa, muunneltavuutta ja mahdollisuuksia varusteluun.",
     features: ["30 m² aittaratkaisu", "Sopii majoitus- ja vieraskäyttöön", "Tilavampi lähtökohta vapaa-ajan kokonaisuuksiin"],
-    note: "Tarkemmat mitat, kuvat, hinnat ja toimitussisällöt täydentyvät malliston kehittyessä.",
+    note: "Mitat, kuvat ja toimitussisältö tarkennetaan kohteen mukaan.",
     backLink: "mallisto-grand-30.html",
     image: {
       src: "assets/mallisto/nordmod-grand/grand aitta/grand aitta1.png",
@@ -267,7 +248,7 @@ const MODEL_LIBRARY = {
     description: "Suurempi saunatuparatkaisu silloin, kun käyttöön tarvitaan enemmän tilaa ja mukavuutta.",
     overview: "NordMod Grand Saunatupa 30 yhdistää oleskelutilan, saunan ja tukitilat selkeäksi kokonaisuudeksi. Malli sopii vapaa-aikaan, mökkikäyttöön ja majoituskäyttöön silloin, kun halutaan enemmän tilaa, käyttömukavuutta ja näyttävämpi kokonaisuus.",
     features: ["30 m² saunatupakokonaisuus", "Oleskelutila, sauna ja tukitilat", "Sopii vapaa-aikaan, mökille ja majoituskäyttöön"],
-    note: "Tarkemmat mitat, kuvat, hinnat ja toimitussisällöt täydentyvät malliston kehittyessä.",
+    note: "Mitat, kuvat ja toimitussisältö tarkennetaan kohteen mukaan.",
     backLink: "mallisto-grand-30.html",
     image: {
       src: "assets/mallisto/nordmod-grand/grand saunatupa/iso terassi ok2.png",
@@ -284,9 +265,9 @@ const MODEL_LIBRARY = {
     series: "NordMod Grand",
     name: "NordMod Grand Terassi",
     description: "Laajempaa Grand-kokonaisuutta täydentävä terassiratkaisu oleskeluun ja käyttöön.",
-    overview: "Tälle mallille lisätään myöhemmin kuvat, vaihtoehdot, mitat ja toteutustiedot.",
-    features: ["Terassiratkaisu Grand-sarjaan", "Sopii suurempiin kokonaisuuksiin", "Täydennettävissä myöhemmin tarkemmilla tiedoilla"],
-    note: "Kuvat, hinnat, pohjakuvat ja tarkemmat tuotetiedot lisätään tähän mallikohtaisesti myöhemmin.",
+    overview: "NordMod Terassi voidaan sovittaa Grand-sarjan suurempiin kokonaisuuksiin ja laajentaa rakennuksen käyttöä ulkotilaan.",
+    features: ["Terassiratkaisu Grand-sarjaan", "Sopii suurempiin kokonaisuuksiin", "Sama tuote kuin NordMod Terassi, koko valitaan mallin mukaan"],
+    note: "Terassi avautuu NordMod Terassi -tuotteena ja koko valitaan mallin mukaan.",
     backLink: "mallisto-grand-30.html",
     image: {
       src: "assets/mallisto/nordmod-grand/grand aitta/grand aitta1.png",
@@ -309,7 +290,7 @@ const MODEL_LIBRARY = {
       "Voidaan ostaa myös erillisenä moduuliterassina",
       "Mitat ja viimeistely tarkennetaan tarjousvaiheessa",
     ],
-    note: "Tarkemmat mitat, kuvat, hinnat ja toimitussisällöt täydentyvät malliston kehittyessä.",
+    note: "Mitat, kuvat ja toimitussisältö tarkennetaan kohteen mukaan.",
     backLink: "mallisto.html",
     image: {
       src: "assets/mallisto/Terassi/Terassi.png",
@@ -321,9 +302,9 @@ const MODEL_LIBRARY = {
     series: "NordMod Pihasauna",
     name: "NordMod Pihasauna",
     description: "Yhden vakiokoon pihasaunamalli mökille, omakotitalon pihapiiriin tai vapaa-ajan käyttöön.",
-    overview: "NordMod Pihasauna on yhden vakiokoon pihasaunamalli, jossa yhdistyvät selkeä pohjaratkaisu, viihtyisä saunatila ja huoliteltu Nordic Modular -tyylinen ulkoasu. Vakiokokoinen ratkaisu tekee suunnittelusta, hinnoittelusta ja toimituksesta selkeämpää.",
+    overview: "NordMod Pihasauna on yhden vakiokoon pihasaunamalli, jossa yhdistyvät selkeä pohjaratkaisu, viihtyisä saunatila ja huoliteltu Nordic Modular -tyylinen ulkoasu. Vakiokokoinen ratkaisu tekee suunnittelusta ja toimituksesta selkeämpää.",
     features: ["Yhden vakiokoon pihasaunamalli", "Selkeä ja helposti hahmotettava pihasaunaratkaisu", "Varustelu ja toimitussisältö tarkentuvat kohteen mukaan"],
-    note: "Tarkemmat mitat, kuvat, hinnat ja toimitussisällöt täydentyvät malliston kehittyessä.",
+    note: "Mitat, kuvat ja toimitussisältö tarkennetaan kohteen mukaan.",
     backLink: "mallisto-pihasauna.html",
     image: {
       src: "assets/mallisto/nordmod-pihasauna/NordMod Pihasauna/pihasauna plan73.png",
@@ -370,6 +351,7 @@ const UI_COPY = {
   validationName: "Lisää nimi.",
   validationEmail: "Lisää toimiva sähköpostiosoite.",
   validationPhone: "Lisää puhelinnumero, josta sinut tavoittaa.",
+  validationContact: "Lisää sähköposti tai puhelinnumero.",
   validationMessage: "Kerro viestissäsi hieman tarkemmin, miten voimme auttaa.",
 };
 
@@ -465,6 +447,29 @@ const initMenu = () => {
   });
 };
 
+const initHeaderCta = () => {
+  const actions = document.querySelector(".topbar-actions");
+  if (!actions || actions.querySelector(".header-cta")) return;
+
+  const link = document.createElement("a");
+  link.className = "header-cta";
+  link.href = "tarjous.html";
+  link.textContent = "Tarjous";
+  actions.prepend(link);
+};
+
+const initStickyHeader = () => {
+  const header = document.querySelector(".topbar");
+  if (!header) return;
+
+  const updateHeader = () => {
+    header.classList.toggle("is-scrolled", window.scrollY > 16);
+  };
+
+  updateHeader();
+  window.addEventListener("scroll", updateHeader, { passive: true });
+};
+
 const initReveal = () => {
   const items = document.querySelectorAll(".reveal");
   if (!items.length) return;
@@ -512,15 +517,12 @@ const initSimpleQuoteForm = () => {
   const form = document.getElementById("quote-form");
   if (!form) return;
 
-  const totalEl = document.getElementById("estimate-total");
-  const labelEl = document.getElementById("estimate-label");
-  const itemsEl = document.getElementById("estimate-items");
   const statusEl = document.getElementById("quote-form-status");
 
   const validators = {
     name: (value) => (value.trim() ? "" : getUiCopy().validationName),
-    email: (value) => (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()) ? "" : getUiCopy().validationEmail),
-    phone: (value) => (value.trim().length >= 6 ? "" : getUiCopy().validationPhone),
+    email: (value) => (!value.trim() || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()) ? "" : getUiCopy().validationEmail),
+    phone: (value) => (!value.trim() || value.trim().length >= 6 ? "" : getUiCopy().validationPhone),
   };
 
   const setFieldError = (input, message) => {
@@ -566,11 +568,19 @@ const initSimpleQuoteForm = () => {
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const requiredFields = ["name", "email", "phone"].map((name) => form.querySelector(`[name="${name}"]`));
-    const isValid = requiredFields.every((field) => validateField(field));
+    const fieldsToValidate = ["name", "email", "phone"].map((name) => form.querySelector(`[name="${name}"]`));
+    const isValid = fieldsToValidate.every((field) => validateField(field));
+    const emailField = form.querySelector("#email");
+    const phoneField = form.querySelector("#phone");
+    const hasContact = Boolean(emailField.value.trim() || phoneField.value.trim());
 
-    if (!isValid) {
-      const firstInvalid = requiredFields.find((field) => !validateField(field));
+    if (!hasContact) {
+      setFieldError(emailField, getUiCopy().validationContact);
+      setFieldError(phoneField, getUiCopy().validationContact);
+    }
+
+    if (!isValid || !hasContact) {
+      const firstInvalid = fieldsToValidate.find((field) => field.closest("label")?.classList.contains("has-error"));
       firstInvalid?.focus();
       return;
     }
@@ -578,8 +588,6 @@ const initSimpleQuoteForm = () => {
     const product = form.querySelector("#product");
     const selectedProduct = product.options[product.selectedIndex];
     const productLabel = selectedProduct.textContent.trim() || selectedProduct.dataset.label;
-    const useCase = form.querySelector("#use-case").selectedOptions?.[0]?.textContent || form.querySelector("#use-case").value;
-    const timeline = form.querySelector("#timeline").selectedOptions?.[0]?.textContent || form.querySelector("#timeline").value;
     const location = form.querySelector("#location").value.trim() || (getCurrentLanguage() === "en" ? "Not provided" : "Ei ilmoitettu");
     const details = form.querySelector("#details").value.trim() || (getCurrentLanguage() === "en" ? "No additional information" : "Ei lisätietoja");
     const name = form.querySelector("#name").value.trim();
@@ -590,8 +598,6 @@ const initSimpleQuoteForm = () => {
 
     const payload = buildQuoteEmailPayload({
       productLabel,
-      useCase,
-      timeline,
       location,
       details,
       name,
@@ -599,7 +605,6 @@ const initSimpleQuoteForm = () => {
       phone,
     });
 
-    // TODO: Korvaa tämä varalogiikka julkaisuversiossa palvelinlähetyksellä.
     // Polar55 SMTP -kytkennassa tarjouspyynto lahetetaan osoitteeseen info@nordicmodular.fi,
     // kopio teppo.herranen@nordicmodular.fi, Reply-To asiakkaan sahkopostiin
     // ja lahettajan nimena Nordic Modular -verkkosivut.
@@ -819,6 +824,8 @@ initTheme();
 setYear();
 normalizeOfferCopy();
 setActiveNav();
+initHeaderCta();
+initStickyHeader();
 initMenu();
 initReveal();
 initSimpleQuoteForm();
