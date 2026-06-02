@@ -301,9 +301,9 @@ const MODEL_LIBRARY = {
   "nordic-pihasauna": {
     series: "NordMod Pihasauna",
     name: "NordMod Pihasauna",
-    description: "Yhden vakiokoon pihasaunamalli mökille, omakotitalon pihapiiriin tai vapaa-ajan käyttöön.",
-    overview: "NordMod Pihasauna on yhden vakiokoon pihasaunamalli, jossa yhdistyvät selkeä pohjaratkaisu, viihtyisä saunatila ja huoliteltu Nordic Modular -tyylinen ulkoasu. Vakiokokoinen ratkaisu tekee suunnittelusta ja toimituksesta selkeämpää.",
-    features: ["Yhden vakiokoon pihasaunamalli", "Selkeä ja helposti hahmotettava pihasaunaratkaisu", "Varustelu ja toimitussisältö tarkentuvat kohteen mukaan"],
+    description: "Selkeä pihasaunamalli mökille, omakotitalon pihapiiriin tai vapaa-ajan käyttöön.",
+    overview: "NordMod Pihasauna on selkeä pihasaunamalli, jossa yhdistyvät toimiva pohjaratkaisu, viihtyisä saunatila ja huoliteltu Nordic Modular -tyylinen ulkoasu. Ratkaisu tekee suunnittelusta ja toimituksesta selkeämpää.",
+    features: ["Selkeä pihasaunamalli", "Helposti hahmotettava saunaratkaisu", "Varustelu ja toimitussisältö tarkentuvat kohteen mukaan"],
     note: "Mitat, kuvat ja toimitussisältö tarkennetaan kohteen mukaan.",
     backLink: "mallisto-pihasauna.html",
     image: {
