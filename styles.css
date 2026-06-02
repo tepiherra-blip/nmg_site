@@ -349,6 +349,7 @@ main {
   height: 100%;
   min-height: min(86vh, 820px);
   object-fit: cover;
+  object-position: center center;
   filter: saturate(1.04);
 }
 
@@ -535,7 +536,9 @@ body[data-page="mallisto"] .catalog-note {
 .page-hero-image {
   width: 100%;
   min-height: 380px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
+  background: var(--surface-lifted);
   border-radius: var(--radius-xl);
   border: 1px solid var(--line);
   box-shadow: var(--shadow-md);
@@ -947,7 +950,9 @@ p {
   min-height: 0;
   margin: -28px -28px 2px;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
+  padding: 10px;
   background: var(--surface-lifted);
   border-bottom: 1px solid var(--line);
 }
@@ -1039,7 +1044,10 @@ p {
   min-height: 0;
   max-height: 300px;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
+  padding: 8px;
+  background: var(--surface-lifted);
 }
 
 .mobile-catalog-cta {
@@ -1092,7 +1100,9 @@ body[data-page="yritys"] .split-copy {
 .media-card img {
   width: 100%;
   min-height: 280px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
+  background: var(--surface-lifted);
 }
 
 .mobile-feature-image {
@@ -1109,7 +1119,9 @@ body[data-page="yritys"] .split-copy {
   display: block;
   width: 100%;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
+  background: var(--surface-lifted);
 }
 
 .reference-grid {
@@ -1145,7 +1157,8 @@ body[data-page="yritys"] .split-copy {
   width: 100%;
   height: 100%;
   max-height: none;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
 }
 
 .catalog-image-link {
@@ -1263,12 +1276,13 @@ body[data-page="yritys"] .split-copy {
 
 .category-card-media {
   display: flex;
-  align-items: stretch;
-  justify-content: stretch;
+  align-items: center;
+  justify-content: center;
   min-height: 0;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   background: var(--surface-lifted);
+  padding: 10px;
 }
 
 .category-card-placeholder {
@@ -1311,7 +1325,8 @@ body[data-page="yritys"] .split-copy {
   width: 100%;
   height: 100%;
   min-height: 0;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
 }
 
 .category-card-copy {
@@ -1509,7 +1524,9 @@ body[data-page="yritys"] .split-copy {
 .story-card-image {
   width: 100%;
   min-height: 220px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
+  background: var(--surface-lifted);
   border-radius: var(--radius-md);
   border: 1px solid var(--line);
   box-shadow: var(--shadow-sm);
@@ -1746,6 +1763,35 @@ body[data-page="yritys"] .split-copy {
   box-shadow: var(--shadow-sm);
 }
 
+.contact-logo-placeholder {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 4 / 3.6;
+  min-height: 210px;
+  max-height: 260px;
+  padding: 28px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line-strong);
+  background:
+    radial-gradient(circle at top right, rgba(105, 185, 236, 0.14), transparent 32%),
+    radial-gradient(circle at bottom left, rgba(201, 150, 87, 0.12), transparent 28%),
+    var(--surface-lifted);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-logo-placeholder img {
+  display: block;
+  width: min(150px, 72%);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 22px rgba(18, 44, 61, 0.12));
+}
+
+:root[data-theme="dark"] .contact-logo-placeholder img {
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.34));
+}
+
 .contact-role {
   max-width: 100%;
   margin-top: -2px;
@@ -1864,7 +1910,8 @@ body[data-page="yritys"] .split-copy {
   height: auto;
   min-height: 0;
   aspect-ratio: 16 / 10;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
   background: rgba(255, 255, 255, 0.03);
   padding: 0;
 }
@@ -1976,7 +2023,8 @@ body[data-page="yritys"] .split-copy {
   height: auto;
   min-height: 0;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
   background: rgba(255, 255, 255, 0.03);
 }
 
@@ -2342,7 +2390,8 @@ html.reveal-enabled .reveal.is-visible {
     width: 100%;
     max-height: none;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center center;
     border-radius: 14px;
   }
 
@@ -2383,6 +2432,7 @@ html.reveal-enabled .reveal.is-visible {
 
   .category-card-media {
     min-height: 0;
+    padding: 10px;
   }
 
   .category-card-placeholder {
@@ -2452,7 +2502,9 @@ html.reveal-enabled .reveal.is-visible {
     height: 320px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    object-position: center 38%;
+    object-fit: contain;
+    object-position: center center;
+    background: var(--surface-lifted);
   }
 
   .hero-banner-copy {
@@ -2601,6 +2653,33 @@ html.reveal-enabled .reveal.is-visible {
   .home-visual-strip img {
     max-height: 240px;
     aspect-ratio: 4 / 3;
+    object-fit: contain;
+    object-position: center center;
+  }
+
+  .product-card-image,
+  .category-card-media img,
+  .page-hero-image,
+  .catalog-visual img,
+  .home-visual-strip img {
+    object-fit: contain;
+    object-position: center center;
+  }
+
+  .team-card {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .team-card .feature-list,
+  .contact-focus {
+    width: 100%;
+    text-align: left;
+  }
+
+  .contact-logo-placeholder {
+    max-width: 320px;
+    margin-inline: auto;
   }
 
   .contact-hero-logo {
@@ -2644,7 +2723,9 @@ html.reveal-enabled .reveal.is-visible {
     height: auto;
     min-height: 0;
     aspect-ratio: 4 / 3;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center center;
+    background: var(--surface-lifted);
   }
 
   .floor-plan-card {
@@ -2662,6 +2743,8 @@ html.reveal-enabled .reveal.is-visible {
     height: auto;
     min-height: 0;
     aspect-ratio: 4 / 3;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center center;
+    background: var(--surface-lifted);
   }
 }
