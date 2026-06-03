@@ -778,6 +778,10 @@ p {
   grid-template-columns: repeat(4, 1fr);
 }
 
+body[data-page="home"] .product-grid .mobile-featured-card {
+  order: -1;
+}
+
 .benefit-grid {
   grid-template-columns: repeat(2, 1fr);
 }
