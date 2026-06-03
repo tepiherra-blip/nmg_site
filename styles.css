@@ -2644,8 +2644,21 @@ html.reveal-enabled .reveal.is-visible {
     margin-top: 18px;
   }
 
-  body[data-page="home"] .product-grid .product-card:nth-child(n + 3) {
+  body[data-page="home"] .product-grid .product-card {
     display: none;
+  }
+
+  body[data-page="home"] .product-grid .mobile-featured-card,
+  body[data-page="home"] .product-grid .mobile-secondary-card {
+    display: grid;
+  }
+
+  body[data-page="home"] .product-grid .mobile-featured-card {
+    order: 1;
+  }
+
+  body[data-page="home"] .product-grid .mobile-secondary-card {
+    order: 2;
   }
 
   .mobile-catalog-cta {
