@@ -120,10 +120,18 @@ const MODEL_LIBRARY = {
   "compact-aitta-14": {
     series: "NordMod Compact",
     name: "NordMod Compact Aitta 14",
-    description: "Kompakti aittaratkaisu lisämajoitukseen, vieraskäyttöön tai pihapiirin lisätilaksi.",
-    overview: "NordMod Compact on kompakti ja tehokas piharakennusmalli, joka sopii pienemmille tonteille, mökille tai kodin lisätilaksi. Aittaversio toimii vieras-, harraste- tai lisätilakäytössä silloin, kun halutaan laadukas ja selkeä tilaratkaisu rajalliseen tilaan.",
-    features: ["Aittaversio Compact-kokoluokassa", "Sopii vieras-, harraste- ja lisätilaksi", "Selkeä ratkaisu pienemmille tonteille"],
-    note: "Mitat, kuvat ja toimitussisältö tarkennetaan kohteen mukaan.",
+    description: "Premium-varusteltu kompakti aittamalli yhdellä makuuhuoneella ja erillisellä WC-tilalla.",
+    overview:
+      "NordMod Compact Aitta on malliston kompakti aittamalli, joka sisältää yhden makuuhuoneen sekä erillisen WC-tilan. Rakennus toimitetaan lähtökohtaisesti lähes käyttövalmiina kokonaisuutena sisältäen valmiit sisäpinnat, sähköistyksen, LED-valaistuksen, lämmityksen sekä kiintokalusteet tämän toimitussisällön mukaisesti.",
+    features: [
+      "Yksi makuuhuone ja erillinen WC-tila",
+      "Valmiit maalatut sisälevypinnat asiakkaan toiveiden mukaan",
+      "Korkea kiintokomero makuuhuoneessa",
+      "Allaskaappi ja peilikaappi WC-tilassa",
+      "Sähköistys, LED-valaistus ja sähköpatterit vakiona",
+    ],
+    note:
+      "Toimitussisältö perustuu NordMod Compact Aitan vakiomalliin. Rakennus sisältää yhden makuuhuoneen sekä erillisen WC-tilan. WC-istuin toimitetaan lisävarusteena asiakkaan valitseman käyttötarkoituksen ja järjestelmän mukaan. Rakennuksessa ei ole vakiona varausta juoksevalle vedelle eikä viemäröinnille. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
     backLink: "mallisto-compact-14.html",
     image: {
       src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/musta1.png",
@@ -135,50 +143,332 @@ const MODEL_LIBRARY = {
       { src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/musta2.png", alt: "NordMod Compact Aitta ulkonäkymä" },
       { src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/musta3.png", alt: "NordMod Compact Aitta vaihtoehtoinen ulkokuva" },
     ],
+    technicalContent: {
+      title: "Premium-vakiovarustelu ja tekninen toimitussisältö",
+      intro:
+        "NordMod Compact Aitan vakiorakenteet, tekniset ratkaisut ja premium-varustelu muodostavat kompaktiin majoitus- ja lisätilakäyttöön sopivan lähes käyttövalmiin kokonaisuuden.",
+      sections: [
+        {
+          title: "Runko- ja eristerakenteet",
+          groups: [
+            {
+              title: "Alapohja",
+              items: ["Kantava alapohjarunko 48 x 198 mm", "Rossipohjarakenne", "Lämmöneristeenä Finnfoam 210 mm rossipohjaeriste"],
+            },
+            {
+              title: "Ulkoseinät",
+              items: [
+                "Seinärunko 48 x 98 mm",
+                "Lämmöneristeenä Finnfoam 100 mm",
+                "Sisäpuolinen lisäeristys FF-PIR 30 mm",
+                "Sisäpinnat maalattua levypintaa",
+                "Sisälevyseinät maalataan asiakkaan toiveiden mukaan",
+              ],
+            },
+            {
+              title: "Yläpohja",
+              items: [
+                "Yläpohjan runko 48 x 148 mm",
+                "Lämmöneristeenä Finnfoam 210 mm rossipohjaeriste",
+                "Vesikatteena peltinen rivikate",
+                "Vesikourut ja syöksytorvet",
+              ],
+            },
+            {
+              title: "Julkisivu",
+              items: [
+                "28 x 170 mm vaakapanelointi",
+                "Tuuletettu julkisivurakenne",
+                "Julkisivupaneelit maalataan asiakkaan toiveiden mukaan",
+                "Ikkuna- ja ovipellitykset",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Sisäpinnat ja tilakohtaiset varusteet",
+          groups: [
+            {
+              title: "Makuuhuone",
+              items: [
+                "Yksi makuuhuone",
+                "Maalatut levyseinäpinnat asiakkaan toiveiden mukaan",
+                "Tammen sävyinen vinyylilattia",
+                "Katossa 90 mm lämpöhaapapaneeli",
+                "Sähköistys ja LED-valaistus",
+                "Sähköpatteri",
+                "Pistorasiat ja kytkimet valmiiksi asennettuina",
+                "Korkea kiintokomero tavaroiden säilyttämiseen",
+              ],
+            },
+            {
+              title: "WC-tila",
+              items: [
+                "Vinyylilattia",
+                "Maalatut levyseinäpinnat",
+                "Allaskaappi",
+                "Peilikaappi",
+                "LED-valaistus",
+                "Pistorasia peilikaapin yhteydessä",
+                "WC-istuin lisävarusteena asiakkaan valitseman järjestelmän mukaan",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Ikkunat ja ovet",
+          items: [
+            "Energiatehokkaat lämpölasilliset ikkunat ja ovet",
+            "Ikkunatyypit MSE / MEK",
+            "Alumiiniulkopuite",
+            "Musta ulkopuoli",
+            "Sälekaihtimet vakiona",
+          ],
+        },
+        {
+          title: "Talotekniikka",
+          items: [
+            "Rakennus toimitetaan sähköistettynä",
+            "Pistorasiat ja kytkimet valmiiksi asennettuina",
+            "LED-valaistus sisätiloissa",
+            "Ulkovalaistus räystäissä",
+            "Painovoimainen ilmanvaihto",
+            "Yleisissä tiloissa sähköpatterit",
+            "Lisävarusteena ilmalämpöpumppu",
+          ],
+        },
+        {
+          title: "Premium-vakiovarustelu",
+          items: [
+            "Valmiit maalatut sisälevypinnat",
+            "90 mm lämpöhaapapaneeli katoissa",
+            "Tammen sävyinen vinyylilattia",
+            "Korkea kiintokomero makuuhuoneessa",
+            "Allaskaappi ja peilikaappi WC-tilassa",
+            "Energiatehokkaat ikkunat ja ovet",
+            "Sähköistys ja LED-valaistus",
+            "Sähköpatterit",
+            "Painovoimainen ilmanvaihto",
+            "Sälekaihtimet ikkunoissa",
+            "Julkisivun maalaus asiakkaan toiveiden mukaan",
+            "Sisälevyseinien maalaus asiakkaan toiveiden mukaan",
+          ],
+        },
+        {
+          title: "Toimitukseen sisältyy",
+          items: [
+            "Rakennuksen valmistus tehdasolosuhteissa",
+            "Rakennuksen runko-, eriste- ja vesikattorakenteet",
+            "Valmiit ulko- ja sisäpinnat",
+            "Sähköistys ja valaistus",
+            "Allaskaappi ja peilikaappi WC-tilaan",
+            "Lämmitys sähköpattereilla",
+            "Painovoimainen ilmanvaihto",
+            "Rakennuksen siirtovalmius",
+          ],
+        },
+        {
+          title: "Toimitukseen ei sisälly",
+          items: [
+            "Perustukset",
+            "Maatyöt",
+            "Kuljetus",
+            "Nostotyöt",
+            "Tontin sähköliittymä",
+            "Vesiliittymä",
+            "Viemäriliittymä",
+            "WC-istuin ja siihen liittyvä järjestelmä, esimerkiksi polttava WC, kuivakäymälä tai vesikäymälä",
+            "Rakennuslupa- ja viranomaismaksut",
+            "Mahdolliset asiakaskohtaiset lisä- ja muutostyöt",
+          ],
+        },
+      ],
+    },
   },
   "compact-saunatupa-14": {
     series: "NordMod Compact",
-    name: "NordMod Compact Saunatupa 14",
-    description: "Selkeä 14 m² saunatuparatkaisu vapaa-aikaan, pihaan tai mökkikäyttöön.",
-    overview: "NordMod Compact Saunatupa yhdistää saunan ja oleskelutilan tiiviissä kokonaisuudessa. Malli sopii mökille, pihapiiriin tai vapaa-ajan käyttöön, kun halutaan selkeä saunatupatoteutus kompaktissa koossa.",
-    features: ["Sauna ja tupa kompaktissa koossa", "Sopii mökille ja pihapiiriin", "Hyvä valinta rajalliseen tilaan"],
-    note: "Mitat, kuvat ja toimitussisältö tarkennetaan kohteen mukaan.",
+    name: "NordMod Compact Sauna 14",
+    description: "Premium-varusteltu kompakti sauna- ja peseytymisrakennus saunalla, suihkutilalla ja pukuhuoneella.",
+    overview:
+      "NordMod Compact Sauna on kompakti ja laadukas sauna- ja peseytymisrakennus, joka sisältää saunan, suihkutilan sekä pukuhuoneen. Rakennus toimitetaan lähtökohtaisesti lähes käyttövalmiina kokonaisuutena sisältäen valmiit sisäpinnat, sähköistyksen, lämmityksen, ilmanvaihdon, märkätilat sekä saunavarustelun tämän toimitussisällön mukaisesti.",
+    features: [
+      "Sauna, suihkutila ja lämmin pukuhuone",
+      "Vesieristetty ja laatoitettu suihkutila lattialämmityksellä",
+      "Harvia 9 kW sähkökiuas ja mittatilauslauteet",
+      "Lämminvesivaraaja suihkulle",
+      "Sähköistys, LED-valaistus ja ilmanvaihto vakiona",
+    ],
+    note:
+      "Toimitussisältö perustuu NordMod Compact Saunan vakiomalliin. Rakennus sisältää saunan, suihkutilan sekä lämpimän pukuhuoneen ja soveltuu ympärivuotiseen käyttöön. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
     backLink: "mallisto-compact-14.html",
     image: {
       src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/sauna musta 1.png",
-      alt: "NordMod Compact Saunatupa ulkokuva",
+      alt: "NordMod Compact Sauna ulkokuva",
     },
     gallery: [
-      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/Comapct pohja.png", alt: "NordMod Compact Saunatupa pohjakuva", caption: "Pohjakuva", className: "plan-card-wide" },
-      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/sauna musta 2.png", alt: "NordMod Compact Saunatupa sivunäkymä" },
-      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/sauna musta 3.png", alt: "NordMod Compact Saunatupa terassilla" },
-      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/sauna musta 4.png", alt: "NordMod Compact Saunatupa vaihtoehtoinen ulkokuva" },
+      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/Comapct pohja.png", alt: "NordMod Compact Sauna pohjakuva", caption: "Pohjakuva", className: "plan-card-wide" },
+      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/sauna musta 2.png", alt: "NordMod Compact Sauna sivunäkymä" },
+      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/sauna musta 3.png", alt: "NordMod Compact Sauna terassilla" },
+      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/sauna musta 4.png", alt: "NordMod Compact Sauna vaihtoehtoinen ulkokuva" },
     ],
-  },
-  "compact-terassi": {
-    series: "NordMod Compact",
-    name: "NordMod Compact Terassi",
-    description: "Compact-sarjaa täydentävä terassiratkaisu, joka viimeistelee kokonaisuuden.",
-    overview: "NordMod Terassi täydentää Compact-sarjan kokonaisuutta ja tuo rakennuksen eteen selkeän oleskelu- ja kulkutilan.",
-    features: ["Täydentävä terassimalli", "Sopii Compact-sarjan yhteyteen", "Sama tuote kuin NordMod Terassi, koko valitaan mallin mukaan"],
-    note: "Terassi avautuu NordMod Terassi -tuotteena ja koko valitaan mallin mukaan.",
-    backLink: "mallisto-compact-14.html",
-    image: {
-      src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/musta5.png",
-      alt: "NordMod Compact Terassi etunäkymä",
+    technicalContent: {
+      title: "Premium-vakiovarustelu ja tekninen toimitussisältö",
+      intro:
+        "NordMod Compact Saunan vakiorakenteet, tekniset ratkaisut ja premium-varustelu muodostavat kompaktin, laadukkaan ja lähes käyttövalmiin sauna- ja peseytymisrakennuksen.",
+      sections: [
+        {
+          title: "Runko- ja eristerakenteet",
+          groups: [
+            {
+              title: "Alapohja",
+              items: ["Kantava alapohjarunko 48 x 198 mm", "Rossipohjarakenne", "Lämmöneristeenä Finnfoam 210 mm rossipohjaeriste"],
+            },
+            {
+              title: "Ulkoseinät",
+              items: ["Seinärunko 48 x 98 mm", "Lämmöneristeenä Finnfoam 100 mm", "Sisäpuolinen lisäeristys FF-PIR 30 mm"],
+            },
+            {
+              title: "Yläpohja",
+              items: [
+                "Yläpohjan runko 48 x 148 mm",
+                "Lämmöneristeenä Finnfoam 210 mm rossipohjaeriste",
+                "Vesikatteena peltinen rivikate",
+                "Vesikourut ja syöksytorvet",
+              ],
+            },
+            {
+              title: "Julkisivu",
+              items: [
+                "28 x 170 mm vaakapanelointi",
+                "Tuuletettu julkisivurakenne",
+                "Julkisivupaneelit maalataan asiakkaan toiveiden mukaan",
+                "Ikkuna- ja ovipellitykset",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Sisäpinnat ja tilakohtaiset varusteet",
+          groups: [
+            {
+              title: "Pukuhuone",
+              items: [
+                "Seinissä 90 mm lämpöhaapapaneeli",
+                "Katossa 90 mm lämpöhaapapaneeli",
+                "Tammen sävyinen vinyylilattia",
+                "Sähköistys ja LED-valaistus",
+                "Sähköpatteri",
+                "Pistorasiat ja kytkimet valmiiksi asennettuina",
+              ],
+            },
+            {
+              title: "Suihkutila",
+              items: [
+                "Vesieristetyt ja laatoitetut seinät",
+                "Vesieristetty ja laatoitettu lattia",
+                "Viemäröinti",
+                "Lattialämmitys",
+                "Katossa 140 mm lämpöhaapapaneeli",
+                "Lämminvesivaraaja suihkulle",
+                "LED-valaistus",
+                "PAX-kylpyhuonepuhallin",
+              ],
+            },
+            {
+              title: "Sauna",
+              items: [
+                "Seinissä ja katossa 140 mm lämpöhaapapaneeli",
+                "Mittatilaustyönä valmistetut 180 mm radiatamäntylauteet",
+                "Harvia 9 kW sähkökiuas",
+                "Sähköistys ja valaistus",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Ikkunat ja ovet",
+          items: [
+            "Energiatehokkaat lämpölasilliset ikkunat ja ovet",
+            "Ikkunatyypit MSE / MEK",
+            "Alumiiniulkopuite",
+            "Musta ulkopuoli",
+            "Sälekaihtimet vakiona",
+          ],
+        },
+        {
+          title: "Talotekniikka",
+          items: [
+            "Rakennus toimitetaan sähköistettynä",
+            "Pistorasiat ja kytkimet valmiiksi asennettuina",
+            "LED-valaistus sisätiloissa",
+            "Ulkovalaistus räystäissä",
+            "Painovoimainen ilmanvaihto",
+            "PAX-kylpyhuonepuhallin märkätilassa",
+            "Märkätiloissa lattialämmitys",
+            "Pukuhuoneessa sähköpatteri",
+            "Lämminvesivaraaja suihkulle",
+            "Viemäröinti ja vesipisteet",
+          ],
+        },
+        {
+          title: "Premium-vakiovarustelu",
+          items: [
+            "Lämpöhaapapaneelit saunassa sekä pukuhuoneessa",
+            "Mittatilaustyönä valmistetut radiatamäntylauteet",
+            "Vesieristetty ja laatoitettu suihkutila",
+            "Märkätilan lattialämmitys",
+            "Harvia 9 kW sähkökiuas",
+            "Lämminvesivaraaja",
+            "Energiatehokkaat ikkunat ja ovet",
+            "Sähköistys ja LED-valaistus",
+            "Painovoimainen ilmanvaihto",
+            "PAX-kylpyhuonepuhallin",
+            "Sälekaihtimet ikkunoissa",
+          ],
+        },
+        {
+          title: "Toimitukseen sisältyy",
+          items: [
+            "Rakennuksen valmistus tehdasolosuhteissa",
+            "Rakennuksen runko-, eriste- ja vesikattorakenteet",
+            "Valmiit ulko- ja sisäpinnat",
+            "Sähköistys ja valaistus",
+            "Märkätilojen vedeneristys ja laatoitus",
+            "Sauna ja kiuas",
+            "Lämminvesivaraaja",
+            "Rakennuksen siirtovalmius",
+          ],
+        },
+        {
+          title: "Toimitukseen ei sisälly",
+          items: [
+            "Perustukset",
+            "Maatyöt",
+            "Kuljetus",
+            "Nostotyöt",
+            "Tontin sähkö-, vesi- ja viemäriliittymät",
+            "Rakennuslupa- ja viranomaismaksut",
+            "Mahdolliset asiakaskohtaiset lisä- ja muutostyöt",
+          ],
+        },
+      ],
     },
-    gallery: [
-      { src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/musta5.png", alt: "NordMod Compact Terassi etunäkymä" },
-      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/sauna musta 1.png", alt: "NordMod Compact Terassi saunamallin yhteydessä" },
-    ],
   },
   "classic-aitta-18": {
     series: "NordMod Classic",
     name: "NordMod Classic Aitta 18",
-    description: "Monikäyttöinen aittamalli vieraskäyttöön, lisämajoitukseen ja vapaa-aikaan.",
-    overview: "NordMod Classic on malliston monikäyttöinen perusmalli, jossa yhdistyvät käytännöllinen pohjaratkaisu, viimeistelty ulkoasu ja pohjoisiin olosuhteisiin suunniteltu rakenne. Aittaversio sopii hyvin vierasmajaksi, lisämajoitukseen tai piharakennukseksi.",
-    features: ["Aittaversio Classic-kokoluokassa", "Sopii majoitukseen ja lisätilaksi", "Viimeistelty perusmalli pohjoisiin oloihin"],
-    note: "Mitat, kuvat ja toimitussisältö tarkennetaan kohteen mukaan.",
+    description: "Premium-varusteltu kahden makuuhuoneen aittamalli majoitus- ja vierasmajakäyttöön.",
+    overview:
+      "NordMod Classic Aitta toimitetaan lähtökohtaisesti lähes käyttövalmiina kokonaisuutena. Vakiotoimitukseen kuuluvat valmiit sisäpinnat, sähköistys, LED-valaistus, sähköpatterit, painovoimainen ilmanvaihto sekä kahden makuuhuoneen varustelu korkeilla kiintokomeroilla.",
+    features: [
+      "Kaksi erillistä makuuhuonetta",
+      "Valmiit maalatut sisälevypinnat asiakkaan toiveiden mukaan",
+      "Sähköistys, LED-valaistus ja sähköpatterit vakiona",
+      "Korkeat kiintokomerot molemmissa makuuhuoneissa",
+      "Energiatehokkaat lämpölasilliset ikkunat ja ovet",
+    ],
+    note:
+      "Toimitussisältö perustuu NordMod Classic Aitan vakiomalliin. Malli ei sisällä vesipisteitä, viemäröintiä eikä märkätiloja. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
     backLink: "mallisto-classic-18.html",
     image: {
       src: "assets/mallisto/nordmod-classic/Classic aitta/kuva1.png",
@@ -189,14 +479,152 @@ const MODEL_LIBRARY = {
       { src: "assets/mallisto/nordmod-classic/Classic aitta/kuva 3.png", alt: "NordMod Classic Aitta ulkokuva" },
       { src: "assets/mallisto/nordmod-classic/Classic aitta/kuva3.png", alt: "NordMod Classic Aitta vaihtoehtoinen ulkokuva" },
     ],
+    technicalContent: {
+      title: "Premium-vakiovarustelu ja tekninen toimitussisältö",
+      intro:
+        "NordMod Classic Aitan vakiorakenteet, tekniset ratkaisut ja premium-varustelu on suunniteltu laadukkaaseen, energiatehokkaaseen majoitus- ja vierasmajakäyttöön.",
+      sections: [
+        {
+          title: "Runko- ja eristerakenteet",
+          groups: [
+            {
+              title: "Alapohja",
+              items: ["Kantava alapohjarunko 48 x 198 mm", "Rossipohjarakenne", "Lämmöneristeenä Finnfoam 210 mm rossipohjaeriste"],
+            },
+            {
+              title: "Ulkoseinät",
+              items: [
+                "Seinärunko 48 x 98 mm",
+                "Lämmöneristeenä Finnfoam 100 mm",
+                "Sisäpuolinen lisäeristys FF-PIR 30 mm",
+                "Sisäpinnat maalattua levypintaa",
+                "Sisälevyseinät maalataan asiakkaan toiveiden mukaan",
+              ],
+            },
+            {
+              title: "Yläpohja",
+              items: [
+                "Yläpohjan runko 48 x 148 mm",
+                "Lämmöneristeenä Finnfoam 210 mm rossipohjaeriste",
+                "Vesikatteena peltinen rivikate",
+                "Vesikourut ja syöksytorvet",
+              ],
+            },
+            {
+              title: "Julkisivu",
+              items: [
+                "28 x 170 mm vaakapanelointi",
+                "Tuuletettu julkisivurakenne",
+                "Julkisivupaneelit maalataan asiakkaan toiveiden mukaan",
+                "Ikkuna- ja ovipellitykset",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Sisäpinnat ja tilakohtaiset varusteet",
+          groups: [
+            {
+              title: "Makuuhuoneet",
+              items: [
+                "Kaksi erillistä makuuhuonetta",
+                "Maalatut levyseinäpinnat asiakkaan toiveiden mukaan",
+                "Tammen sävyinen vinyylilattia",
+                "Katossa 90 mm lämpöhaapapaneeli",
+                "Sähköistys ja LED-valaistus",
+                "Sähköpatterit",
+                "Pistorasiat ja kytkimet valmiiksi asennettuina",
+                "Korkeat kiintokomerot molemmissa makuuhuoneissa",
+              ],
+            },
+            {
+              title: "Sisustus ja varustelu",
+              items: ["Valmiit sisäpinnat", "Huonekohtainen LED-valaistus", "Huonekohtaiset sähköpatterit", "Sälekaihtimet ikkunoissa"],
+            },
+          ],
+        },
+        {
+          title: "Ikkunat ja ovet",
+          items: [
+            "Energiatehokkaat lämpölasilliset ikkunat ja ovet",
+            "Ikkunatyypit MSE / MEK",
+            "Alumiiniulkopuite",
+            "Musta ulkopuoli",
+            "Sälekaihtimet vakiona",
+          ],
+        },
+        {
+          title: "Talotekniikka",
+          items: [
+            "Rakennus toimitetaan sähköistettynä",
+            "Pistorasiat ja kytkimet valmiiksi asennettuina",
+            "LED-valaistus sisätiloissa",
+            "Ulkovalaistus räystäissä",
+            "Painovoimainen ilmanvaihto",
+            "Yleisissä tiloissa sähköpatterit",
+            "Lisävarusteena ilmalämpöpumppu",
+          ],
+        },
+        {
+          title: "Premium-vakiovarustelu",
+          items: [
+            "Valmiit maalatut sisälevypinnat",
+            "90 mm lämpöhaapapaneeli katoissa",
+            "Tammen sävyinen vinyylilattia",
+            "Korkeat kiintokomerot molemmissa makuuhuoneissa",
+            "Energiatehokkaat ikkunat ja ovet",
+            "Sähköistys ja LED-valaistus",
+            "Sähköpatterit",
+            "Painovoimainen ilmanvaihto",
+            "Sälekaihtimet ikkunoissa",
+            "Julkisivun maalaus asiakkaan toiveiden mukaan",
+            "Sisälevyseinien maalaus asiakkaan toiveiden mukaan",
+          ],
+        },
+        {
+          title: "Toimitukseen sisältyy",
+          items: [
+            "Rakennuksen valmistus tehdasolosuhteissa",
+            "Rakennuksen runko-, eriste- ja vesikattorakenteet",
+            "Valmiit ulko- ja sisäpinnat",
+            "Sähköistys ja valaistus",
+            "Lämmitys sähköpattereilla",
+            "Painovoimainen ilmanvaihto",
+            "Korkeat kiintokomerot molemmissa makuuhuoneissa",
+            "Rakennuksen siirtovalmius",
+          ],
+        },
+        {
+          title: "Toimitukseen ei sisälly",
+          items: [
+            "Perustukset",
+            "Maatyöt",
+            "Kuljetus",
+            "Nostotyöt",
+            "Tontin sähköliittymä",
+            "Vesipisteet, viemäröinti tai märkätilat",
+            "Rakennuslupa- ja viranomaismaksut",
+            "Mahdolliset asiakaskohtaiset lisä- ja muutostyöt",
+          ],
+        },
+      ],
+    },
   },
   "classic-saunatupa-18": {
     series: "NordMod Classic",
     name: "NordMod Classic Saunatupa 18",
-    description: "Classic-sarjan saunatuparatkaisu vapaa-aikaan, pihaan tai mökkikäyttöön.",
-    overview: "NordMod Classic Saunatupa on monikäyttöinen perusmalli vapaa-aikaan, mökille ja pihapiiriin. Mallissa yhdistyvät sauna, oleskelu ja käytännöllinen pohjaratkaisu viimeisteltyyn Nordic Modular -ulkoasuun.",
-    features: ["Saunatupa 18 m² kokoluokassa", "Sopii vapaa-aikaan ja pihoille", "Käytännöllinen sauna- ja oleskeluratkaisu"],
-    note: "Mitat, kuvat ja toimitussisältö tarkennetaan kohteen mukaan.",
+    description: "Premium-varusteltu saunatuparatkaisu valmiilla sisäpinnoilla, märkätiloilla ja kiintokalusteilla.",
+    overview:
+      "NordMod Classic Saunatupa toimitetaan lähtökohtaisesti lähes käyttövalmiina kokonaisuutena. Vakiotoimitukseen kuuluvat valmiit sisäpinnat, sähköistys, lämmitys, ilmanvaihto, märkätilat, sauna, kiuas, lämminvesivaraaja sekä keittiön kiintokalusteet tämän toimitussisällön mukaisesti.",
+    features: [
+      "Sauna, kylpyhuone ja tupatila Classic-kokoluokassa",
+      "Vesieristetyt ja laatoitetut märkätilat lattialämmityksellä",
+      "Harvia 9 kW sähkökiuas ja mittatilauslauteet",
+      "Keittiökalusteet, uuni, jääkaappi sekä pesuallas ja vesipiste",
+      "Sähköistys, LED-valaistus ja ilmanvaihto vakiona",
+    ],
+    note:
+      "Toimitussisältö perustuu NordMod Classic Saunatuvan vakiomalliin. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
     backLink: "mallisto-classic-18.html",
     image: {
       src: "assets/mallisto/nordmod-classic/Classic sauna/Classic sauna 1.png",
@@ -208,31 +636,177 @@ const MODEL_LIBRARY = {
       { src: "assets/mallisto/nordmod-classic/Classic sauna/classic sauna3.png", alt: "NordMod Classic Saunatupa sivunäkymä" },
       { src: "assets/mallisto/nordmod-classic/Classic sauna/classic sauna 4.png", alt: "NordMod Classic Saunatupa vaihtoehtoinen ulkokuva" },
     ],
-  },
-  "classic-terassi": {
-    series: "NordMod Classic",
-    name: "NordMod Classic Terassi",
-    description: "Terassiratkaisu, joka täydentää Classic-sarjan mallien käyttöä ja viimeistelyä.",
-    overview: "NordMod Terassi täydentää Classic-sarjan käyttöä ja viimeistelee rakennuksen edustan selkeäksi oleskelualueeksi.",
-    features: ["Täydentävä terassimalli", "Classic-sarjan rinnalle", "Sama tuote kuin NordMod Terassi, koko valitaan mallin mukaan"],
-    note: "Terassi avautuu NordMod Terassi -tuotteena ja koko valitaan mallin mukaan.",
-    backLink: "mallisto-classic-18.html",
-    image: {
-      src: "assets/mallisto/nordmod-classic/Classic aitta/kuva1.png",
-      alt: "NordMod Classic Terassi mallin yhteydessä",
+    technicalContent: {
+      title: "Premium-vakiovarustelu ja tekninen toimitussisältö",
+      intro:
+        "NordMod Classic Saunatuvan vakiorakenteet, tekniset ratkaisut ja premium-varustelu muodostavat lähes käyttövalmiin kokonaisuuden vapaa-ajan, piha- ja mökkikäyttöön.",
+      sections: [
+        {
+          title: "Runko- ja eristerakenteet",
+          groups: [
+            {
+              title: "Alapohja",
+              items: ["Kantava alapohjarunko 48 x 198 mm", "Rossipohjarakenne", "Lämmöneristeenä Finnfoam 210 mm rossipohjaeriste"],
+            },
+            {
+              title: "Ulkoseinät",
+              items: [
+                "Seinärunko 48 x 98 mm",
+                "Lämmöneristeenä Finnfoam 100 mm",
+                "Sisäpuolinen lisäeristys FF-PIR 30 mm",
+                "Sisäpinnat yleisissä tiloissa maalattua levypintaa",
+                "Sisälevyseinät maalataan asiakkaan toiveiden mukaan",
+              ],
+            },
+            {
+              title: "Yläpohja",
+              items: [
+                "Yläpohjan runko 48 x 148 mm",
+                "Lämmöneristeenä Finnfoam 210 mm rossipohjaeriste",
+                "Vesikatteena peltinen rivikate",
+                "Vesikourut ja syöksytorvet",
+              ],
+            },
+            {
+              title: "Julkisivu",
+              items: [
+                "28 x 170 mm vaakapanelointi",
+                "Tuuletettu julkisivurakenne",
+                "Julkisivupaneelit maalataan asiakkaan toiveiden mukaan",
+                "Ikkuna- ja ovipellitykset",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Sisäpinnat ja tilakohtaiset varusteet",
+          groups: [
+            {
+              title: "Yleiset tilat",
+              items: [
+                "Maalatut levyseinäpinnat asiakkaan toiveiden mukaan",
+                "Tammen sävyinen vinyylilattia",
+                "Katossa 90 mm lämpöhaapapaneeli",
+                "Sähköistys ja LED-valaistus",
+                "Sähköpatterit",
+                "Lisävarusteena ilmalämpöpumppu",
+              ],
+            },
+            {
+              title: "Keittiö / tupatila",
+              items: ["Kiintokalusteet", "Uuni", "Jääkaappi", "Pesuallas ja vesipiste"],
+            },
+            {
+              title: "Kylpyhuone",
+              items: [
+                "Vesieristetyt ja laatoitetut seinät",
+                "Vesieristetty ja laatoitettu lattia",
+                "Viemäröinti",
+                "Lattialämmitys",
+                "Katossa 140 mm lämpöhaapapaneeli",
+                "Lämminvesivaraaja suihkulle",
+                "LED-valaistus",
+                "PAX-kylpyhuonepuhallin",
+              ],
+            },
+            {
+              title: "Sauna",
+              items: [
+                "Seinissä ja katossa 140 mm lämpöhaapapaneeli",
+                "Mittatilaustyönä valmistetut 180 mm radiatamäntylauteet",
+                "Harvia 9 kW sähkökiuas",
+                "Sähköistys ja valaistus",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Ikkunat ja ovet",
+          items: [
+            "Energiatehokkaat lämpölasilliset ikkunat ja ovet",
+            "Ikkunatyypit MSE / MEK",
+            "Alumiiniulkopuite",
+            "Musta ulkopuoli",
+            "Sälekaihtimet vakiona",
+          ],
+        },
+        {
+          title: "Talotekniikka",
+          items: [
+            "Rakennus toimitetaan sähköistettynä",
+            "Pistorasiat ja kytkimet valmiiksi asennettuina",
+            "LED-valaistus sisätiloissa",
+            "Ulkovalaistus räystäissä",
+            "Painovoimainen ilmanvaihto",
+            "PAX-kylpyhuonepuhallin märkätilassa",
+            "Märkätiloissa lattialämmitys",
+            "Yleisissä tiloissa sähköpatterit",
+            "Lämminvesivaraaja suihkulle",
+            "Viemäröinti ja vesipisteet",
+            "Lisävarusteena ilmalämpöpumppu",
+          ],
+        },
+        {
+          title: "Premium-vakiovarustelu",
+          items: [
+            "Lämpöhaapapaneelit saunassa ja sisäkatoissa",
+            "Mittatilaustyönä valmistetut radiatamäntylauteet",
+            "Vesieristetyt ja laatoitetut märkätilat",
+            "Märkätilojen lattialämmitys",
+            "Harvia 9 kW sähkökiuas",
+            "Lämminvesivaraaja",
+            "Energiatehokkaat ikkunat ja ovet",
+            "Sähköistys ja LED-valaistus",
+            "Painovoimainen ilmanvaihto",
+            "PAX-kylpyhuonepuhallin",
+            "Keittiökalusteet ja kodinkoneet",
+            "Sälekaihtimet ikkunoissa",
+          ],
+        },
+        {
+          title: "Toimitukseen sisältyy",
+          items: [
+            "Rakennuksen valmistus tehdasolosuhteissa",
+            "Rakennuksen runko-, eriste- ja vesikattorakenteet",
+            "Valmiit ulko- ja sisäpinnat",
+            "Sähköistys ja valaistus",
+            "Märkätilojen vedeneristys ja laatoitus",
+            "Kiintokalusteet",
+            "Sauna ja kiuas",
+            "Lämminvesivaraaja",
+            "Rakennuksen siirtovalmius",
+          ],
+        },
+        {
+          title: "Toimitukseen ei sisälly",
+          items: [
+            "Perustukset",
+            "Maatyöt",
+            "Kuljetus",
+            "Nostotyöt",
+            "Tontin sähkö-, vesi- ja viemäriliittymät",
+            "Rakennuslupa- ja viranomaismaksut",
+            "Mahdolliset asiakaskohtaiset lisä- ja muutostyöt",
+          ],
+        },
+      ],
     },
-    gallery: [
-      { src: "assets/mallisto/nordmod-classic/Classic aitta/kuva1.png", alt: "NordMod Classic Terassi aittamallin yhteydessä" },
-      { src: "assets/mallisto/nordmod-classic/Classic sauna/Classic sauna 1.png", alt: "NordMod Classic Terassi saunamallin yhteydessä" },
-    ],
   },
   "grand-aitta-30": {
     series: "NordMod Grand",
     name: "NordMod Grand Aitta 30",
-    description: "Tilavampi aittaratkaisu majoitukseen, vieraskäyttöön tai vapaa-ajan kokonaisuuteen.",
-    overview: "NordMod Grand on tilavampi ja näyttävämpi moduuliratkaisu vapaa-ajan käyttöön, majoitukseen tai premium-tason piharakennukseksi. Grand Aitta tarjoaa enemmän oleskelutilaa, muunneltavuutta ja mahdollisuuksia varusteluun.",
-    features: ["30 m² aittaratkaisu", "Sopii majoitus- ja vieraskäyttöön", "Tilavampi lähtökohta vapaa-ajan kokonaisuuksiin"],
-    note: "Mitat, kuvat ja toimitussisältö tarkennetaan kohteen mukaan.",
+    description: "Premium-varusteltu kahden makuuhuoneen aittamalli väljemmässä Grand-kokoluokassa.",
+    overview:
+      "NordMod Grand Aitta on Classic Aittaa hieman suurempi kahden makuuhuoneen aittamalli, joka tarjoaa tutun premium-varustelun sekä laadukkaat materiaalit väljemmässä kokoluokassa. Rakennus toimitetaan lähtökohtaisesti lähes käyttövalmiina kokonaisuutena sisältäen valmiit sisäpinnat, sähköistyksen, LED-valaistuksen, lämmityksen sekä kahden makuuhuoneen varustelun tämän toimitussisällön mukaisesti.",
+    features: [
+      "Kaksi erillistä makuuhuonetta väljemmässä Grand-kokoluokassa",
+      "Valmiit maalatut sisälevypinnat asiakkaan toiveiden mukaan",
+      "Korkeat kiintokomerot molemmissa makuuhuoneissa",
+      "Sähköistys, LED-valaistus ja sähköpatterit vakiona",
+      "Energiatehokkaat lämpölasilliset ikkunat ja ovet",
+    ],
+    note:
+      "Toimitussisältö perustuu NordMod Grand Aitan vakiomalliin. Grand Aitta on Classic Aittaa hieman suurempi kahden makuuhuoneen aittamalli, joka tarjoaa enemmän tilaa majoittumiseen ja säilytykseen säilyttäen saman laadukkaan premium-varustelun. Malli ei sisällä vesipisteitä, viemäröintiä eikä märkätiloja. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
     backLink: "mallisto-grand-30.html",
     image: {
       src: "assets/mallisto/nordmod-grand/grand aitta/grand aitta1.png",
@@ -241,14 +815,152 @@ const MODEL_LIBRARY = {
     gallery: [
       { src: "assets/mallisto/nordmod-grand/grand aitta/Grand pohja.png", alt: "NordMod Grand Aitta pohjakuva", caption: "Pohjakuva", className: "plan-card-wide" },
     ],
+    technicalContent: {
+      title: "Premium-vakiovarustelu ja tekninen toimitussisältö",
+      intro:
+        "NordMod Grand Aitan vakiorakenteet, tekniset ratkaisut ja premium-varustelu tarjoavat laadukkaan kahden makuuhuoneen majoitusratkaisun väljemmässä kokoluokassa.",
+      sections: [
+        {
+          title: "Runko- ja eristerakenteet",
+          groups: [
+            {
+              title: "Alapohja",
+              items: ["Kantava alapohjarunko 48 x 198 mm", "Rossipohjarakenne", "Lämmöneristeenä Finnfoam 210 mm rossipohjaeriste"],
+            },
+            {
+              title: "Ulkoseinät",
+              items: [
+                "Seinärunko 48 x 98 mm",
+                "Lämmöneristeenä Finnfoam 100 mm",
+                "Sisäpuolinen lisäeristys FF-PIR 30 mm",
+                "Sisäpinnat maalattua levypintaa",
+                "Sisälevyseinät maalataan asiakkaan toiveiden mukaan",
+              ],
+            },
+            {
+              title: "Yläpohja",
+              items: [
+                "Yläpohjan runko 48 x 148 mm",
+                "Lämmöneristeenä Finnfoam 210 mm rossipohjaeriste",
+                "Vesikatteena peltinen rivikate",
+                "Vesikourut ja syöksytorvet",
+              ],
+            },
+            {
+              title: "Julkisivu",
+              items: [
+                "28 x 170 mm vaakapanelointi",
+                "Tuuletettu julkisivurakenne",
+                "Julkisivupaneelit maalataan asiakkaan toiveiden mukaan",
+                "Ikkuna- ja ovipellitykset",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Sisäpinnat ja tilakohtaiset varusteet",
+          groups: [
+            {
+              title: "Makuuhuoneet",
+              items: [
+                "Kaksi erillistä makuuhuonetta",
+                "Maalatut levyseinäpinnat asiakkaan toiveiden mukaan",
+                "Tammen sävyinen vinyylilattia",
+                "Katossa 90 mm lämpöhaapapaneeli",
+                "Sähköistys ja LED-valaistus",
+                "Sähköpatterit",
+                "Pistorasiat ja kytkimet valmiiksi asennettuina",
+                "Molemmissa makuuhuoneissa korkeat kiintokomerot tavaroiden säilyttämiseen",
+              ],
+            },
+            {
+              title: "Sisustus ja varustelu",
+              items: ["Valmiit sisäpinnat", "Huonekohtainen LED-valaistus", "Huonekohtaiset sähköpatterit", "Sälekaihtimet ikkunoissa"],
+            },
+          ],
+        },
+        {
+          title: "Ikkunat ja ovet",
+          items: [
+            "Energiatehokkaat lämpölasilliset ikkunat ja ovet",
+            "Ikkunatyypit MSE / MEK",
+            "Alumiiniulkopuite",
+            "Musta ulkopuoli",
+            "Sälekaihtimet vakiona",
+          ],
+        },
+        {
+          title: "Talotekniikka",
+          items: [
+            "Rakennus toimitetaan sähköistettynä",
+            "Pistorasiat ja kytkimet valmiiksi asennettuina",
+            "LED-valaistus sisätiloissa",
+            "Ulkovalaistus räystäissä",
+            "Painovoimainen ilmanvaihto",
+            "Yleisissä tiloissa sähköpatterit",
+            "Lisävarusteena ilmalämpöpumppu",
+          ],
+        },
+        {
+          title: "Premium-vakiovarustelu",
+          items: [
+            "Valmiit maalatut sisälevypinnat",
+            "90 mm lämpöhaapapaneeli katoissa",
+            "Tammen sävyinen vinyylilattia",
+            "Korkeat kiintokomerot molemmissa makuuhuoneissa",
+            "Energiatehokkaat ikkunat ja ovet",
+            "Sähköistys ja LED-valaistus",
+            "Sähköpatterit",
+            "Painovoimainen ilmanvaihto",
+            "Sälekaihtimet ikkunoissa",
+            "Julkisivun maalaus asiakkaan toiveiden mukaan",
+            "Sisälevyseinien maalaus asiakkaan toiveiden mukaan",
+          ],
+        },
+        {
+          title: "Toimitukseen sisältyy",
+          items: [
+            "Rakennuksen valmistus tehdasolosuhteissa",
+            "Rakennuksen runko-, eriste- ja vesikattorakenteet",
+            "Valmiit ulko- ja sisäpinnat",
+            "Sähköistys ja valaistus",
+            "Lämmitys sähköpattereilla",
+            "Painovoimainen ilmanvaihto",
+            "Korkeat kiintokomerot molemmissa makuuhuoneissa",
+            "Rakennuksen siirtovalmius",
+          ],
+        },
+        {
+          title: "Toimitukseen ei sisälly",
+          items: [
+            "Perustukset",
+            "Maatyöt",
+            "Kuljetus",
+            "Nostotyöt",
+            "Tontin sähköliittymä",
+            "Vesipisteet, viemäröinti tai märkätilat",
+            "Rakennuslupa- ja viranomaismaksut",
+            "Mahdolliset asiakaskohtaiset lisä- ja muutostyöt",
+          ],
+        },
+      ],
+    },
   },
   "grand-saunatupa-30": {
     series: "NordMod Grand",
     name: "NordMod Grand Saunatupa 30",
-    description: "Suurempi saunatuparatkaisu silloin, kun käyttöön tarvitaan enemmän tilaa ja mukavuutta.",
-    overview: "NordMod Grand Saunatupa 30 yhdistää oleskelutilan, saunan ja tukitilat selkeäksi kokonaisuudeksi. Malli sopii vapaa-aikaan, mökkikäyttöön ja majoituskäyttöön silloin, kun halutaan enemmän tilaa, käyttömukavuutta ja näyttävämpi kokonaisuus.",
-    features: ["30 m² saunatupakokonaisuus", "Oleskelutila, sauna ja tukitilat", "Sopii vapaa-aikaan, mökille ja majoituskäyttöön"],
-    note: "Mitat, kuvat ja toimitussisältö tarkennetaan kohteen mukaan.",
+    description: "Premium-varusteltu Grand-sarjan saunatupa koneellisella poistoilmanvaihdolla.",
+    overview:
+      "NordMod Grand Saunatupa tarjoaa saman laadukkaan premium-varustelun kuin Classic Saunatupa, mutta varustettuna koneellisella poistoilmanvaihdolla asumismukavuuden ja ilmanvaihdon tehostamiseksi. Rakennus toimitetaan lähtökohtaisesti lähes käyttövalmiina kokonaisuutena sisältäen valmiit sisäpinnat, sähköistyksen, lämmityksen, ilmanvaihdon, märkätilat sekä kiintokalusteet tämän toimitussisällön mukaisesti.",
+    features: [
+      "Grand-sarjan saunatupa valmiilla märkätiloilla",
+      "Koneellinen poistoilmanvaihto vakiona",
+      "Keittiökalusteet, uuni, jääkaappi sekä pesuallas ja vesipiste",
+      "Harvia 9 kW sähkökiuas ja mittatilauslauteet",
+      "Sähköistys, LED-valaistus ja lämmitys vakiona",
+    ],
+    note:
+      "Toimitussisältö perustuu NordMod Grand Saunatuvan vakiomalliin. Grand-mallin vakiona toimitettava koneellinen poistoilmanvaihto parantaa sisäilman laatua ja asumismukavuutta erityisesti ympärivuotisessa käytössä. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
     backLink: "mallisto-grand-30.html",
     image: {
       src: "assets/mallisto/nordmod-grand/grand saunatupa/iso terassi ok2.png",
@@ -260,23 +972,161 @@ const MODEL_LIBRARY = {
       { src: "assets/mallisto/nordmod-grand/grand saunatupa/iso terassi ok 5.png", alt: "NordMod Grand Saunatupa vaihtoehtoinen ulkokuva" },
       { src: "assets/mallisto/nordmod-grand/grand saunatupa/iso terassi ok3.png", alt: "NordMod Grand Saunatupa terassinäkymä" },
     ],
-  },
-  "grand-terassi": {
-    series: "NordMod Grand",
-    name: "NordMod Grand Terassi",
-    description: "Laajempaa Grand-kokonaisuutta täydentävä terassiratkaisu oleskeluun ja käyttöön.",
-    overview: "NordMod Terassi voidaan sovittaa Grand-sarjan suurempiin kokonaisuuksiin ja laajentaa rakennuksen käyttöä ulkotilaan.",
-    features: ["Terassiratkaisu Grand-sarjaan", "Sopii suurempiin kokonaisuuksiin", "Sama tuote kuin NordMod Terassi, koko valitaan mallin mukaan"],
-    note: "Terassi avautuu NordMod Terassi -tuotteena ja koko valitaan mallin mukaan.",
-    backLink: "mallisto-grand-30.html",
-    image: {
-      src: "assets/mallisto/nordmod-grand/grand aitta/grand aitta1.png",
-      alt: "NordMod Grand Terassi aittamallin yhteydessä",
+    technicalContent: {
+      title: "Premium-vakiovarustelu ja tekninen toimitussisältö",
+      intro:
+        "NordMod Grand Saunatuvan vakiorakenteet, tekniset ratkaisut ja premium-varustelu muodostavat lähes käyttövalmiin saunatupakokonaisuuden koneellisella poistoilmanvaihdolla.",
+      sections: [
+        {
+          title: "Runko- ja eristerakenteet",
+          groups: [
+            {
+              title: "Alapohja",
+              items: ["Kantava alapohjarunko 48 x 198 mm", "Rossipohjarakenne", "Lämmöneristeenä Finnfoam 210 mm rossipohjaeriste"],
+            },
+            {
+              title: "Ulkoseinät",
+              items: [
+                "Seinärunko 48 x 98 mm",
+                "Lämmöneristeenä Finnfoam 100 mm",
+                "Sisäpuolinen lisäeristys FF-PIR 30 mm",
+                "Sisäpinnat yleisissä tiloissa maalattua levypintaa",
+                "Sisälevyseinät maalataan asiakkaan toiveiden mukaan",
+              ],
+            },
+            {
+              title: "Yläpohja",
+              items: [
+                "Yläpohjan runko 48 x 148 mm",
+                "Lämmöneristeenä Finnfoam 210 mm rossipohjaeriste",
+                "Vesikatteena peltinen rivikate",
+                "Vesikourut ja syöksytorvet",
+              ],
+            },
+            {
+              title: "Julkisivu",
+              items: [
+                "28 x 170 mm vaakapanelointi",
+                "Tuuletettu julkisivurakenne",
+                "Julkisivupaneelit maalataan asiakkaan toiveiden mukaan",
+                "Ikkuna- ja ovipellitykset",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Sisäpinnat ja tilakohtaiset varusteet",
+          groups: [
+            {
+              title: "Yleiset tilat",
+              items: [
+                "Maalatut levyseinäpinnat asiakkaan toiveiden mukaan",
+                "Tammen sävyinen vinyylilattia",
+                "Katossa 90 mm lämpöhaapapaneeli",
+                "Sähköistys ja LED-valaistus",
+                "Sähköpatterit",
+                "Lisävarusteena ilmalämpöpumppu",
+              ],
+            },
+            {
+              title: "Keittiö / tupatila",
+              items: ["Kiintokalusteet", "Uuni", "Jääkaappi", "Pesuallas ja vesipiste"],
+            },
+            {
+              title: "Kylpyhuone",
+              items: [
+                "Vesieristetyt ja laatoitetut seinät",
+                "Vesieristetty ja laatoitettu lattia",
+                "Viemäröinti",
+                "Lattialämmitys",
+                "Katossa 140 mm lämpöhaapapaneeli",
+                "Lämminvesivaraaja suihkulle",
+                "LED-valaistus",
+                "PAX-kylpyhuonepuhallin",
+              ],
+            },
+            {
+              title: "Sauna",
+              items: [
+                "Seinissä ja katossa 140 mm lämpöhaapapaneeli",
+                "Mittatilaustyönä valmistetut 180 mm radiatamäntylauteet",
+                "Harvia 9 kW sähkökiuas",
+                "Sähköistys ja valaistus",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Ikkunat ja ovet",
+          items: [
+            "Energiatehokkaat lämpölasilliset ikkunat ja ovet",
+            "Ikkunatyypit MSE / MEK",
+            "Alumiiniulkopuite",
+            "Musta ulkopuoli",
+            "Sälekaihtimet vakiona",
+          ],
+        },
+        {
+          title: "Talotekniikka",
+          items: [
+            "Rakennus toimitetaan sähköistettynä",
+            "Pistorasiat ja kytkimet valmiiksi asennettuina",
+            "LED-valaistus sisätiloissa",
+            "Ulkovalaistus räystäissä",
+            "Koneellinen poistoilmanvaihto",
+            "PAX-kylpyhuonepuhallin märkätilassa",
+            "Märkätiloissa lattialämmitys",
+            "Yleisissä tiloissa sähköpatterit",
+            "Lämminvesivaraaja suihkulle",
+            "Viemäröinti ja vesipisteet",
+            "Lisävarusteena ilmalämpöpumppu",
+          ],
+        },
+        {
+          title: "Premium-vakiovarustelu",
+          items: [
+            "Lämpöhaapapaneelit saunassa ja sisäkatoissa",
+            "Mittatilaustyönä valmistetut radiatamäntylauteet",
+            "Vesieristetyt ja laatoitetut märkätilat",
+            "Märkätilojen lattialämmitys",
+            "Harvia 9 kW sähkökiuas",
+            "Lämminvesivaraaja",
+            "Energiatehokkaat ikkunat ja ovet",
+            "Sähköistys ja LED-valaistus",
+            "Koneellinen poistoilmanvaihto",
+            "PAX-kylpyhuonepuhallin",
+            "Keittiökalusteet ja kodinkoneet",
+            "Sälekaihtimet ikkunoissa",
+          ],
+        },
+        {
+          title: "Toimitukseen sisältyy",
+          items: [
+            "Rakennuksen valmistus tehdasolosuhteissa",
+            "Rakennuksen runko-, eriste- ja vesikattorakenteet",
+            "Valmiit ulko- ja sisäpinnat",
+            "Sähköistys ja valaistus",
+            "Märkätilojen vedeneristys ja laatoitus",
+            "Kiintokalusteet",
+            "Sauna ja kiuas",
+            "Lämminvesivaraaja",
+            "Rakennuksen siirtovalmius",
+          ],
+        },
+        {
+          title: "Toimitukseen ei sisälly",
+          items: [
+            "Perustukset",
+            "Maatyöt",
+            "Kuljetus",
+            "Nostotyöt",
+            "Tontin sähkö-, vesi- ja viemäriliittymät",
+            "Rakennuslupa- ja viranomaismaksut",
+            "Mahdolliset asiakaskohtaiset lisä- ja muutostyöt",
+          ],
+        },
+      ],
     },
-    gallery: [
-      { src: "assets/mallisto/nordmod-grand/grand aitta/grand aitta1.png", alt: "NordMod Grand Terassi aittamallin yhteydessä" },
-      { src: "assets/mallisto/nordmod-grand/grand saunatupa/iso terassi ok2.png", alt: "NordMod Grand Terassi saunatuvan yhteydessä" },
-    ],
   },
   "nordmod-terassi": {
     series: "NordMod Terassi",
@@ -301,10 +1151,18 @@ const MODEL_LIBRARY = {
   "nordic-pihasauna": {
     series: "NordMod Pihasauna",
     name: "NordMod Pihasauna",
-    description: "Selkeä pihasaunamalli mökille, omakotitalon pihapiiriin tai vapaa-ajan käyttöön.",
-    overview: "NordMod Pihasauna on selkeä pihasaunamalli, jossa yhdistyvät toimiva pohjaratkaisu, viihtyisä saunatila ja huoliteltu Nordic Modular -tyylinen ulkoasu. Ratkaisu tekee suunnittelusta ja toimituksesta selkeämpää.",
-    features: ["Selkeä pihasaunamalli", "Helposti hahmotettava saunaratkaisu", "Varustelu ja toimitussisältö tarkentuvat kohteen mukaan"],
-    note: "Mitat, kuvat ja toimitussisältö tarkennetaan kohteen mukaan.",
+    description: "Perinteinen puulämmitteinen pihasauna kantovesikäyttöön ja aitoon suomalaiseen saunakokemukseen.",
+    overview:
+      "NordMod Pihasauna on perinteinen puulämmitteinen pihasauna, joka on suunniteltu aidon suomalaisen saunakokemuksen ympärille. Rakennus on tarkoitettu kantovesikäyttöiseen saunomiseen. Se ei ole tarkoitettu ympärivuotiseen asumis- tai majoituskäyttöön, eikä se sisällä vesijohto- tai viemärijärjestelmiä.",
+    features: [
+      "Puulämmitteinen kiuas ja kiuashormisto",
+      "Kantovesikäyttöinen sauna ilman vesijohto- tai viemärijärjestelmiä",
+      "140 mm lämpöhaapapanelointi seinissä ja katossa",
+      "Käsityönä valmistetut radiatamäntylauteet",
+      "Suuri maisemaikkuna ja LED-valaistus",
+    ],
+    note:
+      "Toimitussisältö perustuu NordMod Pihasaunan vakiomalliin. Rakennus on suunniteltu perinteiseen kantovesikäyttöön eikä sisällä vesijohto- tai viemärijärjestelmiä. FF-PIR 30 mm -levytystä käytetään seinissä ja katossa saunan lämpenemisen ja lämmön pysyvyyden parantamiseksi. Mallia ei ole tarkoitettu ympärivuotiseen asumis- tai majoituskäyttöön. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
     backLink: "mallisto-pihasauna.html",
     image: {
       src: "assets/mallisto/nordmod-pihasauna/NordMod Pihasauna/pihasauna plan73.png",
@@ -315,6 +1173,147 @@ const MODEL_LIBRARY = {
       { src: "assets/mallisto/nordmod-pihasauna/NordMod Pihasauna/pihasauna.png", alt: "NordMod Pihasauna etunäkymä" },
       { src: "assets/mallisto/nordmod-pihasauna/NordMod Pihasauna/pihasauna1.png", alt: "NordMod Pihasauna vaihtoehtoinen ulkokuva" },
     ],
+    technicalContent: {
+      title: "Premium-vakiovarustelu ja tekninen toimitussisältö",
+      intro:
+        "NordMod Pihasaunan vakiorakenteet, tekniset ratkaisut ja premium-varustelu on suunniteltu perinteiseen puulämmitteiseen kantovesisaunomiseen laadukkailla materiaaleilla.",
+      sections: [
+        {
+          title: "Runko- ja rakenneratkaisut",
+          groups: [
+            {
+              title: "Alapohja",
+              items: [
+                "Kantava alapohjarunko 48 x 198 mm",
+                "Rossipohjarakenne",
+                "Kaatovanerilattia vedenpoistolla",
+                "Vedenpoistokouru",
+                "Lämpömäntyinen ritilälattia",
+              ],
+            },
+            {
+              title: "Ulkoseinät",
+              items: [
+                "Seinärunko 48 x 98 mm",
+                "Seinissä FF-PIR 30 mm -levytys saunan nopeamman lämpenemisen ja lämmön pysyvyyden parantamiseksi",
+                "Sisäpinnat paneloitu 140 mm lämpöhaapapaneelilla",
+              ],
+            },
+            {
+              title: "Yläpohja",
+              items: [
+                "Yläpohjan runko 48 x 148 mm",
+                "Katossa FF-PIR 30 mm -levytys saunan nopeamman lämpenemisen ja lämmön pysyvyyden parantamiseksi",
+                "Sisäkatto paneloitu 140 mm lämpöhaapapaneelilla",
+                "Vesikatteena peltinen rivikate",
+                "Vesikourut ja syöksytorvet",
+              ],
+            },
+            {
+              title: "Julkisivu",
+              items: [
+                "28 x 170 mm vaakapanelointi",
+                "Tuuletettu julkisivurakenne",
+                "Julkisivupaneelit maalataan asiakkaan toiveiden mukaan",
+                "Ikkuna- ja ovipellitykset",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Sisäpinnat ja varusteet",
+          groups: [
+            {
+              title: "Saunatila",
+              items: [
+                "Seinissä 140 mm lämpöhaapapaneeli",
+                "Katossa 140 mm lämpöhaapapaneeli",
+                "Käsityönä valmistetut radiatamäntylauteet",
+                "Lämpömäntyinen ritilälattia",
+                "Kaatovanerilattia vedenpoistolla",
+                "Vedenpoistokouru",
+                "Suuri maisemaikkuna",
+                "LED-valaistus",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Kiuas ja veden lämmitys",
+          items: [
+            "Puulämmitteinen kiuas",
+            "Kiuashormisto",
+            "Kiuasvesisäiliö lämpimälle pesuvedelle",
+            "Perinteinen kantovesikäyttö",
+          ],
+        },
+        {
+          title: "Ikkunat ja ovet",
+          items: [
+            "Suuri maisemaikkuna",
+            "Malliin soveltuvat ikkunat ja ulko-ovi",
+            "Musta ulkopuoli",
+            "Ikkuna- ja ovimallit valitaan toimituskohtaisesti",
+          ],
+        },
+        {
+          title: "Talotekniikka",
+          items: [
+            "Rakennus toimitetaan sähköistettynä",
+            "LED-valaistus",
+            "Ulkovalaistus räystäissä",
+            "Painovoimainen ilmanvaihto",
+            "Ei vesijohto- tai viemärijärjestelmiä",
+          ],
+        },
+        {
+          title: "Premium-vakiovarustelu",
+          items: [
+            "140 mm lämpöhaapapanelointi seinissä ja katossa",
+            "FF-PIR 30 mm -levytys seinissä ja katossa saunakäyttöä varten",
+            "Käsityönä valmistetut radiatamäntylauteet",
+            "Puulämmitteinen kiuas",
+            "Kiuashormisto",
+            "Kiuasvesisäiliö",
+            "Lämpömäntyinen ritilälattia",
+            "Kaatovanerilattia vedenpoistolla",
+            "Vedenpoistokouru",
+            "Suuri maisemaikkuna",
+            "LED-valaistus",
+            "Julkisivun maalaus asiakkaan toiveiden mukaan",
+          ],
+        },
+        {
+          title: "Toimitukseen sisältyy",
+          items: [
+            "Rakennuksen valmistus tehdasolosuhteissa",
+            "Rakennuksen runko- ja vesikattorakenteet",
+            "Valmiit ulko- ja sisäpinnat",
+            "Puukiuas",
+            "Hormisto",
+            "Kiuasvesisäiliö",
+            "Lauderakenteet",
+            "Sähköistys ja valaistus",
+            "Rakennuksen siirtovalmius",
+          ],
+        },
+        {
+          title: "Toimitukseen ei sisälly",
+          items: [
+            "Perustukset",
+            "Maatyöt",
+            "Kuljetus",
+            "Nostotyöt",
+            "Vesiliittymät",
+            "Viemäröinti",
+            "Suihkutilat",
+            "Ympärivuotiseen asumis- tai majoituskäyttöön vaadittavat ratkaisut",
+            "Rakennuslupa- ja viranomaismaksut",
+            "Mahdolliset asiakaskohtaiset lisä- ja muutostyöt",
+          ],
+        },
+      ],
+    },
   },
 };
 
@@ -358,19 +1357,77 @@ const UI_COPY = {
 const getCurrentLanguage = () => "fi";
 const getUiCopy = () => UI_COPY;
 
-const MODEL_ALIASES = {
-  "compact-terassi": "nordmod-terassi",
-  "classic-terassi": "nordmod-terassi",
-  "grand-terassi": "nordmod-terassi",
+const MODEL_ALIASES = {};
+
+const createTextElement = (tagName, className, text) => {
+  const element = document.createElement(tagName);
+  if (className) element.className = className;
+  element.textContent = text;
+  return element;
 };
 
-const TERRACE_SIZE_LABELS = {
-  compact: "NordMod Terassi Compact-koko",
-  classic: "NordMod Terassi Classic-koko",
-  grand: "NordMod Terassi Grand-koko",
-  "compact-terassi": "NordMod Terassi Compact-koko",
-  "classic-terassi": "NordMod Terassi Classic-koko",
-  "grand-terassi": "NordMod Terassi Grand-koko",
+const createItemList = (items) => {
+  const list = document.createElement("ul");
+  list.className = "feature-list technical-list";
+
+  items.forEach((item) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = item;
+    list.appendChild(listItem);
+  });
+
+  return list;
+};
+
+const renderTechnicalContent = (container, content) => {
+  if (!container) return;
+
+  const existingCard = container.querySelector(".technical-content-card");
+  existingCard?.remove();
+
+  if (!content) return;
+
+  const card = document.createElement("article");
+  card.className = "info-card technical-content-card";
+  card.appendChild(createTextElement("span", "card-label", "Tekniset tiedot"));
+  card.appendChild(createTextElement("h2", "", content.title));
+
+  if (content.intro) {
+    card.appendChild(createTextElement("p", "technical-intro", content.intro));
+  }
+
+  const sections = document.createElement("div");
+  sections.className = "technical-sections";
+
+  content.sections.forEach((section) => {
+    const sectionEl = document.createElement("section");
+    sectionEl.className = "technical-section";
+    sectionEl.appendChild(createTextElement("h3", "", section.title));
+
+    if (section.items?.length) {
+      sectionEl.appendChild(createItemList(section.items));
+    }
+
+    if (section.groups?.length) {
+      const groupsEl = document.createElement("div");
+      groupsEl.className = "technical-groups";
+
+      section.groups.forEach((group) => {
+        const groupEl = document.createElement("div");
+        groupEl.className = "technical-group";
+        groupEl.appendChild(createTextElement("h4", "", group.title));
+        groupEl.appendChild(createItemList(group.items));
+        groupsEl.appendChild(groupEl);
+      });
+
+      sectionEl.appendChild(groupsEl);
+    }
+
+    sections.appendChild(sectionEl);
+  });
+
+  card.appendChild(sections);
+  container.appendChild(card);
 };
 
 const applyTheme = (theme) => {
@@ -496,9 +1553,10 @@ const setModelFromQuery = (form) => {
   if (!model) return;
 
   const product = form.querySelector("#product");
-  const option = Array.from(product.options).find((item) => item.dataset.label === model);
+  const optionIndex = Array.from(product.options).findIndex((item) => item.dataset.label === model);
+  const option = product.options[optionIndex];
   if (option) {
-    product.value = option.value;
+    product.selectedIndex = optionIndex;
   }
 };
 
@@ -726,7 +1784,6 @@ const initModelDetail = () => {
   const params = new URLSearchParams(window.location.search);
   const requestedModelId = params.get("model");
   const modelId = MODEL_ALIASES[requestedModelId] || requestedModelId;
-  const sizeLabel = TERRACE_SIZE_LABELS[params.get("size")] || TERRACE_SIZE_LABELS[requestedModelId];
   const model = modelId ? MODEL_LIBRARY[modelId] : null;
 
   if (!model) {
@@ -748,6 +1805,7 @@ const initModelDetail = () => {
   const galleryEl = document.getElementById("model-gallery");
   const backLinkEl = document.getElementById("model-back-link");
   const offerLinkEl = document.getElementById("model-offer-link");
+  const detailStackEl = document.querySelector(".detail-stack");
 
   if (seriesEl) seriesEl.textContent = `Mallisto / ${model.series}`;
   nameEl.textContent = model.name;
@@ -757,8 +1815,7 @@ const initModelDetail = () => {
   if (placeholderEl) placeholderEl.textContent = model.name;
   if (backLinkEl) backLinkEl.href = model.backLink;
   if (offerLinkEl) {
-    const offerProductName = modelId === "nordmod-terassi" && sizeLabel ? sizeLabel : model.name;
-    offerLinkEl.href = `tarjous.html?model=${encodeURIComponent(offerProductName)}`;
+    offerLinkEl.href = `tarjous.html?model=${encodeURIComponent(model.name)}`;
   }
 
   if (mainImageEl && model.image?.src) {
@@ -774,6 +1831,8 @@ const initModelDetail = () => {
   if (featuresEl) {
     featuresEl.innerHTML = model.features.map((feature) => `<li>${feature}</li>`).join("");
   }
+
+  renderTechnicalContent(detailStackEl, model.technicalContent);
 
   const galleryItems = Array.isArray(model.gallery) ? model.gallery : [];
   const floorPlan = galleryItems.find((item) => item.className?.includes("plan-card") || item.caption === "Pohjakuva");

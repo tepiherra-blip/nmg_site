@@ -1760,15 +1760,27 @@ body[data-page="yritys"] .split-copy {
 }
 
 .contact-portrait {
+  display: block;
   width: 100%;
-  aspect-ratio: 4 / 3.6;
-  min-height: 210px;
-  max-height: 260px;
+  aspect-ratio: 4 / 5;
+  min-height: 300px;
   object-fit: cover;
-  object-position: center top;
+  object-position: var(--portrait-position, center 16%);
   border-radius: var(--radius-sm);
   border: 1px solid var(--line-strong);
   box-shadow: var(--shadow-sm);
+}
+
+.contact-portrait--teppo {
+  --portrait-position: 50% 14%;
+}
+
+.contact-portrait--aleksi {
+  --portrait-position: 50% 12%;
+}
+
+.contact-portrait--toni {
+  --portrait-position: 50% 14%;
 }
 
 .contact-logo-placeholder {
@@ -2021,6 +2033,64 @@ body[data-page="yritys"] .split-copy {
   margin-top: 18px;
 }
 
+.technical-content-card {
+  gap: 18px;
+}
+
+.technical-intro {
+  max-width: 72ch;
+}
+
+.technical-sections {
+  display: grid;
+  gap: 18px;
+}
+
+.technical-section {
+  display: grid;
+  gap: 12px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.technical-section h3,
+.technical-group h4 {
+  margin: 0;
+  color: var(--text);
+}
+
+.technical-section h3 {
+  font-size: 1.05rem;
+}
+
+.technical-group h4 {
+  font-size: 0.94rem;
+}
+
+.technical-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.technical-group {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.technical-list {
+  margin-top: 0;
+}
+
+.technical-list li {
+  line-height: 1.45;
+}
+
 .detail-price {
   font-size: clamp(2rem, 3vw, 3rem);
 }
@@ -2140,6 +2210,10 @@ html.reveal-enabled .reveal.is-visible {
   .timeline,
   .detail-gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .technical-groups {
+    grid-template-columns: 1fr;
   }
 
   .product-featured {
@@ -2703,7 +2777,8 @@ html.reveal-enabled .reveal.is-visible {
     text-align: left;
   }
 
-  .contact-logo-placeholder {
+  .contact-logo-placeholder,
+  .contact-portrait {
     max-width: 320px;
     margin-inline: auto;
   }
