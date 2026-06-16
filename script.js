@@ -125,7 +125,7 @@ const MODEL_LIBRARY = {
       "NordMod Compact Aitta on malliston kompakti aittamalli, joka sisältää yhden makuuhuoneen sekä erillisen WC-tilan. Rakennus toimitetaan lähtökohtaisesti lähes käyttövalmiina kokonaisuutena sisältäen valmiit sisäpinnat, sähköistyksen, LED-valaistuksen, lämmityksen sekä kiintokalusteet tämän toimitussisällön mukaisesti.",
     features: [
       "Yksi makuuhuone ja erillinen WC-tila",
-      "Valmiit maalatut sisälevypinnat asiakkaan toiveiden mukaan",
+      "Valmiit maalatut sisälevypinnat valikoiduilla vakioväreillä",
       "Korkea kiintokomero makuuhuoneessa",
       "Allaskaappi ja peilikaappi WC-tilassa",
       "Sähköistys, LED-valaistus ja sähköpatterit vakiona",
@@ -162,7 +162,7 @@ const MODEL_LIBRARY = {
                 "Lämmöneristeenä Finnfoam 100 mm",
                 "Sisäpuolinen lisäeristys FF-PIR 30 mm",
                 "Sisäpinnat maalattua levypintaa",
-                "Sisälevyseinät maalataan asiakkaan toiveiden mukaan",
+                "Sisälevyseinät maalataan valikoiduilla vakioväreillä; vakiovärien ulkopuoliset sävyt lisähintaan",
               ],
             },
             {
@@ -179,7 +179,7 @@ const MODEL_LIBRARY = {
               items: [
                 "28 x 170 mm vaakapanelointi",
                 "Tuuletettu julkisivurakenne",
-                "Julkisivupaneelit maalataan asiakkaan toiveiden mukaan",
+                "Julkisivupaneelit maalataan valikoiduilla vakioväreillä; vakiovärien ulkopuoliset sävyt lisähintaan",
                 "Ikkuna- ja ovipellitykset",
               ],
             },
@@ -192,7 +192,7 @@ const MODEL_LIBRARY = {
               title: "Makuuhuone",
               items: [
                 "Yksi makuuhuone",
-                "Maalatut levyseinäpinnat asiakkaan toiveiden mukaan",
+                "Maalatut levyseinäpinnat valikoiduilla vakioväreillä",
                 "Tammen sävyinen vinyylilattia",
                 "Katossa 90 mm lämpöhaapapaneeli",
                 "Sähköistys ja LED-valaistus",
@@ -218,11 +218,11 @@ const MODEL_LIBRARY = {
         {
           title: "Ikkunat ja ovet",
           items: [
-            "Energiatehokkaat lämpölasilliset ikkunat ja ovet",
-            "Ikkunatyypit MSE / MEK",
-            "Alumiiniulkopuite",
+            "Pääosin kiinteät energiatehokkaat lämpölasilliset ikkunat",
+            "Mallikohtaisesti avattava tuuletusikkuna",
             "Musta ulkopuoli",
-            "Sälekaihtimet vakiona",
+            "Sisäpuolella mustaksi maalattu 131 mm mäntykarmi",
+            "Ikkunatyypit ja avattavuudet määritellään mallin ja toimituksen mukaan",
           ],
         },
         {
@@ -249,9 +249,8 @@ const MODEL_LIBRARY = {
             "Sähköistys ja LED-valaistus",
             "Sähköpatterit",
             "Painovoimainen ilmanvaihto",
-            "Sälekaihtimet ikkunoissa",
-            "Julkisivun maalaus asiakkaan toiveiden mukaan",
-            "Sisälevyseinien maalaus asiakkaan toiveiden mukaan",
+            "Julkisivun maalaus valikoiduilla vakioväreillä",
+            "Sisälevyseinien maalaus valikoiduilla vakioväreillä",
           ],
         },
         {
@@ -282,6 +281,12 @@ const MODEL_LIBRARY = {
             "Mahdolliset asiakaskohtaiset lisä- ja muutostyöt",
           ],
         },
+        {
+          title: "Perustus- ja pohjatyöt lisäpalveluna",
+          items: [
+            "Perustus- ja pohjatyöt voidaan tarjota erikseen kohteen mukaan. Toteutuksessa hyödynnämme luotettuja aliurakoitsijoita, jolloin kokonaisuus voidaan sovittaa yhteen rakennuksen toimituksen kanssa.",
+          ],
+        },
       ],
     },
   },
@@ -294,7 +299,7 @@ const MODEL_LIBRARY = {
     features: [
       "Sauna, suihkutila ja lämmin pukuhuone",
       "Vesieristetty ja laatoitettu suihkutila lattialämmityksellä",
-      "Harvia 9 kW sähkökiuas ja mittatilauslauteet",
+      "Sähkökiuas Harvia Cilindro Xenio PC90XE Black ja mittatilauslauteet",
       "Lämminvesivaraaja suihkulle",
       "Sähköistys, LED-valaistus ja ilmanvaihto vakiona",
     ],
@@ -341,7 +346,7 @@ const MODEL_LIBRARY = {
               items: [
                 "28 x 170 mm vaakapanelointi",
                 "Tuuletettu julkisivurakenne",
-                "Julkisivupaneelit maalataan asiakkaan toiveiden mukaan",
+                "Julkisivupaneelit maalataan valikoiduilla vakioväreillä; vakiovärien ulkopuoliset sävyt lisähintaan",
                 "Ikkuna- ja ovipellitykset",
               ],
             },
@@ -371,7 +376,6 @@ const MODEL_LIBRARY = {
                 "Katossa 140 mm lämpöhaapapaneeli",
                 "Lämminvesivaraaja suihkulle",
                 "LED-valaistus",
-                "PAX-kylpyhuonepuhallin",
               ],
             },
             {
@@ -379,7 +383,7 @@ const MODEL_LIBRARY = {
               items: [
                 "Seinissä ja katossa 140 mm lämpöhaapapaneeli",
                 "Mittatilaustyönä valmistetut 180 mm radiatamäntylauteet",
-                "Harvia 9 kW sähkökiuas",
+                "Sähkökiuas Harvia Cilindro Xenio PC90XE Black",
                 "Sähköistys ja valaistus",
               ],
             },
@@ -388,11 +392,11 @@ const MODEL_LIBRARY = {
         {
           title: "Ikkunat ja ovet",
           items: [
-            "Energiatehokkaat lämpölasilliset ikkunat ja ovet",
-            "Ikkunatyypit MSE / MEK",
-            "Alumiiniulkopuite",
+            "Pääosin kiinteät energiatehokkaat lämpölasilliset ikkunat",
+            "Mallikohtaisesti avattava tuuletusikkuna",
             "Musta ulkopuoli",
-            "Sälekaihtimet vakiona",
+            "Sisäpuolella mustaksi maalattu 131 mm mäntykarmi",
+            "Ikkunatyypit ja avattavuudet määritellään mallin ja toimituksen mukaan",
           ],
         },
         {
@@ -417,13 +421,12 @@ const MODEL_LIBRARY = {
             "Mittatilaustyönä valmistetut radiatamäntylauteet",
             "Vesieristetty ja laatoitettu suihkutila",
             "Märkätilan lattialämmitys",
-            "Harvia 9 kW sähkökiuas",
+            "Sähkökiuas Harvia Cilindro Xenio PC90XE Black",
             "Lämminvesivaraaja",
             "Energiatehokkaat ikkunat ja ovet",
             "Sähköistys ja LED-valaistus",
             "Painovoimainen ilmanvaihto",
             "PAX-kylpyhuonepuhallin",
-            "Sälekaihtimet ikkunoissa",
           ],
         },
         {
@@ -451,6 +454,12 @@ const MODEL_LIBRARY = {
             "Mahdolliset asiakaskohtaiset lisä- ja muutostyöt",
           ],
         },
+        {
+          title: "Perustus- ja pohjatyöt lisäpalveluna",
+          items: [
+            "Perustus- ja pohjatyöt voidaan tarjota erikseen kohteen mukaan. Toteutuksessa hyödynnämme luotettuja aliurakoitsijoita, jolloin kokonaisuus voidaan sovittaa yhteen rakennuksen toimituksen kanssa.",
+          ],
+        },
       ],
     },
   },
@@ -462,7 +471,7 @@ const MODEL_LIBRARY = {
       "NordMod Classic Aitta toimitetaan lähtökohtaisesti lähes käyttövalmiina kokonaisuutena. Vakiotoimitukseen kuuluvat valmiit sisäpinnat, sähköistys, LED-valaistus, sähköpatterit, painovoimainen ilmanvaihto sekä kahden makuuhuoneen varustelu korkeilla kiintokomeroilla.",
     features: [
       "Kaksi erillistä makuuhuonetta",
-      "Valmiit maalatut sisälevypinnat asiakkaan toiveiden mukaan",
+      "Valmiit maalatut sisälevypinnat valikoiduilla vakioväreillä",
       "Sähköistys, LED-valaistus ja sähköpatterit vakiona",
       "Korkeat kiintokomerot molemmissa makuuhuoneissa",
       "Energiatehokkaat lämpölasilliset ikkunat ja ovet",
@@ -498,7 +507,7 @@ const MODEL_LIBRARY = {
                 "Lämmöneristeenä Finnfoam 100 mm",
                 "Sisäpuolinen lisäeristys FF-PIR 30 mm",
                 "Sisäpinnat maalattua levypintaa",
-                "Sisälevyseinät maalataan asiakkaan toiveiden mukaan",
+                "Sisälevyseinät maalataan valikoiduilla vakioväreillä; vakiovärien ulkopuoliset sävyt lisähintaan",
               ],
             },
             {
@@ -515,7 +524,7 @@ const MODEL_LIBRARY = {
               items: [
                 "28 x 170 mm vaakapanelointi",
                 "Tuuletettu julkisivurakenne",
-                "Julkisivupaneelit maalataan asiakkaan toiveiden mukaan",
+                "Julkisivupaneelit maalataan valikoiduilla vakioväreillä; vakiovärien ulkopuoliset sävyt lisähintaan",
                 "Ikkuna- ja ovipellitykset",
               ],
             },
@@ -528,7 +537,7 @@ const MODEL_LIBRARY = {
               title: "Makuuhuoneet",
               items: [
                 "Kaksi erillistä makuuhuonetta",
-                "Maalatut levyseinäpinnat asiakkaan toiveiden mukaan",
+                "Maalatut levyseinäpinnat valikoiduilla vakioväreillä",
                 "Tammen sävyinen vinyylilattia",
                 "Katossa 90 mm lämpöhaapapaneeli",
                 "Sähköistys ja LED-valaistus",
@@ -539,18 +548,18 @@ const MODEL_LIBRARY = {
             },
             {
               title: "Sisustus ja varustelu",
-              items: ["Valmiit sisäpinnat", "Huonekohtainen LED-valaistus", "Huonekohtaiset sähköpatterit", "Sälekaihtimet ikkunoissa"],
+              items: ["Valmiit sisäpinnat", "Huonekohtainen LED-valaistus", "Huonekohtaiset sähköpatterit"],
             },
           ],
         },
         {
           title: "Ikkunat ja ovet",
           items: [
-            "Energiatehokkaat lämpölasilliset ikkunat ja ovet",
-            "Ikkunatyypit MSE / MEK",
-            "Alumiiniulkopuite",
+            "Pääosin kiinteät energiatehokkaat lämpölasilliset ikkunat",
+            "Mallikohtaisesti avattava tuuletusikkuna",
             "Musta ulkopuoli",
-            "Sälekaihtimet vakiona",
+            "Sisäpuolella mustaksi maalattu 131 mm mäntykarmi",
+            "Ikkunatyypit ja avattavuudet määritellään mallin ja toimituksen mukaan",
           ],
         },
         {
@@ -576,9 +585,8 @@ const MODEL_LIBRARY = {
             "Sähköistys ja LED-valaistus",
             "Sähköpatterit",
             "Painovoimainen ilmanvaihto",
-            "Sälekaihtimet ikkunoissa",
-            "Julkisivun maalaus asiakkaan toiveiden mukaan",
-            "Sisälevyseinien maalaus asiakkaan toiveiden mukaan",
+            "Julkisivun maalaus valikoiduilla vakioväreillä",
+            "Sisälevyseinien maalaus valikoiduilla vakioväreillä",
           ],
         },
         {
@@ -607,6 +615,12 @@ const MODEL_LIBRARY = {
             "Mahdolliset asiakaskohtaiset lisä- ja muutostyöt",
           ],
         },
+        {
+          title: "Perustus- ja pohjatyöt lisäpalveluna",
+          items: [
+            "Perustus- ja pohjatyöt voidaan tarjota erikseen kohteen mukaan. Toteutuksessa hyödynnämme luotettuja aliurakoitsijoita, jolloin kokonaisuus voidaan sovittaa yhteen rakennuksen toimituksen kanssa.",
+          ],
+        },
       ],
     },
   },
@@ -619,7 +633,7 @@ const MODEL_LIBRARY = {
     features: [
       "Sauna, kylpyhuone ja tupatila Classic-kokoluokassa",
       "Vesieristetyt ja laatoitetut märkätilat lattialämmityksellä",
-      "Harvia 9 kW sähkökiuas ja mittatilauslauteet",
+      "Sähkökiuas Harvia Cilindro Xenio PC90XE Black ja mittatilauslauteet",
       "Keittiökalusteet, uuni, jääkaappi sekä pesuallas ja vesipiste",
       "Sähköistys, LED-valaistus ja ilmanvaihto vakiona",
     ],
@@ -655,7 +669,7 @@ const MODEL_LIBRARY = {
                 "Lämmöneristeenä Finnfoam 100 mm",
                 "Sisäpuolinen lisäeristys FF-PIR 30 mm",
                 "Sisäpinnat yleisissä tiloissa maalattua levypintaa",
-                "Sisälevyseinät maalataan asiakkaan toiveiden mukaan",
+                "Sisälevyseinät maalataan valikoiduilla vakioväreillä; vakiovärien ulkopuoliset sävyt lisähintaan",
               ],
             },
             {
@@ -672,7 +686,7 @@ const MODEL_LIBRARY = {
               items: [
                 "28 x 170 mm vaakapanelointi",
                 "Tuuletettu julkisivurakenne",
-                "Julkisivupaneelit maalataan asiakkaan toiveiden mukaan",
+                "Julkisivupaneelit maalataan valikoiduilla vakioväreillä; vakiovärien ulkopuoliset sävyt lisähintaan",
                 "Ikkuna- ja ovipellitykset",
               ],
             },
@@ -684,7 +698,7 @@ const MODEL_LIBRARY = {
             {
               title: "Yleiset tilat",
               items: [
-                "Maalatut levyseinäpinnat asiakkaan toiveiden mukaan",
+                "Maalatut levyseinäpinnat valikoiduilla vakioväreillä",
                 "Tammen sävyinen vinyylilattia",
                 "Katossa 90 mm lämpöhaapapaneeli",
                 "Sähköistys ja LED-valaistus",
@@ -706,7 +720,6 @@ const MODEL_LIBRARY = {
                 "Katossa 140 mm lämpöhaapapaneeli",
                 "Lämminvesivaraaja suihkulle",
                 "LED-valaistus",
-                "PAX-kylpyhuonepuhallin",
               ],
             },
             {
@@ -714,7 +727,7 @@ const MODEL_LIBRARY = {
               items: [
                 "Seinissä ja katossa 140 mm lämpöhaapapaneeli",
                 "Mittatilaustyönä valmistetut 180 mm radiatamäntylauteet",
-                "Harvia 9 kW sähkökiuas",
+                "Sähkökiuas Harvia Cilindro Xenio PC90XE Black",
                 "Sähköistys ja valaistus",
               ],
             },
@@ -723,11 +736,11 @@ const MODEL_LIBRARY = {
         {
           title: "Ikkunat ja ovet",
           items: [
-            "Energiatehokkaat lämpölasilliset ikkunat ja ovet",
-            "Ikkunatyypit MSE / MEK",
-            "Alumiiniulkopuite",
+            "Pääosin kiinteät energiatehokkaat lämpölasilliset ikkunat",
+            "Mallikohtaisesti avattava tuuletusikkuna",
             "Musta ulkopuoli",
-            "Sälekaihtimet vakiona",
+            "Sisäpuolella mustaksi maalattu 131 mm mäntykarmi",
+            "Ikkunatyypit ja avattavuudet määritellään mallin ja toimituksen mukaan",
           ],
         },
         {
@@ -753,14 +766,13 @@ const MODEL_LIBRARY = {
             "Mittatilaustyönä valmistetut radiatamäntylauteet",
             "Vesieristetyt ja laatoitetut märkätilat",
             "Märkätilojen lattialämmitys",
-            "Harvia 9 kW sähkökiuas",
+            "Sähkökiuas Harvia Cilindro Xenio PC90XE Black",
             "Lämminvesivaraaja",
             "Energiatehokkaat ikkunat ja ovet",
             "Sähköistys ja LED-valaistus",
             "Painovoimainen ilmanvaihto",
             "PAX-kylpyhuonepuhallin",
             "Keittiökalusteet ja kodinkoneet",
-            "Sälekaihtimet ikkunoissa",
           ],
         },
         {
@@ -789,6 +801,12 @@ const MODEL_LIBRARY = {
             "Mahdolliset asiakaskohtaiset lisä- ja muutostyöt",
           ],
         },
+        {
+          title: "Perustus- ja pohjatyöt lisäpalveluna",
+          items: [
+            "Perustus- ja pohjatyöt voidaan tarjota erikseen kohteen mukaan. Toteutuksessa hyödynnämme luotettuja aliurakoitsijoita, jolloin kokonaisuus voidaan sovittaa yhteen rakennuksen toimituksen kanssa.",
+          ],
+        },
       ],
     },
   },
@@ -800,7 +818,7 @@ const MODEL_LIBRARY = {
       "NordMod Grand Aitta on Classic Aittaa hieman suurempi kahden makuuhuoneen aittamalli, joka tarjoaa tutun premium-varustelun sekä laadukkaat materiaalit väljemmässä kokoluokassa. Rakennus toimitetaan lähtökohtaisesti lähes käyttövalmiina kokonaisuutena sisältäen valmiit sisäpinnat, sähköistyksen, LED-valaistuksen, lämmityksen sekä kahden makuuhuoneen varustelun tämän toimitussisällön mukaisesti.",
     features: [
       "Kaksi erillistä makuuhuonetta väljemmässä Grand-kokoluokassa",
-      "Valmiit maalatut sisälevypinnat asiakkaan toiveiden mukaan",
+      "Valmiit maalatut sisälevypinnat valikoiduilla vakioväreillä",
       "Korkeat kiintokomerot molemmissa makuuhuoneissa",
       "Sähköistys, LED-valaistus ja sähköpatterit vakiona",
       "Energiatehokkaat lämpölasilliset ikkunat ja ovet",
@@ -834,7 +852,7 @@ const MODEL_LIBRARY = {
                 "Lämmöneristeenä Finnfoam 100 mm",
                 "Sisäpuolinen lisäeristys FF-PIR 30 mm",
                 "Sisäpinnat maalattua levypintaa",
-                "Sisälevyseinät maalataan asiakkaan toiveiden mukaan",
+                "Sisälevyseinät maalataan valikoiduilla vakioväreillä; vakiovärien ulkopuoliset sävyt lisähintaan",
               ],
             },
             {
@@ -851,7 +869,7 @@ const MODEL_LIBRARY = {
               items: [
                 "28 x 170 mm vaakapanelointi",
                 "Tuuletettu julkisivurakenne",
-                "Julkisivupaneelit maalataan asiakkaan toiveiden mukaan",
+                "Julkisivupaneelit maalataan valikoiduilla vakioväreillä; vakiovärien ulkopuoliset sävyt lisähintaan",
                 "Ikkuna- ja ovipellitykset",
               ],
             },
@@ -864,7 +882,7 @@ const MODEL_LIBRARY = {
               title: "Makuuhuoneet",
               items: [
                 "Kaksi erillistä makuuhuonetta",
-                "Maalatut levyseinäpinnat asiakkaan toiveiden mukaan",
+                "Maalatut levyseinäpinnat valikoiduilla vakioväreillä",
                 "Tammen sävyinen vinyylilattia",
                 "Katossa 90 mm lämpöhaapapaneeli",
                 "Sähköistys ja LED-valaistus",
@@ -875,18 +893,18 @@ const MODEL_LIBRARY = {
             },
             {
               title: "Sisustus ja varustelu",
-              items: ["Valmiit sisäpinnat", "Huonekohtainen LED-valaistus", "Huonekohtaiset sähköpatterit", "Sälekaihtimet ikkunoissa"],
+              items: ["Valmiit sisäpinnat", "Huonekohtainen LED-valaistus", "Huonekohtaiset sähköpatterit"],
             },
           ],
         },
         {
           title: "Ikkunat ja ovet",
           items: [
-            "Energiatehokkaat lämpölasilliset ikkunat ja ovet",
-            "Ikkunatyypit MSE / MEK",
-            "Alumiiniulkopuite",
+            "Pääosin kiinteät energiatehokkaat lämpölasilliset ikkunat",
+            "Mallikohtaisesti avattava tuuletusikkuna",
             "Musta ulkopuoli",
-            "Sälekaihtimet vakiona",
+            "Sisäpuolella mustaksi maalattu 131 mm mäntykarmi",
+            "Ikkunatyypit ja avattavuudet määritellään mallin ja toimituksen mukaan",
           ],
         },
         {
@@ -912,9 +930,8 @@ const MODEL_LIBRARY = {
             "Sähköistys ja LED-valaistus",
             "Sähköpatterit",
             "Painovoimainen ilmanvaihto",
-            "Sälekaihtimet ikkunoissa",
-            "Julkisivun maalaus asiakkaan toiveiden mukaan",
-            "Sisälevyseinien maalaus asiakkaan toiveiden mukaan",
+            "Julkisivun maalaus valikoiduilla vakioväreillä",
+            "Sisälevyseinien maalaus valikoiduilla vakioväreillä",
           ],
         },
         {
@@ -943,6 +960,12 @@ const MODEL_LIBRARY = {
             "Mahdolliset asiakaskohtaiset lisä- ja muutostyöt",
           ],
         },
+        {
+          title: "Perustus- ja pohjatyöt lisäpalveluna",
+          items: [
+            "Perustus- ja pohjatyöt voidaan tarjota erikseen kohteen mukaan. Toteutuksessa hyödynnämme luotettuja aliurakoitsijoita, jolloin kokonaisuus voidaan sovittaa yhteen rakennuksen toimituksen kanssa.",
+          ],
+        },
       ],
     },
   },
@@ -956,7 +979,7 @@ const MODEL_LIBRARY = {
       "Grand-sarjan saunatupa valmiilla märkätiloilla",
       "Koneellinen poistoilmanvaihto vakiona",
       "Keittiökalusteet, uuni, jääkaappi sekä pesuallas ja vesipiste",
-      "Harvia 9 kW sähkökiuas ja mittatilauslauteet",
+      "Sähkökiuas Harvia Cilindro Xenio PC90XE Black ja mittatilauslauteet",
       "Sähköistys, LED-valaistus ja lämmitys vakiona",
     ],
     note:
@@ -991,7 +1014,7 @@ const MODEL_LIBRARY = {
                 "Lämmöneristeenä Finnfoam 100 mm",
                 "Sisäpuolinen lisäeristys FF-PIR 30 mm",
                 "Sisäpinnat yleisissä tiloissa maalattua levypintaa",
-                "Sisälevyseinät maalataan asiakkaan toiveiden mukaan",
+                "Sisälevyseinät maalataan valikoiduilla vakioväreillä; vakiovärien ulkopuoliset sävyt lisähintaan",
               ],
             },
             {
@@ -1008,7 +1031,7 @@ const MODEL_LIBRARY = {
               items: [
                 "28 x 170 mm vaakapanelointi",
                 "Tuuletettu julkisivurakenne",
-                "Julkisivupaneelit maalataan asiakkaan toiveiden mukaan",
+                "Julkisivupaneelit maalataan valikoiduilla vakioväreillä; vakiovärien ulkopuoliset sävyt lisähintaan",
                 "Ikkuna- ja ovipellitykset",
               ],
             },
@@ -1020,7 +1043,7 @@ const MODEL_LIBRARY = {
             {
               title: "Yleiset tilat",
               items: [
-                "Maalatut levyseinäpinnat asiakkaan toiveiden mukaan",
+                "Maalatut levyseinäpinnat valikoiduilla vakioväreillä",
                 "Tammen sävyinen vinyylilattia",
                 "Katossa 90 mm lämpöhaapapaneeli",
                 "Sähköistys ja LED-valaistus",
@@ -1042,7 +1065,6 @@ const MODEL_LIBRARY = {
                 "Katossa 140 mm lämpöhaapapaneeli",
                 "Lämminvesivaraaja suihkulle",
                 "LED-valaistus",
-                "PAX-kylpyhuonepuhallin",
               ],
             },
             {
@@ -1050,7 +1072,7 @@ const MODEL_LIBRARY = {
               items: [
                 "Seinissä ja katossa 140 mm lämpöhaapapaneeli",
                 "Mittatilaustyönä valmistetut 180 mm radiatamäntylauteet",
-                "Harvia 9 kW sähkökiuas",
+                "Sähkökiuas Harvia Cilindro Xenio PC90XE Black",
                 "Sähköistys ja valaistus",
               ],
             },
@@ -1059,11 +1081,11 @@ const MODEL_LIBRARY = {
         {
           title: "Ikkunat ja ovet",
           items: [
-            "Energiatehokkaat lämpölasilliset ikkunat ja ovet",
-            "Ikkunatyypit MSE / MEK",
-            "Alumiiniulkopuite",
+            "Pääosin kiinteät energiatehokkaat lämpölasilliset ikkunat",
+            "Mallikohtaisesti avattava tuuletusikkuna",
             "Musta ulkopuoli",
-            "Sälekaihtimet vakiona",
+            "Sisäpuolella mustaksi maalattu 131 mm mäntykarmi",
+            "Ikkunatyypit ja avattavuudet määritellään mallin ja toimituksen mukaan",
           ],
         },
         {
@@ -1074,7 +1096,6 @@ const MODEL_LIBRARY = {
             "LED-valaistus sisätiloissa",
             "Ulkovalaistus räystäissä",
             "Koneellinen poistoilmanvaihto",
-            "PAX-kylpyhuonepuhallin märkätilassa",
             "Märkätiloissa lattialämmitys",
             "Yleisissä tiloissa sähköpatterit",
             "Lämminvesivaraaja suihkulle",
@@ -1089,14 +1110,12 @@ const MODEL_LIBRARY = {
             "Mittatilaustyönä valmistetut radiatamäntylauteet",
             "Vesieristetyt ja laatoitetut märkätilat",
             "Märkätilojen lattialämmitys",
-            "Harvia 9 kW sähkökiuas",
+            "Sähkökiuas Harvia Cilindro Xenio PC90XE Black",
             "Lämminvesivaraaja",
             "Energiatehokkaat ikkunat ja ovet",
             "Sähköistys ja LED-valaistus",
             "Koneellinen poistoilmanvaihto",
-            "PAX-kylpyhuonepuhallin",
             "Keittiökalusteet ja kodinkoneet",
-            "Sälekaihtimet ikkunoissa",
           ],
         },
         {
@@ -1125,28 +1144,98 @@ const MODEL_LIBRARY = {
             "Mahdolliset asiakaskohtaiset lisä- ja muutostyöt",
           ],
         },
+        {
+          title: "Perustus- ja pohjatyöt lisäpalveluna",
+          items: [
+            "Perustus- ja pohjatyöt voidaan tarjota erikseen kohteen mukaan. Toteutuksessa hyödynnämme luotettuja aliurakoitsijoita, jolloin kokonaisuus voidaan sovittaa yhteen rakennuksen toimituksen kanssa.",
+          ],
+        },
       ],
     },
   },
   "nordmod-terassi": {
     series: "NordMod Terassi",
     name: "NordMod Terassi",
-    description: "Elementtirakenteinen terassiratkaisu mökkimallin yhteyteen tai erikseen ostettavaksi ratkaisuksi.",
+    description: "Viimeistelty moduuliterassi rakennuksen yhteyteen tai erikseen ostettavaksi pihaterassiksi.",
     overview:
-      "NordMod Terassi on elementtirakenteinen terassiratkaisu saunan, aitan, saunatuvan tai muun piharakennuksen yhteyteen. Terassi voidaan suunnitella osaksi Nordic Modular -mallistoa tai toteuttaa erillisenä ratkaisuna asiakkaan kohteeseen. Selkeä rakenne ja viimeistelty ulkonäkö tekevät siitä käytännöllisen lisän vapaa-ajan rakennuksiin ja pihapiireihin.",
+      "NordMod Terassi on viimeistelty moduuliterassi, joka toimii yhtä hyvin saunan, aitan tai saunatuvan yhteydessä kuin erikseen ostettavana pihaterassina. Se voidaan sijoittaa omakotitalon pihaan, mökille, saunan eteen tai omaksi oleskelualueeksi ilman, että kohteessa tarvitsee olla NordMod-rakennusta. Pinnoitettu Lunawood-lämpöpuukansi ladotaan näyttävään kalanruotokuvioon ja ruuvataan piilosta, jolloin terassin pinnasta tulee siisti, lämminhenkinen ja paljaalle jalalle miellyttävä. 90 x 90 mm kyllästetty liimapuurunko mahdollistaa matalan, ryhdikkään ja helposti eri pihoihin sovitettavan runkorakenteen.",
     features: [
-      "Sama tuote eri kokovaihtoehtoina",
-      "Sopii Compact-, Classic- ja Grand-mallien yhteyteen",
-      "Voidaan ostaa myös erillisenä moduuliterassina",
-      "Mitat ja viimeistely tarkennetaan tarjousvaiheessa",
+      "Sopii myös erikseen ostettavaksi pihaterassiksi",
+      "Pinnoitettu Lunawood 26 x 117 mm lämpöpuukansi",
+      "Näyttävä kalanruotokuvio",
+      "Piiloruuvaus viimeisteltyä kansipintaa varten",
+      "90 x 90 mm kyllästetty liimapuurunko",
+      "Matala runkorakenne rakennuksen yhteyteen tai erilliselle oleskelualueelle",
     ],
-    note: "Mitat, kuvat ja toimitussisältö tarkennetaan kohteen mukaan.",
+    note:
+      "Terassin voi ostaa osaksi NordMod-kokonaisuutta tai täysin erillisenä pihaterassina. Mitoitus, sijoitus pihaan, mahdollinen liittyminen rakennukseen ja kohdekohtaiset viimeistelyt tarkennetaan tarjousvaiheessa.",
     backLink: "mallisto.html",
     image: {
       src: "assets/mallisto/Terassi/Terassi.png",
       alt: "NordMod Terassi järvimaisemassa",
     },
     gallery: [{ src: "assets/mallisto/Terassi/Terassi.png", alt: "NordMod Terassi ulkokuva" }],
+    technicalContent: {
+      title: "Premium-terassirakenne ja tekninen toimitussisältö",
+      intro:
+        "NordMod Terassi on suunniteltu matalaksi, viimeistellyksi ja näyttäväksi moduuliterassiksi rakennuksen yhteyteen tai itsenäiseksi pihaterassiksi. Laadukas lämpöpuukansi yhdistyy kestävään kyllästettyyn liimapuurunkoon.",
+      sections: [
+        {
+          title: "Terassikansi",
+          items: [
+            "Pinnoitettu Lunawood 26 x 117 mm lämpöpuu",
+            "Kalanruotokuvioon ladottu kansipinta",
+            "Piiloruuvaus siistiä ja viimeisteltyä pintaa varten",
+            "Lämpöpuun lämmin sävy ja miellyttävä tuntuma paljaalle jalalle",
+          ],
+        },
+        {
+          title: "Runko",
+          items: [
+            "90 x 90 mm kyllästetty liimapuurunko",
+            "Matalan runkorakenteen mahdollistava rakenneratkaisu",
+            "Soveltuu rakennuksen yhteyteen silloin, kun halutaan siisti ja matala liittymä terassille",
+            "Runko mitoitetaan kohdekohtaisesti terassin koon ja asennuspaikan mukaan",
+          ],
+        },
+        {
+          title: "Viimeistely ja käyttö",
+          items: [
+            "Sopii erikseen ostettavaksi terassiksi omakotitalon pihaan, mökille tai vapaa-ajan kohteeseen",
+            "Huoliteltu ulkoasu Nordic Modular -rakennusten yhteyteen tai itsenäiseksi pihaterassiksi",
+            "Voidaan suunnitella rakennuksen eteen, sivulle tai erillisenä oleskelualueena",
+            "Sopii saunan, aitan, saunatuvan, muun piharakennuksen tai olemassa olevan pihan yhteyteen",
+            "Kohdekohtaiset mitat ja reunaratkaisut määritellään tarjousvaiheessa",
+          ],
+        },
+        {
+          title: "Toimitukseen sisältyy",
+          items: [
+            "Terassirungon valmistus",
+            "90 x 90 mm kyllästetty liimapuurunko",
+            "Pinnoitettu Lunawood 26 x 117 mm lämpöpuukansi",
+            "Kalanruotokuvioinen kansilaudoitus",
+            "Piiloruuvattu kansipinta",
+            "Terassin siirtovalmius tai kohteen mukaan sovittu toimitustapa",
+          ],
+        },
+        {
+          title: "Toimitukseen ei sisälly",
+          items: [
+            "Perustukset ja maatyöt",
+            "Kuljetus ja nostotyöt, ellei erikseen sovita",
+            "Kaiteet, portaat ja erikoisreunukset, ellei niitä määritellä tarjouksessa",
+            "Kohdekohtaiset lisä- ja muutostyöt",
+          ],
+        },
+        {
+          title: "Perustus- ja pohjatyöt lisäpalveluna",
+          items: [
+            "Perustus- ja pohjatyöt voidaan tarjota erikseen kohteen mukaan. Toteutuksessa hyödynnämme luotettuja aliurakoitsijoita, jolloin kokonaisuus voidaan sovittaa yhteen rakennuksen toimituksen kanssa.",
+          ],
+        },
+      ],
+    },
   },
   "nordic-pihasauna": {
     series: "NordMod Pihasauna",
@@ -1155,7 +1244,7 @@ const MODEL_LIBRARY = {
     overview:
       "NordMod Pihasauna on perinteinen puulämmitteinen pihasauna, joka on suunniteltu aidon suomalaisen saunakokemuksen ympärille. Rakennus on tarkoitettu kantovesikäyttöiseen saunomiseen. Se ei ole tarkoitettu ympärivuotiseen asumis- tai majoituskäyttöön, eikä se sisällä vesijohto- tai viemärijärjestelmiä.",
     features: [
-      "Puulämmitteinen kiuas ja kiuashormisto",
+      "Puulämmitteinen kiuas vesisäiliöllä ja piipulla",
       "Kantovesikäyttöinen sauna ilman vesijohto- tai viemärijärjestelmiä",
       "140 mm lämpöhaapapanelointi seinissä ja katossa",
       "Käsityönä valmistetut radiatamäntylauteet",
@@ -1214,7 +1303,7 @@ const MODEL_LIBRARY = {
               items: [
                 "28 x 170 mm vaakapanelointi",
                 "Tuuletettu julkisivurakenne",
-                "Julkisivupaneelit maalataan asiakkaan toiveiden mukaan",
+                "Julkisivupaneelit maalataan valikoiduilla vakioväreillä; vakiovärien ulkopuoliset sävyt lisähintaan",
                 "Ikkuna- ja ovipellitykset",
               ],
             },
@@ -1241,8 +1330,8 @@ const MODEL_LIBRARY = {
         {
           title: "Kiuas ja veden lämmitys",
           items: [
-            "Puulämmitteinen kiuas",
-            "Kiuashormisto",
+            "Puulämmitteinen kiuas vesisäiliöllä",
+            "Piippu ja hormisto kuuluvat toimitukseen",
             "Kiuasvesisäiliö lämpimälle pesuvedelle",
             "Perinteinen kantovesikäyttö",
           ],
@@ -1250,10 +1339,10 @@ const MODEL_LIBRARY = {
         {
           title: "Ikkunat ja ovet",
           items: [
-            "Suuri maisemaikkuna",
-            "Malliin soveltuvat ikkunat ja ulko-ovi",
+            "Kiinteä maisemaikkuna",
             "Musta ulkopuoli",
-            "Ikkuna- ja ovimallit valitaan toimituskohtaisesti",
+            "Sisäpuolella mustaksi maalattu 131 mm mäntykarmi",
+            "Ikkuna- ja ovimallit sekä avattavuudet valitaan toimituskohtaisesti",
           ],
         },
         {
@@ -1272,15 +1361,15 @@ const MODEL_LIBRARY = {
             "140 mm lämpöhaapapanelointi seinissä ja katossa",
             "FF-PIR 30 mm -levytys seinissä ja katossa saunakäyttöä varten",
             "Käsityönä valmistetut radiatamäntylauteet",
-            "Puulämmitteinen kiuas",
-            "Kiuashormisto",
+            "Puulämmitteinen kiuas vesisäiliöllä",
+            "Piippu ja hormisto",
             "Kiuasvesisäiliö",
             "Lämpömäntyinen ritilälattia",
             "Kaatovanerilattia vedenpoistolla",
             "Vedenpoistokouru",
             "Suuri maisemaikkuna",
             "LED-valaistus",
-            "Julkisivun maalaus asiakkaan toiveiden mukaan",
+            "Julkisivun maalaus valikoiduilla vakioväreillä",
           ],
         },
         {
@@ -1289,8 +1378,8 @@ const MODEL_LIBRARY = {
             "Rakennuksen valmistus tehdasolosuhteissa",
             "Rakennuksen runko- ja vesikattorakenteet",
             "Valmiit ulko- ja sisäpinnat",
-            "Puukiuas",
-            "Hormisto",
+            "Puukiuas vesisäiliöllä",
+            "Piippu ja hormisto",
             "Kiuasvesisäiliö",
             "Lauderakenteet",
             "Sähköistys ja valaistus",
@@ -1310,6 +1399,12 @@ const MODEL_LIBRARY = {
             "Ympärivuotiseen asumis- tai majoituskäyttöön vaadittavat ratkaisut",
             "Rakennuslupa- ja viranomaismaksut",
             "Mahdolliset asiakaskohtaiset lisä- ja muutostyöt",
+          ],
+        },
+        {
+          title: "Perustus- ja pohjatyöt lisäpalveluna",
+          items: [
+            "Perustus- ja pohjatyöt voidaan tarjota erikseen kohteen mukaan. Toteutuksessa hyödynnämme luotettuja aliurakoitsijoita, jolloin kokonaisuus voidaan sovittaa yhteen rakennuksen toimituksen kanssa.",
           ],
         },
       ],
@@ -1366,17 +1461,23 @@ const createTextElement = (tagName, className, text) => {
   return element;
 };
 
-const createItemList = (items) => {
+const createItemList = (items = []) => {
   const list = document.createElement("ul");
   list.className = "feature-list technical-list";
 
-  items.forEach((item) => {
+  items.filter(Boolean).forEach((item) => {
     const listItem = document.createElement("li");
     listItem.textContent = item;
     list.appendChild(listItem);
   });
 
   return list;
+};
+
+const TECHNICAL_STANDARD_NOTE = {
+  title: "Mallikohtainen vakiotaso ja asiakaskohtainen toteutus",
+  text:
+    "Tässä esitetty toimitussisältö kuvaa NordMod-malliston vakioitua premium-tasoa. Toteutus voidaan kuitenkin sovittaa asiakkaan tarpeiden ja käyttötarkoituksen mukaan. Materiaalit, varustelu, mitoitus ja lisävarusteet määritellään aina lopullisesti tarjouksessa ja kauppasopimuksessa.",
 };
 
 const renderTechnicalContent = (container, content) => {
@@ -1396,10 +1497,18 @@ const renderTechnicalContent = (container, content) => {
     card.appendChild(createTextElement("p", "technical-intro", content.intro));
   }
 
+  const standardNote = document.createElement("div");
+  standardNote.className = "technical-standard-note";
+  standardNote.appendChild(createTextElement("h3", "", TECHNICAL_STANDARD_NOTE.title));
+  standardNote.appendChild(createTextElement("p", "", TECHNICAL_STANDARD_NOTE.text));
+  card.appendChild(standardNote);
+
   const sections = document.createElement("div");
   sections.className = "technical-sections";
 
-  content.sections.forEach((section) => {
+  const sectionsData = Array.isArray(content.sections) ? content.sections : [];
+
+  sectionsData.forEach((section) => {
     const sectionEl = document.createElement("section");
     sectionEl.className = "technical-section";
     sectionEl.appendChild(createTextElement("h3", "", section.title));
@@ -1416,7 +1525,7 @@ const renderTechnicalContent = (container, content) => {
         const groupEl = document.createElement("div");
         groupEl.className = "technical-group";
         groupEl.appendChild(createTextElement("h4", "", group.title));
-        groupEl.appendChild(createItemList(group.items));
+        groupEl.appendChild(createItemList(Array.isArray(group.items) ? group.items : []));
         groupsEl.appendChild(groupEl);
       });
 
@@ -1441,6 +1550,23 @@ const getPreferredTheme = () => {
   return "light";
 };
 
+const getStoredTheme = () => {
+  try {
+    window.localStorage.removeItem("nmg-theme");
+    return window.localStorage.getItem(THEME_KEY);
+  } catch (error) {
+    return null;
+  }
+};
+
+const setStoredTheme = (theme) => {
+  try {
+    window.localStorage.setItem(THEME_KEY, theme);
+  } catch (error) {
+    // Theme still changes for the current page even if browser storage is unavailable.
+  }
+};
+
 const updateThemeButton = (button) => {
   const ui = getUiCopy();
   const currentTheme = getCurrentTheme();
@@ -1451,8 +1577,7 @@ const updateThemeButton = (button) => {
 };
 
 const initTheme = () => {
-  window.localStorage.removeItem("nmg-theme");
-  const savedTheme = window.localStorage.getItem(THEME_KEY);
+  const savedTheme = getStoredTheme();
   const initialTheme = savedTheme === "light" || savedTheme === "dark" ? savedTheme : getPreferredTheme();
   applyTheme(initialTheme);
 
@@ -1466,7 +1591,7 @@ const initTheme = () => {
   themeButton.addEventListener("click", () => {
     const nextTheme = getCurrentTheme() === "light" ? "dark" : "light";
     applyTheme(nextTheme);
-    window.localStorage.setItem(THEME_KEY, nextTheme);
+    setStoredTheme(nextTheme);
     updateThemeButton(themeButton);
   });
 
@@ -1520,31 +1645,7 @@ const initReveal = () => {
   const items = document.querySelectorAll(".reveal");
   if (!items.length) return;
 
-  if (window.matchMedia("(max-width: 760px)").matches) {
-    items.forEach((item) => item.classList.add("is-visible"));
-    return;
-  }
-
-  if (!("IntersectionObserver" in window)) {
-    items.forEach((item) => item.classList.add("is-visible"));
-    return;
-  }
-
-  document.documentElement.classList.add("reveal-enabled");
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.16 }
-  );
-
-  items.forEach((item) => observer.observe(item));
+  items.forEach((item) => item.classList.add("is-visible"));
 };
 
 const setModelFromQuery = (form) => {
@@ -1829,7 +1930,8 @@ const initModelDetail = () => {
   }
 
   if (featuresEl) {
-    featuresEl.innerHTML = model.features.map((feature) => `<li>${feature}</li>`).join("");
+    const features = Array.isArray(model.features) ? model.features : [];
+    featuresEl.innerHTML = features.map((feature) => `<li>${feature}</li>`).join("");
   }
 
   renderTechnicalContent(detailStackEl, model.technicalContent);
