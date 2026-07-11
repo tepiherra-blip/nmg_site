@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.nordicmodular.fi/sitemap.xml
+Sitemap: https://www.nordicmodular.fi/image-sitemap.xml

@@ -1,21 +1,26 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nordic Modular Finland Oy | Malli</title>
-    <meta
-      name="description"
-      content="Nordic Modular -mallin esittelysivu. Mallikohtainen kuvaus, tilaratkaisu ja tarjouspolku yhdellä sivulla."
-    />
-    <link rel="stylesheet" href="styles.css?v=20260616-4" />
-    <link rel="icon" type="image/png" href="assets/logo.png" />
+    <title>Valmis pihasauna, aitta tai saunatupa | Nordic Modular Finland Oy</title>
+    <meta name="description" content="Mallikohtainen esittely valmiista pihasaunasta, aitasta, saunatuvasta, terassista tai modulaarisesta piharakennuksesta." />
+    <meta property="og:title" content="Valmis pihasauna, aitta tai saunatupa | Nordic Modular Finland Oy" />
+    <meta property="og:description" content="Mallikohtainen esittely valmiista pihasaunasta, aitasta, saunatuvasta, terassista tai modulaarisesta piharakennuksesta." />
+    <meta property="og:image" content="https://www.nordicmodular.fi/assets/mallisto/nordmod-pihasauna/NordMod%20Pihasauna/pihasauna%20plan73.png" />
+    <meta property="og:url" content="https://www.nordicmodular.fi/malli.html" />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="styles.css?v=20260711-3" />
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   </head>
   <body data-page="mallisto">
     <div class="site-shell">
       <header class="topbar">
         <a class="brand" href="index.html" aria-label="Nordic Modular Finland Oy">
-          <img src="assets/logo.png" alt="Nordic Modular Finland Oy logo" />
+          <img src="assets/logo.png" alt="Nordic Modular Finland Oy:n logo" />
         </a>
         <div class="topbar-actions">
           <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Valikko</button>
@@ -25,7 +30,7 @@
           <a href="mallisto.html" data-nav="mallisto">Mallisto</a>
           <a href="ratkaisut.html" data-nav="ratkaisut">Ratkaisut</a>
           <a href="yritys.html" data-nav="yritys">Yritys</a>
-          <a href="tarjous.html" data-nav="tarjous">Tarjous</a>
+          <a href="tarjous.html" data-nav="tarjous">Pyydä tarjous</a>
           <a href="yhteystiedot.html" data-nav="yhteystiedot">Yhteystiedot</a>
         </nav>
       </header>
@@ -36,16 +41,20 @@
             <p class="eyebrow" id="model-series">Mallisto</p>
             <h1 id="model-name">Nordic malli</h1>
             <p class="lead" id="model-description">Mallikohtainen esittely, kuvat ja tarjouspolku yhdessä näkymässä.</p>
+            <div class="model-price" id="model-price" hidden>
+              <span class="model-price__amount" id="model-price-amount"></span>
+              <span class="model-price__label" id="model-price-label"></span>
+            </div>
             <div class="hero-actions">
               <a class="button button-primary" id="model-offer-link" href="tarjous.html">Pyydä alustava tarjous</a>
               <a class="button button-secondary" id="model-back-link" href="mallisto.html">Takaisin mallistoon</a>
             </div>
           </div>
           <div class="model-detail-visual">
-            <img id="model-main-image" class="page-hero-image" src="" alt="" hidden />
+            <img id="model-main-image" class="page-hero-image" src="" alt="Valmis mallikohtainen piharakennus Nordic Modular Finland Oy:n mallistosta" hidden />
             <figure id="model-floor-plan-card" class="floor-plan-card" hidden>
               <span class="card-label">Pohjakuva</span>
-              <img id="model-floor-plan-image" class="floor-plan-image" src="" alt="" />
+              <img id="model-floor-plan-image" class="floor-plan-image" src="" alt="Mallikohtainen pohjakuva pihasaunalle, aitalle tai saunatuvalle" />
             </figure>
             <div id="model-placeholder-card" class="model-placeholder-media model-placeholder-media-large">
               <span id="model-placeholder">Nordic Modular malli</span>
@@ -70,6 +79,7 @@
                 Mallikohtainen kuvaus, tilaratkaisu ja toimituksen perusajatus esitetään tällä sivulla tiiviisti.
                 Tarkempi kokonaisuus käydään läpi tarjousvaiheessa kohteen tarpeen mukaan.
               </p>
+              <p class="model-price-detail" id="model-price-detail" hidden></p>
               <ul class="feature-list" id="model-features">
                 <li>Kuvat mallista</li>
                 <li>Pohjakuvat ja tilajako</li>
@@ -107,7 +117,7 @@
           <a href="mallisto.html">Mallisto</a>
           <a href="ratkaisut.html">Ratkaisut</a>
           <a href="yritys.html">Yritys</a>
-          <a href="tarjous.html">Tarjous</a>
+          <a href="tarjous.html">Pyydä tarjous</a>
           <a href="yhteystiedot.html">Yhteystiedot</a>
         </nav>
         <div class="footer-meta">
@@ -116,7 +126,7 @@
         </div>
       </footer>
     </div>
-    <script src="script.js?v=20260616-4"></script>
+    <script src="script.js?v=20260711-3"></script>
   </body>
 </html>
 

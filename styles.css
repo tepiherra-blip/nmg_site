@@ -1029,6 +1029,48 @@ body[data-page="home"] .product-grid .mobile-featured-card {
   font-size: 0.92rem;
 }
 
+.model-price {
+  display: grid;
+  gap: 4px;
+  max-width: 100%;
+  margin-top: 2px;
+  overflow-wrap: anywhere;
+}
+
+.model-price__amount {
+  color: var(--text);
+  font-size: clamp(1.05rem, 1.35vw, 1.28rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.model-price__label,
+.model-price-detail,
+.catalog-price-note {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.model-price-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.model-price-list .model-price {
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.catalog-price-note {
+  margin-top: 22px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-soft);
+}
+
 .home-visual-strip {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
@@ -1060,6 +1102,16 @@ body[data-page="home"] .product-grid .mobile-featured-card {
 
 .mobile-catalog-cta {
   display: none;
+}
+
+.home-b2b-card {
+  margin-top: 22px;
+  max-width: none;
+}
+
+.home-b2b-card .button {
+  justify-self: start;
+  margin-top: 2px;
 }
 
 .split-section {
@@ -2113,6 +2165,67 @@ body[data-page="yritys"] .split-copy {
 
 .technical-list li {
   line-height: 1.45;
+}
+
+.furniture-supplier-card {
+  gap: 14px;
+}
+
+.supplier-logo-link {
+  display: inline-flex;
+  width: min(100%, 280px);
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+.supplier-logo {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.b2b-section {
+  align-items: start;
+}
+
+.b2b-section .split-copy > p:not(.eyebrow),
+.b2b-section .info-card p {
+  font-size: 1rem;
+  line-height: 1.68;
+}
+
+.b2b-section .benefit-list h3,
+.b2b-section .info-card h3 {
+  font-size: clamp(1.08rem, 1.45vw, 1.28rem);
+}
+
+.b2b-supplier-card .catalog-actions {
+  margin-top: 4px;
+}
+
+.b2b-supplier-card .supplier-logo-link {
+  width: min(100%, 340px);
+  padding: 12px;
+  margin-bottom: 2px;
+}
+
+.supplier-feature-image {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface-lifted);
+  box-shadow: var(--shadow-sm);
+}
+
+.supplier-feature-image img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .detail-price {
