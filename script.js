@@ -23,6 +23,8 @@ const QUOTE_EMAIL_CONFIG = {
     password: "",
   },
 };
+const QUOTE_PRICE_ADJUSTMENT_TERM =
+  "Tarjoushinta perustuu tarjouksen päiväyksen mukaiseen raaka-aineiden, rakennusmateriaalien, komponenttien, energian ja kuljetusten kustannustasoon. Mikäli toimitettavan tuotteen valmistukseen liittyvien materiaalien, komponenttien ja kuljetusten yhteenlasketut kustannukset nousevat yli 5 prosenttia tarjouksen päiväyksen ja asiakkaan sitovan tilauksen välisenä aikana, Nordic Modular Finland Oy pidättää oikeuden tarkistaa tarjoushintaa toteutunutta kustannusten nousua vastaavalla määrällä. Mahdollisesta hinnantarkistuksesta ilmoitetaan asiakkaalle kirjallisesti ennen tilauksen vahvistamista. Tilauksen vahvistamisen jälkeen sovittu hinta on kiinteä, elleivät osapuolet kirjallisesti sovi toimitussisällön, aikataulun tai muiden sopimusehtojen muutoksista.";
 
 const buildQuoteEmailPayload = ({
   productLabel,
@@ -46,6 +48,7 @@ const buildQuoteEmailPayload = ({
   malli: productLabel,
   paikkakunta: location,
   lisatiedot: details,
+  tarjouksen_hintatarkistusehto: QUOTE_PRICE_ADJUSTMENT_TERM,
   lahettajan_nimi: QUOTE_EMAIL_CONFIG.senderName,
 });
 
@@ -141,16 +144,16 @@ const MODEL_LIBRARY = {
     series: "NordMod Compact",
     name: "NordMod Compact Aitta 16",
     description: "Premium-varusteltu kompakti aittamalli yhdellä makuuhuoneella ja erillisellä WC-tilalla.",
-    price: "Alkaen 22 900 €",
+    price: "24 900 €",
     furnitureSupplier: true,
     overview:
       "NordMod Compact Aitta on malliston kompakti aittamalli, joka sisältää yhden makuuhuoneen sekä erillisen WC-tilan. Rakennus toimitetaan lähtökohtaisesti lähes käyttövalmiina kokonaisuutena sisältäen valmiit sisäpinnat, sähköistyksen, LED-valaistuksen, lämmityksen sekä kiintokalusteet tämän toimitussisällön mukaisesti.",
     features: [
-      "Yksi makuuhuone ja erillinen WC-tila",
-      "Valmiit maalatut sisälevypinnat valikoiduilla vakioväreillä",
-      "Korkea kiintokomero makuuhuoneessa",
-      "Allaskaappi ja peilikaappi WC-tilassa",
-      "Sähköistys, LED-valaistus ja sähköpatterit vakiona",
+      "Pohjoisiin olosuhteisiin suunniteltu eristys",
+      "Valmiit sisäpinnat",
+      "Sähköistys ja lämmitys",
+      "Tehdasvalmisteinen ja viimeistelty kokonaisuus",
+      "Erillinen WC-tila",
     ],
     note:
       "Toimitussisältö perustuu NordMod Compact Aitan vakiomalliin. Rakennus sisältää yhden makuuhuoneen sekä erillisen WC-tilan. WC-istuin toimitetaan lisävarusteena asiakkaan valitseman käyttötarkoituksen ja järjestelmän mukaan. Rakennuksessa ei ole vakiona varausta juoksevalle vedelle eikä viemäröinnille. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
@@ -180,7 +183,7 @@ const MODEL_LIBRARY = {
             {
               title: "Ulkoseinät",
               items: [
-                "Seinärunko 48 x 98 mm",
+                "Seinärunko 48 x 123 mm",
                 "Lämmöneristeenä Finnfoam 100 mm",
                 "Sisäpuolinen lisäeristys FF-PIR 30 mm",
                 "Sisäpinnat maalattua levypintaa",
@@ -316,18 +319,17 @@ const MODEL_LIBRARY = {
     series: "NordMod Compact",
     name: "NordMod Compact Sauna 16",
     description: "Premium-varusteltu kompakti sauna- ja peseytymisrakennus saunalla, suihkutilalla ja pukuhuoneella.",
-    price: "Alkaen 26 900 €",
+    price: "34 900 €",
     overview:
       "NordMod Compact Sauna on kompakti ja laadukas sauna- ja peseytymisrakennus, joka sisältää saunan, suihkutilan sekä pukuhuoneen. Rakennus toimitetaan lähtökohtaisesti lähes käyttövalmiina kokonaisuutena sisältäen valmiit sisäpinnat, sähköistyksen, lämmityksen, ilmanvaihdon, märkätilat sekä saunavarustelun tämän toimitussisällön mukaisesti.",
     features: [
-      "Sauna, suihkutila ja lämmin pukuhuone",
-      "Vesieristetty ja laatoitettu suihkutila lattialämmityksellä",
-      "Sähkökiuas Harvia Cilindro Xenio PC90XE Black ja mittatilauslauteet",
-      "Lämminvesivaraaja suihkulle",
-      "Sähköistys, LED-valaistus ja ilmanvaihto vakiona",
+      "Lämminvesivaraaja",
+      "Suihku ja viemäröity märkätila",
+      "Sähkökiuas",
+      "Pohjoisiin olosuhteisiin suunniteltu eristys",
     ],
     note:
-      "Toimitussisältö perustuu NordMod Compact Saunan vakiomalliin. Rakennus sisältää saunan, suihkutilan sekä lämpimän pukuhuoneen ja soveltuu ympärivuotiseen käyttöön. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
+      "Toimitussisältö perustuu NordMod Compact Saunan vakiomalliin. Rakennus sisältää saunan, suihkutilan sekä lämpimän pukuhuoneen ja soveltuu säännölliseen vapaa-ajan käyttöön. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
     backLink: "mallisto-compact-14.html",
     image: {
       src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/sauna musta 1.png",
@@ -353,7 +355,7 @@ const MODEL_LIBRARY = {
             },
             {
               title: "Ulkoseinät",
-              items: ["Seinärunko 48 x 98 mm", "Lämmöneristeenä Finnfoam 100 mm", "Sisäpuolinen lisäeristys FF-PIR 30 mm"],
+              items: ["Seinärunko 48 x 123 mm", "Lämmöneristeenä Finnfoam 100 mm", "Sisäpuolinen lisäeristys FF-PIR 30 mm"],
             },
             {
               title: "Yläpohja",
@@ -490,16 +492,15 @@ const MODEL_LIBRARY = {
     series: "NordMod Classic",
     name: "NordMod Classic Aitta 20",
     description: "Premium-varusteltu kahden makuuhuoneen aittamalli majoitus- ja vierasmajakäyttöön.",
-    price: "Alkaen 31 900 €",
+    price: "31 900 €",
     furnitureSupplier: true,
     overview:
       "NordMod Classic Aitta toimitetaan lähtökohtaisesti lähes käyttövalmiina kokonaisuutena. Vakiotoimitukseen kuuluvat valmiit sisäpinnat, sähköistys, LED-valaistus, sähköpatterit, painovoimainen ilmanvaihto sekä kahden makuuhuoneen varustelu korkeilla kiintokomeroilla.",
     features: [
-      "Kaksi erillistä makuuhuonetta",
-      "Valmiit maalatut sisälevypinnat valikoiduilla vakioväreillä",
-      "Sähköistys, LED-valaistus ja sähköpatterit vakiona",
-      "Korkeat kiintokomerot molemmissa makuuhuoneissa",
-      "Energiatehokkaat lämpölasilliset ikkunat ja ovet",
+      "Pohjoisiin olosuhteisiin suunniteltu eristys",
+      "Valmiit sisäpinnat",
+      "Sähköistys ja lämmitys",
+      "Tehdasvalmisteinen ja viimeistelty kokonaisuus",
     ],
     note:
       "Toimitussisältö perustuu NordMod Classic Aitan vakiomalliin. Malli ei sisällä vesipisteitä, viemäröintiä eikä märkätiloja. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
@@ -528,7 +529,7 @@ const MODEL_LIBRARY = {
             {
               title: "Ulkoseinät",
               items: [
-                "Seinärunko 48 x 98 mm",
+                "Seinärunko 48 x 123 mm",
                 "Lämmöneristeenä Finnfoam 100 mm",
                 "Sisäpuolinen lisäeristys FF-PIR 30 mm",
                 "Sisäpinnat maalattua levypintaa",
@@ -653,16 +654,15 @@ const MODEL_LIBRARY = {
     series: "NordMod Classic",
     name: "NordMod Classic Saunatupa 20",
     description: "Premium-varusteltu saunatuparatkaisu valmiilla sisäpinnoilla, märkätiloilla ja kiintokalusteilla.",
-    price: "Alkaen 52 900 €",
+    price: "52 900 €",
     furnitureSupplier: true,
     overview:
       "NordMod Classic Saunatupa toimitetaan lähtökohtaisesti lähes käyttövalmiina kokonaisuutena. Vakiotoimitukseen kuuluvat valmiit sisäpinnat, sähköistys, lämmitys, ilmanvaihto, märkätilat, sauna, kiuas, lämminvesivaraaja sekä keittiön kiintokalusteet tämän toimitussisällön mukaisesti.",
     features: [
-      "Sauna, kylpyhuone ja tupatila Classic-kokoluokassa",
-      "Vesieristetyt ja laatoitetut märkätilat lattialämmityksellä",
-      "Sähkökiuas Harvia Cilindro Xenio PC90XE Black ja mittatilauslauteet",
-      "Keittiökalusteet, uuni, jääkaappi sekä pesuallas ja vesipiste",
-      "Sähköistys, LED-valaistus ja ilmanvaihto vakiona",
+      "Lämminvesivaraaja",
+      "Suihku ja viemäröity märkätila",
+      "Sähkökiuas",
+      "Pohjoisiin olosuhteisiin suunniteltu eristys",
     ],
     note:
       "Toimitussisältö perustuu NordMod Classic Saunatuvan vakiomalliin. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
@@ -692,7 +692,7 @@ const MODEL_LIBRARY = {
             {
               title: "Ulkoseinät",
               items: [
-                "Seinärunko 48 x 98 mm",
+                "Seinärunko 48 x 123 mm",
                 "Lämmöneristeenä Finnfoam 100 mm",
                 "Sisäpuolinen lisäeristys FF-PIR 30 mm",
                 "Sisäpinnat yleisissä tiloissa maalattua levypintaa",
@@ -841,16 +841,15 @@ const MODEL_LIBRARY = {
     series: "NordMod Grand",
     name: "NordMod Grand Aitta 30",
     description: "Premium-varusteltu kahden makuuhuoneen aittamalli väljemmässä Grand-kokoluokassa.",
-    price: "Alkaen 43 900 €",
+    price: "43 900 €",
     furnitureSupplier: true,
     overview:
       "NordMod Grand Aitta on Classic Aittaa hieman suurempi kahden makuuhuoneen aittamalli, joka tarjoaa tutun premium-varustelun sekä laadukkaat materiaalit väljemmässä kokoluokassa. Rakennus toimitetaan lähtökohtaisesti lähes käyttövalmiina kokonaisuutena sisältäen valmiit sisäpinnat, sähköistyksen, LED-valaistuksen, lämmityksen sekä kahden makuuhuoneen varustelun tämän toimitussisällön mukaisesti.",
     features: [
-      "Kaksi erillistä makuuhuonetta väljemmässä Grand-kokoluokassa",
-      "Valmiit maalatut sisälevypinnat valikoiduilla vakioväreillä",
-      "Korkeat kiintokomerot molemmissa makuuhuoneissa",
-      "Sähköistys, LED-valaistus ja sähköpatterit vakiona",
-      "Energiatehokkaat lämpölasilliset ikkunat ja ovet",
+      "Pohjoisiin olosuhteisiin suunniteltu eristys",
+      "Valmiit sisäpinnat",
+      "Sähköistys ja lämmitys",
+      "Tehdasvalmisteinen ja viimeistelty kokonaisuus",
     ],
     note:
       "Toimitussisältö perustuu NordMod Grand Aitan vakiomalliin. Grand Aitta on Classic Aittaa hieman suurempi kahden makuuhuoneen aittamalli, joka tarjoaa enemmän tilaa majoittumiseen ja säilytykseen säilyttäen saman laadukkaan premium-varustelun. Malli ei sisällä vesipisteitä, viemäröintiä eikä märkätiloja. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
@@ -877,7 +876,7 @@ const MODEL_LIBRARY = {
             {
               title: "Ulkoseinät",
               items: [
-                "Seinärunko 48 x 98 mm",
+                "Seinärunko 48 x 123 mm",
                 "Lämmöneristeenä Finnfoam 100 mm",
                 "Sisäpuolinen lisäeristys FF-PIR 30 mm",
                 "Sisäpinnat maalattua levypintaa",
@@ -1002,19 +1001,18 @@ const MODEL_LIBRARY = {
     series: "NordMod Grand",
     name: "NordMod Grand Saunatupa 30",
     description: "Premium-varusteltu Grand-sarjan saunatupa koneellisella poistoilmanvaihdolla.",
-    price: "Alkaen 74 900 €",
+    price: "74 900 €",
     furnitureSupplier: true,
     overview:
-      "NordMod Grand Saunatupa tarjoaa saman laadukkaan premium-varustelun kuin Classic Saunatupa, mutta varustettuna koneellisella poistoilmanvaihdolla asumismukavuuden ja ilmanvaihdon tehostamiseksi. Rakennus toimitetaan lähtökohtaisesti lähes käyttövalmiina kokonaisuutena sisältäen valmiit sisäpinnat, sähköistyksen, lämmityksen, ilmanvaihdon, märkätilat sekä kiintokalusteet tämän toimitussisällön mukaisesti.",
+      "NordMod Grand Saunatupa tarjoaa saman laadukkaan premium-varustelun kuin Classic Saunatupa, mutta varustettuna koneellisella poistoilmanvaihdolla käyttömukavuuden ja ilmanvaihdon tehostamiseksi. Rakennus toimitetaan lähtökohtaisesti lähes käyttövalmiina kokonaisuutena sisältäen valmiit sisäpinnat, sähköistyksen, lämmityksen, ilmanvaihdon, märkätilat sekä kiintokalusteet tämän toimitussisällön mukaisesti.",
     features: [
-      "Grand-sarjan saunatupa valmiilla märkätiloilla",
-      "Koneellinen poistoilmanvaihto vakiona",
-      "Keittiökalusteet, uuni, jääkaappi sekä pesuallas ja vesipiste",
-      "Sähkökiuas Harvia Cilindro Xenio PC90XE Black ja mittatilauslauteet",
-      "Sähköistys, LED-valaistus ja lämmitys vakiona",
+      "Lämminvesivaraaja",
+      "Suihku ja viemäröity märkätila",
+      "Sähkökiuas",
+      "Pohjoisiin olosuhteisiin suunniteltu eristys",
     ],
     note:
-      "Toimitussisältö perustuu NordMod Grand Saunatuvan vakiomalliin. Grand-mallin vakiona toimitettava koneellinen poistoilmanvaihto parantaa sisäilman laatua ja asumismukavuutta erityisesti ympärivuotisessa käytössä. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
+      "Toimitussisältö perustuu NordMod Grand Saunatuvan vakiomalliin. Grand-mallin vakiona toimitettava koneellinen poistoilmanvaihto parantaa sisäilman laatua ja käyttömukavuutta erityisesti säännöllisessä vapaa-ajan käytössä. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
     backLink: "mallisto-grand-30.html",
     image: {
       src: "assets/mallisto/nordmod-grand/grand saunatupa/iso terassi ok2.png",
@@ -1041,7 +1039,7 @@ const MODEL_LIBRARY = {
             {
               title: "Ulkoseinät",
               items: [
-                "Seinärunko 48 x 98 mm",
+                "Seinärunko 48 x 123 mm",
                 "Lämmöneristeenä Finnfoam 100 mm",
                 "Sisäpuolinen lisäeristys FF-PIR 30 mm",
                 "Sisäpinnat yleisissä tiloissa maalattua levypintaa",
@@ -1271,19 +1269,19 @@ const MODEL_LIBRARY = {
   "nordic-pihasauna": {
     series: "NordMod Pihasauna",
     name: "NordMod Pihasauna",
-    description: "Perinteinen puulämmitteinen pihasauna kantovesikäyttöön ja aitoon suomalaiseen saunakokemukseen.",
-    price: "Alkaen 15 900 €",
+    description: "Perinteiseen mökki- ja pihasaunakäyttöön suunniteltu kevyempi saunaratkaisu puukiukaalla ja kantovedellä.",
+    price: "15 900 €",
     overview:
-      "NordMod Pihasauna on perinteinen puulämmitteinen pihasauna, joka on suunniteltu aidon suomalaisen saunakokemuksen ympärille. Rakennus on tarkoitettu kantovesikäyttöiseen saunomiseen. Se ei ole tarkoitettu ympärivuotiseen asumis- tai majoituskäyttöön, eikä se sisällä vesijohto- tai viemärijärjestelmiä.",
+      "NordMod Pihasauna on perinteiseen mökki- ja pihasaunakäyttöön suunniteltu kevyempi saunaratkaisu. Se varustetaan puukiukaalla ja kantovesikäyttöön soveltuvalla vesisäiliöllä. Rakenteet ja eristystaso ovat kevyemmät kuin NordMod Compact-, Classic- ja Grand-mallien ratkaisuissa.",
     features: [
-      "Puulämmitteinen kiuas vesisäiliöllä ja piipulla",
-      "Kantovesikäyttöinen sauna ilman vesijohto- tai viemärijärjestelmiä",
-      "140 mm lämpöhaapapanelointi seinissä ja katossa",
-      "Käsityönä valmistetut radiatamäntylauteet",
-      "Suuri maisemaikkuna ja LED-valaistus",
+      "Puukiuas ja savuhormi",
+      "Kantovesikäyttö",
+      "Kiukaan yhteydessä lämmitettävä vesi",
+      "Kevyempi eristysratkaisu",
+      "Perinteinen mökki- ja pihasaunakäyttö",
     ],
     note:
-      "Toimitussisältö perustuu NordMod Pihasaunan vakiomalliin. Rakennus on suunniteltu perinteiseen kantovesikäyttöön eikä sisällä vesijohto- tai viemärijärjestelmiä. FF-PIR 30 mm -levytystä käytetään seinissä ja katossa saunan lämpenemisen ja lämmön pysyvyyden parantamiseksi. Mallia ei ole tarkoitettu ympärivuotiseen asumis- tai majoituskäyttöön. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
+      "Toimitussisältö perustuu NordMod Pihasaunan vakiomalliin. Rakennus on suunniteltu perinteiseen kantovesikäyttöön eikä sisällä vesijohto- tai viemärijärjestelmiä. FF-PIR 30 mm -levytystä käytetään seinissä ja katossa saunan lämpenemisen ja lämmön pysyvyyden parantamiseksi. Mallia ei ole tarkoitettu asumis- tai majoituskäyttöön. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
     backLink: "mallisto-pihasauna.html",
     image: {
       src: "assets/mallisto/nordmod-pihasauna/NordMod Pihasauna/pihasauna plan73.png",
@@ -1295,9 +1293,9 @@ const MODEL_LIBRARY = {
       { src: "assets/mallisto/nordmod-pihasauna/NordMod Pihasauna/pihasauna1.png", alt: "NordMod Pihasauna vaihtoehtoinen ulkokuva" },
     ],
     technicalContent: {
-      title: "Premium-vakiovarustelu ja tekninen toimitussisältö",
+      title: "Pihasaunan varustelu ja tekninen toimitussisältö",
       intro:
-        "NordMod Pihasaunan vakiorakenteet, tekniset ratkaisut ja premium-varustelu on suunniteltu perinteiseen puulämmitteiseen kantovesisaunomiseen laadukkailla materiaaleilla.",
+        "NordMod Pihasaunan vakiorakenteet ja tekniset ratkaisut on suunniteltu perinteiseen puulämmitteiseen kantovesisaunomiseen laadukkailla materiaaleilla.",
       sections: [
         {
           title: "Runko- ja rakenneratkaisut",
@@ -1388,7 +1386,7 @@ const MODEL_LIBRARY = {
           ],
         },
         {
-          title: "Premium-vakiovarustelu",
+          title: "Pihasaunan vakiovarustelu",
           items: [
             "140 mm lämpöhaapapanelointi seinissä ja katossa",
             "FF-PIR 30 mm -levytys seinissä ja katossa saunakäyttöä varten",
@@ -1498,9 +1496,11 @@ const createTextElement = (tagName, className, text) => {
   return element;
 };
 
-const MODEL_PRICE_LABEL = "Vakioidulla premium-varustelulla";
+const MODEL_PRICE_LABEL = "Premium-varusteltuna";
+const MODEL_PRICE_TAX_TEXT = "Sis. alv 25,5 %";
+const MODEL_PRICE_NOTE_TEXT = "Saatavana myös kevennetyllä tai yksilöllisellä varustelulla.";
 const MODEL_PRICE_DETAIL_TEXT =
-  "Ilmoitettu hinta koskee mallin vakioitua premium-varustelutasoa. Rakennuksen varustelua, materiaaleja ja tilaratkaisuja voidaan muokata asiakkaan tarpeiden mukaan. Malli voidaan toteuttaa myös kevennetyllä varustelulla edullisemmin. Lopullinen hinta vahvistetaan aina tarjouksessa.";
+  "Ilmoitettu hinta koskee mallin vakioitua premium-varustelua. Materiaaleja, varusteita ja tilaratkaisuja voidaan muuttaa kohteen ja asiakkaan tarpeiden mukaan. Malli voidaan toteuttaa myös kevennetyllä varustelulla edullisemmin. Lopullinen toimitussisältö ja hinta vahvistetaan aina kirjallisessa tarjouksessa.";
 const FURNITURE_SUPPLIER = {
   name: "Carlo Casagrande & Co",
   url: "https://carlocasagrande.fi/fi-fi/",
@@ -2053,6 +2053,8 @@ const initModelDetail = () => {
   const priceEl = document.getElementById("model-price");
   const priceAmountEl = document.getElementById("model-price-amount");
   const priceLabelEl = document.getElementById("model-price-label");
+  const priceTaxEl = document.getElementById("model-price-tax");
+  const priceNoteEl = document.getElementById("model-price-note");
   const priceDetailEl = document.getElementById("model-price-detail");
   const overviewEl = document.getElementById("model-overview");
   const featuresEl = document.getElementById("model-features");
@@ -2066,6 +2068,7 @@ const initModelDetail = () => {
   const galleryEl = document.getElementById("model-gallery");
   const backLinkEl = document.getElementById("model-back-link");
   const offerLinkEl = document.getElementById("model-offer-link");
+  const detailOfferLinkEl = document.getElementById("model-detail-offer-link");
   const detailStackEl = document.querySelector(".detail-stack");
 
   if (seriesEl) seriesEl.textContent = `Mallisto / ${model.series}`;
@@ -2075,10 +2078,14 @@ const initModelDetail = () => {
     if (model.price) {
       priceAmountEl.textContent = model.price;
       priceLabelEl.textContent = MODEL_PRICE_LABEL;
+      if (priceTaxEl) priceTaxEl.textContent = MODEL_PRICE_TAX_TEXT;
+      if (priceNoteEl) priceNoteEl.textContent = MODEL_PRICE_NOTE_TEXT;
       priceEl.hidden = false;
     } else {
       priceAmountEl.textContent = "";
       priceLabelEl.textContent = "";
+      if (priceTaxEl) priceTaxEl.textContent = "";
+      if (priceNoteEl) priceNoteEl.textContent = "";
       priceEl.hidden = true;
     }
   }
@@ -2097,6 +2104,9 @@ const initModelDetail = () => {
   if (backLinkEl) backLinkEl.href = model.backLink;
   if (offerLinkEl) {
     offerLinkEl.href = `tarjous.html?model=${encodeURIComponent(model.name)}`;
+  }
+  if (detailOfferLinkEl) {
+    detailOfferLinkEl.href = `tarjous.html?model=${encodeURIComponent(model.name)}`;
   }
 
   if (mainImageEl && model.image?.src) {

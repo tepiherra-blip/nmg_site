@@ -10,7 +10,7 @@
     <meta property="og:image" content="https://www.nordicmodular.fi/assets/mallisto/nordmod-pihasauna/NordMod%20Pihasauna/pihasauna%20plan73.png" />
     <meta property="og:url" content="https://www.nordicmodular.fi/malli.html" />
     <meta property="og:type" content="website" />
-    <link rel="stylesheet" href="styles.css?v=20260711-3" />
+    <link rel="stylesheet" href="styles.css?v=20260712-1" />
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
@@ -42,11 +42,13 @@
             <h1 id="model-name">Nordic malli</h1>
             <p class="lead" id="model-description">Mallikohtainen esittely, kuvat ja tarjouspolku yhdessä näkymässä.</p>
             <div class="model-price" id="model-price" hidden>
-              <span class="model-price__amount" id="model-price-amount"></span>
               <span class="model-price__label" id="model-price-label"></span>
+              <strong class="model-price__amount" id="model-price-amount"></strong>
+              <span class="model-price__tax" id="model-price-tax"></span>
+              <span class="model-price__note" id="model-price-note"></span>
             </div>
             <div class="hero-actions">
-              <a class="button button-primary" id="model-offer-link" href="tarjous.html">Pyydä alustava tarjous</a>
+              <a class="button button-primary" id="model-offer-link" href="tarjous.html">Pyydä tarkka tarjous</a>
               <a class="button button-secondary" id="model-back-link" href="mallisto.html">Takaisin mallistoon</a>
             </div>
           </div>
@@ -80,6 +82,9 @@
                 Tarkempi kokonaisuus käydään läpi tarjousvaiheessa kohteen tarpeen mukaan.
               </p>
               <p class="model-price-detail" id="model-price-detail" hidden></p>
+              <div class="catalog-actions product-price-actions">
+                <a class="button button-secondary" id="model-detail-offer-link" href="tarjous.html">Pyydä tarkka tarjous</a>
+              </div>
               <ul class="feature-list" id="model-features">
                 <li>Kuvat mallista</li>
                 <li>Pohjakuvat ja tilajako</li>
@@ -100,7 +105,7 @@
             </div>
             <div class="summary-card">
               <p class="eyebrow">Seuraava askel</p>
-              <h3>Pyydä alustava tarjous</h3>
+              <h3>Pyydä tarkka tarjous</h3>
               <p>Voit lähettää yhteydenoton heti, jos haluat keskustella mallista, varustelusta ja kohteeseesi sopivasta toimituksesta.</p>
             </div>
           </aside>
@@ -126,7 +131,7 @@
         </div>
       </footer>
     </div>
-    <script src="script.js?v=20260711-3"></script>
+    <script src="script.js?v=20260712-1"></script>
   </body>
 </html>
 
