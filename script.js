@@ -156,7 +156,7 @@ const MODEL_LIBRARY = {
       "Erillinen WC-tila",
     ],
     note:
-      "Toimitussisältö perustuu NordMod Compact Aitan vakiomalliin. Rakennus sisältää yhden makuuhuoneen sekä erillisen WC-tilan. WC-istuin toimitetaan lisävarusteena asiakkaan valitseman käyttötarkoituksen ja järjestelmän mukaan. Rakennuksessa ei ole vakiona varausta juoksevalle vedelle eikä viemäröinnille. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
+      "Toimitussisältö perustuu NordMod Compact Aitan vakiomalliin. Mallissa on erillinen WC-tila. WC-istuin ja lopullinen vesi- ja viemäröintiratkaisu eivät sisälly vakiohintaan, vaan ne valitaan kohteen liittymien, jätevesijärjestelmän ja käyttötarkoituksen mukaan. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
     backLink: "mallisto-compact-14.html",
     image: {
       src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/musta1.png",
@@ -227,15 +227,11 @@ const MODEL_LIBRARY = {
               ],
             },
             {
-              title: "WC-tila",
+              title: "WC-valmius",
               items: [
-                "Vinyylilattia",
-                "Maalatut levyseinäpinnat",
-                "Allaskaappi",
-                "Peilikaappi",
-                "LED-valaistus",
-                "Pistorasia peilikaapin yhteydessä",
-                "WC-istuin lisävarusteena asiakkaan valitseman järjestelmän mukaan",
+                "Mallissa on erillinen WC-tila",
+                "WC-istuin ja lopullinen vesi- ja viemäröintiratkaisu eivät sisälly vakiohintaan",
+                "Ratkaisu valitaan kohteen liittymien, jätevesijärjestelmän ja käyttötarkoituksen mukaan",
               ],
             },
           ],
