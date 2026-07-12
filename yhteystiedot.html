@@ -21,7 +21,7 @@
       "description": "Yhteystiedot valmiita pihasaunoja, aittoja, saunatupia ja modulaarisia piharakennuksia varten."
     }
     </script>
-    <link rel="stylesheet" href="styles.css?v=20260712-1" />
+    <link rel="stylesheet" href="styles.css?v=20260712-14" />
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
@@ -115,19 +115,19 @@
               <div class="form-grid">
                 <label>
                   <span>Nimi</span>
-                  <input id="contact-name" name="name" type="text" placeholder="Oma nimi" required />
+                  <input id="contact-name" name="name" type="text" placeholder="Oma nimi" maxlength="120" autocomplete="name" required />
                   <small class="field-error" aria-live="polite"></small>
                 </label>
 
                 <label>
                   <span>Sähköposti</span>
-                  <input id="contact-email" name="email" type="email" placeholder="nimi@esimerkki.fi" required />
+                  <input id="contact-email" name="email" type="email" placeholder="nimi@esimerkki.fi" maxlength="160" autocomplete="email" required />
                   <small class="field-error" aria-live="polite"></small>
                 </label>
 
                 <label>
                   <span>Puhelin</span>
-                  <input id="contact-phone" name="phone" type="tel" placeholder="+358..." />
+                  <input id="contact-phone" name="phone" type="tel" placeholder="+358..." maxlength="40" autocomplete="tel" />
                 </label>
 
                 <label>
@@ -146,6 +146,7 @@
                     id="contact-message"
                     name="message"
                     rows="6"
+                    maxlength="2000"
                     placeholder="Kerro lyhyesti hankkeesta, toiveesta tai yhteydenoton aiheesta."
                     required
                   ></textarea>
@@ -154,10 +155,19 @@
               </div>
             </div>
 
+            <label class="honeypot-field" aria-hidden="true" tabindex="-1">
+              <span>Jätä tämä kenttä tyhjäksi</span>
+              <input name="_honey" type="text" autocomplete="off" tabindex="-1" />
+            </label>
+
             <div class="form-actions">
               <button class="button button-primary" type="submit">Lähetä yhteydenotto</button>
               <button class="button button-secondary" type="reset">Tyhjennä</button>
             </div>
+            <p class="form-privacy-note">
+              Käytämme antamiasi tietoja vain yhteydenottoosi vastaamiseen ja asian hoitamiseen.
+              <a href="tietosuojaseloste.html">Lue tietosuojaseloste</a>.
+            </p>
             <div id="contact-form-status" class="form-status" hidden aria-live="polite"></div>
           </form>
 
@@ -218,6 +228,7 @@
           <a href="yritys.html">Yritys</a>
           <a href="tarjous.html">Pyydä tarjous</a>
           <a href="yhteystiedot.html">Yhteystiedot</a>
+          <a href="tietosuojaseloste.html">Tietosuojaseloste</a>
         </nav>
         <div class="footer-meta">
           <a href="mailto:info@nordicmodular.fi">info@nordicmodular.fi</a>
@@ -226,9 +237,10 @@
       </footer>
     </div>
 
-    <script src="script.js?v=20260712-1"></script>
+    <script src="script.js?v=20260712-14"></script>
   </body>
 </html>
+
 
 
 

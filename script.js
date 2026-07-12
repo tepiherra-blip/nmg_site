@@ -69,6 +69,11 @@ const buildContactEmailPayload = ({ name, email, phone, subject, message }) => (
   lahettajan_nimi: QUOTE_EMAIL_CONFIG.senderName,
 });
 
+const isSpamTrapFilled = (form) => {
+  const trap = form.querySelector('[name="_honey"]');
+  return Boolean(trap?.value.trim());
+};
+
 const submitFormToEndpoint = async (payload) => {
   const response = await fetch(FORM_ENDPOINT, {
     method: "POST",
@@ -132,7 +137,7 @@ const normalizeOfferCopy = () => {
       text === "Avaa tarjouslomake" ||
       text === "Täytä tarjouslomake"
     ) {
-      element.textContent = "Pyydä alustava tarjous";
+      element.textContent = "Pyydä tarjous";
     }
   });
 
@@ -156,7 +161,7 @@ const MODEL_LIBRARY = {
       "Erillinen WC-tila",
     ],
     note:
-      "Toimitussisältö perustuu NordMod Compact Aitan vakiomalliin. Mallissa on erillinen WC-tila. WC-istuin ja lopullinen vesi- ja viemäröintiratkaisu eivät sisälly vakiohintaan, vaan ne valitaan kohteen liittymien, jätevesijärjestelmän ja käyttötarkoituksen mukaan. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
+      "Toimitussisältö perustuu NordMod Compact Aitan vakiomalliin. Mallissa on erillinen WC-tila. WC-istuin ja lopullinen vesi- ja viemäröintiratkaisu eivät sisälly ilmoitettuun hintaan, vaan ne valitaan kohteen liittymien, jätevesijärjestelmän ja käyttötarkoituksen mukaan. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
     backLink: "mallisto-compact-14.html",
     image: {
       src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/musta1.png",
@@ -230,7 +235,7 @@ const MODEL_LIBRARY = {
               title: "WC-valmius",
               items: [
                 "Mallissa on erillinen WC-tila",
-                "WC-istuin ja lopullinen vesi- ja viemäröintiratkaisu eivät sisälly vakiohintaan",
+                "WC-istuin ja lopullinen vesi- ja viemäröintiratkaisu eivät sisälly ilmoitettuun hintaan",
                 "Ratkaisu valitaan kohteen liittymien, jätevesijärjestelmän ja käyttötarkoituksen mukaan",
               ],
             },
@@ -1466,7 +1471,7 @@ const UI_COPY = {
   contactSent: "Yhteydenotto lähetettiin onnistuneesti. Palaamme sinulle mahdollisimman pian.",
   sendError:
     "Lähetys ei onnistunut juuri nyt. Voit yrittää uudelleen tai lähettää viestin osoitteeseen info@nordicmodular.fi.",
-  quoteFallback: "Pyydä alustava tarjous",
+  quoteFallback: "Pyydä tarjous",
   contactFallback: "Lähetä yhteydenotto",
   validationName: "Lisää nimi.",
   validationEmail: "Lisää toimiva sähköpostiosoite.",
@@ -1805,6 +1810,11 @@ const initSimpleQuoteForm = () => {
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
+    if (isSpamTrapFilled(form)) {
+      setFormStatus(statusEl, "success", getUiCopy().quoteSent);
+      return;
+    }
+
     const fieldsToValidate = ["name", "email", "phone"].map((name) => form.querySelector(`[name="${name}"]`));
     const isValid = fieldsToValidate.every((field) => validateField(field));
     const emailField = form.querySelector("#email");
@@ -1921,6 +1931,11 @@ const initContactForm = () => {
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
+    if (isSpamTrapFilled(form)) {
+      setFormStatus(statusEl, "success", getUiCopy().contactSent);
+      return;
+    }
+
     const requiredFields = ["name", "email", "message"].map((name) => form.querySelector(`[name="${name}"]`));
     const isValid = requiredFields.every((field) => validateField(field));
 
@@ -1969,6 +1984,11 @@ const initContactForm = () => {
 
 const getAbsoluteSiteUrl = (path) => new URL(path, SITE_URL + "/").href;
 
+const getSchemaPrice = (price) => {
+  const digits = String(price || "").replace(/[^\d]/g, "");
+  return digits ? Number(digits) : null;
+};
+
 const setMetaTag = (attribute, key, content) => {
   if (!content) return;
   let tag = document.head.querySelector(`meta[${attribute}="${key}"]`);
@@ -1993,7 +2013,54 @@ const updateModelSeo = (model, modelId) => {
   setMetaTag("property", "og:url", url);
   setMetaTag("property", "og:type", "website");
 
-  const schema = {
+  const images = [
+    model.image?.src,
+    ...(Array.isArray(model.gallery) ? model.gallery.map((item) => item.src) : []),
+  ]
+    .filter(Boolean)
+    .map(getAbsoluteSiteUrl);
+  const schemaPrice = getSchemaPrice(model.price);
+
+  const schema = schemaPrice
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        name: model.name,
+        description: model.description,
+        category: model.series,
+        image: images,
+        brand: {
+          "@type": "Brand",
+          name: "Nordic Modular Finland Oy",
+        },
+        manufacturer: {
+          "@type": "Organization",
+          name: "Nordic Modular Finland Oy",
+          url: SITE_URL,
+        },
+        offers: {
+          "@type": "Offer",
+          url,
+          price: schemaPrice,
+          priceCurrency: "EUR",
+          availability: "https://schema.org/PreOrder",
+          itemCondition: "https://schema.org/NewCondition",
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            price: schemaPrice,
+            priceCurrency: "EUR",
+            valueAddedTaxIncluded: true,
+            description:
+              "Alkaen-hinta koskee mallin vakioitua premium-varustelutasoa. Lopullinen hinta vahvistetaan tarjouksessa.",
+          },
+          seller: {
+            "@type": "Organization",
+            name: "Nordic Modular Finland Oy",
+            url: SITE_URL,
+          },
+        },
+      }
+    : {
     "@context": "https://schema.org",
     "@type": "Service",
     name: model.name,
@@ -2012,12 +2079,7 @@ const updateModelSeo = (model, modelId) => {
       "@type": "Country",
       name: "Finland",
     },
-    image: [
-      model.image?.src,
-      ...(Array.isArray(model.gallery) ? model.gallery.map((item) => item.src) : []),
-    ]
-      .filter(Boolean)
-      .map(getAbsoluteSiteUrl),
+    image: images,
   };
 
   const existingSchema = document.getElementById("model-service-schema");

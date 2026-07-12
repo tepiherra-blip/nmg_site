@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pyydä tarjous pihasaunasta tai aitasta | Nordic Modular Finland Oy</title>
-    <meta name="description" content="Pyydä alustava tarjous valmiista pihasaunasta, aitasta, saunatuvasta, terassista tai modulaarisesta rakennuksesta." />
+    <meta name="description" content="Pyydä tarjous valmiista pihasaunasta, aitasta, saunatuvasta, terassista tai modulaarisesta rakennuksesta." />
     <meta property="og:title" content="Pyydä tarjous pihasaunasta tai aitasta | Nordic Modular Finland Oy" />
-    <meta property="og:description" content="Pyydä alustava tarjous valmiista pihasaunasta, aitasta, saunatuvasta, terassista tai modulaarisesta rakennuksesta." />
+    <meta property="og:description" content="Pyydä tarjous valmiista pihasaunasta, aitasta, saunatuvasta, terassista tai modulaarisesta rakennuksesta." />
     <meta property="og:image" content="https://www.nordicmodular.fi/assets/logo.png" />
     <meta property="og:url" content="https://www.nordicmodular.fi/tarjous.html" />
     <meta property="og:type" content="website" />
@@ -20,7 +20,7 @@
       "description": "Tarjouspyynnöt valmiista pihasaunoista, aittoista, saunatuvista ja modulaarisista rakennuksista."
     }
     </script>
-    <link rel="stylesheet" href="styles.css?v=20260712-1" />
+    <link rel="stylesheet" href="styles.css?v=20260712-14" />
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
@@ -52,7 +52,7 @@
         <section class="page-hero page-hero-tight reveal">
           <div class="page-hero-copy">
             <p class="eyebrow">Tarjous</p>
-            <h1>Pyydä alustava tarjous kohteeseesi.</h1>
+            <h1>Pyydä tarjous kohteeseesi.</h1>
             <p class="lead">Kerro kiinnostava malli, kohteen sijainti ja yhteystietosi. Palaamme asiaan ja tarkennamme kokonaisuuden kanssasi.</p>
           </div>
         </section>
@@ -77,7 +77,7 @@
                     <option value="0" data-label="NordMod Pihasauna">NordMod Pihasauna</option>
                     <option value="0" data-label="NordMod Terassi">NordMod Terassi</option>
                     <option value="0" data-label="NordMod Custom">NordMod Custom</option>
-                    <option value="0" data-label="Valmis lauteet">Valmis lauteet</option>
+                    <option value="0" data-label="Valmislauteet">Valmislauteet</option>
                     <option value="0" data-label="Yrityskohteen kaluste- ja tuotetoimitus">
                       Yrityskohteen kaluste- ja tuotetoimitus
                     </option>
@@ -90,7 +90,7 @@
 
                 <label>
                   <span>Kohdepaikkakunta</span>
-                  <input id="location" name="location" type="text" placeholder="Esim. Lappeenranta" />
+                  <input id="location" name="location" type="text" placeholder="Esim. Lappeenranta" maxlength="120" autocomplete="address-level2" />
                 </label>
               </div>
             </div>
@@ -103,19 +103,19 @@
               <div class="form-grid">
                 <label>
                   <span>Nimi</span>
-                  <input id="name" name="name" type="text" placeholder="Oma nimi" required />
+                  <input id="name" name="name" type="text" placeholder="Oma nimi" maxlength="120" autocomplete="name" required />
                   <small class="field-error" aria-live="polite"></small>
                 </label>
 
                 <label>
                   <span>Sähköposti</span>
-                  <input id="email" name="email" type="email" placeholder="nimi@esimerkki.fi" />
+                  <input id="email" name="email" type="email" placeholder="nimi@esimerkki.fi" maxlength="160" autocomplete="email" />
                   <small class="field-error" aria-live="polite"></small>
                 </label>
 
                 <label>
                   <span>Puhelin</span>
-                  <input id="phone" name="phone" type="tel" placeholder="+358..." />
+                  <input id="phone" name="phone" type="tel" placeholder="+358..." maxlength="40" autocomplete="tel" />
                   <small class="field-error" aria-live="polite"></small>
                 </label>
               </div>
@@ -133,15 +133,25 @@
                     id="details"
                     name="details"
                     rows="5"
+                    maxlength="2000"
                     placeholder="Kerro lyhyesti kohteesta, toiveista tai kysymyksestä."
                   ></textarea>
                 </label>
               </div>
             </div>
 
+            <label class="honeypot-field" aria-hidden="true" tabindex="-1">
+              <span>Jätä tämä kenttä tyhjäksi</span>
+              <input name="_honey" type="text" autocomplete="off" tabindex="-1" />
+            </label>
+
             <div class="form-actions">
-              <button class="button button-primary" type="submit">Pyydä alustava tarjous</button>
+              <button class="button button-primary" type="submit">Pyydä tarjous</button>
             </div>
+            <p class="form-privacy-note">
+              Käytämme antamiasi tietoja vain yhteydenottoosi vastaamiseen ja tarjouksen valmisteluun.
+              <a href="tietosuojaseloste.html">Lue tietosuojaseloste</a>.
+            </p>
             <div id="quote-form-status" class="form-status" hidden aria-live="polite"></div>
           </form>
 
@@ -177,6 +187,7 @@
           <a href="yritys.html">Yritys</a>
           <a href="tarjous.html">Pyydä tarjous</a>
           <a href="yhteystiedot.html">Yhteystiedot</a>
+          <a href="tietosuojaseloste.html">Tietosuojaseloste</a>
         </nav>
         <div class="footer-meta">
           <a href="mailto:info@nordicmodular.fi">info@nordicmodular.fi</a>
@@ -185,9 +196,10 @@
       </footer>
     </div>
 
-    <script src="script.js?v=20260712-1"></script>
+    <script src="script.js?v=20260712-14"></script>
   </body>
 </html>
+
 
 
 
