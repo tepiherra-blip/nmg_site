@@ -20,7 +20,7 @@
       "description": "Tarjouspyynnöt valmiista pihasaunoista, aittoista, saunatuvista ja modulaarisista rakennuksista."
     }
     </script>
-    <link rel="stylesheet" href="styles.css?v=20260714-01" />
+    <link rel="stylesheet" href="styles.css?v=20260716-01" />
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
@@ -67,7 +67,8 @@
               <div class="form-grid">
                 <label>
                   <span>Kiinnostava malli</span>
-                  <select id="product" name="product" aria-describedby="product-hint">
+                  <select id="product" name="product" aria-describedby="product-hint" required>
+                    <option value="" data-label="">Valitse kiinnostava malli</option>
                     <option value="0" data-label="NordMod Compact Aitta 16">NordMod Compact Aitta 16</option>
                     <option value="0" data-label="NordMod Compact Sauna 16">NordMod Compact Sauna 16</option>
                     <option value="0" data-label="NordMod Classic Aitta 20">NordMod Classic Aitta 20</option>
@@ -86,6 +87,7 @@
                     </option>
                   </select>
                   <small id="product-hint" class="field-hint">Voit valita myös malliston ulkopuolisen toteutuksen.</small>
+                  <small class="field-error" aria-live="polite"></small>
                 </label>
 
                 <label>
@@ -196,9 +198,10 @@
       </footer>
     </div>
 
-    <script src="script.js?v=20260714-01"></script>
+    <script src="script.js?v=20260716-01"></script>
   </body>
 </html>
+
 
 
 

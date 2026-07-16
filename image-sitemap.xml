@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
@@ -30,7 +30,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.nordicmodular.fi/mallisto-compact-14.html</loc>
+    <loc>https://www.nordicmodular.fi/mallisto-compact-16.html</loc>
     <image:image>
       <image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-compact/NordMod%20Compact%20Aitta/musta1.png</image:loc>
     </image:image>
@@ -39,7 +39,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.nordicmodular.fi/mallisto-classic-18.html</loc>
+    <loc>https://www.nordicmodular.fi/mallisto-classic-20.html</loc>
     <image:image>
       <image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-classic/Classic%20aitta/kuva1.png</image:loc>
     </image:image>
@@ -90,3 +90,4 @@
     </image:image>
   </url>
 </urlset>
+

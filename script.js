@@ -162,7 +162,7 @@ const MODEL_LIBRARY = {
     ],
     note:
       "Toimitussisältö perustuu NordMod Compact Aitan vakiomalliin. Mallissa on erillinen WC-tila. WC-istuin ja lopullinen vesi- ja viemäröintiratkaisu eivät sisälly ilmoitettuun hintaan, vaan ne valitaan kohteen liittymien, jätevesijärjestelmän ja käyttötarkoituksen mukaan. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
-    backLink: "mallisto-compact-14.html",
+    backLink: "mallisto-compact-16.html",
     image: {
       src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/musta1.png",
       alt: "Valmis Compact-aitta lisämajoitukseen mökille tai pihapiiriin",
@@ -331,7 +331,7 @@ const MODEL_LIBRARY = {
     ],
     note:
       "Toimitussisältö perustuu NordMod Compact Saunan vakiomalliin. Rakennus sisältää saunan, suihkutilan sekä lämpimän pukuhuoneen ja soveltuu säännölliseen vapaa-ajan käyttöön. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
-    backLink: "mallisto-compact-14.html",
+    backLink: "mallisto-compact-16.html",
     image: {
       src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/sauna musta 1.png",
       alt: "Valmis Compact-sauna mökille, pihalle tai vapaa-ajan käyttöön",
@@ -505,7 +505,7 @@ const MODEL_LIBRARY = {
     ],
     note:
       "Toimitussisältö perustuu NordMod Classic Aitan vakiomalliin. Malli ei sisällä vesipisteitä, viemäröintiä eikä märkätiloja. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
-    backLink: "mallisto-classic-18.html",
+    backLink: "mallisto-classic-20.html",
     image: {
       src: "assets/mallisto/nordmod-classic/Classic aitta/kuva1.png",
       alt: "Valmis Classic-aitta lisämajoitukseen mökille tai pihapiiriin",
@@ -667,7 +667,7 @@ const MODEL_LIBRARY = {
     ],
     note:
       "Toimitussisältö perustuu NordMod Classic Saunatuvan vakiomalliin. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
-    backLink: "mallisto-classic-18.html",
+    backLink: "mallisto-classic-20.html",
     image: {
       src: "assets/mallisto/nordmod-classic/Classic sauna/Classic sauna 1.png",
       alt: "Valmis Classic-saunatupa, jossa on sauna ja mökkitupa",
@@ -1473,6 +1473,7 @@ const UI_COPY = {
     "Lähetys ei onnistunut juuri nyt. Voit yrittää uudelleen tai lähettää viestin osoitteeseen info@nordicmodular.fi.",
   quoteFallback: "Pyydä tarjous",
   contactFallback: "Lähetä yhteydenotto",
+  validationProduct: "Valitse kiinnostava malli.",
   validationName: "Lisää nimi.",
   validationEmail: "Lisää toimiva sähköpostiosoite.",
   validationPhone: "Lisää puhelinnumero, josta sinut tavoittaa.",
@@ -1497,11 +1498,11 @@ const createTextElement = (tagName, className, text) => {
   return element;
 };
 
-const MODEL_PRICE_LABEL = "Premium-varusteltuna";
+const MODEL_PRICE_LABEL = "Premium-vakiovarustelu";
 const MODEL_PRICE_TAX_TEXT = "Sis. alv 25,5 %";
 const MODEL_PRICE_NOTE_TEXT = "Saatavana myös kevennetyllä tai yksilöllisellä varustelulla.";
 const MODEL_PRICE_DETAIL_TEXT =
-  "Ilmoitettu hinta koskee mallin vakioitua premium-varustelua. Materiaaleja, varusteita ja tilaratkaisuja voidaan muuttaa kohteen ja asiakkaan tarpeiden mukaan. Malli voidaan toteuttaa myös kevennetyllä varustelulla edullisemmin. Lopullinen toimitussisältö ja hinta vahvistetaan aina kirjallisessa tarjouksessa.";
+  "Hinta koskee mallin vakioitua premium-varustelutasoa. Lopullinen toimitussisältö ja kohdekohtaiset kustannukset vahvistetaan kirjallisessa tarjouksessa.";
 const FURNITURE_SUPPLIER = {
   name: "Carlo Casagrande & Co",
   url: "https://carlocasagrande.fi/fi-fi/",
@@ -1762,6 +1763,7 @@ const initSimpleQuoteForm = () => {
   const statusEl = document.getElementById("quote-form-status");
 
   const validators = {
+    product: (value) => (value.trim() ? "" : getUiCopy().validationProduct),
     name: (value) => (value.trim() ? "" : getUiCopy().validationName),
     email: (value) => (!value.trim() || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()) ? "" : getUiCopy().validationEmail),
     phone: (value) => (!value.trim() || value.trim().length >= 6 ? "" : getUiCopy().validationPhone),
@@ -1793,8 +1795,11 @@ const initSimpleQuoteForm = () => {
     }
   });
 
-  form.addEventListener("change", () => {
+  form.addEventListener("change", (event) => {
     resetFormStatus(statusEl);
+    if (event.target instanceof HTMLSelectElement) {
+      validateField(event.target);
+    }
   });
 
   form.addEventListener("reset", () => {
@@ -1815,7 +1820,7 @@ const initSimpleQuoteForm = () => {
       return;
     }
 
-    const fieldsToValidate = ["name", "email", "phone"].map((name) => form.querySelector(`[name="${name}"]`));
+    const fieldsToValidate = ["product", "name", "email", "phone"].map((name) => form.querySelector(`[name="${name}"]`));
     const isValid = fieldsToValidate.every((field) => validateField(field));
     const emailField = form.querySelector("#email");
     const phoneField = form.querySelector("#phone");
@@ -2051,7 +2056,7 @@ const updateModelSeo = (model, modelId) => {
             priceCurrency: "EUR",
             valueAddedTaxIncluded: true,
             description:
-              "Alkaen-hinta koskee mallin vakioitua premium-varustelutasoa. Lopullinen hinta vahvistetaan tarjouksessa.",
+              "Hinta koskee mallin vakioitua premium-varustelutasoa. Lopullinen toimitussisältö ja kohdekohtaiset kustannukset vahvistetaan kirjallisessa tarjouksessa.",
           },
           seller: {
             "@type": "Organization",
@@ -2229,5 +2234,6 @@ initReveal();
 initSimpleQuoteForm();
 initContactForm();
 initModelDetail();
+
 
 
