@@ -5,6 +5,14 @@
     maximumFractionDigits: 0,
   }).format(value);
 
+const SITE_DISPLAY_CONFIG = {
+  priceDisplay: "blurred", // vaihtoehdot: "blurred" tai "visible"
+  socialLinks: {
+    instagram: "https://www.instagram.com/nordicmodularfinland/",
+    facebook: "https://www.facebook.com/profile.php?id=61590937243717",
+  },
+};
+
 document.documentElement.classList.add("has-js");
 
 const SITE_URL = "https://www.nordicmodular.fi";
@@ -2224,6 +2232,138 @@ const initModelDetail = () => {
   updateModelSeo(model, modelId);
 };
 
+const createPriceReviewStatus = () => {
+  const status = document.createElement("div");
+  status.className = "price-review-status";
+  status.innerHTML = `
+    <strong class="price-review-status__title">Hinta tarkistuksessa</strong>
+    <span class="price-review-status__text">Julkaisemme tarkistetun vakiohinnan pian.</span>
+    <a class="price-review-status__link" href="tarjous.html">Pyydä tarjous</a>
+  `;
+  return status;
+};
+
+const applyPriceDisplayMode = () => {
+  const shouldBlur = SITE_DISPLAY_CONFIG.priceDisplay === "blurred";
+
+  document.querySelectorAll(".model-price__amount").forEach((priceAmountEl) => {
+    const priceBlock = priceAmountEl.closest(".model-price") || priceAmountEl.parentElement;
+    if (!priceBlock) return;
+
+    const existingStatus = priceBlock.querySelector(".price-review-status");
+
+    if (shouldBlur) {
+      priceAmountEl.classList.add("is-price-blurred");
+      priceAmountEl.setAttribute("aria-hidden", "true");
+
+      if (!existingStatus) {
+        priceAmountEl.insertAdjacentElement("afterend", createPriceReviewStatus());
+      }
+    } else {
+      priceAmountEl.classList.remove("is-price-blurred");
+      priceAmountEl.removeAttribute("aria-hidden");
+      existingStatus?.remove();
+    }
+  });
+};
+
+const isValidInstagramUrl = (url) => {
+  if (!url || !url.startsWith("https://www.instagram.com/")) return false;
+
+  try {
+    const parsedUrl = new URL(url);
+    return parsedUrl.protocol === "https:" && parsedUrl.hostname === "www.instagram.com";
+  } catch {
+    return false;
+  }
+};
+
+const isValidFacebookUrl = (url) => {
+  if (!url || url.includes("PASTE_") || !url.startsWith("https://www.facebook.com/")) return false;
+
+  try {
+    const parsedUrl = new URL(url);
+    return parsedUrl.protocol === "https:" && parsedUrl.hostname === "www.facebook.com";
+  } catch {
+    return false;
+  }
+};
+
+const getSocialIconSvg = (service) => {
+  if (service === "instagram") {
+    return `
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+        <circle cx="12" cy="12" r="4"></circle>
+        <circle cx="17.5" cy="6.5" r="1.1"></circle>
+      </svg>
+    `;
+  }
+
+  return `
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M14 8.4V6.8c0-.9.4-1.4 1.5-1.4H17V3h-2.3C12.2 3 11 4.5 11 6.5v1.9H8.8V11H11v10h3V11h2.5l.4-2.6H14Z"></path>
+    </svg>
+  `;
+};
+
+const createSocialLink = ({ service, url, label, title }) => {
+  const link = document.createElement("a");
+  link.className = `social-link social-link--${service}`;
+  link.href = url;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.setAttribute("aria-label", label);
+  link.title = title;
+  link.innerHTML = `
+    ${getSocialIconSvg(service)}
+    <span class="visually-hidden">${title}</span>
+  `;
+  return link;
+};
+
+const initializeSocialLinks = () => {
+  const { instagram, facebook } = SITE_DISPLAY_CONFIG.socialLinks;
+
+  document.querySelectorAll(".footer-meta").forEach((footerMeta) => {
+    footerMeta.querySelector(".footer-social")?.remove();
+
+    const social = document.createElement("div");
+    social.className = "footer-social";
+
+    if (isValidInstagramUrl(instagram)) {
+      social.appendChild(
+        createSocialLink({
+          service: "instagram",
+          url: instagram,
+          label: "Nordic Modular Finland Instagramissa",
+          title: "Instagram",
+        })
+      );
+    }
+
+    if (isValidFacebookUrl(facebook)) {
+      social.appendChild(
+        createSocialLink({
+          service: "facebook",
+          url: facebook,
+          label: "Nordic Modular Finland Facebookissa",
+          title: "Facebook",
+        })
+      );
+    }
+
+    if (!social.children.length) return;
+
+    const copyright = footerMeta.querySelector("p");
+    footerMeta.insertBefore(social, copyright || null);
+  });
+};
+
+window.SITE_DISPLAY_CONFIG = SITE_DISPLAY_CONFIG;
+window.applyPriceDisplayMode = applyPriceDisplayMode;
+window.initializeSocialLinks = initializeSocialLinks;
+
 initTheme();
 setYear();
 normalizeOfferCopy();
@@ -2234,6 +2374,5 @@ initReveal();
 initSimpleQuoteForm();
 initContactForm();
 initModelDetail();
-
-
-
+applyPriceDisplayMode();
+initializeSocialLinks();
