@@ -2188,44 +2188,30 @@ body[data-page="home"] main > .section:last-of-type {
   justify-content: center;
   width: 28px;
   height: 28px;
-  color: var(--muted-strong);
   border-radius: 50%;
   transition:
-    color 160ms ease,
+    filter 160ms ease,
     transform 160ms ease;
 }
 
 .social-link svg {
   width: 25px;
   height: 25px;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  fill: none;
 }
 
 .social-link--facebook svg {
   width: 24px;
   height: 24px;
-  stroke: none;
-  fill: currentColor;
 }
 
 .social-link:hover {
-  color: var(--accent-strong);
+  filter: saturate(1.12) brightness(1.06);
   transform: translateY(-1px);
 }
 
 .social-link:focus-visible {
   outline: 3px solid rgba(79, 168, 216, 0.42);
   outline-offset: 4px;
-}
-
-:root[data-theme="dark"] .social-link {
-  color: #dcecf5;
-}
-
-:root[data-theme="dark"] .social-link:hover {
-  color: var(--accent-strong);
 }
 
 .visually-hidden {
@@ -3349,3 +3335,66 @@ html.reveal-enabled .reveal.is-visible {
     background: var(--surface-lifted);
   }
 }
+
+/* Patio-mallit ja myöhemmin lisättävien kuvien paikat. */
+.patio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+.patio-card { min-width: 0; scroll-margin-top: 7rem; }
+.patio-card h3 { margin-top: 1.25rem; }
+.patio-card .button { margin-top: 1rem; }
+.patio-image-placeholder {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  padding: 1rem;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface-soft);
+  color: var(--muted-strong);
+  text-align: center;
+}
+.patio-card img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: contain; border-radius: var(--radius-sm); }
+.patio-custom {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  height: auto;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  scroll-margin-top: 7rem;
+}
+.patio-custom-copy { display: grid; gap: 0.5rem; }
+.patio-custom-copy > * { margin: 0; }
+.patio-custom h3, .patio-custom p { max-width: none; }
+.patio-custom .button { justify-self: end; }
+.patio-frame {
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  align-items: center;
+  height: auto;
+  gap: 1.5rem;
+  margin: 1.5rem 0 0;
+  padding: 1rem;
+}
+.patio-frame figcaption { display: grid; gap: 0.75rem; padding: 0.5rem; }
+.patio-frame figcaption > * { margin: 0; }
+.patio-frame-placeholder { aspect-ratio: 3 / 1; margin: 1rem 0; }
+.patio-frame img { display: block; width: 100%; height: auto; margin: 0; border-radius: var(--radius-sm); }
+@media (max-width: 900px) {
+  .patio-grid { grid-template-columns: 1fr; }
+  .patio-frame-placeholder { aspect-ratio: 4 / 3; }
+}
+@media (max-width: 640px) {
+  .patio-custom, .patio-frame { grid-template-columns: 1fr; gap: 1rem; }
+  .patio-custom .button { justify-self: start; }
+}
+
+.patio-business {
+  border-top: 1px solid var(--line-strong);
+  padding-top: 1.5rem;
+}
+.patio-business h2 { font-size: 1.25rem; margin: 0 0 0.75rem; }
+.patio-business p { max-width: 72ch; color: var(--muted-strong); margin: 0 0 0.75rem; }
+.patio-business a { text-decoration: underline; text-underline-offset: 0.2em; }

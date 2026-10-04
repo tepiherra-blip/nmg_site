@@ -1,4 +1,4 @@
-﻿const formatEuro = (value) =>
+const formatEuro = (value) =>
   new Intl.NumberFormat("fi-FI", {
     style: "currency",
     currency: "EUR",
@@ -6,7 +6,7 @@
   }).format(value);
 
 const SITE_DISPLAY_CONFIG = {
-  priceDisplay: "blurred", // vaihtoehdot: "blurred" tai "visible"
+  priceDisplay: "visible", // vaihtoehdot: "blurred" tai "visible"
   socialLinks: {
     instagram: "https://www.instagram.com/nordicmodularfinland/",
     facebook: "https://www.facebook.com/profile.php?id=61590937243717",
@@ -157,7 +157,7 @@ const MODEL_LIBRARY = {
     series: "NordMod Compact",
     name: "NordMod Compact Aitta 16",
     description: "Premium-varusteltu kompakti aittamalli yhdellä makuuhuoneella ja erillisellä WC-tilalla.",
-    price: "24 900 €",
+    price: "27 900 €",
     furnitureSupplier: true,
     overview:
       "NordMod Compact Aitta on malliston kompakti aittamalli, joka sisältää yhden makuuhuoneen sekä erillisen WC-tilan. Rakennus toimitetaan lähtökohtaisesti lähes käyttövalmiina kokonaisuutena sisältäen valmiit sisäpinnat, sähköistyksen, LED-valaistuksen, lämmityksen sekä kiintokalusteet tämän toimitussisällön mukaisesti.",
@@ -172,14 +172,14 @@ const MODEL_LIBRARY = {
       "Toimitussisältö perustuu NordMod Compact Aitan vakiomalliin. Mallissa on erillinen WC-tila. WC-istuin ja lopullinen vesi- ja viemäröintiratkaisu eivät sisälly ilmoitettuun hintaan, vaan ne valitaan kohteen liittymien, jätevesijärjestelmän ja käyttötarkoituksen mukaan. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
     backLink: "mallisto-compact-16.html",
     image: {
-      src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/musta1.png",
+      src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/compact-aitta-paakuva.jpg",
       alt: "Valmis Compact-aitta lisämajoitukseen mökille tai pihapiiriin",
     },
     gallery: [
       { src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/compact pohja.png", alt: "Compact-aitan pohjakuva lisämajoitukseen tai vierasmajaksi", caption: "Pohjakuva", className: "plan-card-wide" },
-      { src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/musta5.png", alt: "Valmis Compact-aitta terassilla mökin tai pihapiirin yhteyteen" },
-      { src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/musta2.png", alt: "Valmis aitta lisämajoitukseen kompaktissa piharakennuksessa" },
-      { src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/musta3.png", alt: "Valmis Compact-aitta piharakennukseksi tai vierasmajaksi" },
+      { src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/compact-aitta-edesta.jpg", alt: "NordMod Compact Aitta suoraan edestä auringonlaskussa" },
+      { src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/compact-aitta-makuuhuone.jpg", alt: "Compact Aitan makuuhuone, kiintokomero ja näkymä järvelle" },
+      { src: "assets/mallisto/nordmod-compact/NordMod Compact Aitta/compact-aitta-wc.jpg", alt: "Compact Aitan erillinen WC-tila" },
     ],
     technicalContent: {
       title: "Premium-vakiovarustelu ja tekninen toimitussisältö",
@@ -328,7 +328,7 @@ const MODEL_LIBRARY = {
     series: "NordMod Compact",
     name: "NordMod Compact Sauna 16",
     description: "Premium-varusteltu kompakti sauna- ja peseytymisrakennus saunalla, suihkutilalla ja pukuhuoneella.",
-    price: "38 900 €",
+    price: "44 900 €",
     overview:
       "NordMod Compact Sauna on kompakti ja laadukas sauna- ja peseytymisrakennus, joka sisältää saunan, suihkutilan sekä pukuhuoneen. Rakennus toimitetaan lähtökohtaisesti lähes käyttövalmiina kokonaisuutena sisältäen valmiit sisäpinnat, sähköistyksen, lämmityksen, ilmanvaihdon, märkätilat sekä saunavarustelun tämän toimitussisällön mukaisesti.",
     features: [
@@ -341,14 +341,14 @@ const MODEL_LIBRARY = {
       "Toimitussisältö perustuu NordMod Compact Saunan vakiomalliin. Rakennus sisältää saunan, suihkutilan sekä lämpimän pukuhuoneen ja soveltuu säännölliseen vapaa-ajan käyttöön. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
     backLink: "mallisto-compact-16.html",
     image: {
-      src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/sauna musta 1.png",
+      src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/compact-sauna-paakuva.jpg",
       alt: "Valmis Compact-sauna mökille, pihalle tai vapaa-ajan käyttöön",
     },
     gallery: [
       { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/Comapct pohja.png", alt: "Compact-saunan pohjakuva saunalle, suihkutilalle ja pukuhuoneelle", caption: "Pohjakuva", className: "plan-card-wide" },
-      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/sauna musta 2.png", alt: "Valmis Compact-sauna pihasaunaksi mökille tai pihalle" },
-      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/sauna musta 3.png", alt: "Valmis sauna terassilla mökin tai piharakennuksen yhteyteen" },
-      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/sauna musta 4.png", alt: "Kompakti valmis sauna vapaa-ajan käyttöön ja pihapiiriin" },
+      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/compact-sauna-pukuhuone.jpg", alt: "Compact Saunan pukuhuone ja suuri maisemaikkuna" },
+      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/compact-sauna-suihku.jpg", alt: "Compact Saunan suihkutila" },
+      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/compact-sauna-saunatila.jpg", alt: "Compact Saunan lauteet, kiuas ja järvimaisema" },
     ],
     technicalContent: {
       title: "Premium-vakiovarustelu ja tekninen toimitussisältö",
@@ -501,7 +501,7 @@ const MODEL_LIBRARY = {
     series: "NordMod Classic",
     name: "NordMod Classic Aitta 20",
     description: "Premium-varusteltu kahden makuuhuoneen aittamalli majoitus- ja vierasmajakäyttöön.",
-    price: "31 900 €",
+    price: "36 900 €",
     furnitureSupplier: true,
     overview:
       "NordMod Classic Aitta toimitetaan lähtökohtaisesti lähes käyttövalmiina kokonaisuutena. Vakiotoimitukseen kuuluvat valmiit sisäpinnat, sähköistys, LED-valaistus, sähköpatterit, painovoimainen ilmanvaihto sekä kahden makuuhuoneen varustelu korkeilla kiintokomeroilla.",
@@ -515,13 +515,14 @@ const MODEL_LIBRARY = {
       "Toimitussisältö perustuu NordMod Classic Aitan vakiomalliin. Malli ei sisällä vesipisteitä, viemäröintiä eikä märkätiloja. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
     backLink: "mallisto-classic-20.html",
     image: {
-      src: "assets/mallisto/nordmod-classic/Classic aitta/kuva1.png",
+      src: "assets/mallisto/nordmod-classic/Classic aitta/classic-aitta-paakuva.jpg",
       alt: "Valmis Classic-aitta lisämajoitukseen mökille tai pihapiiriin",
     },
     gallery: [
       { src: "assets/mallisto/nordmod-classic/Classic aitta/classic pohja.png", alt: "Classic-aitan pohjakuva kahden makuuhuoneen vierasmajalle", caption: "Pohjakuva", className: "plan-card-wide" },
-      { src: "assets/mallisto/nordmod-classic/Classic aitta/kuva 3.png", alt: "Valmis Classic-aitta vierasmajaksi tai lisämajoitukseen" },
-      { src: "assets/mallisto/nordmod-classic/Classic aitta/kuva3.png", alt: "Valmis aitta mökille, pihalle tai majoituskäyttöön" },
+      { src: "assets/mallisto/nordmod-classic/Classic aitta/classic-aitta-edesta.jpg", alt: "NordMod Classic Aitta suoraan edestä auringonlaskussa" },
+      { src: "assets/mallisto/nordmod-classic/Classic aitta/classic-aitta-sisakuva-1.jpg", alt: "Classic Aitan makuuhuone ja näkymä järvelle" },
+      { src: "assets/mallisto/nordmod-classic/Classic aitta/classic-aitta-sisakuva-2.jpg", alt: "Classic Aitan toinen makuuhuone ja suuret ikkunat" },
     ],
     technicalContent: {
       title: "Premium-vakiovarustelu ja tekninen toimitussisältö",
@@ -663,7 +664,7 @@ const MODEL_LIBRARY = {
     series: "NordMod Classic",
     name: "NordMod Classic Saunatupa 20",
     description: "Premium-varusteltu saunatuparatkaisu valmiilla sisäpinnoilla, märkätiloilla ja kiintokalusteilla.",
-    price: "52 900 €",
+    price: "59 900 €",
     furnitureSupplier: true,
     overview:
       "NordMod Classic Saunatupa toimitetaan lähtökohtaisesti lähes käyttövalmiina kokonaisuutena. Vakiotoimitukseen kuuluvat valmiit sisäpinnat, sähköistys, lämmitys, ilmanvaihto, märkätilat, sauna, kiuas, lämminvesivaraaja sekä keittiön kiintokalusteet tämän toimitussisällön mukaisesti.",
@@ -677,14 +678,15 @@ const MODEL_LIBRARY = {
       "Toimitussisältö perustuu NordMod Classic Saunatuvan vakiomalliin. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
     backLink: "mallisto-classic-20.html",
     image: {
-      src: "assets/mallisto/nordmod-classic/Classic sauna/Classic sauna 1.png",
+      src: "assets/mallisto/nordmod-classic/Classic sauna/classic-saunatupa-paakuva.jpg",
       alt: "Valmis Classic-saunatupa, jossa on sauna ja mökkitupa",
     },
     gallery: [
       { src: "assets/mallisto/nordmod-classic/Classic sauna/classic pohja.png", alt: "Classic-saunatuvan pohjakuva saunalle ja oleskelutilalle", caption: "Pohjakuva", className: "plan-card-wide" },
-      { src: "assets/mallisto/nordmod-classic/Classic sauna/Classic sauna 2.png", alt: "Valmis saunatupa, jossa on sauna ja pieni mökkitupa" },
-      { src: "assets/mallisto/nordmod-classic/Classic sauna/classic sauna3.png", alt: "Valmis saunatupa mökille, pihalle tai vapaa-ajan käyttöön" },
-      { src: "assets/mallisto/nordmod-classic/Classic sauna/classic sauna 4.png", alt: "Valmis saunatupa mökille ja lisämajoitukseen" },
+      { src: "assets/mallisto/nordmod-classic/Classic sauna/classic-saunatupa-ulkokuva.jpg", alt: "NordMod Classic Saunatupa ja terassi järven rannalla" },
+      { src: "assets/mallisto/nordmod-classic/Classic sauna/classic-saunatupa-tupa.jpg", alt: "Classic Saunatuvan oleskelutila ja keittiökalusteet" },
+      { src: "assets/mallisto/nordmod-classic/Classic sauna/classic-saunatupa-suihku.jpg", alt: "Classic Saunatuvan suihkutila saunan vieressä" },
+      { src: "assets/mallisto/nordmod-classic/Classic sauna/classic-saunatupa-sauna.jpg", alt: "Classic Saunatuvan sauna, vastakkaiset lauteet ja maisemaikkuna" },
     ],
     technicalContent: {
       title: "Premium-vakiovarustelu ja tekninen toimitussisältö",
@@ -850,7 +852,7 @@ const MODEL_LIBRARY = {
     series: "NordMod Grand",
     name: "NordMod Grand Aitta 30",
     description: "Premium-varusteltu kahden makuuhuoneen aittamalli väljemmässä Grand-kokoluokassa.",
-    price: "43 900 €",
+    price: "49 900 €",
     furnitureSupplier: true,
     overview:
       "NordMod Grand Aitta on Classic Aittaa hieman suurempi kahden makuuhuoneen aittamalli, joka tarjoaa tutun premium-varustelun sekä laadukkaat materiaalit väljemmässä kokoluokassa. Rakennus toimitetaan lähtökohtaisesti lähes käyttövalmiina kokonaisuutena sisältäen valmiit sisäpinnat, sähköistyksen, LED-valaistuksen, lämmityksen sekä kahden makuuhuoneen varustelun tämän toimitussisällön mukaisesti.",
@@ -864,11 +866,16 @@ const MODEL_LIBRARY = {
       "Toimitussisältö perustuu NordMod Grand Aitan vakiomalliin. Grand Aitta on Classic Aittaa hieman suurempi kahden makuuhuoneen aittamalli, joka tarjoaa enemmän tilaa majoittumiseen ja säilytykseen säilyttäen saman laadukkaan premium-varustelun. Malli ei sisällä vesipisteitä, viemäröintiä eikä märkätiloja. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
     backLink: "mallisto-grand-30.html",
     image: {
-      src: "assets/mallisto/nordmod-grand/grand aitta/grand aitta1.png",
+      src: "assets/mallisto/nordmod-grand/grand aitta/grand-aitta-paakuva.jpg",
       alt: "Valmis Grand-aitta vierasmajaksi tai lisämajoitukseen mökille",
     },
     gallery: [
       { src: "assets/mallisto/nordmod-grand/grand aitta/Grand pohja.png", alt: "Grand-aitan pohjakuva väljään lisämajoitukseen", caption: "Pohjakuva", className: "plan-card-wide" },
+      { src: "assets/mallisto/nordmod-grand/grand aitta/grand-aitta-edesta.jpg", alt: "NordMod Grand Aitta suoraan edestä auringonlaskussa" },
+      { src: "assets/mallisto/nordmod-grand/grand aitta/grand-aitta-makuuhuone.jpg", alt: "Grand Aitan makuuhuone ja suuri maisemaikkuna" },
+      { src: "assets/mallisto/nordmod-grand/grand aitta/grand-aitta-oleskelutila.jpg", alt: "Grand Aitan oleskelutilan sisustus ja järvinäkymä" },
+      { src: "assets/mallisto/nordmod-grand/grand aitta/grand-aitta-oleskelutila-ilta.jpg", alt: "Grand Aitan oleskelutila iltavalaistuksessa" },
+      { src: "assets/mallisto/nordmod-grand/grand aitta/grand-aitta-makuuhuone-ilta.jpg", alt: "Grand Aitan makuuhuoneen sisustus iltavalaistuksessa" },
     ],
     technicalContent: {
       title: "Premium-vakiovarustelu ja tekninen toimitussisältö",
@@ -1010,7 +1017,7 @@ const MODEL_LIBRARY = {
     series: "NordMod Grand",
     name: "NordMod Grand Saunatupa 30",
     description: "Premium-varusteltu Grand-sarjan saunatupa koneellisella poistoilmanvaihdolla.",
-    price: "74 900 €",
+    price: "78 900 €",
     furnitureSupplier: true,
     overview:
       "NordMod Grand Saunatupa tarjoaa saman laadukkaan premium-varustelun kuin Classic Saunatupa, mutta varustettuna koneellisella poistoilmanvaihdolla käyttömukavuuden ja ilmanvaihdon tehostamiseksi. Rakennus toimitetaan lähtökohtaisesti lähes käyttövalmiina kokonaisuutena sisältäen valmiit sisäpinnat, sähköistyksen, lämmityksen, ilmanvaihdon, märkätilat sekä kiintokalusteet tämän toimitussisällön mukaisesti.",
@@ -1024,14 +1031,15 @@ const MODEL_LIBRARY = {
       "Toimitussisältö perustuu NordMod Grand Saunatuvan vakiomalliin. Grand-mallin vakiona toimitettava koneellinen poistoilmanvaihto parantaa sisäilman laatua ja käyttömukavuutta erityisesti säännöllisessä vapaa-ajan käytössä. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
     backLink: "mallisto-grand-30.html",
     image: {
-      src: "assets/mallisto/nordmod-grand/grand saunatupa/iso terassi ok2.png",
+      src: "assets/mallisto/nordmod-grand/grand saunatupa/grand-saunatupa-paakuva.jpg",
       alt: "Tilava valmis Grand-saunatupa mökille ja vapaa-ajan käyttöön",
     },
     gallery: [
       { src: "assets/mallisto/nordmod-grand/grand saunatupa/Grand s pohja.png", alt: "Grand-saunatuvan pohjakuva saunalle, pesuhuoneelle ja tuvalle", caption: "Pohjakuva", className: "plan-card-wide" },
-      { src: "assets/mallisto/nordmod-grand/grand saunatupa/iso terassi ok 4.png", alt: "Tilava saunatupa terassilla mökin tai pihapiirin yhteyteen" },
-      { src: "assets/mallisto/nordmod-grand/grand saunatupa/iso terassi ok 5.png", alt: "Valmis Grand-saunatupa lisämukavuuteen ja vapaa-aikaan" },
-      { src: "assets/mallisto/nordmod-grand/grand saunatupa/iso terassi ok3.png", alt: "NordMod Grand Saunatupa terassinäkymä" },
+      { src: "assets/mallisto/nordmod-grand/grand saunatupa/grand-saunatupa-ulkokuva.jpg", alt: "NordMod Grand Saunatupa saunan päädyn suunnasta" },
+      { src: "assets/mallisto/nordmod-grand/grand saunatupa/grand-saunatupa-tupa.jpg", alt: "Grand Saunatuvan oleskelutila, keittiö ja järvinäkymä" },
+      { src: "assets/mallisto/nordmod-grand/grand saunatupa/grand-saunatupa-sauna.jpg", alt: "Grand Saunatuvan lauteet, kiuas ja maisemaikkunat" },
+      { src: "assets/mallisto/nordmod-grand/grand saunatupa/grand-saunatupa-suihku.jpg", alt: "Grand Saunatuvan pesuhuone ja kaksi suihkua" },
     ],
     technicalContent: {
       title: "Premium-vakiovarustelu ja tekninen toimitussisältö",
@@ -1194,6 +1202,11 @@ const MODEL_LIBRARY = {
   "nordmod-terassi": {
     series: "NordMod Terassi",
     name: "NordMod Terassi",
+    price: "1 480 €",
+    priceLabel: "Alkaen",
+    priceTax: "",
+    priceNote: "NordMod Patio: 6 m², 9 m² ja 16 m².",
+    priceDetail: "Patio 6 m²: 1 480 €. Patio 9 m²: 2 180 €. Patio 16 m²: 3 480 €. Kuljetus ja nostotyöt sovitaan erikseen.",
     description: "Viimeistelty moduuliterassi rakennuksen yhteyteen tai erikseen ostettavaksi pihaterassiksi.",
     overview:
       "NordMod Terassi on viimeistelty moduuliterassi, joka toimii yhtä hyvin saunan, aitan tai saunatuvan yhteydessä kuin erikseen ostettavana pihaterassina. Se voidaan sijoittaa omakotitalon pihaan, mökille, saunan eteen tai omaksi oleskelualueeksi ilman, että kohteessa tarvitsee olla NordMod-rakennusta. Pinnoitettu Lunawood-lämpöpuukansi ladotaan näyttävään kalanruotokuvioon ja ruuvataan piilosta, jolloin terassin pinnasta tulee siisti, lämminhenkinen ja paljaalle jalalle miellyttävä. 90 x 90 mm kyllästetty liimapuurunko mahdollistaa matalan, ryhdikkään ja helposti eri pihoihin sovitettavan runkorakenteen.",
@@ -1206,13 +1219,13 @@ const MODEL_LIBRARY = {
       "Matala runkorakenne rakennuksen yhteyteen tai erilliselle oleskelualueelle",
     ],
     note:
-      "Terassin voi ostaa osaksi NordMod-kokonaisuutta tai täysin erillisenä pihaterassina. Mitoitus, sijoitus pihaan, mahdollinen liittyminen rakennukseen ja kohdekohtaiset viimeistelyt tarkennetaan tarjousvaiheessa.",
+      "Terassin voi ostaa osaksi NordMod-kokonaisuutta tai täysin erillisenä pihaterassina. Vakiokoot ovat 6 m², 9 m² ja 16 m². Toimitustapa ja kuljetuskulut vahvistetaan tilauksen yhteydessä. Patio Custom valmistetaan omien mittojen mukaan erillisen tarjouksen perusteella.",
     backLink: "mallisto.html",
     image: {
-      src: "assets/mallisto/Terassi/Terassi.png",
+      src: "assets/mallisto/Terassi/patio.jpg",
       alt: "Valmis terassi mökin, pihasaunan tai piharakennuksen yhteyteen",
     },
-    gallery: [{ src: "assets/mallisto/Terassi/Terassi.png", alt: "Valmis terassi piharakennuksen, mökin tai pihasaunan yhteyteen" }],
+    gallery: [{ src: "assets/mallisto/Terassi/patio.jpg", alt: "Valmis terassi piharakennuksen, mökin tai pihasaunan yhteyteen" }],
     technicalContent: {
       title: "Premium-terassirakenne ja tekninen toimitussisältö",
       intro:
@@ -1279,7 +1292,7 @@ const MODEL_LIBRARY = {
     series: "NordMod Pihasauna",
     name: "NordMod Pihasauna",
     description: "Perinteiseen mökki- ja pihasaunakäyttöön suunniteltu kevyempi saunaratkaisu puukiukaalla ja kantovedellä.",
-    price: "15 900 €",
+    price: "17 800 €",
     overview:
       "NordMod Pihasauna on perinteiseen mökki- ja pihasaunakäyttöön suunniteltu kevyempi saunaratkaisu. Se varustetaan puukiukaalla ja kantovesikäyttöön soveltuvalla vesisäiliöllä. Rakenteet ja eristystaso ovat kevyemmät kuin NordMod Compact-, Classic- ja Grand-mallien ratkaisuissa.",
     features: [
@@ -1511,6 +1524,24 @@ const MODEL_PRICE_TAX_TEXT = "Sis. alv 25,5 %";
 const MODEL_PRICE_NOTE_TEXT = "Saatavana myös kevennetyllä tai yksilöllisellä varustelulla.";
 const MODEL_PRICE_DETAIL_TEXT =
   "Hinta koskee mallin vakioitua premium-varustelutasoa. Lopullinen toimitussisältö ja kohdekohtaiset kustannukset vahvistetaan kirjallisessa tarjouksessa.";
+const YEAR_ROUND_MODEL_IDS = new Set([
+  "compact-aitta-16",
+  "compact-saunatupa-16",
+  "classic-aitta-20",
+  "classic-saunatupa-20",
+  "grand-aitta-30",
+  "grand-saunatupa-30",
+]);
+const YEAR_ROUND_SECTION = {
+  title: "Rakennettu ympärivuotiseen käyttöön – myös ankarissa olosuhteissa",
+  text:
+    "Tehokkaasti eristetyt NordMod-rakennukset on suunniteltu kestämään pohjoisen kylmyyttä, tuulta ja vaihtelevia sääolosuhteita. Huolellisesti toteutetut rakenteet tekevät rakennuksesta lämpimän, energiatehokkaan ja käyttökelpoisen vuoden jokaisena päivänä.",
+};
+const MATERIALS_SECTION = {
+  title: "Kestävät materiaalit, vähemmän huoltoa",
+  text:
+    "Kaikki NordMod-rakennusten materiaalit valitaan tarkoin kulutuksenkestävyyden, helppohoitoisuuden ja pitkäikäisyyden perusteella. Näin rakennus säilyttää laadukkaan ilmeensä vuodesta toiseen ja arjen huoltotarve pysyy mahdollisimman vähäisenä.",
+};
 const FURNITURE_SUPPLIER = {
   name: "Carlo Casagrande & Co",
   url: "https://carlocasagrande.fi/fi-fi/",
@@ -1594,6 +1625,34 @@ const renderTechnicalContent = (container, content) => {
   });
 
   card.appendChild(sections);
+  container.appendChild(card);
+};
+
+const renderYearRoundContent = (container, modelId) => {
+  if (!container) return;
+
+  const existingCard = container.querySelector(".year-round-content-card");
+  existingCard?.remove();
+
+  if (!YEAR_ROUND_MODEL_IDS.has(modelId)) return;
+
+  const card = document.createElement("article");
+  card.className = "info-card year-round-content-card";
+  card.appendChild(createTextElement("h2", "", YEAR_ROUND_SECTION.title));
+  card.appendChild(createTextElement("p", "", YEAR_ROUND_SECTION.text));
+  container.appendChild(card);
+};
+
+const renderMaterialsContent = (container) => {
+  if (!container) return;
+
+  const existingCard = container.querySelector(".materials-content-card");
+  existingCard?.remove();
+
+  const card = document.createElement("article");
+  card.className = "info-card materials-content-card";
+  card.appendChild(createTextElement("h2", "", MATERIALS_SECTION.title));
+  card.appendChild(createTextElement("p", "", MATERIALS_SECTION.text));
   container.appendChild(card);
 };
 
@@ -1796,6 +1855,34 @@ const initSimpleQuoteForm = () => {
 
   setModelFromQuery(form);
 
+  const patioPrices = { "NordMod Patio 6 m²": "1 480 €", "NordMod Patio 9 m²": "2 180 €", "NordMod Patio 16 m²": "3 480 €" };
+  const selectedPatioPrice = () => patioPrices[form.querySelector("#product").selectedOptions[0]?.dataset.label];
+  const orderCopy = [
+    [".page-hero-copy .eyebrow", "Patio-tilaus"],
+    [".page-hero-copy h1", "Tilaa NordMod Patio"],
+    [".page-hero-copy .lead", "Valitse vakiokoko ja jätä yhteystietosi. Vahvistamme toimitustavan, kuljetuskulut ja aikataulun kanssasi ennen tilauksen vahvistamista."],
+    [".form-section-heading h2", "Valitse Patio-malli."],
+    ["#product-hint", "Kuljetus ja nostotyöt sovitaan erikseen. Lomakkeella lähetät tilauspyynnön; maksua ei veloiteta tässä."],
+    ["#quote-form button[type=submit]", "Lähetä tilauspyyntö"],
+    [".form-privacy-note", "Käytämme antamiasi tietoja tilauspyynnön käsittelyyn. <a href=\"tietosuojaseloste.html\">Lue tietosuojaseloste</a>."],
+    [".quote-summary .summary-card:first-child h3", "Vahvistetaan toimitus yhdessä."],
+    [".quote-summary .summary-card:first-child p:last-child", "Tilauspyyntö lähetetään myyntiimme. Otamme yhteyttä toimitustietojen ja tilauksen vahvistamista varten."],
+  ].map(([selector, copy]) => {
+    const element = document.querySelector(selector);
+    return { element, copy, original: element?.innerHTML };
+  });
+  const originalTitle = document.title;
+  const updateOrderCopy = () => {
+    const price = selectedPatioPrice();
+    orderCopy.forEach(({ element, copy, original }) => { if (element) element.innerHTML = price ? copy : original; });
+    document.title = price ? "Tilaa NordMod Patio | Nordic Modular Finland Oy" : originalTitle;
+    if (price) document.querySelector(".form-section-heading h2").textContent = `${form.querySelector("#product").selectedOptions[0].dataset.label} — ${price}`;
+    if (form.querySelector("#product").selectedOptions[0]?.dataset.label === "NordMod Patio Custom") {
+      form.querySelector("#details").placeholder = "Kerro terassin haluttu leveys ja pituus sekä muut toiveesi.";
+    }
+  };
+  updateOrderCopy();
+
   form.addEventListener("input", (event) => {
     resetFormStatus(statusEl);
     if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) {
@@ -1805,6 +1892,7 @@ const initSimpleQuoteForm = () => {
 
   form.addEventListener("change", (event) => {
     resetFormStatus(statusEl);
+    updateOrderCopy();
     if (event.target instanceof HTMLSelectElement) {
       validateField(event.target);
     }
@@ -1865,6 +1953,14 @@ const initSimpleQuoteForm = () => {
       phone,
     });
 
+    const patioPrice = selectedPatioPrice();
+    if (patioPrice) {
+      payload._subject = "Uusi Patio-tilauspyyntö verkkosivuilta";
+      payload.lomake = "Patio-tilauspyyntö";
+      payload.tuotteen_hinta = patioPrice;
+      delete payload.tarjouksen_hintatarkistusehto;
+    }
+
     // Polar55 SMTP -kytkennassa tarjouspyynto lahetetaan osoitteeseen info@nordicmodular.fi,
     // kopio teppo.herranen@nordicmodular.fi, Reply-To asiakkaan sahkopostiin
     // ja lahettajan nimena Nordic Modular -verkkosivut.
@@ -1876,7 +1972,7 @@ const initSimpleQuoteForm = () => {
 
       await submitFormToEndpoint(payload);
       clearFormFields(form);
-      setFormStatus(statusEl, "success", getUiCopy().quoteSent);
+      setFormStatus(statusEl, "success", patioPrice ? "Kiitos! Tilauspyyntösi on lähetetty. Otamme yhteyttä toimitustietojen ja tilauksen vahvistamiseksi." : getUiCopy().quoteSent);
       return;
     } catch (error) {
       console.error("Tarjouslomakkeen lähetys epäonnistui", error);
@@ -2062,9 +2158,9 @@ const updateModelSeo = (model, modelId) => {
             "@type": "PriceSpecification",
             price: schemaPrice,
             priceCurrency: "EUR",
-            valueAddedTaxIncluded: true,
+            ...(model.priceTax === "" ? {} : { valueAddedTaxIncluded: true }),
             description:
-              "Hinta koskee mallin vakioitua premium-varustelutasoa. Lopullinen toimitussisältö ja kohdekohtaiset kustannukset vahvistetaan kirjallisessa tarjouksessa.",
+              model.priceDetail ?? "Hinta koskee mallin vakioitua premium-varustelutasoa. Lopullinen toimitussisältö ja kohdekohtaiset kustannukset vahvistetaan kirjallisessa tarjouksessa.",
           },
           seller: {
             "@type": "Organization",
@@ -2148,9 +2244,9 @@ const initModelDetail = () => {
   if (priceEl && priceAmountEl && priceLabelEl) {
     if (model.price) {
       priceAmountEl.textContent = model.price;
-      priceLabelEl.textContent = MODEL_PRICE_LABEL;
-      if (priceTaxEl) priceTaxEl.textContent = MODEL_PRICE_TAX_TEXT;
-      if (priceNoteEl) priceNoteEl.textContent = MODEL_PRICE_NOTE_TEXT;
+      priceLabelEl.textContent = model.priceLabel ?? MODEL_PRICE_LABEL;
+      if (priceTaxEl) priceTaxEl.textContent = model.priceTax ?? MODEL_PRICE_TAX_TEXT;
+      if (priceNoteEl) priceNoteEl.textContent = model.priceNote ?? MODEL_PRICE_NOTE_TEXT;
       priceEl.hidden = false;
     } else {
       priceAmountEl.textContent = "";
@@ -2162,7 +2258,7 @@ const initModelDetail = () => {
   }
   if (priceDetailEl) {
     if (model.price) {
-      priceDetailEl.textContent = MODEL_PRICE_DETAIL_TEXT;
+      priceDetailEl.textContent = model.priceDetail ?? MODEL_PRICE_DETAIL_TEXT;
       priceDetailEl.hidden = false;
     } else {
       priceDetailEl.textContent = "";
@@ -2170,6 +2266,10 @@ const initModelDetail = () => {
     }
   }
   if (overviewEl) overviewEl.textContent = model.overview;
+  const patioModelsEl = document.getElementById("patio-models");
+  if (patioModelsEl) patioModelsEl.hidden = modelId !== "nordmod-terassi";
+  const patioBusinessEl = document.getElementById("patio-business");
+  if (patioBusinessEl) patioBusinessEl.hidden = modelId !== "nordmod-terassi";
   if (noteEl) noteEl.textContent = model.note;
   if (placeholderEl) placeholderEl.textContent = model.name;
   if (backLinkEl) backLinkEl.href = model.backLink;
@@ -2178,6 +2278,16 @@ const initModelDetail = () => {
   }
   if (detailOfferLinkEl) {
     detailOfferLinkEl.href = `tarjous.html?model=${encodeURIComponent(model.name)}`;
+  }
+  if (modelId === "nordmod-terassi") {
+    [offerLinkEl, detailOfferLinkEl].forEach((link) => {
+      if (link) { link.href = "#patio-models"; link.textContent = "Valitse Patio"; }
+    });
+    const nextStep = document.querySelector(".quote-summary .summary-card:last-child");
+    if (nextStep) {
+      nextStep.querySelector("h3").textContent = "Valitse sopiva Patio";
+      nextStep.querySelector("p:last-child").textContent = "Tilaa vakiokoko tai pyydä tarjous omien mittojen mukaan valmistettavasta Patio Customista.";
+    }
   }
 
   if (mainImageEl && model.image?.src) {
@@ -2195,6 +2305,8 @@ const initModelDetail = () => {
     featuresEl.innerHTML = features.map((feature) => `<li>${feature}</li>`).join("");
   }
 
+  renderYearRoundContent(detailStackEl, modelId);
+  renderMaterialsContent(detailStackEl);
   renderFurnitureSupplier(detailStackEl, model.furnitureSupplier);
   renderTechnicalContent(detailStackEl, model.technicalContent);
 
@@ -2292,17 +2404,28 @@ const isValidFacebookUrl = (url) => {
 const getSocialIconSvg = (service) => {
   if (service === "instagram") {
     return `
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-        <circle cx="12" cy="12" r="4"></circle>
-        <circle cx="17.5" cy="6.5" r="1.1"></circle>
+      <svg class="social-logo social-logo--instagram" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <defs>
+          <radialGradient id="instagram-gradient" cx="30%" cy="105%" r="115%">
+            <stop offset="0%" stop-color="#feda75"></stop>
+            <stop offset="25%" stop-color="#fa7e1e"></stop>
+            <stop offset="50%" stop-color="#d62976"></stop>
+            <stop offset="75%" stop-color="#962fbf"></stop>
+            <stop offset="100%" stop-color="#4f5bd5"></stop>
+          </radialGradient>
+        </defs>
+        <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="url(#instagram-gradient)"></rect>
+        <rect x="7" y="7" width="10" height="10" rx="3" fill="none" stroke="#fff" stroke-width="1.8"></rect>
+        <circle cx="12" cy="12" r="2.7" fill="none" stroke="#fff" stroke-width="1.8"></circle>
+        <circle cx="16.3" cy="7.7" r="1.1" fill="#fff"></circle>
       </svg>
     `;
   }
 
   return `
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path d="M14 8.4V6.8c0-.9.4-1.4 1.5-1.4H17V3h-2.3C12.2 3 11 4.5 11 6.5v1.9H8.8V11H11v10h3V11h2.5l.4-2.6H14Z"></path>
+    <svg class="social-logo social-logo--facebook" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <circle cx="12" cy="12" r="10.5" fill="#1877f2"></circle>
+      <path fill="#fff" d="M14.6 12.7h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.3c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H8.4v3.1h2.8v7.6c.6.1 1.1.1 1.7.1s1.2 0 1.7-.1v-7.9Z"></path>
     </svg>
   `;
 };
