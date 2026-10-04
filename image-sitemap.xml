@@ -23,7 +23,7 @@
       <image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-pihasauna/NordMod%20Pihasauna/pihasauna-paakuva-korjattu.png</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.nordicmodular.fi/assets/mallisto/Terassi/Terassi.png</image:loc>
+      <image:loc>https://www.nordicmodular.fi/assets/mallisto/Terassi/patio-kansikuva-20261004.png</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://www.nordicmodular.fi/assets/sauna-interior.png</image:loc>
@@ -79,21 +79,14 @@
   </url>
   <url>
     <loc>https://www.nordicmodular.fi/ratkaisut.html</loc>
-    <image:image>
-      <image:loc>https://www.nordicmodular.fi/assets/revo%20pihaa%20sauna.png</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.nordicmodular.fi/assets/sauna-view-interior.png</image:loc>
-    </image:image>
+    <image:image><image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-custom/custom-paakuva.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.nordicmodular.fi/yritys.html</loc>
-    <image:image>
-      <image:loc>https://www.nordicmodular.fi/assets/uusi%20revo.png</image:loc>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.nordicmodular.fi/assets/uusi%20talvi%20revo.png</image:loc>
-    </image:image>
+    <image:image><image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-grand/grand%20aitta/grand-aitta-paakuva-korjattu.png</image:loc></image:image>
+    <image:image><image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-grand/grand%20aitta/grand-aitta-edesta-korjattu.png</image:loc></image:image>
+    <image:image><image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-grand/grand%20saunatupa/grand-saunatupa-paakuva-korjattu.png</image:loc></image:image>
+    <image:image><image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-custom/custom-sisakuva.jpg</image:loc></image:image>
   </url>
 </urlset>
 

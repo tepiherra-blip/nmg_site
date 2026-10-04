@@ -1,3 +1,13 @@
+// NordMod Patio: terassikuvien keskitetty määritys.
+const PATIO_IMAGES = {
+  "size6": "assets/mallisto/Terassi/patio-6m2-20261004.png",
+  "size9": "assets/mallisto/Terassi/patio-9m2-20261004.png",
+  "size16": "assets/mallisto/Terassi/patio-16m2-20261004.png",
+  "custom": "assets/mallisto/Terassi/patio-custom-20261004.png",
+  "cover": "assets/mallisto/Terassi/patio-kansikuva-20261004.png",
+  "frame": "assets/mallisto/Terassi/patio-runko-20261004.png"
+};
+
 const formatEuro = (value) =>
   new Intl.NumberFormat("fi-FI", {
     style: "currency",
@@ -1220,10 +1230,10 @@ const MODEL_LIBRARY = {
       "Terassin voi ostaa osaksi NordMod-kokonaisuutta tai täysin erillisenä pihaterassina. Vakiokoot ovat 6 m², 9 m² ja 16 m². Toimitustapa ja kuljetuskulut vahvistetaan tilauksen yhteydessä. Patio Custom valmistetaan omien mittojen mukaan erillisen tarjouksen perusteella.",
     backLink: "mallisto.html",
     image: {
-      src: "assets/mallisto/Terassi/patio.jpg",
+      src: PATIO_IMAGES.cover,
       alt: "Valmis terassi mökin, pihasaunan tai piharakennuksen yhteyteen",
     },
-    gallery: [{ src: "assets/mallisto/Terassi/patio.jpg", alt: "Valmis terassi piharakennuksen, mökin tai pihasaunan yhteyteen" }],
+    gallery: [{ src: PATIO_IMAGES.cover, alt: "Valmis terassi piharakennuksen, mökin tai pihasaunan yhteyteen" }],
     technicalContent: {
       title: "Premium-terassirakenne ja tekninen toimitussisältö",
       intro:
@@ -1814,7 +1824,7 @@ const setModelFromQuery = (form) => {
   if (!model) return;
 
   const product = form.querySelector("#product");
-  const optionIndex = Array.from(product.options).findIndex((item) => item.dataset.label === model);
+  const optionIndex = Array.from(product.options).findIndex((item) => item.dataset.label === (model === "NordMod Patio Custom" ? "NordMod Patio Custom / Mittatilausterassi" : model));
   const option = product.options[optionIndex];
   if (option) {
     product.selectedIndex = optionIndex;
@@ -1875,7 +1885,7 @@ const initSimpleQuoteForm = () => {
     orderCopy.forEach(({ element, copy, original }) => { if (element) element.innerHTML = price ? copy : original; });
     document.title = price ? "Tilaa NordMod Patio | Nordic Modular Finland Oy" : originalTitle;
     if (price) document.querySelector(".form-section-heading h2").textContent = `${form.querySelector("#product").selectedOptions[0].dataset.label} — ${price}`;
-    if (form.querySelector("#product").selectedOptions[0]?.dataset.label === "NordMod Patio Custom") {
+    if (form.querySelector("#product").selectedOptions[0]?.dataset.label === "NordMod Patio Custom / Mittatilausterassi") {
       form.querySelector("#details").placeholder = "Kerro terassin haluttu leveys ja pituus sekä muut toiveesi.";
     }
   };
@@ -2497,3 +2507,9 @@ initContactForm();
 initModelDetail();
 applyPriceDisplayMode();
 initializeSocialLinks();
+
+// HTML-kuvien src toimii myös ilman JavaScriptiä.
+document.querySelectorAll("[data-patio-image]").forEach((image) => {
+  const src = PATIO_IMAGES[image.dataset.patioImage];
+  if (src) image.src = src;
+});

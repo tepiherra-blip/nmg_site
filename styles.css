@@ -3339,7 +3339,7 @@ html.reveal-enabled .reveal.is-visible {
 /* Patio-mallit ja myöhemmin lisättävien kuvien paikat. */
 .patio-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1.5rem;
 }
 .patio-card { min-width: 0; scroll-margin-top: 7rem; }
@@ -3398,3 +3398,12 @@ html.reveal-enabled .reveal.is-visible {
 .patio-business h2 { font-size: 1.25rem; margin: 0 0 0.75rem; }
 .patio-business p { max-width: 72ch; color: var(--muted-strong); margin: 0 0 0.75rem; }
 .patio-business a { text-decoration: underline; text-underline-offset: 0.2em; }
+
+/* Neljä Patio-vaihtoehtoa samalla korttirakenteella. */
+.patio-card { display: flex; flex-direction: column; gap: 0.75rem; }
+.patio-card h3 { font-size: 1.2rem; }
+.patio-card .button { margin-top: auto; align-self: flex-start; }
+.patio-card summary { cursor: pointer; text-decoration: underline; }
+.patio-card details p { margin-top: 0.75rem; }
+@media (min-width: 641px) and (max-width: 1100px) { .patio-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .patio-grid { grid-template-columns: 1fr; } }
