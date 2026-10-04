@@ -20,7 +20,7 @@
       <image:loc>https://www.nordicmodular.fi/assets/uusi%20revo.png</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-pihasauna/NordMod%20Pihasauna/pihasauna%20plan73.png</image:loc>
+      <image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-pihasauna/NordMod%20Pihasauna/pihasauna-paakuva-korjattu.png</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://www.nordicmodular.fi/assets/mallisto/Terassi/Terassi.png</image:loc>
@@ -35,7 +35,7 @@
       <image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-compact/NordMod%20Compact%20Aitta/compact-aitta-paakuva.jpg</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-compact/NordMod%20Compact%20Sauna/compact-sauna-paakuva.jpg</image:loc>
+      <image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-compact/NordMod%20Compact%20Sauna/compact-sauna-paakuva-korjattu.png</image:loc>
     </image:image>
   </url>
   <url>
@@ -44,31 +44,37 @@
       <image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-classic/Classic%20aitta/classic-aitta-paakuva.jpg</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-classic/Classic%20sauna/classic-saunatupa-paakuva.jpg</image:loc>
+      <image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-classic/Classic%20sauna/classic-saunatupa-paakuva-korjattu.png</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.nordicmodular.fi/mallisto-grand-30.html</loc>
     <image:image>
-      <image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-grand/grand%20saunatupa/grand-saunatupa-paakuva.jpg</image:loc>
+      <image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-grand/grand%20saunatupa/grand-saunatupa-paakuva-korjattu.png</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-grand/grand%20aitta/grand-aitta-paakuva.jpg</image:loc>
+      <image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-grand/grand%20aitta/grand-aitta-paakuva-korjattu.png</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.nordicmodular.fi/mallisto-pihasauna.html</loc>
     <image:image>
-      <image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-pihasauna/NordMod%20Pihasauna/pihasauna%20plan73.png</image:loc>
+      <image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-pihasauna/NordMod%20Pihasauna/pihasauna-paakuva-korjattu.png</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-pihasauna/NordMod%20Pihasauna/pihasauna.png</image:loc>
+      <image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-pihasauna/NordMod%20Pihasauna/pihasauna-ikkunapaaty-korjattu.png</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.nordicmodular.fi/mallisto-custom.html</loc>
     <image:image>
-      <image:loc>https://www.nordicmodular.fi/assets/revo%20vuori.png</image:loc>
+      <image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-custom/custom-paakuva.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-custom/custom-ulkokuva.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.nordicmodular.fi/assets/mallisto/nordmod-custom/custom-sisakuva.jpg</image:loc>
     </image:image>
   </url>
   <url>

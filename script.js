@@ -341,14 +341,14 @@ const MODEL_LIBRARY = {
       "Toimitussisältö perustuu NordMod Compact Saunan vakiomalliin. Rakennus sisältää saunan, suihkutilan sekä lämpimän pukuhuoneen ja soveltuu säännölliseen vapaa-ajan käyttöön. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
     backLink: "mallisto-compact-16.html",
     image: {
-      src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/compact-sauna-paakuva.jpg",
+      src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/compact-sauna-paakuva-korjattu.png",
       alt: "Valmis Compact-sauna mökille, pihalle tai vapaa-ajan käyttöön",
     },
     gallery: [
       { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/Comapct pohja.png", alt: "Compact-saunan pohjakuva saunalle, suihkutilalle ja pukuhuoneelle", caption: "Pohjakuva", className: "plan-card-wide" },
-      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/compact-sauna-pukuhuone.jpg", alt: "Compact Saunan pukuhuone ja suuri maisemaikkuna" },
-      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/compact-sauna-suihku.jpg", alt: "Compact Saunan suihkutila" },
-      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/compact-sauna-saunatila.jpg", alt: "Compact Saunan lauteet, kiuas ja järvimaisema" },
+      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/compact-sauna-pukuhuone-korjattu.jpg", alt: "Compact Saunan pukuhuone ja suuri maisemaikkuna" },
+      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/compact-sauna-suihku-korjattu.jpg", alt: "Compact Saunan suihkutila" },
+      { src: "assets/mallisto/nordmod-compact/NordMod Compact Sauna/compact-sauna-saunatila-korjattu.png", alt: "Compact Saunan lauteet, kiuas ja maisemaikkuna" },
     ],
     technicalContent: {
       title: "Premium-vakiovarustelu ja tekninen toimitussisältö",
@@ -678,15 +678,14 @@ const MODEL_LIBRARY = {
       "Toimitussisältö perustuu NordMod Classic Saunatuvan vakiomalliin. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
     backLink: "mallisto-classic-20.html",
     image: {
-      src: "assets/mallisto/nordmod-classic/Classic sauna/classic-saunatupa-paakuva.jpg",
+      src: "assets/mallisto/nordmod-classic/Classic sauna/classic-saunatupa-paakuva-korjattu.png",
       alt: "Valmis Classic-saunatupa, jossa on sauna ja mökkitupa",
     },
     gallery: [
       { src: "assets/mallisto/nordmod-classic/Classic sauna/classic pohja.png", alt: "Classic-saunatuvan pohjakuva saunalle ja oleskelutilalle", caption: "Pohjakuva", className: "plan-card-wide" },
-      { src: "assets/mallisto/nordmod-classic/Classic sauna/classic-saunatupa-ulkokuva.jpg", alt: "NordMod Classic Saunatupa ja terassi järven rannalla" },
-      { src: "assets/mallisto/nordmod-classic/Classic sauna/classic-saunatupa-tupa.jpg", alt: "Classic Saunatuvan oleskelutila ja keittiökalusteet" },
-      { src: "assets/mallisto/nordmod-classic/Classic sauna/classic-saunatupa-suihku.jpg", alt: "Classic Saunatuvan suihkutila saunan vieressä" },
-      { src: "assets/mallisto/nordmod-classic/Classic sauna/classic-saunatupa-sauna.jpg", alt: "Classic Saunatuvan sauna, vastakkaiset lauteet ja maisemaikkuna" },
+      { src: "assets/mallisto/nordmod-classic/Classic sauna/classic-saunatupa-tupa-korjattu.png", alt: "Classic Saunatuvan oleskelutila ja keittiökalusteet" },
+      { src: "assets/mallisto/nordmod-classic/Classic sauna/classic-saunatupa-suihku-korjattu.jpg", alt: "Classic Saunatuvan suihkutila saunan vieressä" },
+      { src: "assets/mallisto/nordmod-classic/Classic sauna/classic-saunatupa-sauna-korjattu.png", alt: "Classic Saunatuvan sauna, vastakkaiset lauteet ja maisemaikkuna" },
     ],
     technicalContent: {
       title: "Premium-vakiovarustelu ja tekninen toimitussisältö",
@@ -866,16 +865,15 @@ const MODEL_LIBRARY = {
       "Toimitussisältö perustuu NordMod Grand Aitan vakiomalliin. Grand Aitta on Classic Aittaa hieman suurempi kahden makuuhuoneen aittamalli, joka tarjoaa enemmän tilaa majoittumiseen ja säilytykseen säilyttäen saman laadukkaan premium-varustelun. Malli ei sisällä vesipisteitä, viemäröintiä eikä märkätiloja. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
     backLink: "mallisto-grand-30.html",
     image: {
-      src: "assets/mallisto/nordmod-grand/grand aitta/grand-aitta-paakuva.jpg",
+      src: "assets/mallisto/nordmod-grand/grand aitta/grand-aitta-paakuva-korjattu.png",
       alt: "Valmis Grand-aitta vierasmajaksi tai lisämajoitukseen mökille",
     },
     gallery: [
-      { src: "assets/mallisto/nordmod-grand/grand aitta/Grand pohja.png", alt: "Grand-aitan pohjakuva väljään lisämajoitukseen", caption: "Pohjakuva", className: "plan-card-wide" },
-      { src: "assets/mallisto/nordmod-grand/grand aitta/grand-aitta-edesta.jpg", alt: "NordMod Grand Aitta suoraan edestä auringonlaskussa" },
-      { src: "assets/mallisto/nordmod-grand/grand aitta/grand-aitta-makuuhuone.jpg", alt: "Grand Aitan makuuhuone ja suuri maisemaikkuna" },
-      { src: "assets/mallisto/nordmod-grand/grand aitta/grand-aitta-oleskelutila.jpg", alt: "Grand Aitan oleskelutilan sisustus ja järvinäkymä" },
-      { src: "assets/mallisto/nordmod-grand/grand aitta/grand-aitta-oleskelutila-ilta.jpg", alt: "Grand Aitan oleskelutila iltavalaistuksessa" },
-      { src: "assets/mallisto/nordmod-grand/grand aitta/grand-aitta-makuuhuone-ilta.jpg", alt: "Grand Aitan makuuhuoneen sisustus iltavalaistuksessa" },
+      { src: "assets/mallisto/nordmod-grand/grand aitta/grand-aitta-pohja-korjattu.png", alt: "Grand Aitan päivitetty pohjakuva: kaksi makuuhuonetta, ulkomitat 9,00 × 3,30 m", caption: "Pohjakuva", className: "plan-card-wide" },
+      { src: "assets/mallisto/nordmod-grand/grand aitta/grand-aitta-edesta-korjattu.png", alt: "Grand Aitta suoraan edestä" },
+      { src: "assets/mallisto/nordmod-grand/grand aitta/grand-aitta-makuuhuone-korjattu.png", alt: "Grand Aitan makuuhuone ja maisemaikkuna" },
+      { src: "assets/mallisto/nordmod-grand/grand aitta/grand-aitta-oleskelutila-korjattu.png", alt: "Grand Aitan oleskelutila iltavalaistuksessa" },
+      { src: "assets/mallisto/nordmod-grand/grand aitta/grand-aitta-makuuhuone-ilta-korjattu.png", alt: "Grand Aitan makuuhuoneen sisustus iltavalaistuksessa" },
     ],
     technicalContent: {
       title: "Premium-vakiovarustelu ja tekninen toimitussisältö",
@@ -1031,15 +1029,15 @@ const MODEL_LIBRARY = {
       "Toimitussisältö perustuu NordMod Grand Saunatuvan vakiomalliin. Grand-mallin vakiona toimitettava koneellinen poistoilmanvaihto parantaa sisäilman laatua ja käyttömukavuutta erityisesti säännöllisessä vapaa-ajan käytössä. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
     backLink: "mallisto-grand-30.html",
     image: {
-      src: "assets/mallisto/nordmod-grand/grand saunatupa/grand-saunatupa-paakuva.jpg",
+      src: "assets/mallisto/nordmod-grand/grand saunatupa/grand-saunatupa-paakuva-korjattu.png",
       alt: "Tilava valmis Grand-saunatupa mökille ja vapaa-ajan käyttöön",
     },
     gallery: [
-      { src: "assets/mallisto/nordmod-grand/grand saunatupa/Grand s pohja.png", alt: "Grand-saunatuvan pohjakuva saunalle, pesuhuoneelle ja tuvalle", caption: "Pohjakuva", className: "plan-card-wide" },
-      { src: "assets/mallisto/nordmod-grand/grand saunatupa/grand-saunatupa-ulkokuva.jpg", alt: "NordMod Grand Saunatupa saunan päädyn suunnasta" },
-      { src: "assets/mallisto/nordmod-grand/grand saunatupa/grand-saunatupa-tupa.jpg", alt: "Grand Saunatuvan oleskelutila, keittiö ja järvinäkymä" },
-      { src: "assets/mallisto/nordmod-grand/grand saunatupa/grand-saunatupa-sauna.jpg", alt: "Grand Saunatuvan lauteet, kiuas ja maisemaikkunat" },
-      { src: "assets/mallisto/nordmod-grand/grand saunatupa/grand-saunatupa-suihku.jpg", alt: "Grand Saunatuvan pesuhuone ja kaksi suihkua" },
+      { src: "assets/mallisto/nordmod-grand/grand saunatupa/grand-saunatupa-pohja-korjattu.png", alt: "Grand-saunatuvan pohjakuva saunalle, pesuhuoneelle ja tuvalle", caption: "Pohjakuva", className: "plan-card-wide" },
+      { src: "assets/mallisto/nordmod-grand/grand saunatupa/grand-saunatupa-ulkokuva-korjattu.png", alt: "NordMod Grand Saunatupa saunan päädyn suunnasta" },
+      { src: "assets/mallisto/nordmod-grand/grand saunatupa/grand-saunatupa-tupa-korjattu.png", alt: "Grand Saunatuvan oleskelutila, keittiö ja järvinäkymä" },
+      { src: "assets/mallisto/nordmod-grand/grand saunatupa/grand-saunatupa-sauna-korjattu.png", alt: "Grand Saunatuvan lauteet, kiuas ja maisemaikkunat" },
+      { src: "assets/mallisto/nordmod-grand/grand saunatupa/grand-saunatupa-suihku-korjattu.jpg", alt: "Grand Saunatuvan pesuhuone ja kaksi suihkua" },
     ],
     technicalContent: {
       title: "Premium-vakiovarustelu ja tekninen toimitussisältö",
@@ -1306,13 +1304,13 @@ const MODEL_LIBRARY = {
       "Toimitussisältö perustuu NordMod Pihasaunan vakiomalliin. Rakennus on suunniteltu perinteiseen kantovesikäyttöön eikä sisällä vesijohto- tai viemärijärjestelmiä. FF-PIR 30 mm -levytystä käytetään seinissä ja katossa saunan lämpenemisen ja lämmön pysyvyyden parantamiseksi. Mallia ei ole tarkoitettu asumis- tai majoituskäyttöön. Mahdolliset asiakaskohtaiset muutokset, lisävarusteet ja erikoisratkaisut määritellään erikseen tarjouksessa ja kauppasopimuksessa.",
     backLink: "mallisto-pihasauna.html",
     image: {
-      src: "assets/mallisto/nordmod-pihasauna/NordMod Pihasauna/pihasauna plan73.png",
+      src: "assets/mallisto/nordmod-pihasauna/NordMod Pihasauna/pihasauna-paakuva-korjattu.png",
       alt: "Valmis pihasauna mökille, pihalle tai vapaa-ajan käyttöön",
     },
     gallery: [
       { src: "assets/mallisto/nordmod-pihasauna/NordMod Pihasauna/sauna pohja.png", alt: "Pihasaunan pohjakuva puulämmitteiseen kantovesisaunaan", caption: "Pohjakuva", className: "plan-card-wide" },
-      { src: "assets/mallisto/nordmod-pihasauna/NordMod Pihasauna/pihasauna.png", alt: "NordMod Pihasauna etunäkymä" },
-      { src: "assets/mallisto/nordmod-pihasauna/NordMod Pihasauna/pihasauna1.png", alt: "NordMod Pihasauna vaihtoehtoinen ulkokuva" },
+      { src: "assets/mallisto/nordmod-pihasauna/NordMod Pihasauna/pihasauna-ikkunapaaty-korjattu.png", alt: "NordMod Pihasaunan suuri maisemaikkuna" },
+      { src: "assets/mallisto/nordmod-pihasauna/NordMod Pihasauna/pihasauna-ovi-korjattu.png", alt: "NordMod Pihasaunan sisäänkäynti ja puukiuas" },
     ],
     technicalContent: {
       title: "Pihasaunan varustelu ja tekninen toimitussisältö",
