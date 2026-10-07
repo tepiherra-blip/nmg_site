@@ -25,7 +25,7 @@
       ]
     }
     </script>
-    <link rel="stylesheet" href="styles.css?v=20260727-03" />
+    <link rel="stylesheet" href="styles.css?v=20261007-10" />
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
@@ -55,12 +55,18 @@
 
       <main>
         <section class="hero-banner reveal">
+          <div class="hero-banner-media">
           <img
             class="hero-banner-image"
             src="assets/etusivu-grand-saunatupa-korjattu.png"
             fetchpriority="high"
             alt="NordMod Grand Saunatupa ja valaistu terassi järven rannalla auringonlaskussa"
           />
+            <video class="hero-banner-video" muted playsinline preload="metadata" hidden aria-label="Nordic Modularin esittelyvideo">
+              <source src="assets/etusivu-video-nettisivut-v2.mp4" type="video/mp4" />
+            </video>
+            <button class="hero-video-toggle" type="button" hidden>Näytä pääkuva</button>
+          </div>
           <div class="hero-banner-copy">
             <p class="eyebrow">Nordic Modular Finland Oy</p>
             <h1>Tilaratkaisut pohjoisiin olosuhteisiin.</h1>
@@ -240,6 +246,25 @@
             </div>
           </div>
         </section>
+        <section class="section newsletter-section" aria-labelledby="newsletter-heading">
+          <div class="newsletter-copy">
+            <p class="eyebrow">Uutiskirje</p>
+            <h2 id="newsletter-heading">Uudet mallit. Tuoreimmat tarjoukset.</h2>
+            <p>Nordic Modularin uutiset ja inspiraatio suoraan sähköpostiisi.</p>
+          </div>
+          <form class="newsletter-form" aria-describedby="newsletter-availability">
+            <label for="newsletter-email">Sähköpostiosoite</label>
+            <div class="newsletter-controls">
+              <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="nimi@esimerkki.fi" maxlength="160" required />
+              <button class="button button-primary" type="submit" disabled>Tilaa uutiskirje</button>
+            </div>
+            <label class="newsletter-consent"><input type="checkbox" name="consent" required /> <span>Haluan Nordic Modular Finland Oy:n uutiskirjeen ja tarjoukset.</span></label>
+            <label class="honeypot-field" aria-hidden="true">Jätä tyhjäksi<input name="_honey" type="text" tabindex="-1" autocomplete="off" /></label>
+            <p class="form-privacy-note"><a href="tietosuojaseloste.html#uutiskirje">Tietosuoja</a> · Voit perua tilauksen milloin tahansa.</p>
+            <p id="newsletter-availability" role="status" aria-live="polite">Uutiskirjeen tilaus avautuu pian.</p>
+            <noscript>Uutiskirjeen tilaus avautuu pian.</noscript>
+          </form>
+        </section>
       </main>
 
       <footer class="footer">
@@ -264,6 +289,8 @@
     </div>
 
     <script src="script.js?v=20261004-12"></script>
+    <script src="newsletter.js?v=20261007-02"></script>
+    <script src="hero-video.js?v=20261007-02"></script>
   </body>
 </html>
 
