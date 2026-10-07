@@ -1,9 +1,11 @@
-// Uutiskirjepalvelu liitetään ennen tilausten avaamista.
-// Keskeneräinen lomake ei lähetä tai tallenna sähköpostiosoitteita.
+// MailerLiten alkuperäinen POST-lomake säilyttää myös toiminnan ilman JavaScriptiä.
 document.querySelectorAll('.newsletter-form').forEach((form) => {
   form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    form.querySelector('[role="status"]').textContent = 'Uutiskirjeen tilaus avautuu pian.';
+    if (form.elements._honey?.value.trim()) {
+      event.preventDefault();
+      return;
+    }
+    form.querySelector('[role="status"]').textContent = 'Viimeistele tilaus MailerLiten välilehdessä. Jos saat vahvistusviestin, vahvista tilaus sähköpostistasi.';
   });
 });
 const notice = document.createElement('aside');

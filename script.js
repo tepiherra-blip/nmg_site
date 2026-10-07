@@ -20,6 +20,7 @@ const SITE_DISPLAY_CONFIG = {
   socialLinks: {
     instagram: "https://www.instagram.com/nordicmodularfinland/",
     facebook: "https://www.facebook.com/profile.php?id=61590937243717",
+    tiktok: "https://www.tiktok.com/@nordicmodular.fi",
   },
 };
 
@@ -2410,6 +2411,16 @@ const isValidFacebookUrl = (url) => {
 };
 
 const getSocialIconSvg = (service) => {
+  if (service === "tiktok") {
+    return `
+      <svg class="social-logo social-logo--tiktok" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <rect x="1" y="1" width="22" height="22" rx="6" fill="#111"></rect>
+        <path id="tiktok-note" d="M13 5h3c.2 2 1.4 3.2 3.5 3.4v3c-1.3 0-2.5-.4-3.5-1v5.1a5 5 0 1 1-5-5v3a2 2 0 1 0 2 2Z" fill="#25f4ee" transform="translate(-.6 .5)"></path>
+        <path d="M13 5h3c.2 2 1.4 3.2 3.5 3.4v3c-1.3 0-2.5-.4-3.5-1v5.1a5 5 0 1 1-5-5v3a2 2 0 1 0 2 2Z" fill="#fe2c55" transform="translate(.6 -.3)"></path>
+        <path d="M13 5h3c.2 2 1.4 3.2 3.5 3.4v3c-1.3 0-2.5-.4-3.5-1v5.1a5 5 0 1 1-5-5v3a2 2 0 1 0 2 2Z" fill="#fff"></path>
+      </svg>
+    `;
+  }
   if (service === "instagram") {
     return `
       <svg class="social-logo social-logo--instagram" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -2454,7 +2465,7 @@ const createSocialLink = ({ service, url, label, title }) => {
 };
 
 const initializeSocialLinks = () => {
-  const { instagram, facebook } = SITE_DISPLAY_CONFIG.socialLinks;
+  const { instagram, facebook, tiktok } = SITE_DISPLAY_CONFIG.socialLinks;
 
   document.querySelectorAll(".footer-meta").forEach((footerMeta) => {
     footerMeta.querySelector(".footer-social")?.remove();
@@ -2482,6 +2493,15 @@ const initializeSocialLinks = () => {
           title: "Facebook",
         })
       );
+    }
+
+    if (tiktok?.startsWith("https://www.tiktok.com/@")) {
+      social.appendChild(createSocialLink({
+        service: "tiktok",
+        url: tiktok,
+        label: "Nordic Modular Finland TikTokissa",
+        title: "TikTok",
+      }));
     }
 
     if (!social.children.length) return;
