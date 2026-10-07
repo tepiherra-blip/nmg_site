@@ -3468,3 +3468,175 @@ body[data-page] .section.newsletter-section {
 .hero-banner-video[hidden], .hero-video-toggle[hidden] { display: none; }
 .hero-video-toggle { position: absolute; right: 16px; bottom: 16px; z-index: 2; padding: 9px 14px; border: 1px solid rgba(255,255,255,.6); border-radius: 10px; background: rgba(7,24,36,.85); color: #fff; cursor: pointer; font-size: .8rem; }
 @media (max-width: 760px) { .hero-banner.is-video-playing .hero-banner-media { height: auto; aspect-ratio: 16 / 9; } }
+
+/* Valokuvat täyttävät kuvakehyksen myös mobiilissa. */
+.product-card-image {
+  display: block;
+  padding: 0;
+  object-fit: cover;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+.category-card:not(.category-card--plan) .category-card-media {
+  padding: 0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+.category-card:not(.category-card--plan) .category-card-media img {
+  display: block;
+  object-fit: cover;
+}
+.catalog-card:not(.catalog-card--plan) .catalog-visual {
+  padding: 0;
+  width: calc(100% + 56px);
+  margin: -28px -28px 0;
+  border: 0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+.catalog-card:not(.catalog-card--plan) .catalog-visual img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+.media-card:not(.plan-card):not(.plan-card-wide) img,
+.mobile-feature-image img,
+.home-visual-strip img,
+.page-hero-image:not(.is-plan),
+.story-card-image,
+.patio-card img {
+  display: block;
+  padding: 0;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+.home-visual-strip img { border-radius: inherit; }
+.detail-gallery .media-card:not(.plan-card):not(.plan-card-wide) img {
+  padding: 0;
+  object-fit: cover;
+  border-radius: inherit;
+}
+@media (max-width: 760px) {
+  .catalog-card:not(.catalog-card--plan) .catalog-visual {
+    width: calc(100% + 40px);
+    margin: -20px -20px 18px;
+    padding: 0;
+    border-radius: 22px 22px 0 0;
+  }
+  .catalog-card:not(.catalog-card--plan) .catalog-visual img { height: 100%; }
+  .detail-hero .page-hero-image:not(.is-plan) { object-fit: cover; border-radius: var(--radius-lg); }
+}
+/* Mobiilissa otsikko ja toimintapainikkeet kuvan päälle, esittely alle. */
+@media (max-width: 760px) {
+  .hero-banner:not(.is-video-playing) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .hero-banner:not(.is-video-playing) .hero-banner-media {
+    grid-column: 1;
+    grid-row: 1;
+    height: clamp(400px, 110vw, 500px);
+    min-width: 0;
+    overflow: hidden;
+    border-radius: var(--radius-xl);
+  }
+  .hero-banner:not(.is-video-playing) .hero-banner-image {
+    height: 100%;
+    min-height: 0;
+    object-fit: cover;
+  }
+  .hero-banner:not(.is-video-playing) .hero-banner-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(5,17,26,.72), rgba(5,17,26,.08) 55%, rgba(5,17,26,.72));
+  }
+  .hero-banner:not(.is-video-playing) .hero-banner-copy,
+  .hero-banner:not(.is-video-playing) .hero-banner-details {
+    display: contents;
+  }
+  .hero-banner:not(.is-video-playing) .hero-banner-copy > .eyebrow {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+    z-index: 1;
+    margin: 24px 22px 0;
+    color: #f7fbfd;
+  }
+  .hero-banner:not(.is-video-playing) .hero-banner-copy h1 {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+    z-index: 1;
+    width: auto;
+    max-width: 18ch;
+    margin: 56px 22px 0;
+    font-size: clamp(1.7rem, 7.2vw, 2.5rem);
+    line-height: 1.12;
+    color: #fff;
+    text-shadow: 0 2px 16px rgba(7,24,36,.55);
+  }
+  .hero-banner:not(.is-video-playing) .hero-actions {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+    z-index: 1;
+    margin: 0 22px 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .hero-banner:not(.is-video-playing) .hero-lead {
+    grid-column: 1;
+    grid-row: 2;
+    max-width: none;
+    margin: 22px 22px 0;
+    color: var(--muted-strong);
+    text-shadow: none;
+  }
+  .hero-banner:not(.is-video-playing) .hero-points {
+    grid-column: 1;
+    grid-row: 3;
+    margin: 18px 22px 24px;
+  }
+  .hero-banner:not(.is-video-playing) .hero-points li {
+    color: var(--muted-strong);
+    text-shadow: none;
+  }
+}
+/* Valokuvien maltillinen, yhtenäinen värikylläisyys. */
+:root { --photo-color-correction: saturate(0.78); }
+.hero-banner-image,
+.product-card-image,
+.catalog-hero-image,
+.catalog-intro-image,
+.page-hero-image:not(.is-plan),
+.story-card-image,
+.category-card:not(.category-card--plan) .category-card-media img,
+.catalog-card:not(.catalog-card--plan) .catalog-visual img,
+.media-card:not(.plan-card):not(.plan-card-wide) img,
+.mobile-feature-image img,
+.home-visual-strip img,
+.home-b2b-image img,
+.supplier-feature-image img,
+.patio-card img,
+.patio-frame img {
+  filter: var(--photo-color-correction);
+}
+
+/* Mobiilin pääkuvan sisällön leveys ja kontrasti. */
+@media (max-width: 760px) {
+  body[data-page="home"] .hero-banner:not(.is-video-playing) .hero-actions,
+  body[data-page="home"] .hero-banner:not(.is-video-playing) .hero-lead,
+  body[data-page="home"] .hero-banner:not(.is-video-playing) .hero-points,
+  body[data-page="home"] .hero-banner:not(.is-video-playing) .hero-banner-copy > .eyebrow {
+    width: auto;
+    min-width: 0;
+  }
+  :root body[data-page="home"] .hero-banner:not(.is-video-playing) .hero-lead,
+  :root body[data-page="home"] .hero-banner:not(.is-video-playing) .hero-points li {
+    color: var(--muted-strong);
+    text-shadow: none;
+  }
+}
+/* Gallerian figure-elementit eivät lisää selaimen oletusmarginaaleja. */
+.detail-gallery .media-card { margin: 0; min-width: 0; }
