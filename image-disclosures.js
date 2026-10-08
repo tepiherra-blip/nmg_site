@@ -7,7 +7,7 @@ document.querySelectorAll('main img').forEach((image) => {
   if (!isBuilding || isPlan || image.hidden) return;
   const label = document.createElement('span');
   label.className = 'image-origin-note';
-  label.textContent = 'AI-avusteinen havainnekuva';
+  label.textContent = 'Havainnekuva';
   const hero = image.closest('.hero-banner-media');
   if (hero) {
     hero.appendChild(label);
