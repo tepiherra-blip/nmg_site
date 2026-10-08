@@ -104,7 +104,7 @@ const submitFormToEndpoint = async (payload) => {
   });
 
   const data = await response.json().catch(() => ({}));
-  if (!response.ok) {
+  if (!response.ok || (data.success !== true && data.success !== "true")) {
     throw new Error(data?.message || "Lomakkeen lähetys ei onnistunut.");
   }
 
@@ -322,7 +322,7 @@ const MODEL_LIBRARY = {
             "Vesiliittymä",
             "Viemäriliittymä",
             "WC-istuin ja siihen liittyvä järjestelmä, esimerkiksi polttava WC, kuivakäymälä tai vesikäymälä",
-            "Rakennuslupa- ja viranomaismaksut",
+            "Rakentamislupa- ja viranomaismaksut",
             "Mahdolliset asiakaskohtaiset lisä- ja muutostyöt",
           ],
         },
@@ -495,7 +495,7 @@ const MODEL_LIBRARY = {
             "Kuljetus",
             "Nostotyöt",
             "Tontin sähkö-, vesi- ja viemäriliittymät",
-            "Rakennuslupa- ja viranomaismaksut",
+            "Rakentamislupa- ja viranomaismaksut",
             "Mahdolliset asiakaskohtaiset lisä- ja muutostyöt",
           ],
         },
@@ -658,7 +658,7 @@ const MODEL_LIBRARY = {
             "Nostotyöt",
             "Tontin sähköliittymä",
             "Vesipisteet, viemäröinti tai märkätilat",
-            "Rakennuslupa- ja viranomaismaksut",
+            "Rakentamislupa- ja viranomaismaksut",
             "Mahdolliset asiakaskohtaiset lisä- ja muutostyöt",
           ],
         },
@@ -845,7 +845,7 @@ const MODEL_LIBRARY = {
             "Kuljetus",
             "Nostotyöt",
             "Tontin sähkö-, vesi- ja viemäriliittymät",
-            "Rakennuslupa- ja viranomaismaksut",
+            "Rakentamislupa- ja viranomaismaksut",
             "Mahdolliset asiakaskohtaiset lisä- ja muutostyöt",
           ],
         },
@@ -1009,7 +1009,7 @@ const MODEL_LIBRARY = {
             "Nostotyöt",
             "Tontin sähköliittymä",
             "Vesipisteet, viemäröinti tai märkätilat",
-            "Rakennuslupa- ja viranomaismaksut",
+            "Rakentamislupa- ja viranomaismaksut",
             "Mahdolliset asiakaskohtaiset lisä- ja muutostyöt",
           ],
         },
@@ -1195,7 +1195,7 @@ const MODEL_LIBRARY = {
             "Kuljetus",
             "Nostotyöt",
             "Tontin sähkö-, vesi- ja viemäriliittymät",
-            "Rakennuslupa- ja viranomaismaksut",
+            "Rakentamislupa- ja viranomaismaksut",
             "Mahdolliset asiakaskohtaiset lisä- ja muutostyöt",
           ],
         },
@@ -1213,7 +1213,7 @@ const MODEL_LIBRARY = {
     name: "NordMod Terassi",
     price: "1 480 €",
     priceLabel: "Alkaen",
-    priceTax: "",
+    priceTax: "Sis. alv 25,5 %",
     priceNote: "NordMod Patio: 6 m², 9 m² ja 16 m².",
     priceDetail: "Patio 6 m²: 1 480 €. Patio 9 m²: 2 180 €. Patio 16 m²: 3 480 €. Kuljetus ja nostotyöt sovitaan erikseen.",
     description: "Viimeistelty moduuliterassi rakennuksen yhteyteen tai erikseen ostettavaksi pihaterassiksi.",
@@ -1458,7 +1458,7 @@ const MODEL_LIBRARY = {
             "Viemäröinti",
             "Suihkutilat",
             "Ympärivuotiseen asumis- tai majoituskäyttöön vaadittavat ratkaisut",
-            "Rakennuslupa- ja viranomaismaksut",
+            "Rakentamislupa- ja viranomaismaksut",
             "Mahdolliset asiakaskohtaiset lisä- ja muutostyöt",
           ],
         },
@@ -1556,7 +1556,7 @@ const FURNITURE_SUPPLIER = {
   url: "https://carlocasagrande.fi/fi-fi/",
   logo: "assets/carlo-casagrande-logo.png",
   text:
-    "Mallin kiintokalusteet, kaapistot ja keittiöratkaisut toteutetaan laadukkailla Carlo Casagranden kalusteilla osana vakioitua premium-varustelutasoa.",
+    "Mallin toimitussisältöön kuuluvat kiintokalusteet toteutetaan laadukkailla Carlo Casagranden kalusteilla osana vakioitua premium-varustelutasoa. Mallikohtaiset kalusteet eritellään toimitussisällössä.",
 };
 
 const createItemList = (items = []) => {
@@ -1829,6 +1829,12 @@ const setModelFromQuery = (form) => {
   const option = product.options[optionIndex];
   if (option) {
     product.selectedIndex = optionIndex;
+  } else {
+    const fallback = /custom|moduul/i.test(model) ? "NordMod Custom" : "Muu työ tai malliston ulkopuolinen toteutus";
+    const fallbackIndex = Array.from(product.options).findIndex((item) => item.dataset.label === fallback);
+    if (fallbackIndex >= 0) product.selectedIndex = fallbackIndex;
+    const details = form.querySelector("#details");
+    if (details && !details.value) details.value = `Kiinnostava toteutus: ${model}`;
   }
 };
 
@@ -1885,7 +1891,7 @@ const initSimpleQuoteForm = () => {
     const price = selectedPatioPrice();
     orderCopy.forEach(({ element, copy, original }) => { if (element) element.innerHTML = price ? copy : original; });
     document.title = price ? "Tilaa NordMod Patio | Nordic Modular Finland Oy" : originalTitle;
-    if (price) document.querySelector(".form-section-heading h2").textContent = `${form.querySelector("#product").selectedOptions[0].dataset.label} — ${price}`;
+    if (price) document.querySelector(".form-section-heading h2").textContent = `${form.querySelector("#product").selectedOptions[0].dataset.label} — ${price} (sis. alv 25,5 %)`;
     if (form.querySelector("#product").selectedOptions[0]?.dataset.label === "NordMod Patio Custom / Mittatilausterassi") {
       form.querySelector("#details").placeholder = "Kerro terassin haluttu leveys ja pituus sekä muut toiveesi.";
     }

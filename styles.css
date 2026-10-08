@@ -3640,3 +3640,83 @@ body[data-page] .section.newsletter-section {
 }
 /* Gallerian figure-elementit eivät lisää selaimen oletusmarginaaleja. */
 .detail-gallery .media-card { margin: 0; min-width: 0; }
+/* Tuotesivun kokotieto, paluu ja muut mallit. */
+.model-size { font-weight: 700; color: var(--muted-strong); line-height: 1.5; font-size: .95rem; }
+.model-permit-note { color: var(--muted-strong); font-size: .85rem; line-height: 1.6; max-width: 75ch; }
+.catalog-return { margin: 24px 0 0; }
+.related-models > h2 { margin-bottom: 24px; }
+.related-model-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; }
+.related-model-card { border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--card-gradient); overflow: hidden; min-width: 0; }
+.related-model-card > img { width: 100%; aspect-ratio: 4/3; object-fit: cover; filter: var(--photo-color-correction); }
+.related-model-copy { display: grid; gap: 16px; padding: 22px; }
+.related-model-copy .button { align-self: end; }
+.newsletter-thanks { display: grid; gap: 18px; line-height: 1.6; }
+.newsletter-thanks h3 { color: #fff; font-size: 1.45rem; line-height: 1.25; }
+.newsletter-thanks .button { margin-top: 4px; }
+.module-combinations .button { justify-self: start; }
+.has-image-disclosure, .disclosed-photo { position: relative; }
+.disclosed-photo { margin: 0; min-width: 0; }
+.disclosed-photo > img { width: 100%; }
+.image-origin-note { display: block; padding: 6px 10px; font-size: .72rem; line-height: 1.4; color: var(--muted-strong); }
+.has-image-disclosure > .image-origin-note, .disclosed-photo > .image-origin-note { position: absolute; bottom: 10px; left: 10px; max-width: calc(100% - 20px); border-radius: 6px; background: rgba(7,24,36,.88); color: #fff; }
+.hero-banner-media > .image-origin-note { top: 12px; right: 12px; left: auto; bottom: auto; z-index: 2; }
+.hero-banner.is-video-playing .hero-banner-media > .image-origin-note { display: none; }
+@media (max-width: 760px) { .related-model-grid { grid-template-columns: 1fr; } .related-models { padding-top: 40px; } }
+/* AI-merkintä kuvan reunassa ilman taustalaatikkoa. */
+.image-disclosure-frame { position: relative; min-width: 0; width: 100%; margin: 0; }
+.image-disclosure-frame > img { display: block; }
+.image-origin-note {
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  left: auto;
+  max-width: calc(100% - 20px);
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  color: #fff;
+  font-size: .65rem;
+  line-height: 1.4;
+  text-shadow: 0 1px 3px rgba(0,0,0,.85);
+  pointer-events: none;
+}
+.category-card-media > .image-disclosure-frame,
+.catalog-visual > .image-disclosure-frame,
+.catalog-image-link > .image-disclosure-frame { height: 100%; }
+.product-card > .image-disclosure-frame {
+  width: calc(100% + 56px);
+  margin: -28px -28px 2px;
+  overflow: hidden;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+.product-card > .image-disclosure-frame > .product-card-image { width: 100%; margin: 0; }
+.related-model-card > .image-disclosure-frame > img { width: 100%; aspect-ratio: 4/3; object-fit: cover; filter: var(--photo-color-correction); }
+.hero-banner-media > .image-origin-note { top: 6px; bottom: auto; right: 12px; left: auto; background: none; padding: 0; }
+/* Kuvakehys ei saa kasvattaa mallistokortin leveyttä välileveyksillä. */
+.category-card-media { width: 100%; max-width: 100%; min-width: 0; }
+.category-card-media > .image-disclosure-frame { width: 100%; max-width: 100%; min-width: 0; }
+/* Toimitussisältö on avattava, näppäimistölläkin toimiva osio. */
+.technical-accordion { border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--card-gradient); box-shadow: var(--shadow-md); overflow: hidden; }
+.technical-accordion > summary { position: relative; display: grid; gap: 8px; padding: 24px 62px 24px 24px; list-style: none; cursor: pointer; }
+.technical-accordion > summary::-webkit-details-marker { display: none; }
+.technical-accordion > summary::after { content: '+'; position: absolute; right: 24px; top: 24px; font-size: 1.6rem; color: var(--accent-strong); line-height: 1; }
+.technical-accordion[open] > summary::after { content: '−'; }
+.technical-accordion > summary:hover { background: var(--surface-soft); }
+.technical-accordion > summary:focus-visible { outline: 3px solid var(--accent); outline-offset: -4px; }
+.technical-accordion-title { color: var(--text); font-size: 1.2rem; font-weight: 700; line-height: 1.3; }
+.technical-accordion-hint { color: var(--muted-strong); font-size: .85rem; line-height: 1.5; }
+.technical-accordion-content { display: grid; gap: 18px; padding: 24px; border-top: 1px solid var(--line); }
+.model-intro-description { color: var(--muted-strong); line-height: 1.6; }
+@media (max-width: 760px) { .technical-accordion > summary { padding: 20px 54px 20px 20px; } .technical-accordion-content { padding: 20px; } }
+@media print { .technical-accordion > .technical-accordion-content { display: block !important; } }
+/* Toimitussisällön selkeä avausnuoli ja erottuva kortti. */
+.technical-accordion { border: 2px solid var(--accent-strong); background: var(--card-gradient-strong); box-shadow: 0 8px 24px rgba(47,143,199,.16); }
+.technical-accordion > summary { padding-right: 76px; }
+.technical-accordion > summary::after { content: ''; right: 26px; top: 50%; width: 12px; height: 12px; border-right: 3px solid var(--accent-strong); border-bottom: 3px solid var(--accent-strong); transform: translateY(-70%) rotate(45deg); transition: transform 180ms ease; }
+.technical-accordion[open] > summary::after { content: ''; transform: translateY(-20%) rotate(225deg); }
+.technical-accordion-title { font-size: 1.3rem; }
+.technical-accordion-hint { color: var(--text); }
+.technical-accordion-content { background: var(--surface); }
+@media (prefers-reduced-motion: reduce) { .technical-accordion > summary::after { transition: none; } }
